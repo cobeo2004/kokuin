@@ -39,12 +39,13 @@ async function triggerBuild(
 	sqlitePath: string,
 ): Promise<void> {
 	try {
-		// Create an empty SQLite graph DB and mark build as ready
-		new GraphStore(sqlitePath);
 		await prisma.graphBuild.update({
 			where: { id: buildId },
-			data: { status: "ready", sqlitePath },
+			data: { status: "in_progress", sqlitePath },
 		});
+
+		// Create an empty SQLite graph DB while parser/build runs elsewhere
+		new GraphStore(sqlitePath);
 	} catch (err) {
 		const message = err instanceof Error ? err.message : String(err);
 		await prisma.graphBuild.update({

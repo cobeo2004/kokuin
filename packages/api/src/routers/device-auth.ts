@@ -1,3 +1,6 @@
+import { randomBytes } from "node:crypto";
+
+import prisma from "@kokuin/db";
 import { ORPCError } from "@orpc/server";
 import { z } from "zod";
 
@@ -6,24 +9,35 @@ import { protectedProcedure, publicProcedure } from "../index";
 const CHARS = "ABCDEFGHJKLMNPQRSTUVWXYZ23456789";
 const DEVICE_CODE_LENGTH = 32;
 const USER_CODE_SEGMENT_LENGTH = 4;
+const ACCESS_TOKEN_LENGTH = 48;
 const EXPIRY_MS = 15 * 60 * 1000; // 15 minutes
 const POLL_INTERVAL = 5; // seconds
 
-interface DeviceCodeEntry {
-	deviceCode: string;
-	userCode: string;
-	expiresAt: Date;
-	userId?: string;
-	accessToken?: string;
+function fillRandomBytes(buffer: Uint8Array): void {
+	const crypto = globalThis.crypto;
+	if (crypto?.getRandomValues) {
+		crypto.getRandomValues(buffer);
+		return;
+	}
+	const bytes = randomBytes(buffer.length);
+	buffer.set(bytes);
 }
 
-const deviceCodeStore = new Map<string, DeviceCodeEntry>();
-
 function randomChars(length: number): string {
+	const charsLength = CHARS.length;
+	const maxByte = 256 - (256 % charsLength);
 	let result = "";
-	for (let i = 0; i < length; i++) {
-		result += CHARS[Math.floor(Math.random() * CHARS.length)];
+
+	while (result.length < length) {
+		const buffer = new Uint8Array((length - result.length) * 2);
+		fillRandomBytes(buffer);
+		for (const byte of buffer) {
+			if (byte >= maxByte) continue;
+			result += CHARS[byte % charsLength];
+			if (result.length === length) break;
+		}
 	}
+
 	return result;
 }
 
@@ -83,7 +97,7 @@ export const deviceAuthRouter = {
 				});
 			}
 
-			const accessToken = randomChars(48);
+			const accessToken = randomChars(ACCESS_TOKEN_LENGTH);
 			found.userId = context.session.user.id;
 			found.accessToken = accessToken;
 

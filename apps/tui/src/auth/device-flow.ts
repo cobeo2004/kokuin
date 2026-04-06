@@ -3,47 +3,41 @@ import { saveCredentials } from "./credentials.js";
 interface DeviceAuthResponse {
 	deviceCode: string;
 	userCode: string;
-	verificationUrl: string;
-	expiresIn: number;
-	interval: number;
+	expiresAt: string;
+	pollInterval: number;
 }
 
 interface TokenResponse {
 	accessToken: string;
-	userId: string;
 }
 
-interface RpcResponse<T> {
-	result?: T;
-	error?: { message: string };
+function normalizeServerUrl(serverUrl: string): string {
+	return serverUrl.replace(/\/$/, "");
 }
 
 async function rpcCall<T>(
 	serverUrl: string,
-	method: string,
-	params: Record<string, unknown>,
+	path: string,
+	input?: Record<string, unknown>,
 ): Promise<T> {
-	const res = await fetch(`${serverUrl}/rpc`, {
+	const url = `${normalizeServerUrl(serverUrl)}/rpc/${path}`;
+	const res = await fetch(url, {
 		method: "POST",
 		headers: { "Content-Type": "application/json" },
-		body: JSON.stringify({ method, params }),
+		body: input ? JSON.stringify(input) : undefined,
 	});
 
+	const data = (await res.json()) as T;
+
 	if (!res.ok) {
-		throw new Error(`RPC request failed: ${res.status} ${res.statusText}`);
+		const message =
+			data && typeof data === "object" && "message" in data
+				? String((data as { message?: unknown }).message)
+				: `RPC request failed: ${res.status} ${res.statusText}`;
+		throw new Error(message);
 	}
 
-	const data = (await res.json()) as RpcResponse<T>;
-
-	if (data.error) {
-		throw new Error(data.error.message);
-	}
-
-	if (data.result === undefined) {
-		throw new Error("RPC response missing result");
-	}
-
-	return data.result;
+	return data;
 }
 
 export async function runDeviceFlow(serverUrl: string): Promise<void> {
@@ -51,15 +45,18 @@ export async function runDeviceFlow(serverUrl: string): Promise<void> {
 
 	const auth = await rpcCall<DeviceAuthResponse>(
 		serverUrl,
-		"deviceAuth.authorize",
-		{},
+		"deviceAuth/authorize",
 	);
 
-	console.log(`\nTo sign in, visit: ${auth.verificationUrl}`);
+	const verificationUrl = `${normalizeServerUrl(serverUrl)}/device`;
+	console.log(`\nTo sign in, visit: ${verificationUrl}`);
 	console.log(`Enter code: ${auth.userCode}\n`);
 
-	const intervalMs = (auth.interval ?? 5) * 1000;
-	const expiresAt = Date.now() + auth.expiresIn * 1000;
+	const intervalMs = (auth.pollInterval ?? 5) * 1000;
+	const expiresAtMs = Date.parse(auth.expiresAt);
+	const expiresAt = Number.isNaN(expiresAtMs)
+		? Date.now() + 15 * 60 * 1000
+		: expiresAtMs;
 
 	while (Date.now() < expiresAt) {
 		await new Promise<void>((resolve) => setTimeout(resolve, intervalMs));
@@ -67,14 +64,14 @@ export async function runDeviceFlow(serverUrl: string): Promise<void> {
 		try {
 			const token = await rpcCall<TokenResponse>(
 				serverUrl,
-				"deviceAuth.token",
+				"deviceAuth/token",
 				{ deviceCode: auth.deviceCode },
 			);
 
 			saveCredentials({
 				accessToken: token.accessToken,
-				userId: token.userId,
-				serverUrl,
+				userId: "unknown",
+				serverUrl: normalizeServerUrl(serverUrl),
 			});
 
 			console.log("Successfully authenticated.");

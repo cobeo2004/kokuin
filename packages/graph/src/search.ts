@@ -1,4 +1,5 @@
 import type { Database } from "bun:sqlite";
+import type { MergedGraphStore } from "./merge";
 import type { GraphStore } from "./store";
 import type { GraphNode, SearchResult } from "./types";
 
@@ -9,9 +10,16 @@ interface SearchOptions {
 
 export class SearchEngine {
 	private db: Database;
+	private merged: MergedGraphStore | null;
 
-	constructor(store: GraphStore) {
-		this.db = store.getDatabase();
+	constructor(store: GraphStore | MergedGraphStore) {
+		if ("getDatabase" in store) {
+			this.db = store.getDatabase();
+			this.merged = null;
+		} else {
+			this.db = store.getGlobalStore().getDatabase();
+			this.merged = store;
+		}
 	}
 
 	search(query: string, options: SearchOptions = {}): SearchResult[] {
@@ -31,7 +39,9 @@ export class SearchEngine {
 			)
 			.all(sanitized, limit);
 
-		return rows
+		const mergedRows = this.mergeOverlayRows(rows);
+
+		return mergedRows
 			.map((row) => {
 				let score = -row.rank; // FTS5 rank is negative (lower = better)
 				score = this.applyBoost(score, query, row);
@@ -56,5 +66,35 @@ export class SearchEngine {
 			boosted *= 2.0;
 		}
 		return boosted;
+	}
+
+	private mergeOverlayRows(rows: Array<GraphNode & { rank: number }>): Array<
+		GraphNode & { rank: number }
+	> {
+		if (!this.merged) {
+			return rows;
+		}
+
+		const overlayStore = this.merged.getOverlayStore();
+		if (!overlayStore) {
+			return rows;
+		}
+
+		const rowMap = new Map<string, GraphNode & { rank: number }>();
+		for (const row of rows) {
+			rowMap.set(row.qualified_name, row);
+		}
+
+		for (const row of rows) {
+			const overlayNode = overlayStore.getNodeByQualifiedName(row.qualified_name);
+			if (overlayNode) {
+				rowMap.set(row.qualified_name, {
+					...overlayNode,
+					rank: row.rank,
+				});
+			}
+		}
+
+		return Array.from(rowMap.values());
 	}
 }

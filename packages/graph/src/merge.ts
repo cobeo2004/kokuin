@@ -15,6 +15,14 @@ export class MergedGraphStore {
 		return this.global.getNodeByQualifiedName(qn);
 	}
 
+	getNodeById(id: number): GraphNode | null {
+		if (this.overlay) {
+			const overlayNode = this.overlay.getNodeById(id);
+			if (overlayNode) return overlayNode;
+		}
+		return this.global.getNodeById(id);
+	}
+
 	getNodesByFilePath(fp: string): GraphNode[] {
 		const globalNodes = this.global.getNodesByFilePath(fp);
 		if (!this.overlay) return globalNodes;

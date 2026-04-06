@@ -2,24 +2,35 @@ import { existsSync, mkdirSync, rmSync } from "node:fs";
 import { join } from "node:path";
 import type { GraphStorageAdapter } from "./adapter";
 
+function sanitizePathSegment(value: string): string {
+	const trimmed = value.trim();
+	if (!trimmed) return "_";
+	return trimmed.replace(/[^a-zA-Z0-9_\-.]/g, "_");
+}
+
 function sanitizeBranch(branch: string): string {
-	return branch.replace(/[^a-zA-Z0-9_\-.]/g, "_");
+	return sanitizePathSegment(branch);
 }
 
 export class FsStorageAdapter implements GraphStorageAdapter {
 	constructor(private readonly baseDir: string) {}
 
 	getGraphPath(projectId: string, branch: string): string {
-		return join(this.baseDir, projectId, sanitizeBranch(branch), "graph.db");
+		return join(
+			this.baseDir,
+			sanitizePathSegment(projectId),
+			sanitizeBranch(branch),
+			"graph.db",
+		);
 	}
 
 	getOverlayPath(userId: string, projectId: string, branch: string): string {
 		return join(
 			this.baseDir,
-			projectId,
+			sanitizePathSegment(projectId),
 			sanitizeBranch(branch),
 			"overlays",
-			`${userId}.db`,
+			`${sanitizePathSegment(userId)}.db`,
 		);
 	}
 

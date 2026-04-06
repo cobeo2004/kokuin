@@ -8,15 +8,27 @@
 
 - ALWAYS use code-review-graph MCP tools FIRST for codebase exploration, before falling back to Grep/Glob/Read
 - ALWAYS utilize openwolf for token optimization (anatomy.md before reading files, cerebrum.md before generating code, targeted Grep over full reads)
-<!-- How the user likes things done. Code style, tools, patterns, communication. -->
+- Use OMC subagents: haiku for mechanical tasks, sonnet for standard impl, opus for reviews/architecture
+- Run ai-slop-cleaner after each implementation task to validate generated code
+- Run `bun run check-types && bun run check` after every feature (per CLAUDE.md)
+- User prefers multiple-choice questions during brainstorming, one at a time
+- User trusts AI recommendations — often picks the suggested option
 
 ## Key Learnings
 
-- **Project:** kokuin
+- **Project:** kokuin — hybrid platform combining code-review-graph + openwolf for multi-user teams
+- **Tech stack:** Bun workspaces + Turborepo, TanStack Start, Hono, ORPC, Better-Auth, Prisma 7 (PostgreSQL), bun:sqlite (graph engine)
+- **ORPC patterns:** `os.$context<Context>()` → publicProcedure → protectedProcedure → projectProcedure → projectAdminProcedure
+- **bun:sqlite returns snake_case columns** — GraphNode/GraphEdge types use snake_case to match; ParsedNode/ParsedEdge use camelCase for input
+- **Better-Auth org plugin** needs Organization, Member, Invitation models in Prisma schema — add manually if CLI doesn't generate them
+- **Biome errors in .wolf/ and refs/** are pre-existing and should be ignored during check — only validate your own files
+- **TanStack Router** auto-generates routeTree.gen.ts — may need `bun run dev:web` briefly to trigger after new route files
 
 ## Do-Not-Repeat
 
-<!-- Mistakes made and corrected. Each entry prevents the same mistake recurring. -->
+- [2026-04-06] **100% anatomy miss rate** — Failed to check anatomy.md before reading files. ALWAYS check .wolf/anatomy.md first before using Read tool on any project file.
+- [2026-04-06] **Missed commits from subagents** — Some agents created files but didn't commit. ALWAYS verify git log after subagent completion and commit any unstaged files.
+- [2026-04-06] **Graph queries bypass overlay** — QueryEngine/SearchEngine were given `merged.getGlobalStore()` instead of using the MergedGraphStore. The overlay is never queried. Must fix: pass MergedGraphStore to engines or run queries against both stores.
 <!-- Format: [YYYY-MM-DD] Description of what went wrong and what to do instead. -->
 
 ## Decision Log

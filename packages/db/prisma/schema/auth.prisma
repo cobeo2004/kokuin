@@ -104,3 +104,18 @@ model Invitation {
 
   @@map("invitation")
 }
+
+model DeviceAuthCode {
+  id          String    @id @default(cuid())
+  deviceCode  String    @unique
+  userCode    String    @unique
+  userId      String?
+  accessToken String?
+  expiresAt   DateTime
+  createdAt   DateTime  @default(now())
+  updatedAt   DateTime  @updatedAt
+
+  @@index([userId])
+  @@index([expiresAt])
+  @@map("device_auth_code")
+}

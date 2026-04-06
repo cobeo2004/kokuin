@@ -1,4 +1,5 @@
 import {
+	chmodSync,
 	existsSync,
 	mkdirSync,
 	readFileSync,
@@ -18,8 +19,14 @@ const CONFIG_DIR = join(homedir(), ".kokuin");
 const CREDS_FILE = join(CONFIG_DIR, "credentials.json");
 
 export function saveCredentials(creds: Credentials): void {
-	if (!existsSync(CONFIG_DIR)) mkdirSync(CONFIG_DIR, { recursive: true });
-	writeFileSync(CREDS_FILE, JSON.stringify(creds, null, 2));
+	if (!existsSync(CONFIG_DIR)) {
+		mkdirSync(CONFIG_DIR, { recursive: true, mode: 0o700 });
+	}
+	chmodSync(CONFIG_DIR, 0o700);
+	writeFileSync(CREDS_FILE, JSON.stringify(creds, null, 2), {
+		mode: 0o600,
+	});
+	chmodSync(CREDS_FILE, 0o600);
 }
 
 export function loadCredentials(): Credentials | null {

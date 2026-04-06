@@ -38,3 +38,207 @@
 
 | Time | Action | File(s) | Outcome | ~Tokens |
 |------|--------|---------|---------|--------|
+| 20:06 | Edited packages/graph/src/search.ts | modified applyBoost() | ~104 |
+| 20:06 | Created packages/api/src/routers/index.ts | — | ~191 |
+| 20:06 | Created apps/server/package.json | — | ~271 |
+| 20:06 | Created apps/tui/package.json | — | ~104 |
+| 20:06 | Created apps/tui/tsconfig.json | — | ~185 |
+| 20:07 | Edited packages/graph/src/search.ts | modified constructor() | ~20 |
+| $(date +%H:%M) | Task 18: CLI auth commands — created auth/credentials.ts, auth/device-flow.ts, utils/api-client.ts, commands/login.ts, index.ts; removed OpenTUI deps; updated package.json + tsconfig.json | apps/tui/src/ | tui type-check + biome pass | ~3500 |
+| 20:09 | Created apps/tui/src/utils/git.ts | — | ~208 |
+| 20:10 | Created apps/tui/src/commands/init.ts | — | ~448 |
+| 20:10 | Created apps/tui/src/commands/project.ts | — | ~724 |
+| 20:10 | Created apps/tui/src/commands/graph.ts | — | ~1376 |
+| 20:10 | Edited packages/graph/package.json | 3→4 lines | ~24 |
+| 20:10 | Edited apps/tui/src/index.ts | expanded (+6 lines) | ~188 |
+| 20:10 | Created packages/graph/src/mcp-server.ts | — | ~1300 |
+| 20:11 | Edited packages/graph/src/index.ts | 1→2 lines | ~23 |
+| 20:11 | Task 19: Created apps/tui/src/utils/git.ts | getGitRemoteUrl, getCurrentBranch, getChangedFiles | ~120 |
+| 20:11 | Task 19: Created apps/tui/src/commands/init.ts | kokuin init command | ~180 |
+| 20:11 | Task 19: Created apps/tui/src/commands/project.ts | kokuin project list/info commands | ~220 |
+| 20:11 | Task 19: Created apps/tui/src/commands/graph.ts | kokuin graph status/query/search commands | ~300 |
+| 20:11 | Task 19: Updated apps/tui/src/index.ts | registered init, project, graph commands | ~50 |
+| 20:11 | Task 20: Created MCP server with 5 graph tools | packages/graph/src/mcp-server.ts, packages/graph/src/index.ts, packages/graph/package.json | success | ~800 tok |
+| 20:11 | Created apps/web/src/routes/dashboard.tsx | — | ~787 |
+| 20:12 | Edited apps/web/src/utils/orpc.ts | modified getProjectOrpc() | ~411 |
+| 20:12 | Created apps/web/src/routes/projects/$projectId.tsx | — | ~1360 |
+| 20:13 | Created apps/web/src/routes/projects/$projectId.members.tsx | — | ~1695 |
+| 20:13 | Edited apps/web/src/components/header.tsx | 5→4 lines | ~30 |
+| 20:13 | Created apps/web/src/routes/projects/$projectId.members.tsx | — | ~1726 |
+| 20:14 | Edited apps/web/src/routes/projects/$projectId.members.tsx | 3→4 lines | ~56 |
+| 20:14 | Created apps/web/src/routes/projects/$projectId.members.tsx | — | ~1702 |
+| 20:15 | Created apps/web/src/routes/dashboard.tsx | — | ~863 |
+| 20:15 | Created apps/web/src/routes/projects/$projectId.tsx | — | ~1414 |
+| 20:15 | Created apps/web/src/routes/projects/$projectId.members.tsx | — | ~1747 |
+| 20:16 | Edited apps/web/src/routes/dashboard.tsx | 13→13 lines | ~119 |
+| 20:16 | Edited apps/web/src/routes/dashboard.tsx | 3→1 lines | ~18 |
+| 20:16 | Edited apps/web/src/routes/dashboard.tsx | 3→1 lines | ~27 |
+| 20:17 | Edited apps/web/src/routes/dashboard.tsx | 3→2 lines | ~20 |
+| 20:17 | Edited apps/web/src/routes/projects/$projectId.members.tsx | 3→2 lines | ~30 |
+| 20:18 | Task 21: Web dashboard project pages — deleted ai.tsx, updated dashboard.tsx (project list), created projects/$projectId.tsx (detail), projects/$projectId.members.tsx (member mgmt), updated header.tsx, added getProjectOrpc to orpc.ts | apps/web/src/routes/, apps/web/src/utils/orpc.ts, apps/web/src/components/header.tsx | build+biome clean, tsc zero web errors | ~3200 |
+| 20:21 | Created apps/web/src/routes/admin/index.tsx | — | ~1980 |
+| 20:21 | Created apps/web/src/routes/admin/index.tsx | — | ~2128 |
+| 20:22 | Created apps/web/src/routes/projects/$projectId.builds.tsx | — | ~1700 |
+| 20:22 | Edited apps/web/src/components/header.tsx | map() → useSession() | ~171 |
+| 20:23 | Edited apps/web/src/routes/admin/index.tsx | 17→17 lines | ~174 |
+
+## Session: 2026-04-06 20:25
+
+| Time | Action | File(s) | Outcome | ~Tokens |
+|------|--------|---------|---------|--------|
+
+## Session: 2026-04-06 20:27
+
+| Time | Action | File(s) | Outcome | ~Tokens |
+|------|--------|---------|---------|--------|
+
+## Session: 2026-04-06 20:28
+
+| Time | Action | File(s) | Outcome | ~Tokens |
+|------|--------|---------|---------|--------|
+
+## Session 2026-04-06 — Phase 1 MVP Implementation
+
+| Time | Action | Files | Outcome | ~Tokens |
+|------|--------|-------|---------|---------|
+| 14:51 | Brainstormed kokuin design spec | docs/superpowers/specs/2026-04-06-kokuin-design.md | Approved spec with 13 sections | ~8000 |
+| 15:30 | Wrote Phase 1 implementation plan | docs/superpowers/plans/2026-04-06-kokuin-phase1-mvp.md | 22 tasks planned | ~6000 |
+| 16:00 | Task 1: Scaffold packages/graph | packages/graph/{package.json,tsconfig.json,src/index.ts} | haiku agent, committed | ~500 |
+| 16:00 | Task 2: Environment variables | packages/env/src/server.ts | haiku agent, committed | ~500 |
+| 16:10 | Task 3: Prisma schema | packages/db/prisma/schema/{project,graph}.prisma | sonnet agent, committed | ~1000 |
+| 16:10 | Task 5: Graph types & schema | packages/graph/src/{types,schema}.ts | sonnet agent, committed | ~1000 |
+| 16:20 | Task 4: Better-Auth config | packages/auth/src/{index,permissions}.ts + auth.prisma | sonnet agent, committed | ~1500 |
+| 16:20 | Task 6: GraphStore CRUD | packages/graph/src/store.ts + 8 tests | sonnet agent, committed | ~2000 |
+| 16:30 | Tasks 7-8: Query + FTS5 search | packages/graph/src/{query,search}.ts + 10 tests | sonnet agents, committed | ~2000 |
+| 16:45 | Tasks 9-11: Impact + Changes + Merge | packages/graph/src/{impact,changes,adapter,fs-adapter,merge}.ts + 11 tests | sonnet agents, committed | ~3000 |
+| 17:00 | Tasks 12-13: Parser bridge + API middleware | packages/graph/src/parser-bridge.ts + packages/api/src/{context,index}.ts | sonnet agents, committed | ~2000 |
+| 17:15 | Tasks 14-15: Project + Graph routers | packages/api/src/routers/{project,graph}.ts | sonnet agents, committed | ~3000 |
+| 17:30 | Tasks 16-18: Webhook + Device auth + CLI auth | apps/server/src/webhook.ts + device-auth.ts + apps/tui/src/** | sonnet agents, committed | ~4000 |
+| 17:50 | Tasks 19-21: CLI cmds + MCP + Web dashboard | apps/tui/src/commands/** + mcp-server.ts + apps/web/src/routes/** | sonnet agents, committed | ~5000 |
+| 18:10 | Task 22: Admin pages | apps/web/src/routes/admin/ + builds page | sonnet agent, committed | ~2000 |
+| 18:30 | Slop-cleaner review | Full graph engine | Clean — no slop detected | ~2000 |
+| 18:45 | Opus code review | Full Phase 1 implementation | 3 critical + 7 high + 6 medium issues found | ~5000 |
+
+---
+
+## Handoff Notes for Next Session
+
+### What was accomplished
+Phase 1 MVP of kokuin fully implemented across 22 tasks. All code committed to main branch.
+
+### What needs to happen next (in priority order)
+
+**Step 1: Fix Critical Issues from Code Review**
+Read the full review at the bottom of `docs/superpowers/plans/2026-04-06-kokuin-phase1-mvp.md` (or ask me to recall). Key fixes:
+
+1. **[C1] Device auth crypto** — Replace `Math.random()` with `crypto.getRandomValues()` in `packages/api/src/routers/device-auth.ts:22-27`
+2. **[C2] Credential file permissions** — Add `{ mode: 0o600 }` to `writeFileSync` in `apps/tui/src/auth/credentials.ts:22`
+3. **[C3] Device code persistence** — Move in-memory Map to PostgreSQL table in `packages/api/src/routers/device-auth.ts:20`
+
+**Step 2: Fix High Issues**
+
+4. **[H1] Graph queries must use overlay** — `QueryEngine`/`SearchEngine`/`ImpactAnalyzer`/`ChangeDetector` in both `packages/api/src/routers/graph.ts` and `packages/graph/src/mcp-server.ts` use `merged.getGlobalStore()` but should query both stores and merge results per spec Section 5.3
+5. **[H2] Validate pushOverlay input** — Replace `z.any()` with proper `ParsedNode`/`ParsedEdge` Zod schemas in `packages/api/src/routers/graph.ts:190-191`
+6. **[H3] Org membership check** — Add org admin/owner verification in `packages/api/src/routers/project.ts:23-43` before allowing project creation
+7. **[H4] Sanitize projectId/userId** — Add CUID validation in `packages/graph/src/fs-adapter.ts` before using in file paths
+8. **[H5] Fix webhook stub** — Don't mark empty graph as "ready" in `apps/server/src/webhook.ts:37-55` — mark as "pending" until real parsing is implemented
+9. **[H6] Fix CLI RPC format** — CLI device-flow.ts uses wrong JSON format for ORPC; switch to `@orpc/client` RPCLink or correct URL paths
+10. **[H7] Remove /ai endpoint** — Still exists in `apps/server/src/index.ts` — unauthenticated AI proxy
+
+**Step 3: Fix Medium Issues**
+
+11. Move `rebuildFts()` out of search path — call after writes, not on every read
+12. Deduplicate `openMergedStore` logic — create shared factory in packages/graph
+13. Add all 3 auth methods to device page (Google + GitHub + email/password)
+14. Fix edge merge to use `(source_id, target_id, kind)` tuple instead of `id`
+
+**Step 4: Implement Phase 2 — Wolf Integration**
+See spec Section 6 + plan Section 13.2. Shared wolf state (anatomy, cerebrum, buglog), user-scoped state, hooks adaptation.
+
+**Step 5: Implement Phase 3 — Real-time & Polish**
+WebSocket live sync, D3 visualization, storage adapter S3 impl.
+
+### Key files
+- Design spec: `docs/superpowers/specs/2026-04-06-kokuin-design.md`
+- Implementation plan: `docs/superpowers/plans/2026-04-06-kokuin-phase1-mvp.md`
+- Graph engine: `packages/graph/src/` (8 modules, 29 tests)
+- API routers: `packages/api/src/routers/` (project, graph, device-auth)
+- CLI: `apps/tui/src/` (commands/, auth/, utils/)
+- Web dashboard: `apps/web/src/routes/` (dashboard, device, projects/*, admin/)
+- Webhook: `apps/server/src/webhook.ts`
+- MCP server: `packages/graph/src/mcp-server.ts`
+- Parser bridge: `parser/main.py` + `packages/graph/src/parser-bridge.ts`
+
+## Session: 2026-04-06 20:34
+
+| Time | Action | File(s) | Outcome | ~Tokens |
+|------|--------|---------|---------|--------|
+
+## Session: 2026-04-06 20:35
+
+| Time | Action | File(s) | Outcome | ~Tokens |
+|------|--------|---------|---------|--------|
+| 20:42 | Edited packages/graph/src/merge.ts | added 2 condition(s) | ~127 |
+| 20:42 | Edited packages/graph/src/query.ts | added 1 import(s) | ~27 |
+| 20:42 | Edited packages/graph/src/impact.ts | added 1 import(s) | ~27 |
+| 20:42 | Edited packages/graph/src/changes.ts | added 1 import(s) | ~27 |
+| 20:42 | Edited packages/graph/src/query.ts | modified constructor() | ~26 |
+| 20:42 | Edited packages/graph/src/impact.ts | modified constructor() | ~27 |
+| 20:42 | Edited packages/graph/src/changes.ts | modified constructor() | ~27 |
+| 20:42 | Edited packages/graph/src/search.ts | added 1 import(s) | ~55 |
+| 20:43 | Edited packages/graph/src/search.ts | added 1 condition(s) | ~94 |
+| 20:44 | Edited packages/graph/src/query.ts | added nullish coalescing | ~632 |
+| 20:45 | Edited packages/graph/src/search.ts | 2→4 lines | ~21 |
+| 20:45 | Edited packages/graph/src/search.ts | added 3 condition(s) | ~294 |
+| 20:45 | Edited packages/api/src/routers/graph.ts | 2→7 lines | ~27 |
+| 20:45 | Edited packages/api/src/routers/graph.ts | expanded (+36 lines) | ~272 |
+| 20:45 | Edited packages/graph/src/mcp-server.ts | 2→2 lines | ~15 |
+| 20:46 | Edited packages/graph/src/mcp-server.ts | added optional chaining | ~52 |
+| 20:46 | Edited packages/graph/src/mcp-server.ts | 4→5 lines | ~28 |
+| 20:46 | Edited packages/graph/src/mcp-server.ts | 4→2 lines | ~22 |
+| 20:46 | Edited packages/api/src/routers/graph.ts | 3→3 lines | ~33 |
+| 20:46 | Edited packages/api/src/routers/graph.ts | added optional chaining | ~58 |
+| 20:46 | Edited packages/api/src/routers/graph.ts | 5→5 lines | ~30 |
+| 20:46 | Edited packages/api/src/routers/graph.ts | 4→4 lines | ~29 |
+| 20:47 | Edited packages/api/src/routers/graph.ts | 6→6 lines | ~35 |
+| 20:47 | Edited packages/api/src/routers/graph.ts | 3→3 lines | ~34 |
+
+## Session: 2026-04-06 20:51
+
+| Time | Action | File(s) | Outcome | ~Tokens |
+|------|--------|---------|---------|--------|
+
+## Session: 2026-04-06 20:51
+
+| Time | Action | File(s) | Outcome | ~Tokens |
+|------|--------|---------|---------|--------|
+| 20:56 | Created .claude/worktrees/agent-aeba7c78/packages/graph/src/merge.ts | — | ~983 |
+| 20:56 | Edited .claude/worktrees/agent-aeba7c78/packages/api/src/routers/graph.ts | 2→2 lines | ~25 |
+| 20:57 | Edited .claude/worktrees/agent-aeba7c78/packages/api/src/routers/graph.ts | modified withMergedMaterialized() | ~760 |
+| 20:58 | Edited apps/tui/src/auth/credentials.ts | 3→7 lines | ~50 |
+| 20:58 | Edited apps/tui/src/auth/device-flow.ts | added error handling | ~1104 |
+| 20:59 | Created .claude/worktrees/agent-aeba7c78/packages/api/src/routers/graph.ts | — | ~1928 |
+| 20:59 | Created .claude/worktrees/agent-aeba7c78/packages/graph/src/mcp-server.ts | — | ~1214 |
+| 20:59 | Edited apps/tui/src/auth/credentials.ts | 7→9 lines | ~68 |
+| 20:59 | Edited packages/api/src/routers/device-auth.ts | added optional chaining | ~320 |
+| 20:59 | Edited packages/api/src/routers/device-auth.ts | modified generateDeviceCode() | ~671 |
+| 20:59 | Edited apps/tui/src/auth/credentials.ts | 8→9 lines | ~31 |
+| 21:00 | Edited packages/db/prisma/schema/auth.prisma | expanded (+15 lines) | ~207 |
+| 21:00 | Edited packages/api/src/routers/project.ts | added 1 condition(s) | ~166 |
+| 21:00 | Edited packages/graph/src/fs-adapter.ts | added 1 condition(s) | ~73 |
+| 21:00 | Edited packages/graph/src/fs-adapter.ts | modified getGraphPath() | ~118 |
+| 21:00 | Edited apps/server/src/webhook.ts | modified triggerBuild() | ~150 |
+| 21:00 | Edited .claude/worktrees/agent-aeba7c78/packages/graph/src/mcp-server.ts | 2→2 lines | ~52 |
+| 21:00 | Created apps/tui/src/auth/device-flow.ts | — | ~663 |
+| 21:00 | Edited .claude/worktrees/agent-aeba7c78/packages/graph/src/mcp-server.ts | 2→2 lines | ~19 |
+| 21:00 | Edited .claude/worktrees/agent-aeba7c78/packages/graph/src/mcp-server.ts | 2→2 lines | ~22 |
+| 21:00 | Edited .claude/worktrees/agent-aeba7c78/packages/graph/src/mcp-server.ts | 2→2 lines | ~35 |
+| 13:10 | Updated device auth to use secure randomness + Prisma persistence | packages/api/src/routers/device-auth.ts, packages/db/prisma/schema/auth.prisma | in progress | ~900 |
+| 21:01 | Edited .claude/worktrees/agent-aeba7c78/packages/graph/src/mcp-server.ts | 3→3 lines | ~42 |
+| 21:03 | Added org membership enforcement, sanitized FsStorageAdapter paths, and set webhook builds to in_progress | packages/api/src/routers/project.ts; packages/graph/src/fs-adapter.ts; apps/server/src/webhook.ts | updated | ~3900 tok |
+| 21:04 | Edited .claude/worktrees/agent-aeba7c78/packages/graph/src/mcp-server.ts | 3→3 lines | ~44 |
+| 21:05 | Created packages/api/src/routers/device-auth.ts | — | ~983 |
+| 21:06 | Edited packages/api/src/routers/device-auth.ts | reduced (-9 lines) | ~127 |
+| 21:06 | Edited packages/api/src/routers/device-auth.ts | modified generateUserCode() | ~647 |
+| 21:07 | Created packages/api/src/routers/device-auth.ts | — | ~983 |
+| 21:07 | Edited packages/api/src/routers/device-auth.ts | reduced (-9 lines) | ~127 |

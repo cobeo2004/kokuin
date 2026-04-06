@@ -52,7 +52,7 @@ export function createMcpServer(config: McpConfig): McpServer {
 		async ({ pattern, target }) => {
 			const merged = getMerged();
 			try {
-				const result = new QueryEngine(merged.getGlobalStore()).query(
+				const result = new QueryEngine(merged).query(
 					pattern,
 					target,
 				);
@@ -80,7 +80,8 @@ export function createMcpServer(config: McpConfig): McpServer {
 			try {
 				const store = merged.getGlobalStore();
 				store.rebuildFts();
-				const results = new SearchEngine(store).search(query, { limit });
+				merged.getOverlayStore()?.rebuildFts();
+				const results = new SearchEngine(merged).search(query, { limit });
 				return {
 					content: [
 						{ type: "text" as const, text: JSON.stringify(results, null, 2) },
@@ -103,9 +104,10 @@ export function createMcpServer(config: McpConfig): McpServer {
 		async ({ target, maxDepth }) => {
 			const merged = getMerged();
 			try {
-				const result = new ImpactAnalyzer(
-					merged.getGlobalStore(),
-				).getImpactRadius(target, maxDepth);
+				const result = new ImpactAnalyzer(merged).getImpactRadius(
+					target,
+					maxDepth,
+				);
 				return {
 					content: [
 						{ type: "text" as const, text: JSON.stringify(result, null, 2) },
@@ -132,9 +134,7 @@ export function createMcpServer(config: McpConfig): McpServer {
 		async ({ changes }) => {
 			const merged = getMerged();
 			try {
-				const results = new ChangeDetector(
-					merged.getGlobalStore(),
-				).mapChangesToNodes(changes);
+				const results = new ChangeDetector(merged).mapChangesToNodes(changes);
 				return {
 					content: [
 						{ type: "text" as const, text: JSON.stringify(results, null, 2) },

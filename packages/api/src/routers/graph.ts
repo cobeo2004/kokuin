@@ -1,6 +1,11 @@
 import prisma from "@kokuin/db";
 import { env } from "@kokuin/env/server";
-import type { ChangeInfo, QueryPattern } from "@kokuin/graph";
+import type {
+	ChangeInfo,
+	ParsedEdge,
+	ParsedNode,
+	QueryPattern,
+} from "@kokuin/graph";
 import {
 	ChangeDetector,
 	FsStorageAdapter,
@@ -14,6 +19,42 @@ import { z } from "zod";
 import { projectProcedure } from "../index";
 
 const storage = new FsStorageAdapter(env.GRAPH_DATA_DIR);
+
+const nodeKindSchema = z.enum(["File", "Class", "Function", "Type", "Test"]);
+const edgeKindSchema = z.enum([
+	"CALLS",
+	"IMPORTS_FROM",
+	"INHERITS",
+	"IMPLEMENTS",
+	"CONTAINS",
+	"TESTED_BY",
+	"DEPENDS_ON",
+]);
+
+const parsedNodeSchema = z.object({
+	kind: nodeKindSchema,
+	name: z.string(),
+	qualifiedName: z.string(),
+	filePath: z.string(),
+	lineStart: z.number(),
+	lineEnd: z.number(),
+	language: z.string(),
+	parentName: z.string().optional(),
+	params: z.string().optional(),
+	returnType: z.string().optional(),
+	modifiers: z.string().optional(),
+	isTest: z.boolean().optional(),
+	fileHash: z.string().optional(),
+	extra: z.record(z.string(), z.unknown()).optional(),
+});
+
+const parsedEdgeSchema = z.object({
+	sourceQualifiedName: z.string(),
+	targetQualifiedName: z.string(),
+	kind: edgeKindSchema,
+	weight: z.number().optional(),
+	extra: z.record(z.string(), z.unknown()).optional(),
+});
 
 function openMergedStore(projectId: string, branch: string, userId: string) {
 	const globalPath = storage.getGraphPath(projectId, branch);
@@ -53,7 +94,7 @@ export const graphRouter = {
 				context.session.user.id,
 			);
 			try {
-				const engine = new QueryEngine(merged.getGlobalStore());
+				const engine = new QueryEngine(merged);
 				return engine.query(input.pattern as QueryPattern, input.target);
 			} finally {
 				merged.getGlobalStore().close();
@@ -79,7 +120,8 @@ export const graphRouter = {
 			try {
 				const store = merged.getGlobalStore();
 				store.rebuildFts();
-				return new SearchEngine(store).search(input.query, {
+				merged.getOverlayStore()?.rebuildFts();
+				return new SearchEngine(merged).search(input.query, {
 					limit: input.limit,
 				});
 			} finally {
@@ -104,7 +146,7 @@ export const graphRouter = {
 				context.session.user.id,
 			);
 			try {
-				return new ImpactAnalyzer(merged.getGlobalStore()).getImpactRadius(
+				return new ImpactAnalyzer(merged).getImpactRadius(
 					input.target,
 					input.maxDepth,
 				);
@@ -136,7 +178,7 @@ export const graphRouter = {
 				context.session.user.id,
 			);
 			try {
-				return new ChangeDetector(merged.getGlobalStore()).mapChangesToNodes(
+				return new ChangeDetector(merged).mapChangesToNodes(
 					input.changes as ChangeInfo[],
 				);
 			} finally {
@@ -187,8 +229,8 @@ export const graphRouter = {
 		.input(
 			z.object({
 				branch: z.string(),
-				nodes: z.array(z.any()),
-				edges: z.array(z.any()),
+				nodes: z.array(parsedNodeSchema),
+				edges: z.array(parsedEdgeSchema),
 			}),
 		)
 		.handler(async ({ input, context }) => {
@@ -199,8 +241,8 @@ export const graphRouter = {
 			);
 			const overlayStore = new GraphStore(overlayPath);
 			try {
-				overlayStore.upsertNodes(input.nodes);
-				overlayStore.upsertEdges(input.edges);
+				overlayStore.upsertNodes(input.nodes as ParsedNode[]);
+				overlayStore.upsertEdges(input.edges as ParsedEdge[]);
 				overlayStore.rebuildFts();
 				const stats = overlayStore.getStats();
 				await prisma.userGraphOverlay.upsert({

@@ -1,8 +1,9 @@
 import type { GraphStore } from "./store";
+import type { MergedGraphStore } from "./merge";
 import type { ChangeInfo, GraphNode, RiskScoredNode } from "./types";
 
 export class ChangeDetector {
-	constructor(private store: GraphStore) {}
+	constructor(private store: GraphStore | MergedGraphStore) {}
 
 	mapChangesToNodes(changes: ChangeInfo[]): RiskScoredNode[] {
 		const results: RiskScoredNode[] = [];

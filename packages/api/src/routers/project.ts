@@ -31,6 +31,19 @@ export const projectRouter = {
 			}),
 		)
 		.handler(async ({ input, context }) => {
+			const orgMember = await prisma.member.findUnique({
+				where: {
+					organizationId_userId: {
+						organizationId: input.orgId,
+						userId: context.session.user.id,
+					},
+				},
+			});
+			if (!orgMember) {
+				throw new ORPCError("FORBIDDEN", {
+					message: "You are not a member of this organization",
+				});
+			}
 			return prisma.project.create({
 				data: {
 					...input,
