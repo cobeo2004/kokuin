@@ -1,7 +1,7 @@
 # anatomy.md
 
-> Auto-maintained by OpenWolf. Last scanned: 2026-04-06T11:26:36.121Z
-> Files: 523 tracked | Anatomy hits: 0 | Misses: 0
+> Auto-maintained by OpenWolf. Last scanned: 2026-04-06T11:32:03.154Z
+> Files: 521 tracked | Anatomy hits: 0 | Misses: 0
 
 ## ./
 
@@ -355,19 +355,18 @@
 
 - `.cursorrules` (~467 tok)
 - `.gitignore` — Git ignore rules (~148 tok)
-- `.mcp.json` (~158 tok)
+- `.mcp.json` (~142 tok)
 - `.windsurfrules` (~467 tok)
 - `AGENTS.md` — MCP Tools: code-review-graph (~508 tok)
-- `biome.json` — Biome linter/formatter configuration (~492 tok)
-- `bts.jsonc` — Better-T-Stack (~331 tok)
+- `bts.jsonc` — Better-T-Stack (~326 tok)
 - `CLAUDE.md` — Rules for Kioku (~604 tok)
 - `GEMINI.md` — MCP Tools: code-review-graph (~508 tok)
-- `opencode.json` (~254 tok)
-- `package.json` — Node.js package manifest (~487 tok)
+- `opencode.json` (~194 tok)
+- `package.json` — Node.js package manifest (~450 tok)
 - `README.md` — Project documentation (~853 tok)
-- `skills-lock.json` (~655 tok)
-- `tsconfig.json` — TypeScript configuration (~16 tok)
-- `turbo.json` — Turborepo configuration (~248 tok)
+- `skills-lock.json` (~610 tok)
+- `tsconfig.json` — TypeScript configuration (~15 tok)
+- `turbo.json` — Turborepo configuration (~217 tok)
 
 ## .claude/worktrees/agent-a08db236/.agents/skills/ai-sdk/
 
@@ -509,7 +508,7 @@
 
 ## .claude/worktrees/agent-a08db236/.agents/skills/shadcn/evals/
 
-- `evals.json` (~891 tok)
+- `evals.json` (~851 tok)
 
 ## .claude/worktrees/agent-a08db236/.agents/skills/shadcn/rules/
 
@@ -581,7 +580,7 @@
 ## .claude/worktrees/agent-a08db236/.agents/skills/vercel-composition-patterns/
 
 - `AGENTS.md` — React Composition Patterns (~5636 tok)
-- `metadata.json` (~152 tok)
+- `metadata.json` (~148 tok)
 - `README.md` — Project documentation (~533 tok)
 - `SKILL.md` — React Composition Patterns (~720 tok)
 
@@ -601,7 +600,7 @@
 ## .claude/worktrees/agent-a08db236/.agents/skills/vercel-react-best-practices/
 
 - `AGENTS.md` — React Best Practices (~26472 tok)
-- `metadata.json` (~264 tok)
+- `metadata.json` (~258 tok)
 - `README.md` — Project documentation (~843 tok)
 - `SKILL.md` — Vercel React Best Practices (~1831 tok)
 
@@ -685,7 +684,7 @@
 
 ## .claude/worktrees/agent-a08db236/.claude/
 
-- `settings.json` (~626 tok)
+- `settings.json` (~503 tok)
 - `settings.local.json` (~95 tok)
 
 ## .claude/worktrees/agent-a08db236/.claude/rules/
@@ -705,25 +704,25 @@
 
 ## .claude/worktrees/agent-a08db236/.cursor/
 
-- `mcp.json` (~152 tok)
+- `mcp.json` (~137 tok)
 
 ## .claude/worktrees/agent-a08db236/.omc/state/
 
 - `agent-replay-50910635-699d-404a-83ad-4f632a623298.jsonl` (~25 tok)
-- `mission-state.json` (~348 tok)
-- `subagent-tracking.json` (~97 tok)
+- `mission-state.json` (~303 tok)
+- `subagent-tracking.json` (~90 tok)
 
 ## .claude/worktrees/agent-a08db236/apps/docs/
 
 - `.gitignore` — Git ignore rules (~62 tok)
-- `astro.config.mjs` — Astro configuration (~182 tok)
-- `package.json` — Node.js package manifest (~92 tok)
+- `astro.config.mjs` — Astro configuration (~171 tok)
+- `package.json` — Node.js package manifest (~86 tok)
 - `README.md` — Project documentation (~439 tok)
-- `tsconfig.json` — TypeScript configuration (~32 tok)
+- `tsconfig.json` — TypeScript configuration (~31 tok)
 
 ## .claude/worktrees/agent-a08db236/apps/docs/src/
 
-- `content.config.ts` — Exports collections (~78 tok)
+- `content.config.ts` — Exports collections (~77 tok)
 
 ## .claude/worktrees/agent-a08db236/apps/docs/src/assets/
 
@@ -745,8 +744,8 @@
 
 - `.gitignore` — Git ignore rules (~149 tok)
 - `package.json` — Node.js package manifest (~255 tok)
-- `tsconfig.json` — TypeScript configuration (~72 tok)
-- `tsdown.config.ts` (~53 tok)
+- `tsconfig.json` — TypeScript configuration (~66 tok)
+- `tsdown.config.ts` (~52 tok)
 
 ## .claude/worktrees/agent-a08db236/apps/server/src/
 
@@ -784,10 +783,10 @@
 ## .claude/worktrees/agent-a08db236/apps/web/
 
 - `.gitignore` — Git ignore rules (~153 tok)
-- `components.json` (~155 tok)
-- `package.json` — Node.js package manifest (~449 tok)
-- `tsconfig.json` — TypeScript configuration (~199 tok)
-- `vite.config.ts` — Vite build configuration (~111 tok)
+- `components.json` (~146 tok)
+- `package.json` — Node.js package manifest (~422 tok)
+- `tsconfig.json` — TypeScript configuration (~185 tok)
+- `vite.config.ts` — Vite build configuration (~110 tok)
 
 ## .claude/worktrees/agent-a08db236/apps/web/public/
 
@@ -796,20 +795,20 @@
 ## .claude/worktrees/agent-a08db236/apps/web/src/
 
 - `index.css` — Styles: 2 rules (~24 tok)
-- `router.tsx` — getRouter (~243 tok)
+- `router.tsx` — getRouter (~236 tok)
 - `routeTree.gen.ts` — @ts-nocheck (~2032 tok)
 
 ## .claude/worktrees/agent-a08db236/apps/web/src/components/
 
 - `header.tsx` — Header (~171 tok)
-- `loader.tsx` — Loader (~62 tok)
-- `sign-in-form.tsx` — SignInForm — renders form — uses useNavigate, useForm (~1126 tok)
-- `sign-up-form.tsx` — SignUpForm — renders form — uses useNavigate, useForm (~1369 tok)
-- `user-menu.tsx` — UserMenu — uses useNavigate (~475 tok)
+- `loader.tsx` — Loader (~59 tok)
+- `sign-in-form.tsx` — SignInForm — renders form — uses useNavigate, useForm (~972 tok)
+- `sign-up-form.tsx` — SignUpForm — renders form — uses useNavigate, useForm (~1167 tok)
+- `user-menu.tsx` — UserMenu — uses useNavigate (~420 tok)
 
 ## .claude/worktrees/agent-a08db236/apps/web/src/functions/
 
-- `get-user.ts` — Exports getUser (~77 tok)
+- `get-user.ts` — Exports getUser (~76 tok)
 
 ## .claude/worktrees/agent-a08db236/apps/web/src/lib/
 
@@ -817,15 +816,15 @@
 
 ## .claude/worktrees/agent-a08db236/apps/web/src/middleware/
 
-- `auth.ts` — Exports authMiddleware (~109 tok)
+- `auth.ts` — Exports authMiddleware (~108 tok)
 
 ## .claude/worktrees/agent-a08db236/apps/web/src/routes/
 
-- `__root.tsx` — Route (~418 tok)
+- `__root.tsx` — Route (~386 tok)
 - `dashboard.tsx` — Route — uses useQuery (~839 tok)
 - `device.tsx` — Route — uses useState, useMutation (~1000 tok)
-- `index.tsx` — Route — uses useQuery (~511 tok)
-- `login.tsx` — Route — uses useState (~153 tok)
+- `index.tsx` — Route — uses useQuery (~479 tok)
+- `login.tsx` — Route — uses useState (~150 tok)
 
 ## .claude/worktrees/agent-a08db236/apps/web/src/routes/admin/
 
@@ -845,7 +844,7 @@
 
 - `.gitignore` — Git ignore rules (~104 tok)
 - `package.json` — Node.js package manifest (~158 tok)
-- `tsconfig.json` — TypeScript configuration (~58 tok)
+- `tsconfig.json` — TypeScript configuration (~54 tok)
 
 ## .claude/worktrees/agent-a08db236/packages/api/src/
 
@@ -862,8 +861,8 @@
 ## .claude/worktrees/agent-a08db236/packages/auth/
 
 - `.gitignore` — Git ignore rules (~104 tok)
-- `package.json` — Node.js package manifest (~128 tok)
-- `tsconfig.json` — TypeScript configuration (~58 tok)
+- `package.json` — Node.js package manifest (~117 tok)
+- `tsconfig.json` — TypeScript configuration (~54 tok)
 
 ## .claude/worktrees/agent-a08db236/packages/auth/src/
 
@@ -872,28 +871,18 @@
 
 ## .claude/worktrees/agent-a08db236/packages/config/
 
-- `package.json` — Node.js package manifest (~21 tok)
-- `tsconfig.base.json` (~174 tok)
+- `package.json` — Node.js package manifest (~20 tok)
+- `tsconfig.base.json` (~163 tok)
 
 ## .claude/worktrees/agent-a08db236/packages/db/
 
 - `.gitignore` — Git ignore rules (~109 tok)
 - `docker-compose.yml` — Docker Compose services (~137 tok)
-- `package.json` — Node.js package manifest (~246 tok)
-- `prisma.config.ts` (~103 tok)
+- `package.json` — Node.js package manifest (~229 tok)
+- `prisma.config.ts` (~100 tok)
+- `tsconfig.json` — TypeScript configuration (~54 tok)
 
 ## .claude/worktrees/agent-a08db236/packages/db/prisma/schema/
 
 - `auth.prisma` (~718 tok)
-
-## apps/server/src/
-
-- `index.ts` — API routes: GET (1 endpoints) (~519 tok)
-
-## packages/api/src/routers/
-
-- `device-auth.ts` — tRPC router (~938 tok)
-
-## packages/db/prisma/migrations/20260406120000_add_device_auth_code/
-
-- `migration.sql` — CreateTable (~209 tok)
+- `graph.prisma` (~421 tok)
