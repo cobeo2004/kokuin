@@ -10,7 +10,7 @@ interface SearchOptions {
 export class SearchEngine {
 	private db: Database;
 
-	constructor(private store: GraphStore) {
+	constructor(store: GraphStore) {
 		this.db = store.getDatabase();
 	}
 
@@ -42,18 +42,19 @@ export class SearchEngine {
 	}
 
 	private applyBoost(score: number, query: string, node: GraphNode): number {
+		let boosted = score;
 		if (
 			/^[A-Z][a-z]/.test(query) &&
 			(node.kind === "Class" || node.kind === "Type")
 		) {
-			score *= 1.5;
+			boosted *= 1.5;
 		}
 		if (/_/.test(query) && node.kind === "Function") {
-			score *= 1.5;
+			boosted *= 1.5;
 		}
 		if (/\./.test(query)) {
-			score *= 2.0;
+			boosted *= 2.0;
 		}
-		return score;
+		return boosted;
 	}
 }
