@@ -1,0 +1,56 @@
+model GraphBuild {
+  id            String   @id @default(cuid())
+  projectId     String
+  branch        String
+  status        String   @default("pending")
+  triggeredBy   String   @default("manual")
+  commitSha     String?
+  nodeCount     Int      @default(0)
+  edgeCount     Int      @default(0)
+  sqlitePath    String?
+  errorMessage  String?
+  buildDuration Int?
+  createdAt     DateTime @default(now())
+  updatedAt     DateTime @updatedAt
+
+  project       Project  @relation(fields: [projectId], references: [id], onDelete: Cascade)
+  deltas        GraphDelta[]
+
+  @@unique([projectId, branch])
+  @@index([projectId])
+  @@map("graph_build")
+}
+
+model GraphDelta {
+  id            String   @id @default(cuid())
+  graphBuildId  String
+  version       Int
+  nodesAdded    Int      @default(0)
+  nodesRemoved  Int      @default(0)
+  edgesAdded    Int      @default(0)
+  edgesRemoved  Int      @default(0)
+  deltaPayload  Json
+  createdAt     DateTime @default(now())
+
+  graphBuild    GraphBuild @relation(fields: [graphBuildId], references: [id], onDelete: Cascade)
+
+  @@index([graphBuildId])
+  @@map("graph_delta")
+}
+
+model UserGraphOverlay {
+  id           String   @id @default(cuid())
+  userId       String
+  projectId    String
+  branch       String
+  sqlitePath   String?
+  nodeCount    Int      @default(0)
+  edgeCount    Int      @default(0)
+  lastSyncedAt DateTime @default(now())
+
+  project      Project  @relation(fields: [projectId], references: [id], onDelete: Cascade)
+
+  @@unique([userId, projectId, branch])
+  @@index([userId])
+  @@map("user_graph_overlay")
+}
