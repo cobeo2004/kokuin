@@ -1,32 +1,32 @@
 {
-  "last_heartbeat": "2026-04-06T11:10:05.132Z",
-  "engine_status": "running",
-  "execution_log": [
-    {
-      "task_id": "anatomy-rescan",
-      "status": "success",
-      "timestamp": "2026-04-06T04:01:03.176Z",
-      "duration_ms": 102
-    },
-    {
-      "task_id": "token-audit",
-      "status": "success",
-      "timestamp": "2026-04-06T05:07:41.336Z",
-      "duration_ms": 7
-    },
-    {
-      "task_id": "memory-consolidation",
-      "status": "success",
-      "timestamp": "2026-04-06T05:13:35.914Z",
-      "duration_ms": 5
-    },
-    {
-      "task_id": "token-audit",
-      "status": "success",
-      "timestamp": "2026-04-06T11:18:44.159Z",
-      "duration_ms": 3
-    }
-  ],
-  "dead_letter_queue": [],
-  "upcoming": []
+	"last_heartbeat": "2026-04-06T11:10:05.132Z",
+	"engine_status": "running",
+	"execution_log": [
+		{
+			"task_id": "anatomy-rescan",
+			"status": "success",
+			"timestamp": "2026-04-06T04:01:03.176Z",
+			"duration_ms": 102
+		},
+		{
+			"task_id": "token-audit",
+			"status": "success",
+			"timestamp": "2026-04-06T05:07:41.336Z",
+			"duration_ms": 7
+		},
+		{
+			"task_id": "memory-consolidation",
+			"status": "success",
+			"timestamp": "2026-04-06T05:13:35.914Z",
+			"duration_ms": 5
+		},
+		{
+			"task_id": "token-audit",
+			"status": "success",
+			"timestamp": "2026-04-06T11:18:44.159Z",
+			"duration_ms": 3
+		}
+	],
+	"dead_letter_queue": [],
+	"upcoming": []
 }

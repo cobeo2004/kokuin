@@ -233,3 +233,28 @@ WebSocket live sync, D3 visualization, storage adapter S3 impl.
 | 21:15 | Created biome.json | — | ~438 |
 | 21:15 | Created biome.json | — | ~433 |
 | 21:16 | Session end: 28 writes across 10 files (merge.ts, graph.ts, credentials.ts, device-flow.ts, mcp-server.ts) | 52 reads | ~36600 tok |
+
+## Session: 2026-04-06 21:22
+
+| Time | Action | File(s) | Outcome | ~Tokens |
+|------|--------|---------|---------|--------|
+| 21:25 | Created packages/api/src/routers/device-auth.ts | — | ~938 |
+| 21:25 | Edited apps/server/src/index.ts | 13→10 lines | ~138 |
+| 21:25 | Edited apps/server/src/index.ts | removed 16 lines | ~6 |
+| 21:25 | Session end: 3 writes across 2 files (device-auth.ts, index.ts) | 12 reads | ~1601 tok |
+| 21:26 | Created packages/db/prisma/migrations/20260406120000_add_device_auth_code/migration.sql | — | ~209 |
+
+## Session: 2026-04-06 21:22 — Handoff Fix Validation
+
+| Time | Action | File(s) | Outcome | ~Tokens |
+|------|--------|---------|---------|---------|
+| 21:22 | Validated all handoff fixes from previous session | All critical/high items | C1✅ C2✅ C3✅ H1✅ H2✅ H3✅ H4✅ H5✅ H6✅ H7✅ | ~4000 |
+| 21:23 | Removed conflicting biome.json from worktrees | .claude/worktrees/agent-*/biome.json | biome check now runs clean | ~50 |
+| 21:24 | Migrated device auth from in-memory Map to Prisma | packages/api/src/routers/device-auth.ts | Secure persistence via PostgreSQL | ~800 |
+| 21:25 | Added Prisma migration for DeviceAuthCode table | packages/db/prisma/migrations/20260406120000_add_device_auth_code/ | Migration file created | ~200 |
+| 21:25 | Removed unauthenticated /ai endpoint + AI SDK imports | apps/server/src/index.ts | Endpoint removed, no unused imports | ~200 |
+| 21:26 | Regenerated Prisma client | packages/db/prisma/generated/ | DeviceAuthCode model available | ~100 |
+| 21:27 | All type checks pass (4/4), 29 graph tests pass | — | Clean build | ~200 |
+| 21:27 | Committed: fix(security): migrate device auth to Postgres, remove /ai endpoint | ad0e245 | Main branch | ~100 |
+| 21:28 | Session end: 4 writes across 3 files (device-auth.ts, index.ts, migration.sql) | 14 reads | ~1825 tok |
+| 21:28 | Session end: 4 writes across 3 files (device-auth.ts, index.ts, migration.sql) | 14 reads | ~1825 tok |

@@ -1,7 +1,7 @@
 # anatomy.md
 
-> Auto-maintained by OpenWolf. Last scanned: 2026-04-06T11:19:05.951Z
-> Files: 520 tracked | Anatomy hits: 0 | Misses: 0
+> Auto-maintained by OpenWolf. Last scanned: 2026-04-06T11:26:36.121Z
+> Files: 523 tracked | Anatomy hits: 0 | Misses: 0
 
 ## ./
 
@@ -885,3 +885,15 @@
 ## .claude/worktrees/agent-a08db236/packages/db/prisma/schema/
 
 - `auth.prisma` (~718 tok)
+
+## apps/server/src/
+
+- `index.ts` — API routes: GET (1 endpoints) (~519 tok)
+
+## packages/api/src/routers/
+
+- `device-auth.ts` — tRPC router (~938 tok)
+
+## packages/db/prisma/migrations/20260406120000_add_device_auth_code/
+
+- `migration.sql` — CreateTable (~209 tok)

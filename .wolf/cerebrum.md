@@ -28,7 +28,9 @@
 
 - [2026-04-06] **100% anatomy miss rate** — Failed to check anatomy.md before reading files. ALWAYS check .wolf/anatomy.md first before using Read tool on any project file.
 - [2026-04-06] **Missed commits from subagents** — Some agents created files but didn't commit. ALWAYS verify git log after subagent completion and commit any unstaged files.
-- [2026-04-06] **Graph queries bypass overlay** — QueryEngine/SearchEngine were given `merged.getGlobalStore()` instead of using the MergedGraphStore. The overlay is never queried. Must fix: pass MergedGraphStore to engines or run queries against both stores.
+- [2026-04-06] **Graph queries bypass overlay** — FIXED. Used `MergedGraphStore.materialize()` to create an in-memory merged GraphStore, then run engines against it. Both API router and MCP server now use `withMergedMaterialized()`.
+- [2026-04-06] **Worktree biome.json conflict** — Subagents in worktrees wrote biome.json files that conflicted with root config. Always delete `biome.json` from `.claude/worktrees/*/` before running `bun run check`.
+- [2026-04-06] **Device auth in-memory Map** — Initial implementation used in-memory Map for device codes (lost on restart, no persistence). Always use Prisma/DB for auth state. Model: `DeviceAuthCode` in auth.prisma.
 <!-- Format: [YYYY-MM-DD] Description of what went wrong and what to do instead. -->
 
 ## Decision Log

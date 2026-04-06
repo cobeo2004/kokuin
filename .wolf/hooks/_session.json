@@ -1,453 +1,112 @@
 {
-  "session_id": "session-2026-04-06-2051",
-  "started": "2026-04-06T10:51:34.941Z",
+  "session_id": "session-2026-04-06-2122",
+  "started": "2026-04-06T11:22:24.846Z",
   "files_read": {
-    "/Users/cobeo/Codes/WorkPlace/AD/kokuin/.claude/worktrees/agent-aeba7c78/.wolf/buglog.json": {
+    "/Users/cobeo/Codes/WorkPlace/AD/kokuin/packages/api/src/routers/device-auth.ts": {
       "count": 1,
       "tokens": 0,
-      "first_read": "2026-04-06T10:53:53.451Z"
-    },
-    "/Users/cobeo/Codes/WorkPlace/AD/kokuin/.claude/worktrees/agent-aeba7c78/.wolf/cerebrum.md": {
-      "count": 1,
-      "tokens": 0,
-      "first_read": "2026-04-06T10:53:53.556Z"
-    },
-    "/Users/cobeo/Codes/WorkPlace/AD/kokuin/.claude/worktrees/agent-aeba7c78/.wolf/anatomy.md": {
-      "count": 1,
-      "tokens": 0,
-      "first_read": "2026-04-06T10:53:53.992Z"
-    },
-    "/Users/cobeo/Codes/WorkPlace/AD/kokuin/.claude/worktrees/agent-aeba7c78/packages/graph/src/types.ts": {
-      "count": 1,
-      "tokens": 541,
-      "first_read": "2026-04-06T10:54:26.994Z"
-    },
-    "/Users/cobeo/Codes/WorkPlace/AD/kokuin/.claude/worktrees/agent-aeba7c78/packages/api/src/routers/graph.ts": {
-      "count": 3,
-      "tokens": 1928,
-      "first_read": "2026-04-06T10:54:27.021Z"
-    },
-    "/Users/cobeo/Codes/WorkPlace/AD/kokuin/.claude/worktrees/agent-aeba7c78/packages/graph/src/mcp-server.ts": {
-      "count": 2,
-      "tokens": 1301,
-      "first_read": "2026-04-06T10:54:27.137Z"
-    },
-    "/Users/cobeo/Codes/WorkPlace/AD/kokuin/.claude/worktrees/agent-aeba7c78/packages/graph/src/merge.ts": {
-      "count": 2,
-      "tokens": 983,
-      "first_read": "2026-04-06T10:54:35.732Z"
-    },
-    "/Users/cobeo/Codes/WorkPlace/AD/kokuin/.claude/worktrees/agent-aeba7c78/packages/graph/src/store.ts": {
-      "count": 1,
-      "tokens": 1348,
-      "first_read": "2026-04-06T10:54:35.740Z"
-    },
-    "/Users/cobeo/Codes/WorkPlace/AD/kokuin/.claude/worktrees/agent-aeba7c78/packages/graph/src/query.ts": {
-      "count": 1,
-      "tokens": 830,
-      "first_read": "2026-04-06T10:54:42.634Z"
-    },
-    "/Users/cobeo/Codes/WorkPlace/AD/kokuin/.claude/worktrees/agent-aeba7c78/packages/graph/src/search.ts": {
-      "count": 1,
-      "tokens": 716,
-      "first_read": "2026-04-06T10:54:42.662Z"
-    },
-    "/Users/cobeo/Codes/WorkPlace/AD/kokuin/.claude/worktrees/agent-aeba7c78/packages/graph/src/impact.ts": {
-      "count": 1,
-      "tokens": 410,
-      "first_read": "2026-04-06T10:54:42.802Z"
-    },
-    "/Users/cobeo/Codes/WorkPlace/AD/kokuin/.claude/worktrees/agent-aeba7c78/packages/graph/src/changes.ts": {
-      "count": 1,
-      "tokens": 539,
-      "first_read": "2026-04-06T10:54:52.301Z"
-    },
-    "/Users/cobeo/Codes/WorkPlace/AD/kokuin/apps/tui/src/auth/device-flow.ts": {
-      "count": 2,
-      "tokens": 1446,
-      "first_read": "2026-04-06T10:55:02.144Z"
-    },
-    "/Users/cobeo/Codes/WorkPlace/AD/kokuin/apps/tui/src/utils/api-client.ts": {
-      "count": 1,
-      "tokens": 137,
-      "first_read": "2026-04-06T10:55:02.161Z"
+      "first_read": "2026-04-06T11:24:36.724Z"
     },
     "/Users/cobeo/Codes/WorkPlace/AD/kokuin/apps/tui/src/auth/credentials.ts": {
-      "count": 2,
-      "tokens": 276,
-      "first_read": "2026-04-06T10:55:02.252Z"
-    },
-    "/Users/cobeo/Codes/WorkPlace/AD/kokuin/.claude/worktrees/agent-aeba7c78/packages/graph/src/schema.ts": {
-      "count": 1,
-      "tokens": 500,
-      "first_read": "2026-04-06T10:55:15.423Z"
-    },
-    "/Users/cobeo/Codes/WorkPlace/AD/kokuin/packages/db/prisma/schema/auth.prisma": {
-      "count": 2,
-      "tokens": 718,
-      "first_read": "2026-04-06T10:55:21.892Z"
-    },
-    "/Users/cobeo/Codes/WorkPlace/AD/kokuin/packages/api/src/routers/device-auth.ts": {
-      "count": 8,
-      "tokens": 938,
-      "first_read": "2026-04-06T10:55:21.972Z"
-    },
-    "/Users/cobeo/Codes/WorkPlace/AD/kokuin/packages/db/prisma/schema/schema.prisma": {
-      "count": 1,
-      "tokens": 44,
-      "first_read": "2026-04-06T10:55:30.991Z"
-    },
-    "/Users/cobeo/Codes/WorkPlace/AD/kokuin/.claude/worktrees/agent-aeba7c78/packages/graph/src/adapter.ts": {
       "count": 1,
       "tokens": 0,
-      "first_read": "2026-04-06T10:55:35.655Z"
+      "first_read": "2026-04-06T11:24:37.294Z"
     },
-    "/Users/cobeo/Codes/WorkPlace/AD/kokuin/.claude/worktrees/agent-aeba7c78/packages/graph/src/index.ts": {
+    "/Users/cobeo/Codes/WorkPlace/AD/kokuin/apps/tui/src/auth/device-flow.ts": {
       "count": 1,
-      "tokens": 152,
-      "first_read": "2026-04-06T10:55:35.766Z"
+      "tokens": 0,
+      "first_read": "2026-04-06T11:24:37.445Z"
     },
-    "/Users/cobeo/Codes/WorkPlace/AD/kokuin/apps/web/src/utils/orpc.ts": {
+    "/Users/cobeo/Codes/WorkPlace/AD/kokuin/packages/db/prisma/schema/auth.prisma": {
       "count": 1,
-      "tokens": 413,
-      "first_read": "2026-04-06T10:55:46.816Z"
-    },
-    "/Users/cobeo/Codes/WorkPlace/AD/kokuin/packages/db/prisma/schema/project.prisma": {
-      "count": 2,
-      "tokens": 274,
-      "first_read": "2026-04-06T10:55:51.980Z"
-    },
-    "/Users/cobeo/Codes/WorkPlace/AD/kokuin/packages/db/prisma/schema/graph.prisma": {
-      "count": 2,
-      "tokens": 421,
-      "first_read": "2026-04-06T10:56:11.249Z"
-    },
-    "/Users/cobeo/Codes/WorkPlace/AD/kokuin/packages/api/src/routers/project.ts": {
-      "count": 3,
-      "tokens": 1197,
-      "first_read": "2026-04-06T10:56:20.379Z"
-    },
-    "/Users/cobeo/Codes/WorkPlace/AD/kokuin/packages/graph/src/fs-adapter.ts": {
-      "count": 2,
-      "tokens": 458,
-      "first_read": "2026-04-06T10:56:20.396Z"
-    },
-    "/Users/cobeo/Codes/WorkPlace/AD/kokuin/apps/server/src/webhook.ts": {
-      "count": 2,
-      "tokens": 1007,
-      "first_read": "2026-04-06T10:56:20.493Z"
-    },
-    "/Users/cobeo/Codes/WorkPlace/AD/kokuin/apps/server/src/index.ts": {
-      "count": 1,
-      "tokens": 673,
-      "first_read": "2026-04-06T10:56:29.784Z"
-    },
-    "/Users/cobeo/Codes/WorkPlace/AD/kokuin/packages/db/src/index.ts": {
-      "count": 1,
-      "tokens": 105,
-      "first_read": "2026-04-06T10:56:34.258Z"
-    },
-    "/Users/cobeo/Codes/WorkPlace/AD/kokuin/apps/tui/src/commands/login.ts": {
-      "count": 1,
-      "tokens": 277,
-      "first_read": "2026-04-06T10:56:37.492Z"
+      "tokens": 0,
+      "first_read": "2026-04-06T11:24:42.009Z"
     },
     "/Users/cobeo/Codes/WorkPlace/AD/kokuin/packages/api/src/routers/graph.ts": {
       "count": 1,
-      "tokens": 1938,
-      "first_read": "2026-04-06T10:57:03.716Z"
-    },
-    "/Users/cobeo/Codes/WorkPlace/AD/kokuin/apps/tui/tsconfig.json": {
-      "count": 1,
-      "tokens": 15,
-      "first_read": "2026-04-06T10:57:09.631Z"
-    },
-    "/Users/cobeo/Codes/WorkPlace/AD/kokuin/packages/api/src/context.ts": {
-      "count": 3,
-      "tokens": 365,
-      "first_read": "2026-04-06T10:57:10.764Z"
-    },
-    "/Users/cobeo/Codes/WorkPlace/AD/kokuin/packages/api/src/routers/index.ts": {
-      "count": 2,
-      "tokens": 191,
-      "first_read": "2026-04-06T10:57:19.002Z"
-    },
-    "/Users/cobeo/Codes/WorkPlace/AD/kokuin/packages/db/package.json": {
-      "count": 1,
-      "tokens": 450,
-      "first_read": "2026-04-06T10:57:48.493Z"
-    },
-    "/Users/cobeo/Codes/WorkPlace/AD/kokuin/packages/db/prisma.config.ts": {
-      "count": 1,
-      "tokens": 100,
-      "first_read": "2026-04-06T10:57:57.642Z"
-    },
-    "/Users/cobeo/Codes/WorkPlace/AD/kokuin/packages/auth/src/permissions.ts": {
-      "count": 1,
-      "tokens": 260,
-      "first_read": "2026-04-06T10:58:10.919Z"
-    },
-    "/Users/cobeo/Codes/WorkPlace/AD/kokuin/package.json": {
-      "count": 1,
-      "tokens": 450,
-      "first_read": "2026-04-06T10:58:18.129Z"
-    },
-    "/Users/cobeo/Codes/WorkPlace/AD/kokuin/packages/api/src/index.ts": {
-      "count": 1,
-      "tokens": 413,
-      "first_read": "2026-04-06T10:58:40.499Z"
-    },
-    "/Users/cobeo/Codes/WorkPlace/AD/kokuin/packages/api/tsconfig.json": {
-      "count": 1,
-      "tokens": 15,
-      "first_read": "2026-04-06T10:58:48.678Z"
-    },
-    "/Users/cobeo/Codes/WorkPlace/AD/kokuin/packages/graph/src/adapter.ts": {
-      "count": 1,
-      "tokens": 133,
-      "first_read": "2026-04-06T10:58:52.590Z"
-    },
-    "/Users/cobeo/Codes/WorkPlace/AD/kokuin/packages/config/tsconfig.base.json": {
-      "count": 1,
-      "tokens": 163,
-      "first_read": "2026-04-06T10:58:57.039Z"
+      "tokens": 0,
+      "first_read": "2026-04-06T11:24:42.930Z"
     },
     "/Users/cobeo/Codes/WorkPlace/AD/kokuin/packages/graph/src/mcp-server.ts": {
       "count": 1,
-      "tokens": 1305,
-      "first_read": "2026-04-06T10:59:25.919Z"
+      "tokens": 0,
+      "first_read": "2026-04-06T11:24:43.191Z"
     },
-    "/Users/cobeo/Codes/WorkPlace/AD/kokuin/.claude/worktrees/agent-aeba7c78/packages/graph/package.json": {
+    "/Users/cobeo/Codes/WorkPlace/AD/kokuin/packages/api/src/routers/project.ts": {
       "count": 1,
-      "tokens": 450,
-      "first_read": "2026-04-06T10:59:46.891Z"
+      "tokens": 0,
+      "first_read": "2026-04-06T11:24:47.131Z"
     },
-    "/Users/cobeo/Codes/WorkPlace/AD/kokuin/.claude/worktrees/agent-aeba7c78/package.json": {
+    "/Users/cobeo/Codes/WorkPlace/AD/kokuin/packages/graph/src/fs-adapter.ts": {
       "count": 1,
-      "tokens": 450,
-      "first_read": "2026-04-06T10:59:46.978Z"
+      "tokens": 0,
+      "first_read": "2026-04-06T11:24:47.557Z"
     },
-    "/Users/cobeo/Codes/WorkPlace/AD/kokuin/.claude/worktrees/agent-aeba7c78/packages/graph/tsconfig.json": {
+    "/Users/cobeo/Codes/WorkPlace/AD/kokuin/apps/server/src/webhook.ts": {
       "count": 1,
-      "tokens": 15,
-      "first_read": "2026-04-06T11:01:06.292Z"
+      "tokens": 0,
+      "first_read": "2026-04-06T11:24:47.959Z"
     },
-    "/Users/cobeo/Codes/WorkPlace/AD/kokuin/.claude/worktrees/agent-aeba7c78/packages/config/tsconfig.base.json": {
-      "count": 1,
-      "tokens": 163,
-      "first_read": "2026-04-06T11:01:06.299Z"
+    "/Users/cobeo/Codes/WorkPlace/AD/kokuin/apps/server/src/index.ts": {
+      "count": 2,
+      "tokens": 519,
+      "first_read": "2026-04-06T11:24:48.223Z"
     },
-    "/Users/cobeo/Codes/WorkPlace/AD/kokuin/.claude/worktrees/agent-aeba7c78/packages/api/package.json": {
-      "count": 1,
-      "tokens": 450,
-      "first_read": "2026-04-06T11:01:47.469Z"
-    },
-    "/Users/cobeo/Codes/WorkPlace/AD/kokuin/.claude/worktrees/agent-aeba7c78/packages/api/tsconfig.json": {
-      "count": 1,
-      "tokens": 15,
-      "first_read": "2026-04-06T11:01:59.310Z"
-    },
-    "/private/tmp/claude-501/-Users-cobeo-Codes-WorkPlace-AD-kokuin/c17604eb-a3ee-4731-a098-1fb41e053e92/tasks/bf7w5r4iz.output": {
+    "/Users/cobeo/Codes/WorkPlace/AD/kokuin/.gitmodules": {
       "count": 2,
       "tokens": 0,
-      "first_read": "2026-04-06T11:04:06.175Z"
+      "first_read": "2026-04-06T11:24:54.892Z"
     },
-    "/private/tmp/claude-501/-Users-cobeo-Codes-WorkPlace-AD-kokuin/c17604eb-a3ee-4731-a098-1fb41e053e92/tasks/bkh4capvc.output": {
-      "count": 2,
-      "tokens": 0,
-      "first_read": "2026-04-06T11:04:06.264Z"
-    },
-    "/private/tmp/claude-501/-Users-cobeo-Codes-WorkPlace-AD-kokuin/c17604eb-a3ee-4731-a098-1fb41e053e92/tasks/bz0m7vgt0.output": {
+    "/Users/cobeo/Codes/WorkPlace/AD/kokuin/packages/graph/src/merge.ts": {
       "count": 1,
       "tokens": 0,
-      "first_read": "2026-04-06T11:07:46.522Z"
+      "first_read": "2026-04-06T11:24:59.582Z"
+    },
+    "/Users/cobeo/Codes/WorkPlace/AD/kokuin/refs/code-review-graph/.git": {
+      "count": 1,
+      "tokens": 0,
+      "first_read": "2026-04-06T11:27:30.143Z"
+    },
+    "/Users/cobeo/Codes/WorkPlace/AD/kokuin/refs/openwolf/.git": {
+      "count": 1,
+      "tokens": 0,
+      "first_read": "2026-04-06T11:27:30.437Z"
     }
   },
   "files_written": [
     {
-      "file": "/Users/cobeo/Codes/WorkPlace/AD/kokuin/.claude/worktrees/agent-aeba7c78/packages/graph/src/merge.ts",
-      "action": "create",
-      "tokens": 983,
-      "at": "2026-04-06T10:56:40.338Z"
-    },
-    {
-      "file": "/Users/cobeo/Codes/WorkPlace/AD/kokuin/.claude/worktrees/agent-aeba7c78/packages/api/src/routers/graph.ts",
-      "action": "edit",
-      "tokens": 25,
-      "at": "2026-04-06T10:56:56.523Z"
-    },
-    {
-      "file": "/Users/cobeo/Codes/WorkPlace/AD/kokuin/.claude/worktrees/agent-aeba7c78/packages/api/src/routers/graph.ts",
-      "action": "edit",
-      "tokens": 760,
-      "at": "2026-04-06T10:57:16.071Z"
-    },
-    {
-      "file": "/Users/cobeo/Codes/WorkPlace/AD/kokuin/apps/tui/src/auth/credentials.ts",
-      "action": "edit",
-      "tokens": 50,
-      "at": "2026-04-06T10:58:18.239Z"
-    },
-    {
-      "file": "/Users/cobeo/Codes/WorkPlace/AD/kokuin/apps/tui/src/auth/device-flow.ts",
-      "action": "edit",
-      "tokens": 1104,
-      "at": "2026-04-06T10:58:37.877Z"
-    },
-    {
-      "file": "/Users/cobeo/Codes/WorkPlace/AD/kokuin/.claude/worktrees/agent-aeba7c78/packages/api/src/routers/graph.ts",
-      "action": "create",
-      "tokens": 1928,
-      "at": "2026-04-06T10:59:08.516Z"
-    },
-    {
-      "file": "/Users/cobeo/Codes/WorkPlace/AD/kokuin/.claude/worktrees/agent-aeba7c78/packages/graph/src/mcp-server.ts",
-      "action": "create",
-      "tokens": 1214,
-      "at": "2026-04-06T10:59:09.065Z"
-    },
-    {
-      "file": "/Users/cobeo/Codes/WorkPlace/AD/kokuin/apps/tui/src/auth/credentials.ts",
-      "action": "edit",
-      "tokens": 68,
-      "at": "2026-04-06T10:59:23.703Z"
-    },
-    {
-      "file": "/Users/cobeo/Codes/WorkPlace/AD/kokuin/packages/api/src/routers/device-auth.ts",
-      "action": "edit",
-      "tokens": 320,
-      "at": "2026-04-06T10:59:33.305Z"
-    },
-    {
-      "file": "/Users/cobeo/Codes/WorkPlace/AD/kokuin/packages/api/src/routers/device-auth.ts",
-      "action": "edit",
-      "tokens": 671,
-      "at": "2026-04-06T10:59:53.111Z"
-    },
-    {
-      "file": "/Users/cobeo/Codes/WorkPlace/AD/kokuin/apps/tui/src/auth/credentials.ts",
-      "action": "edit",
-      "tokens": 31,
-      "at": "2026-04-06T10:59:57.501Z"
-    },
-    {
-      "file": "/Users/cobeo/Codes/WorkPlace/AD/kokuin/packages/db/prisma/schema/auth.prisma",
-      "action": "edit",
-      "tokens": 222,
-      "at": "2026-04-06T11:00:04.509Z"
-    },
-    {
-      "file": "/Users/cobeo/Codes/WorkPlace/AD/kokuin/packages/api/src/routers/project.ts",
-      "action": "edit",
-      "tokens": 166,
-      "at": "2026-04-06T11:00:10.802Z"
-    },
-    {
-      "file": "/Users/cobeo/Codes/WorkPlace/AD/kokuin/packages/graph/src/fs-adapter.ts",
-      "action": "edit",
-      "tokens": 73,
-      "at": "2026-04-06T11:00:18.690Z"
-    },
-    {
-      "file": "/Users/cobeo/Codes/WorkPlace/AD/kokuin/packages/graph/src/fs-adapter.ts",
-      "action": "edit",
-      "tokens": 118,
-      "at": "2026-04-06T11:00:26.274Z"
-    },
-    {
-      "file": "/Users/cobeo/Codes/WorkPlace/AD/kokuin/apps/server/src/webhook.ts",
-      "action": "edit",
-      "tokens": 150,
-      "at": "2026-04-06T11:00:37.701Z"
-    },
-    {
-      "file": "/Users/cobeo/Codes/WorkPlace/AD/kokuin/.claude/worktrees/agent-aeba7c78/packages/graph/src/mcp-server.ts",
-      "action": "edit",
-      "tokens": 52,
-      "at": "2026-04-06T11:00:37.777Z"
-    },
-    {
-      "file": "/Users/cobeo/Codes/WorkPlace/AD/kokuin/apps/tui/src/auth/device-flow.ts",
-      "action": "create",
-      "tokens": 663,
-      "at": "2026-04-06T11:00:50.006Z"
-    },
-    {
-      "file": "/Users/cobeo/Codes/WorkPlace/AD/kokuin/.claude/worktrees/agent-aeba7c78/packages/graph/src/mcp-server.ts",
-      "action": "edit",
-      "tokens": 19,
-      "at": "2026-04-06T11:00:52.517Z"
-    },
-    {
-      "file": "/Users/cobeo/Codes/WorkPlace/AD/kokuin/.claude/worktrees/agent-aeba7c78/packages/graph/src/mcp-server.ts",
-      "action": "edit",
-      "tokens": 22,
-      "at": "2026-04-06T11:00:52.862Z"
-    },
-    {
-      "file": "/Users/cobeo/Codes/WorkPlace/AD/kokuin/.claude/worktrees/agent-aeba7c78/packages/graph/src/mcp-server.ts",
-      "action": "edit",
-      "tokens": 35,
-      "at": "2026-04-06T11:00:53.179Z"
-    },
-    {
-      "file": "/Users/cobeo/Codes/WorkPlace/AD/kokuin/.claude/worktrees/agent-aeba7c78/packages/graph/src/mcp-server.ts",
-      "action": "edit",
-      "tokens": 42,
-      "at": "2026-04-06T11:01:23.526Z"
-    },
-    {
-      "file": "/Users/cobeo/Codes/WorkPlace/AD/kokuin/.claude/worktrees/agent-aeba7c78/packages/graph/src/mcp-server.ts",
-      "action": "edit",
-      "tokens": 44,
-      "at": "2026-04-06T11:04:20.123Z"
-    },
-    {
       "file": "/Users/cobeo/Codes/WorkPlace/AD/kokuin/packages/api/src/routers/device-auth.ts",
       "action": "create",
-      "tokens": 983,
-      "at": "2026-04-06T11:05:55.532Z"
+      "tokens": 938,
+      "at": "2026-04-06T11:25:18.550Z"
     },
     {
-      "file": "/Users/cobeo/Codes/WorkPlace/AD/kokuin/packages/api/src/routers/device-auth.ts",
+      "file": "/Users/cobeo/Codes/WorkPlace/AD/kokuin/apps/server/src/index.ts",
       "action": "edit",
-      "tokens": 127,
-      "at": "2026-04-06T11:06:15.626Z"
+      "tokens": 138,
+      "at": "2026-04-06T11:25:27.180Z"
     },
     {
-      "file": "/Users/cobeo/Codes/WorkPlace/AD/kokuin/packages/api/src/routers/device-auth.ts",
+      "file": "/Users/cobeo/Codes/WorkPlace/AD/kokuin/apps/server/src/index.ts",
       "action": "edit",
-      "tokens": 647,
-      "at": "2026-04-06T11:06:33.116Z"
+      "tokens": 6,
+      "at": "2026-04-06T11:25:31.915Z"
     },
     {
-      "file": "/Users/cobeo/Codes/WorkPlace/AD/kokuin/packages/api/src/routers/device-auth.ts",
+      "file": "/Users/cobeo/Codes/WorkPlace/AD/kokuin/packages/db/prisma/migrations/20260406120000_add_device_auth_code/migration.sql",
       "action": "create",
-      "tokens": 983,
-      "at": "2026-04-06T11:07:04.459Z"
-    },
-    {
-      "file": "/Users/cobeo/Codes/WorkPlace/AD/kokuin/packages/api/src/routers/device-auth.ts",
-      "action": "edit",
-      "tokens": 127,
-      "at": "2026-04-06T11:07:42.928Z"
+      "tokens": 224,
+      "at": "2026-04-06T11:26:36.133Z"
     }
   ],
   "edit_counts": {
-    ".claude/worktrees/agent-aeba7c78/packages/graph/src/merge.ts": 1,
-    ".claude/worktrees/agent-aeba7c78/packages/api/src/routers/graph.ts": 3,
-    "apps/tui/src/auth/credentials.ts": 3,
-    "apps/tui/src/auth/device-flow.ts": 2,
-    ".claude/worktrees/agent-aeba7c78/packages/graph/src/mcp-server.ts": 7,
-    "packages/api/src/routers/device-auth.ts": 7,
-    "packages/db/prisma/schema/auth.prisma": 1,
-    "packages/api/src/routers/project.ts": 1,
-    "packages/graph/src/fs-adapter.ts": 2,
-    "apps/server/src/webhook.ts": 1
+    "packages/api/src/routers/device-auth.ts": 1,
+    "apps/server/src/index.ts": 2,
+    "packages/db/prisma/migrations/20260406120000_add_device_auth_code/migration.sql": 1
   },
-  "anatomy_hits": 39,
-  "anatomy_misses": 3,
-  "repeated_reads_warned": 25,
+  "anatomy_hits": 0,
+  "anatomy_misses": 14,
+  "repeated_reads_warned": 2,
   "cerebrum_warnings": 0,
-  "stop_count": 1
+  "stop_count": 3
 }

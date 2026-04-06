@@ -2,14 +2,14 @@
   "version": 1,
   "created_at": "2026-04-06T03:56:31.526Z",
   "lifetime": {
-    "total_tokens_estimated": 102533,
-    "total_reads": 65,
-    "total_writes": 58,
-    "total_sessions": 13,
+    "total_tokens_estimated": 107784,
+    "total_reads": 105,
+    "total_writes": 69,
+    "total_sessions": 14,
     "anatomy_hits": 41,
-    "anatomy_misses": 14,
-    "repeated_reads_blocked": 25,
-    "estimated_savings_vs_bare_cli": 28821
+    "anatomy_misses": 54,
+    "repeated_reads_blocked": 30,
+    "estimated_savings_vs_bare_cli": 30378
   },
   "sessions": [
     {
@@ -1029,6 +1029,352 @@
         "writes_count": 28,
         "repeated_reads_blocked": 25,
         "anatomy_lookups": 39
+      }
+    },
+    {
+      "id": "session-2026-04-06-2122",
+      "started": "2026-04-06T11:22:24.846Z",
+      "ended": "2026-04-06T11:25:46.258Z",
+      "reads": [
+        {
+          "file": "/Users/cobeo/Codes/WorkPlace/AD/kokuin/packages/api/src/routers/device-auth.ts",
+          "tokens_estimated": 0,
+          "was_repeated": false,
+          "anatomy_had_description": false
+        },
+        {
+          "file": "/Users/cobeo/Codes/WorkPlace/AD/kokuin/apps/tui/src/auth/credentials.ts",
+          "tokens_estimated": 0,
+          "was_repeated": false,
+          "anatomy_had_description": false
+        },
+        {
+          "file": "/Users/cobeo/Codes/WorkPlace/AD/kokuin/apps/tui/src/auth/device-flow.ts",
+          "tokens_estimated": 0,
+          "was_repeated": false,
+          "anatomy_had_description": false
+        },
+        {
+          "file": "/Users/cobeo/Codes/WorkPlace/AD/kokuin/packages/db/prisma/schema/auth.prisma",
+          "tokens_estimated": 0,
+          "was_repeated": false,
+          "anatomy_had_description": false
+        },
+        {
+          "file": "/Users/cobeo/Codes/WorkPlace/AD/kokuin/packages/api/src/routers/graph.ts",
+          "tokens_estimated": 0,
+          "was_repeated": false,
+          "anatomy_had_description": false
+        },
+        {
+          "file": "/Users/cobeo/Codes/WorkPlace/AD/kokuin/packages/graph/src/mcp-server.ts",
+          "tokens_estimated": 0,
+          "was_repeated": false,
+          "anatomy_had_description": false
+        },
+        {
+          "file": "/Users/cobeo/Codes/WorkPlace/AD/kokuin/packages/api/src/routers/project.ts",
+          "tokens_estimated": 0,
+          "was_repeated": false,
+          "anatomy_had_description": false
+        },
+        {
+          "file": "/Users/cobeo/Codes/WorkPlace/AD/kokuin/packages/graph/src/fs-adapter.ts",
+          "tokens_estimated": 0,
+          "was_repeated": false,
+          "anatomy_had_description": false
+        },
+        {
+          "file": "/Users/cobeo/Codes/WorkPlace/AD/kokuin/apps/server/src/webhook.ts",
+          "tokens_estimated": 0,
+          "was_repeated": false,
+          "anatomy_had_description": false
+        },
+        {
+          "file": "/Users/cobeo/Codes/WorkPlace/AD/kokuin/apps/server/src/index.ts",
+          "tokens_estimated": 519,
+          "was_repeated": true,
+          "anatomy_had_description": false
+        },
+        {
+          "file": "/Users/cobeo/Codes/WorkPlace/AD/kokuin/.gitmodules",
+          "tokens_estimated": 0,
+          "was_repeated": false,
+          "anatomy_had_description": false
+        },
+        {
+          "file": "/Users/cobeo/Codes/WorkPlace/AD/kokuin/packages/graph/src/merge.ts",
+          "tokens_estimated": 0,
+          "was_repeated": false,
+          "anatomy_had_description": false
+        }
+      ],
+      "writes": [
+        {
+          "file": "/Users/cobeo/Codes/WorkPlace/AD/kokuin/packages/api/src/routers/device-auth.ts",
+          "tokens_estimated": 938,
+          "action": "create"
+        },
+        {
+          "file": "/Users/cobeo/Codes/WorkPlace/AD/kokuin/apps/server/src/index.ts",
+          "tokens_estimated": 138,
+          "action": "edit"
+        },
+        {
+          "file": "/Users/cobeo/Codes/WorkPlace/AD/kokuin/apps/server/src/index.ts",
+          "tokens_estimated": 6,
+          "action": "edit"
+        }
+      ],
+      "totals": {
+        "input_tokens_estimated": 519,
+        "output_tokens_estimated": 1082,
+        "reads_count": 12,
+        "writes_count": 3,
+        "repeated_reads_blocked": 1,
+        "anatomy_lookups": 0
+      }
+    },
+    {
+      "id": "session-2026-04-06-2122",
+      "started": "2026-04-06T11:22:24.846Z",
+      "ended": "2026-04-06T11:28:17.244Z",
+      "reads": [
+        {
+          "file": "/Users/cobeo/Codes/WorkPlace/AD/kokuin/packages/api/src/routers/device-auth.ts",
+          "tokens_estimated": 0,
+          "was_repeated": false,
+          "anatomy_had_description": false
+        },
+        {
+          "file": "/Users/cobeo/Codes/WorkPlace/AD/kokuin/apps/tui/src/auth/credentials.ts",
+          "tokens_estimated": 0,
+          "was_repeated": false,
+          "anatomy_had_description": false
+        },
+        {
+          "file": "/Users/cobeo/Codes/WorkPlace/AD/kokuin/apps/tui/src/auth/device-flow.ts",
+          "tokens_estimated": 0,
+          "was_repeated": false,
+          "anatomy_had_description": false
+        },
+        {
+          "file": "/Users/cobeo/Codes/WorkPlace/AD/kokuin/packages/db/prisma/schema/auth.prisma",
+          "tokens_estimated": 0,
+          "was_repeated": false,
+          "anatomy_had_description": false
+        },
+        {
+          "file": "/Users/cobeo/Codes/WorkPlace/AD/kokuin/packages/api/src/routers/graph.ts",
+          "tokens_estimated": 0,
+          "was_repeated": false,
+          "anatomy_had_description": false
+        },
+        {
+          "file": "/Users/cobeo/Codes/WorkPlace/AD/kokuin/packages/graph/src/mcp-server.ts",
+          "tokens_estimated": 0,
+          "was_repeated": false,
+          "anatomy_had_description": false
+        },
+        {
+          "file": "/Users/cobeo/Codes/WorkPlace/AD/kokuin/packages/api/src/routers/project.ts",
+          "tokens_estimated": 0,
+          "was_repeated": false,
+          "anatomy_had_description": false
+        },
+        {
+          "file": "/Users/cobeo/Codes/WorkPlace/AD/kokuin/packages/graph/src/fs-adapter.ts",
+          "tokens_estimated": 0,
+          "was_repeated": false,
+          "anatomy_had_description": false
+        },
+        {
+          "file": "/Users/cobeo/Codes/WorkPlace/AD/kokuin/apps/server/src/webhook.ts",
+          "tokens_estimated": 0,
+          "was_repeated": false,
+          "anatomy_had_description": false
+        },
+        {
+          "file": "/Users/cobeo/Codes/WorkPlace/AD/kokuin/apps/server/src/index.ts",
+          "tokens_estimated": 519,
+          "was_repeated": true,
+          "anatomy_had_description": false
+        },
+        {
+          "file": "/Users/cobeo/Codes/WorkPlace/AD/kokuin/.gitmodules",
+          "tokens_estimated": 0,
+          "was_repeated": true,
+          "anatomy_had_description": false
+        },
+        {
+          "file": "/Users/cobeo/Codes/WorkPlace/AD/kokuin/packages/graph/src/merge.ts",
+          "tokens_estimated": 0,
+          "was_repeated": false,
+          "anatomy_had_description": false
+        },
+        {
+          "file": "/Users/cobeo/Codes/WorkPlace/AD/kokuin/refs/code-review-graph/.git",
+          "tokens_estimated": 0,
+          "was_repeated": false,
+          "anatomy_had_description": false
+        },
+        {
+          "file": "/Users/cobeo/Codes/WorkPlace/AD/kokuin/refs/openwolf/.git",
+          "tokens_estimated": 0,
+          "was_repeated": false,
+          "anatomy_had_description": false
+        }
+      ],
+      "writes": [
+        {
+          "file": "/Users/cobeo/Codes/WorkPlace/AD/kokuin/packages/api/src/routers/device-auth.ts",
+          "tokens_estimated": 938,
+          "action": "create"
+        },
+        {
+          "file": "/Users/cobeo/Codes/WorkPlace/AD/kokuin/apps/server/src/index.ts",
+          "tokens_estimated": 138,
+          "action": "edit"
+        },
+        {
+          "file": "/Users/cobeo/Codes/WorkPlace/AD/kokuin/apps/server/src/index.ts",
+          "tokens_estimated": 6,
+          "action": "edit"
+        },
+        {
+          "file": "/Users/cobeo/Codes/WorkPlace/AD/kokuin/packages/db/prisma/migrations/20260406120000_add_device_auth_code/migration.sql",
+          "tokens_estimated": 224,
+          "action": "create"
+        }
+      ],
+      "totals": {
+        "input_tokens_estimated": 519,
+        "output_tokens_estimated": 1306,
+        "reads_count": 14,
+        "writes_count": 4,
+        "repeated_reads_blocked": 2,
+        "anatomy_lookups": 0
+      }
+    },
+    {
+      "id": "session-2026-04-06-2122",
+      "started": "2026-04-06T11:22:24.846Z",
+      "ended": "2026-04-06T11:28:51.574Z",
+      "reads": [
+        {
+          "file": "/Users/cobeo/Codes/WorkPlace/AD/kokuin/packages/api/src/routers/device-auth.ts",
+          "tokens_estimated": 0,
+          "was_repeated": false,
+          "anatomy_had_description": false
+        },
+        {
+          "file": "/Users/cobeo/Codes/WorkPlace/AD/kokuin/apps/tui/src/auth/credentials.ts",
+          "tokens_estimated": 0,
+          "was_repeated": false,
+          "anatomy_had_description": false
+        },
+        {
+          "file": "/Users/cobeo/Codes/WorkPlace/AD/kokuin/apps/tui/src/auth/device-flow.ts",
+          "tokens_estimated": 0,
+          "was_repeated": false,
+          "anatomy_had_description": false
+        },
+        {
+          "file": "/Users/cobeo/Codes/WorkPlace/AD/kokuin/packages/db/prisma/schema/auth.prisma",
+          "tokens_estimated": 0,
+          "was_repeated": false,
+          "anatomy_had_description": false
+        },
+        {
+          "file": "/Users/cobeo/Codes/WorkPlace/AD/kokuin/packages/api/src/routers/graph.ts",
+          "tokens_estimated": 0,
+          "was_repeated": false,
+          "anatomy_had_description": false
+        },
+        {
+          "file": "/Users/cobeo/Codes/WorkPlace/AD/kokuin/packages/graph/src/mcp-server.ts",
+          "tokens_estimated": 0,
+          "was_repeated": false,
+          "anatomy_had_description": false
+        },
+        {
+          "file": "/Users/cobeo/Codes/WorkPlace/AD/kokuin/packages/api/src/routers/project.ts",
+          "tokens_estimated": 0,
+          "was_repeated": false,
+          "anatomy_had_description": false
+        },
+        {
+          "file": "/Users/cobeo/Codes/WorkPlace/AD/kokuin/packages/graph/src/fs-adapter.ts",
+          "tokens_estimated": 0,
+          "was_repeated": false,
+          "anatomy_had_description": false
+        },
+        {
+          "file": "/Users/cobeo/Codes/WorkPlace/AD/kokuin/apps/server/src/webhook.ts",
+          "tokens_estimated": 0,
+          "was_repeated": false,
+          "anatomy_had_description": false
+        },
+        {
+          "file": "/Users/cobeo/Codes/WorkPlace/AD/kokuin/apps/server/src/index.ts",
+          "tokens_estimated": 519,
+          "was_repeated": true,
+          "anatomy_had_description": false
+        },
+        {
+          "file": "/Users/cobeo/Codes/WorkPlace/AD/kokuin/.gitmodules",
+          "tokens_estimated": 0,
+          "was_repeated": true,
+          "anatomy_had_description": false
+        },
+        {
+          "file": "/Users/cobeo/Codes/WorkPlace/AD/kokuin/packages/graph/src/merge.ts",
+          "tokens_estimated": 0,
+          "was_repeated": false,
+          "anatomy_had_description": false
+        },
+        {
+          "file": "/Users/cobeo/Codes/WorkPlace/AD/kokuin/refs/code-review-graph/.git",
+          "tokens_estimated": 0,
+          "was_repeated": false,
+          "anatomy_had_description": false
+        },
+        {
+          "file": "/Users/cobeo/Codes/WorkPlace/AD/kokuin/refs/openwolf/.git",
+          "tokens_estimated": 0,
+          "was_repeated": false,
+          "anatomy_had_description": false
+        }
+      ],
+      "writes": [
+        {
+          "file": "/Users/cobeo/Codes/WorkPlace/AD/kokuin/packages/api/src/routers/device-auth.ts",
+          "tokens_estimated": 938,
+          "action": "create"
+        },
+        {
+          "file": "/Users/cobeo/Codes/WorkPlace/AD/kokuin/apps/server/src/index.ts",
+          "tokens_estimated": 138,
+          "action": "edit"
+        },
+        {
+          "file": "/Users/cobeo/Codes/WorkPlace/AD/kokuin/apps/server/src/index.ts",
+          "tokens_estimated": 6,
+          "action": "edit"
+        },
+        {
+          "file": "/Users/cobeo/Codes/WorkPlace/AD/kokuin/packages/db/prisma/migrations/20260406120000_add_device_auth_code/migration.sql",
+          "tokens_estimated": 224,
+          "action": "create"
+        }
+      ],
+      "totals": {
+        "input_tokens_estimated": 519,
+        "output_tokens_estimated": 1306,
+        "reads_count": 14,
+        "writes_count": 4,
+        "repeated_reads_blocked": 2,
+        "anatomy_lookups": 0
       }
     }
   ],
