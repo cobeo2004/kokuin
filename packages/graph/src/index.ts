@@ -1,5 +1,9 @@
 export const VERSION = "0.1.0";
+export type { GraphStorageAdapter } from "./adapter";
+export { ChangeDetector } from "./changes";
+export { FsStorageAdapter } from "./fs-adapter";
 export { ImpactAnalyzer } from "./impact";
+export { MergedGraphStore } from "./merge";
 export { QueryEngine } from "./query";
 export * from "./schema";
 export { SearchEngine } from "./search";
