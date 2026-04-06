@@ -1,9 +1,12 @@
 import { Command } from "commander";
+import { graphCommand } from "./commands/graph.js";
+import { initCommand } from "./commands/init.js";
 import {
 	loginCommand,
 	logoutCommand,
 	whoamiCommand,
 } from "./commands/login.js";
+import { projectCommand } from "./commands/project.js";
 
 const program = new Command()
 	.name("kokuin")
@@ -13,5 +16,8 @@ const program = new Command()
 program.addCommand(loginCommand);
 program.addCommand(logoutCommand);
 program.addCommand(whoamiCommand);
+program.addCommand(initCommand);
+program.addCommand(projectCommand);
+program.addCommand(graphCommand);
 
 program.parse(process.argv);
