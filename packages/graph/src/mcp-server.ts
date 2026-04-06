@@ -33,6 +33,18 @@ export function createMcpServer(config: McpConfig): McpServer {
 		return new MergedGraphStore(globalStore, overlay);
 	}
 
+	function withMergedMaterialized<T>(run: (store: GraphStore) => T): T {
+		const merged = getMerged();
+		let materialized: GraphStore | null = null;
+		try {
+			materialized = merged.materialize();
+			return run(materialized);
+		} finally {
+			materialized?.close();
+			merged.close();
+		}
+	}
+
 	server.tool(
 		"query_graph",
 		"Query graph: callers_of, callees_of, imports_of, tests_for, contains",
@@ -49,22 +61,29 @@ export function createMcpServer(config: McpConfig): McpServer {
 			]),
 			target: z.string(),
 		},
-		async ({ pattern, target }) => {
-			const merged = getMerged();
-			try {
-				const result = new QueryEngine(merged).query(
-					pattern,
-					target,
-				);
-				return {
-					content: [
-						{ type: "text" as const, text: JSON.stringify(result, null, 2) },
-					],
-				};
-			} finally {
-				merged.getGlobalStore().close();
-				merged.getOverlayStore()?.close();
-			}
+		async ({
+			pattern,
+			target,
+		}: {
+			pattern:
+				| "callers_of"
+				| "callees_of"
+				| "imports_of"
+				| "imported_by"
+				| "tests_for"
+				| "tested_by"
+				| "contains"
+				| "contained_in";
+			target: string;
+		}) => {
+			const result = withMergedMaterialized((store) =>
+				new QueryEngine(store).query(pattern, target),
+			);
+			return {
+				content: [
+					{ type: "text" as const, text: JSON.stringify(result, null, 2) },
+				],
+			};
 		},
 	);
 
@@ -75,22 +94,16 @@ export function createMcpServer(config: McpConfig): McpServer {
 			query: z.string(),
 			limit: z.number().default(20),
 		},
-		async ({ query, limit }) => {
-			const merged = getMerged();
-			try {
-				const store = merged.getGlobalStore();
+		async ({ query, limit }: { query: string; limit: number }) => {
+			const results = withMergedMaterialized((store) => {
 				store.rebuildFts();
-				merged.getOverlayStore()?.rebuildFts();
-				const results = new SearchEngine(merged).search(query, { limit });
-				return {
-					content: [
-						{ type: "text" as const, text: JSON.stringify(results, null, 2) },
-					],
-				};
-			} finally {
-				merged.getGlobalStore().close();
-				merged.getOverlayStore()?.close();
-			}
+				return new SearchEngine(store).search(query, { limit });
+			});
+			return {
+				content: [
+					{ type: "text" as const, text: JSON.stringify(results, null, 2) },
+				],
+			};
 		},
 	);
 
@@ -101,22 +114,15 @@ export function createMcpServer(config: McpConfig): McpServer {
 			target: z.string(),
 			maxDepth: z.number().default(3),
 		},
-		async ({ target, maxDepth }) => {
-			const merged = getMerged();
-			try {
-				const result = new ImpactAnalyzer(merged).getImpactRadius(
-					target,
-					maxDepth,
-				);
-				return {
-					content: [
-						{ type: "text" as const, text: JSON.stringify(result, null, 2) },
-					],
-				};
-			} finally {
-				merged.getGlobalStore().close();
-				merged.getOverlayStore()?.close();
-			}
+		async ({ target, maxDepth }: { target: string; maxDepth: number }) => {
+			const result = withMergedMaterialized((store) =>
+				new ImpactAnalyzer(store).getImpactRadius(target, maxDepth),
+			);
+			return {
+				content: [
+					{ type: "text" as const, text: JSON.stringify(result, null, 2) },
+				],
+			};
 		},
 	);
 
@@ -131,19 +137,22 @@ export function createMcpServer(config: McpConfig): McpServer {
 				}),
 			),
 		},
-		async ({ changes }) => {
-			const merged = getMerged();
-			try {
-				const results = new ChangeDetector(merged).mapChangesToNodes(changes);
-				return {
-					content: [
-						{ type: "text" as const, text: JSON.stringify(results, null, 2) },
-					],
-				};
-			} finally {
-				merged.getGlobalStore().close();
-				merged.getOverlayStore()?.close();
-			}
+		async ({
+			changes,
+		}: {
+			changes: Array<{
+				filePath: string;
+				lineRanges: Array<{ start: number; end: number }>;
+			}>;
+		}) => {
+			const results = withMergedMaterialized((store) =>
+				new ChangeDetector(store).mapChangesToNodes(changes),
+			);
+			return {
+				content: [
+					{ type: "text" as const, text: JSON.stringify(results, null, 2) },
+				],
+			};
 		},
 	);
 
@@ -159,8 +168,7 @@ export function createMcpServer(config: McpConfig): McpServer {
 				],
 			};
 		} finally {
-			merged.getGlobalStore().close();
-			merged.getOverlayStore()?.close();
+			merged.close();
 		}
 	});
 

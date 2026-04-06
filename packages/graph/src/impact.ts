@@ -1,9 +1,8 @@
 import type { GraphStore } from "./store";
-import type { MergedGraphStore } from "./merge";
 import type { GraphEdge, GraphNode, ImpactResult } from "./types";
 
 export class ImpactAnalyzer {
-	constructor(private store: GraphStore | MergedGraphStore) {}
+	constructor(private store: GraphStore) {}
 
 	getImpactRadius(
 		qualifiedName: string,
