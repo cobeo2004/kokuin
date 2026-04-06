@@ -54,3 +54,5 @@ temp
 # AI Related
 .omc/
 /docs/superpowers/
+.superpowers/
+.wolf/backups/
