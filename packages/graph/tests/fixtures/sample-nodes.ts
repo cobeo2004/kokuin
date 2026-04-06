@@ -1,0 +1,92 @@
+import type { ParsedEdge, ParsedNode } from "../../src/types";
+
+export const sampleNodes: ParsedNode[] = [
+	{
+		kind: "File",
+		name: "auth.ts",
+		qualifiedName: "/src/auth.ts",
+		filePath: "/src/auth.ts",
+		lineStart: 1,
+		lineEnd: 50,
+		language: "typescript",
+		fileHash: "abc123",
+	},
+	{
+		kind: "Function",
+		name: "login",
+		qualifiedName: "/src/auth.ts::login",
+		filePath: "/src/auth.ts",
+		lineStart: 5,
+		lineEnd: 20,
+		language: "typescript",
+		parentName: "auth.ts",
+		params: "username: string, password: string",
+		returnType: "Promise<User>",
+	},
+	{
+		kind: "Function",
+		name: "validateToken",
+		qualifiedName: "/src/auth.ts::validateToken",
+		filePath: "/src/auth.ts",
+		lineStart: 22,
+		lineEnd: 35,
+		language: "typescript",
+		parentName: "auth.ts",
+		params: "token: string",
+		returnType: "boolean",
+	},
+	{
+		kind: "Function",
+		name: "handleLogin",
+		qualifiedName: "/src/routes/login.ts::handleLogin",
+		filePath: "/src/routes/login.ts",
+		lineStart: 10,
+		lineEnd: 30,
+		language: "typescript",
+		params: "req: Request, res: Response",
+		returnType: "void",
+	},
+	{
+		kind: "Test",
+		name: "test_login",
+		qualifiedName: "/tests/auth.test.ts::test_login",
+		filePath: "/tests/auth.test.ts",
+		lineStart: 5,
+		lineEnd: 20,
+		language: "typescript",
+		isTest: true,
+	},
+];
+
+export const sampleEdges: ParsedEdge[] = [
+	{
+		sourceQualifiedName: "/src/routes/login.ts::handleLogin",
+		targetQualifiedName: "/src/auth.ts::login",
+		kind: "CALLS",
+		weight: 1,
+	},
+	{
+		sourceQualifiedName: "/src/auth.ts::login",
+		targetQualifiedName: "/src/auth.ts::validateToken",
+		kind: "CALLS",
+		weight: 1,
+	},
+	{
+		sourceQualifiedName: "/src/auth.ts",
+		targetQualifiedName: "/src/auth.ts::login",
+		kind: "CONTAINS",
+		weight: 1,
+	},
+	{
+		sourceQualifiedName: "/src/auth.ts",
+		targetQualifiedName: "/src/auth.ts::validateToken",
+		kind: "CONTAINS",
+		weight: 1,
+	},
+	{
+		sourceQualifiedName: "/tests/auth.test.ts::test_login",
+		targetQualifiedName: "/src/auth.ts::login",
+		kind: "TESTED_BY",
+		weight: 1,
+	},
+];
