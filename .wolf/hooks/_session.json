@@ -3,7 +3,7 @@
   "started": "2026-04-06T11:22:24.846Z",
   "files_read": {
     "/Users/cobeo/Codes/WorkPlace/AD/kokuin/packages/api/src/routers/device-auth.ts": {
-      "count": 1,
+      "count": 2,
       "tokens": 0,
       "first_read": "2026-04-06T11:24:36.724Z"
     },
@@ -13,8 +13,8 @@
       "first_read": "2026-04-06T11:24:37.294Z"
     },
     "/Users/cobeo/Codes/WorkPlace/AD/kokuin/apps/tui/src/auth/device-flow.ts": {
-      "count": 1,
-      "tokens": 0,
+      "count": 3,
+      "tokens": 722,
       "first_read": "2026-04-06T11:24:37.445Z"
     },
     "/Users/cobeo/Codes/WorkPlace/AD/kokuin/packages/db/prisma/schema/auth.prisma": {
@@ -71,6 +71,41 @@
       "count": 1,
       "tokens": 0,
       "first_read": "2026-04-06T11:27:30.437Z"
+    },
+    "/Users/cobeo/Codes/WorkPlace/AD/kokuin/apps/web/src/utils/orpc.ts": {
+      "count": 1,
+      "tokens": 0,
+      "first_read": "2026-04-06T11:49:25.291Z"
+    },
+    "/Users/cobeo/Codes/WorkPlace/AD/kokuin/apps/web/src/routes/device.tsx": {
+      "count": 1,
+      "tokens": 0,
+      "first_read": "2026-04-06T11:49:25.318Z"
+    },
+    "/Users/cobeo/Codes/WorkPlace/AD/kokuin/apps/tui/src/commands/login.ts": {
+      "count": 1,
+      "tokens": 0,
+      "first_read": "2026-04-06T11:49:52.736Z"
+    },
+    "/Users/cobeo/Codes/WorkPlace/AD/kokuin/packages/api/src/routers/index.ts": {
+      "count": 1,
+      "tokens": 0,
+      "first_read": "2026-04-06T11:52:11.959Z"
+    },
+    "/Users/cobeo/Codes/WorkPlace/AD/kokuin/packages/api/src/index.ts": {
+      "count": 1,
+      "tokens": 0,
+      "first_read": "2026-04-06T11:52:12.264Z"
+    },
+    "/Users/cobeo/Codes/WorkPlace/AD/kokuin/packages/api/src/context.ts": {
+      "count": 1,
+      "tokens": 0,
+      "first_read": "2026-04-06T11:52:17.466Z"
+    },
+    "/Users/cobeo/Codes/WorkPlace/AD/kokuin/apps/tui/src/utils/api-client.ts": {
+      "count": 1,
+      "tokens": 0,
+      "first_read": "2026-04-06T11:53:27.738Z"
     }
   },
   "files_written": [
@@ -97,16 +132,67 @@
       "action": "create",
       "tokens": 224,
       "at": "2026-04-06T11:26:36.133Z"
+    },
+    {
+      "file": "/Users/cobeo/Codes/WorkPlace/AD/kokuin/apps/tui/src/auth/device-flow.ts",
+      "action": "edit",
+      "tokens": 230,
+      "at": "2026-04-06T11:47:59.832Z"
+    },
+    {
+      "file": "/Users/cobeo/Codes/WorkPlace/AD/kokuin/apps/tui/src/commands/login.ts",
+      "action": "edit",
+      "tokens": 111,
+      "at": "2026-04-06T11:49:59.743Z"
+    },
+    {
+      "file": "/Users/cobeo/Codes/WorkPlace/AD/kokuin/apps/tui/src/auth/device-flow.ts",
+      "action": "edit",
+      "tokens": 88,
+      "at": "2026-04-06T11:50:05.405Z"
+    },
+    {
+      "file": "/Users/cobeo/Codes/WorkPlace/AD/kokuin/packages/api/src/routers/device-auth.ts",
+      "action": "edit",
+      "tokens": 51,
+      "at": "2026-04-06T11:52:59.516Z"
+    },
+    {
+      "file": "/Users/cobeo/Codes/WorkPlace/AD/kokuin/packages/api/src/context.ts",
+      "action": "edit",
+      "tokens": 261,
+      "at": "2026-04-06T11:53:07.895Z"
+    },
+    {
+      "file": "/Users/cobeo/Codes/WorkPlace/AD/kokuin/apps/tui/src/auth/device-flow.ts",
+      "action": "edit",
+      "tokens": 21,
+      "at": "2026-04-06T11:53:32.218Z"
+    },
+    {
+      "file": "/Users/cobeo/Codes/WorkPlace/AD/kokuin/apps/tui/src/auth/device-flow.ts",
+      "action": "edit",
+      "tokens": 43,
+      "at": "2026-04-06T11:53:38.101Z"
+    },
+    {
+      "file": "/Users/cobeo/Codes/WorkPlace/AD/kokuin/packages/api/src/context.ts",
+      "action": "edit",
+      "tokens": 85,
+      "at": "2026-04-06T11:53:49.663Z"
     }
   ],
   "edit_counts": {
-    "packages/api/src/routers/device-auth.ts": 1,
+    "packages/api/src/routers/device-auth.ts": 2,
     "apps/server/src/index.ts": 2,
-    "packages/db/prisma/migrations/20260406120000_add_device_auth_code/migration.sql": 1
+    "packages/db/prisma/migrations/20260406120000_add_device_auth_code/migration.sql": 1,
+    "apps/tui/src/auth/device-flow.ts": 4,
+    "apps/tui/src/commands/login.ts": 1,
+    "packages/api/src/context.ts": 2
   },
   "anatomy_hits": 0,
-  "anatomy_misses": 14,
-  "repeated_reads_warned": 2,
+  "anatomy_misses": 21,
+  "repeated_reads_warned": 5,
   "cerebrum_warnings": 0,
-  "stop_count": 3
+  "stop_count": 8
 }
