@@ -68,9 +68,9 @@ export class SearchEngine {
 		return boosted;
 	}
 
-	private mergeOverlayRows(rows: Array<GraphNode & { rank: number }>): Array<
-		GraphNode & { rank: number }
-	> {
+	private mergeOverlayRows(
+		rows: Array<GraphNode & { rank: number }>,
+	): Array<GraphNode & { rank: number }> {
 		if (!this.merged) {
 			return rows;
 		}
@@ -86,7 +86,9 @@ export class SearchEngine {
 		}
 
 		for (const row of rows) {
-			const overlayNode = overlayStore.getNodeByQualifiedName(row.qualified_name);
+			const overlayNode = overlayStore.getNodeByQualifiedName(
+				row.qualified_name,
+			);
 			if (overlayNode) {
 				rowMap.set(row.qualified_name, {
 					...overlayNode,

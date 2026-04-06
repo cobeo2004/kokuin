@@ -51,75 +51,64 @@ function generateUserCode(): string {
 	return `${a}-${b}`;
 }
 
-function cleanExpired(): void {
-	const now = new Date();
-	for (const [key, entry] of deviceCodeStore.entries()) {
-		if (entry.expiresAt < now) {
-			deviceCodeStore.delete(key);
-		}
-	}
-}
-
 export const deviceAuthRouter = {
-	authorize: publicProcedure.handler(() => {
-		cleanExpired();
+	authorize: publicProcedure.handler(async () => {
+		// Purge stale codes first
+		await prisma.deviceAuthCode.deleteMany({
+			where: { expiresAt: { lt: new Date() } },
+		});
+
 		const deviceCode = generateDeviceCode();
 		const userCode = generateUserCode();
 		const expiresAt = new Date(Date.now() + EXPIRY_MS);
 
-		deviceCodeStore.set(deviceCode, { deviceCode, userCode, expiresAt });
+		await prisma.deviceAuthCode.create({
+			data: { deviceCode, userCode, expiresAt },
+		});
 
-		return {
-			deviceCode,
-			userCode,
-			expiresAt,
-			pollInterval: POLL_INTERVAL,
-		};
+		return { deviceCode, userCode, expiresAt, pollInterval: POLL_INTERVAL };
 	}),
 
 	verify: protectedProcedure
 		.input(z.object({ userCode: z.string() }))
-		.handler(({ input, context }) => {
-			cleanExpired();
-			const now = new Date();
-			let found: DeviceCodeEntry | undefined;
+		.handler(async ({ input, context }) => {
+			const entry = await prisma.deviceAuthCode.findFirst({
+				where: {
+					userCode: input.userCode,
+					expiresAt: { gt: new Date() },
+					accessToken: null,
+				},
+			});
 
-			for (const entry of deviceCodeStore.values()) {
-				if (entry.userCode === input.userCode && entry.expiresAt > now) {
-					found = entry;
-					break;
-				}
-			}
-
-			if (!found) {
+			if (!entry) {
 				throw new ORPCError("NOT_FOUND", {
 					message: "Invalid or expired user code",
 				});
 			}
 
 			const accessToken = randomChars(ACCESS_TOKEN_LENGTH);
-			found.userId = context.session.user.id;
-			found.accessToken = accessToken;
+			await prisma.deviceAuthCode.update({
+				where: { id: entry.id },
+				data: { userId: context.session.user.id, accessToken },
+			});
 
 			return { success: true };
 		}),
 
 	token: publicProcedure
 		.input(z.object({ deviceCode: z.string() }))
-		.handler(({ input }) => {
-			const entry = deviceCodeStore.get(input.deviceCode);
+		.handler(async ({ input }) => {
+			const entry = await prisma.deviceAuthCode.findUnique({
+				where: { deviceCode: input.deviceCode },
+			});
 
 			if (!entry) {
-				throw new ORPCError("NOT_FOUND", {
-					message: "Unknown device code",
-				});
+				throw new ORPCError("NOT_FOUND", { message: "Unknown device code" });
 			}
 
 			if (entry.expiresAt < new Date()) {
-				deviceCodeStore.delete(input.deviceCode);
-				throw new ORPCError("GONE", {
-					message: "expired",
-				});
+				await prisma.deviceAuthCode.delete({ where: { id: entry.id } });
+				throw new ORPCError("GONE", { message: "expired" });
 			}
 
 			if (!entry.accessToken) {
@@ -129,7 +118,7 @@ export const deviceAuthRouter = {
 			}
 
 			const accessToken = entry.accessToken;
-			deviceCodeStore.delete(input.deviceCode);
+			await prisma.deviceAuthCode.delete({ where: { id: entry.id } });
 
 			return { accessToken };
 		}),

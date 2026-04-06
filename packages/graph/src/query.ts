@@ -1,5 +1,5 @@
-import type { GraphStore } from "./store";
 import type { MergedGraphStore } from "./merge";
+import type { GraphStore } from "./store";
 import type { GraphEdge, GraphNode, QueryPattern, QueryResult } from "./types";
 
 const PATTERN_TO_EDGE: Record<
