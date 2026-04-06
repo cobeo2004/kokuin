@@ -1,7 +1,7 @@
 # anatomy.md
 
-> Auto-maintained by OpenWolf. Last scanned: 2026-04-06T05:25:57.542Z
-> Files: 527 tracked | Anatomy hits: 0 | Misses: 0
+> Auto-maintained by OpenWolf. Last scanned: 2026-04-06T10:07:03.570Z
+> Files: 528 tracked | Anatomy hits: 0 | Misses: 0
 
 ## ./
 
@@ -419,7 +419,7 @@
 ## apps/server/
 
 - `.gitignore` — Git ignore rules (~149 tok)
-- `package.json` — Node.js package manifest (~261 tok)
+- `package.json` — Node.js package manifest (~271 tok)
 - `tsconfig.json` — TypeScript configuration (~72 tok)
 - `tsdown.config.ts` (~53 tok)
 
@@ -430,13 +430,26 @@
 ## apps/tui/
 
 - `.gitignore` — Git ignore rules (~104 tok)
-- `package.json` — Node.js package manifest (~116 tok)
+- `package.json` — Node.js package manifest (~104 tok)
 - `README.md` — Project documentation (~57 tok)
-- `tsconfig.json` — TypeScript configuration (~216 tok)
+- `tsconfig.json` — TypeScript configuration (~185 tok)
 
 ## apps/tui/src/
 
-- `index.tsx` — App (~144 tok)
+- `index.ts` — CLI entry point; Commander program with login/logout/whoami commands (~80 tok)
+
+## apps/tui/src/auth/
+
+- `credentials.ts` — Token storage at ~/.kokuin/credentials.json; save/load/clear helpers (~120 tok)
+- `device-flow.ts` — OAuth device flow client; polls deviceAuth.authorize + deviceAuth.token RPC endpoints (~180 tok)
+
+## apps/tui/src/commands/
+
+- `login.ts` — Commander commands: login (--server), logout, whoami (~120 tok)
+
+## apps/tui/src/utils/
+
+- `api-client.ts` — Loads credentials and returns serverUrl + auth headers; exits if not authenticated (~60 tok)
 
 ## apps/web/
 
@@ -504,7 +517,7 @@
 
 ## packages/api/src/routers/
 
-- `index.ts` — tRPC router (~136 tok)
+- `index.ts` — tRPC router (~191 tok)
 
 ## packages/auth/
 
@@ -568,6 +581,10 @@
 
 - `server.ts` — Exports env (~123 tok)
 - `web.ts` — Exports env (~72 tok)
+
+## packages/graph/src/
+
+- `search.ts` — Exports SearchEngine (~437 tok)
 
 ## packages/ui/
 
