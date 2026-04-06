@@ -4,6 +4,7 @@ export { ChangeDetector } from "./changes";
 export { FsStorageAdapter } from "./fs-adapter";
 export { ImpactAnalyzer } from "./impact";
 export { MergedGraphStore } from "./merge";
+export { ParserBridge } from "./parser-bridge";
 export { QueryEngine } from "./query";
 export * from "./schema";
 export { SearchEngine } from "./search";
