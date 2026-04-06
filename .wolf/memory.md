@@ -2,12 +2,6 @@
 
 > Chronological action log. Hooks and AI append to this file automatically.
 > Old sessions are consolidated by the daemon weekly.
-
-## Session: 2026-04-06 14:51
-
-| Time | Action | File(s) | Outcome | ~Tokens |
-| ---- | ------ | ------- | ------- | ------- |
-
 ## Session: 2026-04-06 15:06
 
 | Time | Action | File(s) | Outcome | ~Tokens |
@@ -82,20 +76,7 @@
 | 20:22 | Edited apps/web/src/components/header.tsx | map() → useSession() | ~171 |
 | 20:23 | Edited apps/web/src/routes/admin/index.tsx | 17→17 lines | ~174 |
 
-## Session: 2026-04-06 20:25
 
-| Time | Action | File(s) | Outcome | ~Tokens |
-|------|--------|---------|---------|--------|
-
-## Session: 2026-04-06 20:27
-
-| Time | Action | File(s) | Outcome | ~Tokens |
-|------|--------|---------|---------|--------|
-
-## Session: 2026-04-06 20:28
-
-| Time | Action | File(s) | Outcome | ~Tokens |
-|------|--------|---------|---------|--------|
 
 ## Session 2026-04-06 — Phase 1 MVP Implementation
 
@@ -169,11 +150,6 @@ WebSocket live sync, D3 visualization, storage adapter S3 impl.
 - MCP server: `packages/graph/src/mcp-server.ts`
 - Parser bridge: `parser/main.py` + `packages/graph/src/parser-bridge.ts`
 
-## Session: 2026-04-06 20:34
-
-| Time | Action | File(s) | Outcome | ~Tokens |
-|------|--------|---------|---------|--------|
-
 ## Session: 2026-04-06 20:35
 
 | Time | Action | File(s) | Outcome | ~Tokens |
@@ -202,11 +178,6 @@ WebSocket live sync, D3 visualization, storage adapter S3 impl.
 | 20:46 | Edited packages/api/src/routers/graph.ts | 4→4 lines | ~29 |
 | 20:47 | Edited packages/api/src/routers/graph.ts | 6→6 lines | ~35 |
 | 20:47 | Edited packages/api/src/routers/graph.ts | 3→3 lines | ~34 |
-
-## Session: 2026-04-06 20:51
-
-| Time | Action | File(s) | Outcome | ~Tokens |
-|------|--------|---------|---------|--------|
 
 ## Session: 2026-04-06 20:51
 
@@ -242,3 +213,23 @@ WebSocket live sync, D3 visualization, storage adapter S3 impl.
 | 21:06 | Edited packages/api/src/routers/device-auth.ts | modified generateUserCode() | ~647 |
 | 21:07 | Created packages/api/src/routers/device-auth.ts | — | ~983 |
 | 21:07 | Edited packages/api/src/routers/device-auth.ts | reduced (-9 lines) | ~127 |
+
+## Session: 2026-04-06 21:12
+
+| Time | Action | File(s) | Outcome | ~Tokens |
+|------|--------|---------|---------|--------|
+| 21:13 | Created packages/api/src/routers/graph.ts | — | ~2338 |
+| 21:13 | Created packages/api/src/routers/graph.ts | — | ~2260 |
+| 21:13 | Created packages/api/src/routers/graph.ts | — | ~2157 |
+| 21:13 | Created packages/api/src/routers/graph.ts | — | ~2083 |
+| 21:13 | Created packages/api/src/routers/graph.ts | — | ~2009 |
+| 21:13 | Created packages/api/src/routers/graph.ts | — | ~1956 |
+| 21:13 | Created packages/graph/src/mcp-server.ts | — | ~1689 |
+| 21:14 | Created packages/graph/src/mcp-server.ts | — | ~1580 |
+| 21:14 | Created packages/graph/src/mcp-server.ts | — | ~1455 |
+| 21:14 | Created packages/graph/src/mcp-server.ts | — | ~1338 |
+| 21:14 | Created packages/graph/src/changes.ts | — | ~520 |
+| 21:15 | Created packages/graph/src/impact.ts | — | ~390 |
+| 21:15 | Created biome.json | — | ~438 |
+| 21:15 | Created biome.json | — | ~433 |
+| 21:16 | Session end: 28 writes across 10 files (merge.ts, graph.ts, credentials.ts, device-flow.ts, mcp-server.ts) | 52 reads | ~36600 tok |
