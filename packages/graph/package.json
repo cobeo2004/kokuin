@@ -1,0 +1,24 @@
+{
+	"name": "@kokuin/graph",
+	"type": "module",
+	"exports": {
+		".": {
+			"default": "./src/index.ts"
+		},
+		"./*": {
+			"default": "./src/*.ts"
+		}
+	},
+	"scripts": {
+		"test": "bun test",
+		"check-types": "tsc --noEmit"
+	},
+	"dependencies": {
+		"zod": "catalog:"
+	},
+	"devDependencies": {
+		"@kokuin/config": "workspace:*",
+		"@types/bun": "catalog:",
+		"typescript": "^5"
+	}
+}
