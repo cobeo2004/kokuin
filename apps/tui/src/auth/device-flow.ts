@@ -24,10 +24,13 @@ async function rpcCall<T>(
 	const res = await fetch(url, {
 		method: "POST",
 		headers: { "Content-Type": "application/json" },
-		body: input ? JSON.stringify(input) : undefined,
+		// ORPC wire format: body must be {"json": <input>}
+		body: JSON.stringify({ json: input ?? {} }),
 	});
 
-	const data = (await res.json()) as T;
+	// ORPC wire format: response is {"json": <output>} or {"json": <error>}
+	const envelope = (await res.json()) as { json: unknown };
+	const data = envelope.json as T;
 
 	if (!res.ok) {
 		const message =
