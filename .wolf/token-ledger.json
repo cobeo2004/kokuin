@@ -1,662 +1,662 @@
 {
-  "version": 1,
-  "created_at": "2026-04-06T03:56:31.526Z",
-  "lifetime": {
-    "total_tokens_estimated": 65933,
-    "total_reads": 13,
-    "total_writes": 30,
-    "total_sessions": 6,
-    "anatomy_hits": 2,
-    "anatomy_misses": 11,
-    "repeated_reads_blocked": 0,
-    "estimated_savings_vs_bare_cli": 400
-  },
-  "sessions": [
-    {
-      "id": "session-2026-04-06-1451",
-      "started": "2026-04-06T04:51:50.351Z",
-      "ended": "2026-04-06T04:54:05.837Z",
-      "reads": [
-        {
-          "file": "/Users/cobeo/.claude/plugins/cache/claude-plugins-official/superpowers/5.0.7/skills/brainstorming/visual-companion.md",
-          "tokens_estimated": 0,
-          "was_repeated": false,
-          "anatomy_had_description": false
-        }
-      ],
-      "writes": [],
-      "totals": {
-        "input_tokens_estimated": 0,
-        "output_tokens_estimated": 0,
-        "reads_count": 1,
-        "writes_count": 0,
-        "repeated_reads_blocked": 0,
-        "anatomy_lookups": 0
-      }
-    },
-    {
-      "id": "session-2026-04-06-1451",
-      "started": "2026-04-06T04:51:50.351Z",
-      "ended": "2026-04-06T04:55:16.773Z",
-      "reads": [
-        {
-          "file": "/Users/cobeo/.claude/plugins/cache/claude-plugins-official/superpowers/5.0.7/skills/brainstorming/visual-companion.md",
-          "tokens_estimated": 0,
-          "was_repeated": false,
-          "anatomy_had_description": false
-        }
-      ],
-      "writes": [],
-      "totals": {
-        "input_tokens_estimated": 0,
-        "output_tokens_estimated": 0,
-        "reads_count": 1,
-        "writes_count": 0,
-        "repeated_reads_blocked": 0,
-        "anatomy_lookups": 0
-      }
-    },
-    {
-      "id": "session-2026-04-06-1451",
-      "started": "2026-04-06T04:51:50.351Z",
-      "ended": "2026-04-06T04:55:27.486Z",
-      "reads": [
-        {
-          "file": "/Users/cobeo/.claude/plugins/cache/claude-plugins-official/superpowers/5.0.7/skills/brainstorming/visual-companion.md",
-          "tokens_estimated": 0,
-          "was_repeated": false,
-          "anatomy_had_description": false
-        }
-      ],
-      "writes": [],
-      "totals": {
-        "input_tokens_estimated": 0,
-        "output_tokens_estimated": 0,
-        "reads_count": 1,
-        "writes_count": 0,
-        "repeated_reads_blocked": 0,
-        "anatomy_lookups": 0
-      }
-    },
-    {
-      "id": "session-2026-04-06-1451",
-      "started": "2026-04-06T04:51:50.351Z",
-      "ended": "2026-04-06T04:56:33.776Z",
-      "reads": [
-        {
-          "file": "/Users/cobeo/.claude/plugins/cache/claude-plugins-official/superpowers/5.0.7/skills/brainstorming/visual-companion.md",
-          "tokens_estimated": 0,
-          "was_repeated": false,
-          "anatomy_had_description": false
-        }
-      ],
-      "writes": [],
-      "totals": {
-        "input_tokens_estimated": 0,
-        "output_tokens_estimated": 0,
-        "reads_count": 1,
-        "writes_count": 0,
-        "repeated_reads_blocked": 0,
-        "anatomy_lookups": 0
-      }
-    },
-    {
-      "id": "session-2026-04-06-1451",
-      "started": "2026-04-06T04:51:50.351Z",
-      "ended": "2026-04-06T04:58:12.331Z",
-      "reads": [
-        {
-          "file": "/Users/cobeo/.claude/plugins/cache/claude-plugins-official/superpowers/5.0.7/skills/brainstorming/visual-companion.md",
-          "tokens_estimated": 0,
-          "was_repeated": false,
-          "anatomy_had_description": false
-        }
-      ],
-      "writes": [],
-      "totals": {
-        "input_tokens_estimated": 0,
-        "output_tokens_estimated": 0,
-        "reads_count": 1,
-        "writes_count": 0,
-        "repeated_reads_blocked": 0,
-        "anatomy_lookups": 0
-      }
-    },
-    {
-      "id": "session-2026-04-06-1451",
-      "started": "2026-04-06T04:51:50.351Z",
-      "ended": "2026-04-06T04:59:04.384Z",
-      "reads": [
-        {
-          "file": "/Users/cobeo/.claude/plugins/cache/claude-plugins-official/superpowers/5.0.7/skills/brainstorming/visual-companion.md",
-          "tokens_estimated": 0,
-          "was_repeated": false,
-          "anatomy_had_description": false
-        }
-      ],
-      "writes": [],
-      "totals": {
-        "input_tokens_estimated": 0,
-        "output_tokens_estimated": 0,
-        "reads_count": 1,
-        "writes_count": 0,
-        "repeated_reads_blocked": 0,
-        "anatomy_lookups": 0
-      }
-    },
-    {
-      "id": "session-2026-04-06-1451",
-      "started": "2026-04-06T04:51:50.351Z",
-      "ended": "2026-04-06T04:59:30.695Z",
-      "reads": [
-        {
-          "file": "/Users/cobeo/.claude/plugins/cache/claude-plugins-official/superpowers/5.0.7/skills/brainstorming/visual-companion.md",
-          "tokens_estimated": 0,
-          "was_repeated": false,
-          "anatomy_had_description": false
-        }
-      ],
-      "writes": [],
-      "totals": {
-        "input_tokens_estimated": 0,
-        "output_tokens_estimated": 0,
-        "reads_count": 1,
-        "writes_count": 0,
-        "repeated_reads_blocked": 0,
-        "anatomy_lookups": 0
-      }
-    },
-    {
-      "id": "session-2026-04-06-1451",
-      "started": "2026-04-06T04:51:50.351Z",
-      "ended": "2026-04-06T05:00:39.842Z",
-      "reads": [
-        {
-          "file": "/Users/cobeo/.claude/plugins/cache/claude-plugins-official/superpowers/5.0.7/skills/brainstorming/visual-companion.md",
-          "tokens_estimated": 0,
-          "was_repeated": false,
-          "anatomy_had_description": false
-        }
-      ],
-      "writes": [],
-      "totals": {
-        "input_tokens_estimated": 0,
-        "output_tokens_estimated": 0,
-        "reads_count": 1,
-        "writes_count": 0,
-        "repeated_reads_blocked": 0,
-        "anatomy_lookups": 0
-      }
-    },
-    {
-      "id": "session-2026-04-06-1451",
-      "started": "2026-04-06T04:51:50.351Z",
-      "ended": "2026-04-06T05:03:21.711Z",
-      "reads": [
-        {
-          "file": "/Users/cobeo/.claude/plugins/cache/claude-plugins-official/superpowers/5.0.7/skills/brainstorming/visual-companion.md",
-          "tokens_estimated": 0,
-          "was_repeated": false,
-          "anatomy_had_description": false
-        }
-      ],
-      "writes": [],
-      "totals": {
-        "input_tokens_estimated": 0,
-        "output_tokens_estimated": 0,
-        "reads_count": 1,
-        "writes_count": 0,
-        "repeated_reads_blocked": 0,
-        "anatomy_lookups": 0
-      }
-    },
-    {
-      "id": "session-2026-04-06-1451",
-      "started": "2026-04-06T04:51:50.351Z",
-      "ended": "2026-04-06T05:04:04.260Z",
-      "reads": [
-        {
-          "file": "/Users/cobeo/.claude/plugins/cache/claude-plugins-official/superpowers/5.0.7/skills/brainstorming/visual-companion.md",
-          "tokens_estimated": 0,
-          "was_repeated": false,
-          "anatomy_had_description": false
-        }
-      ],
-      "writes": [],
-      "totals": {
-        "input_tokens_estimated": 0,
-        "output_tokens_estimated": 0,
-        "reads_count": 1,
-        "writes_count": 0,
-        "repeated_reads_blocked": 0,
-        "anatomy_lookups": 0
-      }
-    },
-    {
-      "id": "session-2026-04-06-1451",
-      "started": "2026-04-06T04:51:50.351Z",
-      "ended": "2026-04-06T05:05:09.662Z",
-      "reads": [
-        {
-          "file": "/Users/cobeo/.claude/plugins/cache/claude-plugins-official/superpowers/5.0.7/skills/brainstorming/visual-companion.md",
-          "tokens_estimated": 0,
-          "was_repeated": false,
-          "anatomy_had_description": false
-        }
-      ],
-      "writes": [],
-      "totals": {
-        "input_tokens_estimated": 0,
-        "output_tokens_estimated": 0,
-        "reads_count": 1,
-        "writes_count": 0,
-        "repeated_reads_blocked": 0,
-        "anatomy_lookups": 0
-      }
-    },
-    {
-      "id": "session-2026-04-06-1506",
-      "started": "2026-04-06T05:06:07.809Z",
-      "ended": "2026-04-06T05:08:25.945Z",
-      "reads": [],
-      "writes": [
-        {
-          "file": "/Users/cobeo/Codes/WorkPlace/AD/kokuin/.superpowers/brainstorm/33526-1775451224/content/architecture-overview.html",
-          "tokens_estimated": 2268,
-          "action": "create"
-        }
-      ],
-      "totals": {
-        "input_tokens_estimated": 0,
-        "output_tokens_estimated": 2268,
-        "reads_count": 0,
-        "writes_count": 1,
-        "repeated_reads_blocked": 0,
-        "anatomy_lookups": 0
-      }
-    },
-    {
-      "id": "session-2026-04-06-1506",
-      "started": "2026-04-06T05:06:07.809Z",
-      "ended": "2026-04-06T05:10:32.766Z",
-      "reads": [],
-      "writes": [
-        {
-          "file": "/Users/cobeo/Codes/WorkPlace/AD/kokuin/.superpowers/brainstorm/33526-1775451224/content/architecture-overview.html",
-          "tokens_estimated": 2268,
-          "action": "create"
-        }
-      ],
-      "totals": {
-        "input_tokens_estimated": 0,
-        "output_tokens_estimated": 2268,
-        "reads_count": 0,
-        "writes_count": 1,
-        "repeated_reads_blocked": 0,
-        "anatomy_lookups": 0
-      }
-    },
-    {
-      "id": "session-2026-04-06-1506",
-      "started": "2026-04-06T05:06:07.809Z",
-      "ended": "2026-04-06T05:13:01.839Z",
-      "reads": [],
-      "writes": [
-        {
-          "file": "/Users/cobeo/Codes/WorkPlace/AD/kokuin/.superpowers/brainstorm/33526-1775451224/content/architecture-overview.html",
-          "tokens_estimated": 2268,
-          "action": "create"
-        }
-      ],
-      "totals": {
-        "input_tokens_estimated": 0,
-        "output_tokens_estimated": 2268,
-        "reads_count": 0,
-        "writes_count": 1,
-        "repeated_reads_blocked": 0,
-        "anatomy_lookups": 0
-      }
-    },
-    {
-      "id": "session-2026-04-06-1506",
-      "started": "2026-04-06T05:06:07.809Z",
-      "ended": "2026-04-06T05:14:09.840Z",
-      "reads": [],
-      "writes": [
-        {
-          "file": "/Users/cobeo/Codes/WorkPlace/AD/kokuin/.superpowers/brainstorm/33526-1775451224/content/architecture-overview.html",
-          "tokens_estimated": 2268,
-          "action": "create"
-        },
-        {
-          "file": "/Users/cobeo/Codes/WorkPlace/AD/kokuin/.superpowers/brainstorm/33526-1775451224/content/data-flow.html",
-          "tokens_estimated": 2738,
-          "action": "create"
-        }
-      ],
-      "totals": {
-        "input_tokens_estimated": 0,
-        "output_tokens_estimated": 5006,
-        "reads_count": 0,
-        "writes_count": 2,
-        "repeated_reads_blocked": 0,
-        "anatomy_lookups": 0
-      }
-    },
-    {
-      "id": "session-2026-04-06-1506",
-      "started": "2026-04-06T05:06:07.809Z",
-      "ended": "2026-04-06T05:14:56.879Z",
-      "reads": [],
-      "writes": [
-        {
-          "file": "/Users/cobeo/Codes/WorkPlace/AD/kokuin/.superpowers/brainstorm/33526-1775451224/content/architecture-overview.html",
-          "tokens_estimated": 2268,
-          "action": "create"
-        },
-        {
-          "file": "/Users/cobeo/Codes/WorkPlace/AD/kokuin/.superpowers/brainstorm/33526-1775451224/content/data-flow.html",
-          "tokens_estimated": 2738,
-          "action": "create"
-        }
-      ],
-      "totals": {
-        "input_tokens_estimated": 0,
-        "output_tokens_estimated": 5006,
-        "reads_count": 0,
-        "writes_count": 2,
-        "repeated_reads_blocked": 0,
-        "anatomy_lookups": 0
-      }
-    },
-    {
-      "id": "session-2026-04-06-1506",
-      "started": "2026-04-06T05:06:07.809Z",
-      "ended": "2026-04-06T05:16:32.606Z",
-      "reads": [],
-      "writes": [
-        {
-          "file": "/Users/cobeo/Codes/WorkPlace/AD/kokuin/.superpowers/brainstorm/33526-1775451224/content/architecture-overview.html",
-          "tokens_estimated": 2268,
-          "action": "create"
-        },
-        {
-          "file": "/Users/cobeo/Codes/WorkPlace/AD/kokuin/.superpowers/brainstorm/33526-1775451224/content/data-flow.html",
-          "tokens_estimated": 2738,
-          "action": "create"
-        }
-      ],
-      "totals": {
-        "input_tokens_estimated": 0,
-        "output_tokens_estimated": 5006,
-        "reads_count": 0,
-        "writes_count": 2,
-        "repeated_reads_blocked": 0,
-        "anatomy_lookups": 0
-      }
-    },
-    {
-      "id": "session-2026-04-06-1506",
-      "started": "2026-04-06T05:06:07.809Z",
-      "ended": "2026-04-06T05:18:11.464Z",
-      "reads": [],
-      "writes": [
-        {
-          "file": "/Users/cobeo/Codes/WorkPlace/AD/kokuin/.superpowers/brainstorm/33526-1775451224/content/architecture-overview.html",
-          "tokens_estimated": 2268,
-          "action": "create"
-        },
-        {
-          "file": "/Users/cobeo/Codes/WorkPlace/AD/kokuin/.superpowers/brainstorm/33526-1775451224/content/data-flow.html",
-          "tokens_estimated": 2738,
-          "action": "create"
-        }
-      ],
-      "totals": {
-        "input_tokens_estimated": 0,
-        "output_tokens_estimated": 5006,
-        "reads_count": 0,
-        "writes_count": 2,
-        "repeated_reads_blocked": 0,
-        "anatomy_lookups": 0
-      }
-    },
-    {
-      "id": "session-2026-04-06-1506",
-      "started": "2026-04-06T05:06:07.809Z",
-      "ended": "2026-04-06T05:22:03.187Z",
-      "reads": [
-        {
-          "file": "/Users/cobeo/Codes/WorkPlace/AD/kokuin/docs/superpowers/specs/2026-04-06-kokuin-design.md",
-          "tokens_estimated": 6549,
-          "was_repeated": false,
-          "anatomy_had_description": false
-        }
-      ],
-      "writes": [
-        {
-          "file": "/Users/cobeo/Codes/WorkPlace/AD/kokuin/.superpowers/brainstorm/33526-1775451224/content/architecture-overview.html",
-          "tokens_estimated": 2268,
-          "action": "create"
-        },
-        {
-          "file": "/Users/cobeo/Codes/WorkPlace/AD/kokuin/.superpowers/brainstorm/33526-1775451224/content/data-flow.html",
-          "tokens_estimated": 2738,
-          "action": "create"
-        },
-        {
-          "file": "/Users/cobeo/Codes/WorkPlace/AD/kokuin/docs/superpowers/specs/2026-04-06-kokuin-design.md",
-          "tokens_estimated": 7485,
-          "action": "create"
-        },
-        {
-          "file": "/Users/cobeo/Codes/WorkPlace/AD/kokuin/.superpowers/brainstorm/33526-1775451224/content/waiting.html",
-          "tokens_estimated": 41,
-          "action": "create"
-        },
-        {
-          "file": "/Users/cobeo/Codes/WorkPlace/AD/kokuin/docs/superpowers/specs/2026-04-06-kokuin-design.md",
-          "tokens_estimated": 20,
-          "action": "edit"
-        },
-        {
-          "file": "/Users/cobeo/Codes/WorkPlace/AD/kokuin/docs/superpowers/specs/2026-04-06-kokuin-design.md",
-          "tokens_estimated": 83,
-          "action": "edit"
-        },
-        {
-          "file": "/Users/cobeo/Codes/WorkPlace/AD/kokuin/docs/superpowers/specs/2026-04-06-kokuin-design.md",
-          "tokens_estimated": 36,
-          "action": "edit"
-        }
-      ],
-      "totals": {
-        "input_tokens_estimated": 6549,
-        "output_tokens_estimated": 12671,
-        "reads_count": 1,
-        "writes_count": 7,
-        "repeated_reads_blocked": 0,
-        "anatomy_lookups": 1
-      }
-    },
-    {
-      "id": "session-2026-04-06-1506",
-      "started": "2026-04-06T05:06:07.809Z",
-      "ended": "2026-04-06T05:24:56.196Z",
-      "reads": [
-        {
-          "file": "/Users/cobeo/Codes/WorkPlace/AD/kokuin/docs/superpowers/specs/2026-04-06-kokuin-design.md",
-          "tokens_estimated": 6549,
-          "was_repeated": false,
-          "anatomy_had_description": false
-        }
-      ],
-      "writes": [
-        {
-          "file": "/Users/cobeo/Codes/WorkPlace/AD/kokuin/.superpowers/brainstorm/33526-1775451224/content/architecture-overview.html",
-          "tokens_estimated": 2268,
-          "action": "create"
-        },
-        {
-          "file": "/Users/cobeo/Codes/WorkPlace/AD/kokuin/.superpowers/brainstorm/33526-1775451224/content/data-flow.html",
-          "tokens_estimated": 2738,
-          "action": "create"
-        },
-        {
-          "file": "/Users/cobeo/Codes/WorkPlace/AD/kokuin/docs/superpowers/specs/2026-04-06-kokuin-design.md",
-          "tokens_estimated": 7485,
-          "action": "create"
-        },
-        {
-          "file": "/Users/cobeo/Codes/WorkPlace/AD/kokuin/.superpowers/brainstorm/33526-1775451224/content/waiting.html",
-          "tokens_estimated": 41,
-          "action": "create"
-        },
-        {
-          "file": "/Users/cobeo/Codes/WorkPlace/AD/kokuin/docs/superpowers/specs/2026-04-06-kokuin-design.md",
-          "tokens_estimated": 20,
-          "action": "edit"
-        },
-        {
-          "file": "/Users/cobeo/Codes/WorkPlace/AD/kokuin/docs/superpowers/specs/2026-04-06-kokuin-design.md",
-          "tokens_estimated": 83,
-          "action": "edit"
-        },
-        {
-          "file": "/Users/cobeo/Codes/WorkPlace/AD/kokuin/docs/superpowers/specs/2026-04-06-kokuin-design.md",
-          "tokens_estimated": 36,
-          "action": "edit"
-        },
-        {
-          "file": "/Users/cobeo/Codes/WorkPlace/AD/kokuin/docs/superpowers/specs/2026-04-06-kokuin-design.md",
-          "tokens_estimated": 26,
-          "action": "edit"
-        },
-        {
-          "file": "/Users/cobeo/Codes/WorkPlace/AD/kokuin/docs/superpowers/specs/2026-04-06-kokuin-design.md",
-          "tokens_estimated": 373,
-          "action": "edit"
-        },
-        {
-          "file": "/Users/cobeo/Codes/WorkPlace/AD/kokuin/docs/superpowers/specs/2026-04-06-kokuin-design.md",
-          "tokens_estimated": 251,
-          "action": "edit"
-        },
-        {
-          "file": "/Users/cobeo/Codes/WorkPlace/AD/kokuin/docs/superpowers/specs/2026-04-06-kokuin-design.md",
-          "tokens_estimated": 8,
-          "action": "edit"
-        },
-        {
-          "file": "/Users/cobeo/Codes/WorkPlace/AD/kokuin/docs/superpowers/specs/2026-04-06-kokuin-design.md",
-          "tokens_estimated": 7,
-          "action": "edit"
-        }
-      ],
-      "totals": {
-        "input_tokens_estimated": 6549,
-        "output_tokens_estimated": 13336,
-        "reads_count": 1,
-        "writes_count": 12,
-        "repeated_reads_blocked": 0,
-        "anatomy_lookups": 1
-      }
-    }
-  ],
-  "daemon_usage": [],
-  "waste_flags": [
-    {
-      "pattern": "anatomy_miss_rate",
-      "description": "100% of file lookups missed anatomy in session session-2026-04-06-1451",
-      "tokens_wasted": 0,
-      "suggestion": "Run openwolf scan to refresh anatomy.md.",
-      "detected_at": "2026-04-06T05:07:41.333Z"
-    },
-    {
-      "pattern": "anatomy_miss_rate",
-      "description": "100% of file lookups missed anatomy in session session-2026-04-06-1451",
-      "tokens_wasted": 0,
-      "suggestion": "Run openwolf scan to refresh anatomy.md.",
-      "detected_at": "2026-04-06T05:07:41.333Z"
-    },
-    {
-      "pattern": "anatomy_miss_rate",
-      "description": "100% of file lookups missed anatomy in session session-2026-04-06-1451",
-      "tokens_wasted": 0,
-      "suggestion": "Run openwolf scan to refresh anatomy.md.",
-      "detected_at": "2026-04-06T05:07:41.333Z"
-    },
-    {
-      "pattern": "anatomy_miss_rate",
-      "description": "100% of file lookups missed anatomy in session session-2026-04-06-1451",
-      "tokens_wasted": 0,
-      "suggestion": "Run openwolf scan to refresh anatomy.md.",
-      "detected_at": "2026-04-06T05:07:41.333Z"
-    },
-    {
-      "pattern": "anatomy_miss_rate",
-      "description": "100% of file lookups missed anatomy in session session-2026-04-06-1451",
-      "tokens_wasted": 0,
-      "suggestion": "Run openwolf scan to refresh anatomy.md.",
-      "detected_at": "2026-04-06T05:07:41.333Z"
-    },
-    {
-      "pattern": "anatomy_miss_rate",
-      "description": "100% of file lookups missed anatomy in session session-2026-04-06-1451",
-      "tokens_wasted": 0,
-      "suggestion": "Run openwolf scan to refresh anatomy.md.",
-      "detected_at": "2026-04-06T05:07:41.333Z"
-    },
-    {
-      "pattern": "anatomy_miss_rate",
-      "description": "100% of file lookups missed anatomy in session session-2026-04-06-1451",
-      "tokens_wasted": 0,
-      "suggestion": "Run openwolf scan to refresh anatomy.md.",
-      "detected_at": "2026-04-06T05:07:41.333Z"
-    },
-    {
-      "pattern": "anatomy_miss_rate",
-      "description": "100% of file lookups missed anatomy in session session-2026-04-06-1451",
-      "tokens_wasted": 0,
-      "suggestion": "Run openwolf scan to refresh anatomy.md.",
-      "detected_at": "2026-04-06T05:07:41.333Z"
-    },
-    {
-      "pattern": "anatomy_miss_rate",
-      "description": "100% of file lookups missed anatomy in session session-2026-04-06-1451",
-      "tokens_wasted": 0,
-      "suggestion": "Run openwolf scan to refresh anatomy.md.",
-      "detected_at": "2026-04-06T05:07:41.333Z"
-    },
-    {
-      "pattern": "anatomy_miss_rate",
-      "description": "100% of file lookups missed anatomy in session session-2026-04-06-1451",
-      "tokens_wasted": 0,
-      "suggestion": "Run openwolf scan to refresh anatomy.md.",
-      "detected_at": "2026-04-06T05:07:41.333Z"
-    },
-    {
-      "pattern": "anatomy_miss_rate",
-      "description": "100% of file lookups missed anatomy in session session-2026-04-06-1451",
-      "tokens_wasted": 0,
-      "suggestion": "Run openwolf scan to refresh anatomy.md.",
-      "detected_at": "2026-04-06T05:07:41.333Z"
-    }
-  ],
-  "optimization_report": {
-    "last_generated": "2026-04-06T05:07:41.334Z",
-    "patterns": [
-      "anatomy_miss_rate",
-      "anatomy_miss_rate",
-      "anatomy_miss_rate",
-      "anatomy_miss_rate",
-      "anatomy_miss_rate",
-      "anatomy_miss_rate",
-      "anatomy_miss_rate",
-      "anatomy_miss_rate",
-      "anatomy_miss_rate",
-      "anatomy_miss_rate",
-      "anatomy_miss_rate"
-    ]
-  }
+	"version": 1,
+	"created_at": "2026-04-06T03:56:31.526Z",
+	"lifetime": {
+		"total_tokens_estimated": 65933,
+		"total_reads": 13,
+		"total_writes": 30,
+		"total_sessions": 6,
+		"anatomy_hits": 2,
+		"anatomy_misses": 11,
+		"repeated_reads_blocked": 0,
+		"estimated_savings_vs_bare_cli": 400
+	},
+	"sessions": [
+		{
+			"id": "session-2026-04-06-1451",
+			"started": "2026-04-06T04:51:50.351Z",
+			"ended": "2026-04-06T04:54:05.837Z",
+			"reads": [
+				{
+					"file": "/Users/cobeo/.claude/plugins/cache/claude-plugins-official/superpowers/5.0.7/skills/brainstorming/visual-companion.md",
+					"tokens_estimated": 0,
+					"was_repeated": false,
+					"anatomy_had_description": false
+				}
+			],
+			"writes": [],
+			"totals": {
+				"input_tokens_estimated": 0,
+				"output_tokens_estimated": 0,
+				"reads_count": 1,
+				"writes_count": 0,
+				"repeated_reads_blocked": 0,
+				"anatomy_lookups": 0
+			}
+		},
+		{
+			"id": "session-2026-04-06-1451",
+			"started": "2026-04-06T04:51:50.351Z",
+			"ended": "2026-04-06T04:55:16.773Z",
+			"reads": [
+				{
+					"file": "/Users/cobeo/.claude/plugins/cache/claude-plugins-official/superpowers/5.0.7/skills/brainstorming/visual-companion.md",
+					"tokens_estimated": 0,
+					"was_repeated": false,
+					"anatomy_had_description": false
+				}
+			],
+			"writes": [],
+			"totals": {
+				"input_tokens_estimated": 0,
+				"output_tokens_estimated": 0,
+				"reads_count": 1,
+				"writes_count": 0,
+				"repeated_reads_blocked": 0,
+				"anatomy_lookups": 0
+			}
+		},
+		{
+			"id": "session-2026-04-06-1451",
+			"started": "2026-04-06T04:51:50.351Z",
+			"ended": "2026-04-06T04:55:27.486Z",
+			"reads": [
+				{
+					"file": "/Users/cobeo/.claude/plugins/cache/claude-plugins-official/superpowers/5.0.7/skills/brainstorming/visual-companion.md",
+					"tokens_estimated": 0,
+					"was_repeated": false,
+					"anatomy_had_description": false
+				}
+			],
+			"writes": [],
+			"totals": {
+				"input_tokens_estimated": 0,
+				"output_tokens_estimated": 0,
+				"reads_count": 1,
+				"writes_count": 0,
+				"repeated_reads_blocked": 0,
+				"anatomy_lookups": 0
+			}
+		},
+		{
+			"id": "session-2026-04-06-1451",
+			"started": "2026-04-06T04:51:50.351Z",
+			"ended": "2026-04-06T04:56:33.776Z",
+			"reads": [
+				{
+					"file": "/Users/cobeo/.claude/plugins/cache/claude-plugins-official/superpowers/5.0.7/skills/brainstorming/visual-companion.md",
+					"tokens_estimated": 0,
+					"was_repeated": false,
+					"anatomy_had_description": false
+				}
+			],
+			"writes": [],
+			"totals": {
+				"input_tokens_estimated": 0,
+				"output_tokens_estimated": 0,
+				"reads_count": 1,
+				"writes_count": 0,
+				"repeated_reads_blocked": 0,
+				"anatomy_lookups": 0
+			}
+		},
+		{
+			"id": "session-2026-04-06-1451",
+			"started": "2026-04-06T04:51:50.351Z",
+			"ended": "2026-04-06T04:58:12.331Z",
+			"reads": [
+				{
+					"file": "/Users/cobeo/.claude/plugins/cache/claude-plugins-official/superpowers/5.0.7/skills/brainstorming/visual-companion.md",
+					"tokens_estimated": 0,
+					"was_repeated": false,
+					"anatomy_had_description": false
+				}
+			],
+			"writes": [],
+			"totals": {
+				"input_tokens_estimated": 0,
+				"output_tokens_estimated": 0,
+				"reads_count": 1,
+				"writes_count": 0,
+				"repeated_reads_blocked": 0,
+				"anatomy_lookups": 0
+			}
+		},
+		{
+			"id": "session-2026-04-06-1451",
+			"started": "2026-04-06T04:51:50.351Z",
+			"ended": "2026-04-06T04:59:04.384Z",
+			"reads": [
+				{
+					"file": "/Users/cobeo/.claude/plugins/cache/claude-plugins-official/superpowers/5.0.7/skills/brainstorming/visual-companion.md",
+					"tokens_estimated": 0,
+					"was_repeated": false,
+					"anatomy_had_description": false
+				}
+			],
+			"writes": [],
+			"totals": {
+				"input_tokens_estimated": 0,
+				"output_tokens_estimated": 0,
+				"reads_count": 1,
+				"writes_count": 0,
+				"repeated_reads_blocked": 0,
+				"anatomy_lookups": 0
+			}
+		},
+		{
+			"id": "session-2026-04-06-1451",
+			"started": "2026-04-06T04:51:50.351Z",
+			"ended": "2026-04-06T04:59:30.695Z",
+			"reads": [
+				{
+					"file": "/Users/cobeo/.claude/plugins/cache/claude-plugins-official/superpowers/5.0.7/skills/brainstorming/visual-companion.md",
+					"tokens_estimated": 0,
+					"was_repeated": false,
+					"anatomy_had_description": false
+				}
+			],
+			"writes": [],
+			"totals": {
+				"input_tokens_estimated": 0,
+				"output_tokens_estimated": 0,
+				"reads_count": 1,
+				"writes_count": 0,
+				"repeated_reads_blocked": 0,
+				"anatomy_lookups": 0
+			}
+		},
+		{
+			"id": "session-2026-04-06-1451",
+			"started": "2026-04-06T04:51:50.351Z",
+			"ended": "2026-04-06T05:00:39.842Z",
+			"reads": [
+				{
+					"file": "/Users/cobeo/.claude/plugins/cache/claude-plugins-official/superpowers/5.0.7/skills/brainstorming/visual-companion.md",
+					"tokens_estimated": 0,
+					"was_repeated": false,
+					"anatomy_had_description": false
+				}
+			],
+			"writes": [],
+			"totals": {
+				"input_tokens_estimated": 0,
+				"output_tokens_estimated": 0,
+				"reads_count": 1,
+				"writes_count": 0,
+				"repeated_reads_blocked": 0,
+				"anatomy_lookups": 0
+			}
+		},
+		{
+			"id": "session-2026-04-06-1451",
+			"started": "2026-04-06T04:51:50.351Z",
+			"ended": "2026-04-06T05:03:21.711Z",
+			"reads": [
+				{
+					"file": "/Users/cobeo/.claude/plugins/cache/claude-plugins-official/superpowers/5.0.7/skills/brainstorming/visual-companion.md",
+					"tokens_estimated": 0,
+					"was_repeated": false,
+					"anatomy_had_description": false
+				}
+			],
+			"writes": [],
+			"totals": {
+				"input_tokens_estimated": 0,
+				"output_tokens_estimated": 0,
+				"reads_count": 1,
+				"writes_count": 0,
+				"repeated_reads_blocked": 0,
+				"anatomy_lookups": 0
+			}
+		},
+		{
+			"id": "session-2026-04-06-1451",
+			"started": "2026-04-06T04:51:50.351Z",
+			"ended": "2026-04-06T05:04:04.260Z",
+			"reads": [
+				{
+					"file": "/Users/cobeo/.claude/plugins/cache/claude-plugins-official/superpowers/5.0.7/skills/brainstorming/visual-companion.md",
+					"tokens_estimated": 0,
+					"was_repeated": false,
+					"anatomy_had_description": false
+				}
+			],
+			"writes": [],
+			"totals": {
+				"input_tokens_estimated": 0,
+				"output_tokens_estimated": 0,
+				"reads_count": 1,
+				"writes_count": 0,
+				"repeated_reads_blocked": 0,
+				"anatomy_lookups": 0
+			}
+		},
+		{
+			"id": "session-2026-04-06-1451",
+			"started": "2026-04-06T04:51:50.351Z",
+			"ended": "2026-04-06T05:05:09.662Z",
+			"reads": [
+				{
+					"file": "/Users/cobeo/.claude/plugins/cache/claude-plugins-official/superpowers/5.0.7/skills/brainstorming/visual-companion.md",
+					"tokens_estimated": 0,
+					"was_repeated": false,
+					"anatomy_had_description": false
+				}
+			],
+			"writes": [],
+			"totals": {
+				"input_tokens_estimated": 0,
+				"output_tokens_estimated": 0,
+				"reads_count": 1,
+				"writes_count": 0,
+				"repeated_reads_blocked": 0,
+				"anatomy_lookups": 0
+			}
+		},
+		{
+			"id": "session-2026-04-06-1506",
+			"started": "2026-04-06T05:06:07.809Z",
+			"ended": "2026-04-06T05:08:25.945Z",
+			"reads": [],
+			"writes": [
+				{
+					"file": "/Users/cobeo/Codes/WorkPlace/AD/kokuin/.superpowers/brainstorm/33526-1775451224/content/architecture-overview.html",
+					"tokens_estimated": 2268,
+					"action": "create"
+				}
+			],
+			"totals": {
+				"input_tokens_estimated": 0,
+				"output_tokens_estimated": 2268,
+				"reads_count": 0,
+				"writes_count": 1,
+				"repeated_reads_blocked": 0,
+				"anatomy_lookups": 0
+			}
+		},
+		{
+			"id": "session-2026-04-06-1506",
+			"started": "2026-04-06T05:06:07.809Z",
+			"ended": "2026-04-06T05:10:32.766Z",
+			"reads": [],
+			"writes": [
+				{
+					"file": "/Users/cobeo/Codes/WorkPlace/AD/kokuin/.superpowers/brainstorm/33526-1775451224/content/architecture-overview.html",
+					"tokens_estimated": 2268,
+					"action": "create"
+				}
+			],
+			"totals": {
+				"input_tokens_estimated": 0,
+				"output_tokens_estimated": 2268,
+				"reads_count": 0,
+				"writes_count": 1,
+				"repeated_reads_blocked": 0,
+				"anatomy_lookups": 0
+			}
+		},
+		{
+			"id": "session-2026-04-06-1506",
+			"started": "2026-04-06T05:06:07.809Z",
+			"ended": "2026-04-06T05:13:01.839Z",
+			"reads": [],
+			"writes": [
+				{
+					"file": "/Users/cobeo/Codes/WorkPlace/AD/kokuin/.superpowers/brainstorm/33526-1775451224/content/architecture-overview.html",
+					"tokens_estimated": 2268,
+					"action": "create"
+				}
+			],
+			"totals": {
+				"input_tokens_estimated": 0,
+				"output_tokens_estimated": 2268,
+				"reads_count": 0,
+				"writes_count": 1,
+				"repeated_reads_blocked": 0,
+				"anatomy_lookups": 0
+			}
+		},
+		{
+			"id": "session-2026-04-06-1506",
+			"started": "2026-04-06T05:06:07.809Z",
+			"ended": "2026-04-06T05:14:09.840Z",
+			"reads": [],
+			"writes": [
+				{
+					"file": "/Users/cobeo/Codes/WorkPlace/AD/kokuin/.superpowers/brainstorm/33526-1775451224/content/architecture-overview.html",
+					"tokens_estimated": 2268,
+					"action": "create"
+				},
+				{
+					"file": "/Users/cobeo/Codes/WorkPlace/AD/kokuin/.superpowers/brainstorm/33526-1775451224/content/data-flow.html",
+					"tokens_estimated": 2738,
+					"action": "create"
+				}
+			],
+			"totals": {
+				"input_tokens_estimated": 0,
+				"output_tokens_estimated": 5006,
+				"reads_count": 0,
+				"writes_count": 2,
+				"repeated_reads_blocked": 0,
+				"anatomy_lookups": 0
+			}
+		},
+		{
+			"id": "session-2026-04-06-1506",
+			"started": "2026-04-06T05:06:07.809Z",
+			"ended": "2026-04-06T05:14:56.879Z",
+			"reads": [],
+			"writes": [
+				{
+					"file": "/Users/cobeo/Codes/WorkPlace/AD/kokuin/.superpowers/brainstorm/33526-1775451224/content/architecture-overview.html",
+					"tokens_estimated": 2268,
+					"action": "create"
+				},
+				{
+					"file": "/Users/cobeo/Codes/WorkPlace/AD/kokuin/.superpowers/brainstorm/33526-1775451224/content/data-flow.html",
+					"tokens_estimated": 2738,
+					"action": "create"
+				}
+			],
+			"totals": {
+				"input_tokens_estimated": 0,
+				"output_tokens_estimated": 5006,
+				"reads_count": 0,
+				"writes_count": 2,
+				"repeated_reads_blocked": 0,
+				"anatomy_lookups": 0
+			}
+		},
+		{
+			"id": "session-2026-04-06-1506",
+			"started": "2026-04-06T05:06:07.809Z",
+			"ended": "2026-04-06T05:16:32.606Z",
+			"reads": [],
+			"writes": [
+				{
+					"file": "/Users/cobeo/Codes/WorkPlace/AD/kokuin/.superpowers/brainstorm/33526-1775451224/content/architecture-overview.html",
+					"tokens_estimated": 2268,
+					"action": "create"
+				},
+				{
+					"file": "/Users/cobeo/Codes/WorkPlace/AD/kokuin/.superpowers/brainstorm/33526-1775451224/content/data-flow.html",
+					"tokens_estimated": 2738,
+					"action": "create"
+				}
+			],
+			"totals": {
+				"input_tokens_estimated": 0,
+				"output_tokens_estimated": 5006,
+				"reads_count": 0,
+				"writes_count": 2,
+				"repeated_reads_blocked": 0,
+				"anatomy_lookups": 0
+			}
+		},
+		{
+			"id": "session-2026-04-06-1506",
+			"started": "2026-04-06T05:06:07.809Z",
+			"ended": "2026-04-06T05:18:11.464Z",
+			"reads": [],
+			"writes": [
+				{
+					"file": "/Users/cobeo/Codes/WorkPlace/AD/kokuin/.superpowers/brainstorm/33526-1775451224/content/architecture-overview.html",
+					"tokens_estimated": 2268,
+					"action": "create"
+				},
+				{
+					"file": "/Users/cobeo/Codes/WorkPlace/AD/kokuin/.superpowers/brainstorm/33526-1775451224/content/data-flow.html",
+					"tokens_estimated": 2738,
+					"action": "create"
+				}
+			],
+			"totals": {
+				"input_tokens_estimated": 0,
+				"output_tokens_estimated": 5006,
+				"reads_count": 0,
+				"writes_count": 2,
+				"repeated_reads_blocked": 0,
+				"anatomy_lookups": 0
+			}
+		},
+		{
+			"id": "session-2026-04-06-1506",
+			"started": "2026-04-06T05:06:07.809Z",
+			"ended": "2026-04-06T05:22:03.187Z",
+			"reads": [
+				{
+					"file": "/Users/cobeo/Codes/WorkPlace/AD/kokuin/docs/superpowers/specs/2026-04-06-kokuin-design.md",
+					"tokens_estimated": 6549,
+					"was_repeated": false,
+					"anatomy_had_description": false
+				}
+			],
+			"writes": [
+				{
+					"file": "/Users/cobeo/Codes/WorkPlace/AD/kokuin/.superpowers/brainstorm/33526-1775451224/content/architecture-overview.html",
+					"tokens_estimated": 2268,
+					"action": "create"
+				},
+				{
+					"file": "/Users/cobeo/Codes/WorkPlace/AD/kokuin/.superpowers/brainstorm/33526-1775451224/content/data-flow.html",
+					"tokens_estimated": 2738,
+					"action": "create"
+				},
+				{
+					"file": "/Users/cobeo/Codes/WorkPlace/AD/kokuin/docs/superpowers/specs/2026-04-06-kokuin-design.md",
+					"tokens_estimated": 7485,
+					"action": "create"
+				},
+				{
+					"file": "/Users/cobeo/Codes/WorkPlace/AD/kokuin/.superpowers/brainstorm/33526-1775451224/content/waiting.html",
+					"tokens_estimated": 41,
+					"action": "create"
+				},
+				{
+					"file": "/Users/cobeo/Codes/WorkPlace/AD/kokuin/docs/superpowers/specs/2026-04-06-kokuin-design.md",
+					"tokens_estimated": 20,
+					"action": "edit"
+				},
+				{
+					"file": "/Users/cobeo/Codes/WorkPlace/AD/kokuin/docs/superpowers/specs/2026-04-06-kokuin-design.md",
+					"tokens_estimated": 83,
+					"action": "edit"
+				},
+				{
+					"file": "/Users/cobeo/Codes/WorkPlace/AD/kokuin/docs/superpowers/specs/2026-04-06-kokuin-design.md",
+					"tokens_estimated": 36,
+					"action": "edit"
+				}
+			],
+			"totals": {
+				"input_tokens_estimated": 6549,
+				"output_tokens_estimated": 12671,
+				"reads_count": 1,
+				"writes_count": 7,
+				"repeated_reads_blocked": 0,
+				"anatomy_lookups": 1
+			}
+		},
+		{
+			"id": "session-2026-04-06-1506",
+			"started": "2026-04-06T05:06:07.809Z",
+			"ended": "2026-04-06T05:24:56.196Z",
+			"reads": [
+				{
+					"file": "/Users/cobeo/Codes/WorkPlace/AD/kokuin/docs/superpowers/specs/2026-04-06-kokuin-design.md",
+					"tokens_estimated": 6549,
+					"was_repeated": false,
+					"anatomy_had_description": false
+				}
+			],
+			"writes": [
+				{
+					"file": "/Users/cobeo/Codes/WorkPlace/AD/kokuin/.superpowers/brainstorm/33526-1775451224/content/architecture-overview.html",
+					"tokens_estimated": 2268,
+					"action": "create"
+				},
+				{
+					"file": "/Users/cobeo/Codes/WorkPlace/AD/kokuin/.superpowers/brainstorm/33526-1775451224/content/data-flow.html",
+					"tokens_estimated": 2738,
+					"action": "create"
+				},
+				{
+					"file": "/Users/cobeo/Codes/WorkPlace/AD/kokuin/docs/superpowers/specs/2026-04-06-kokuin-design.md",
+					"tokens_estimated": 7485,
+					"action": "create"
+				},
+				{
+					"file": "/Users/cobeo/Codes/WorkPlace/AD/kokuin/.superpowers/brainstorm/33526-1775451224/content/waiting.html",
+					"tokens_estimated": 41,
+					"action": "create"
+				},
+				{
+					"file": "/Users/cobeo/Codes/WorkPlace/AD/kokuin/docs/superpowers/specs/2026-04-06-kokuin-design.md",
+					"tokens_estimated": 20,
+					"action": "edit"
+				},
+				{
+					"file": "/Users/cobeo/Codes/WorkPlace/AD/kokuin/docs/superpowers/specs/2026-04-06-kokuin-design.md",
+					"tokens_estimated": 83,
+					"action": "edit"
+				},
+				{
+					"file": "/Users/cobeo/Codes/WorkPlace/AD/kokuin/docs/superpowers/specs/2026-04-06-kokuin-design.md",
+					"tokens_estimated": 36,
+					"action": "edit"
+				},
+				{
+					"file": "/Users/cobeo/Codes/WorkPlace/AD/kokuin/docs/superpowers/specs/2026-04-06-kokuin-design.md",
+					"tokens_estimated": 26,
+					"action": "edit"
+				},
+				{
+					"file": "/Users/cobeo/Codes/WorkPlace/AD/kokuin/docs/superpowers/specs/2026-04-06-kokuin-design.md",
+					"tokens_estimated": 373,
+					"action": "edit"
+				},
+				{
+					"file": "/Users/cobeo/Codes/WorkPlace/AD/kokuin/docs/superpowers/specs/2026-04-06-kokuin-design.md",
+					"tokens_estimated": 251,
+					"action": "edit"
+				},
+				{
+					"file": "/Users/cobeo/Codes/WorkPlace/AD/kokuin/docs/superpowers/specs/2026-04-06-kokuin-design.md",
+					"tokens_estimated": 8,
+					"action": "edit"
+				},
+				{
+					"file": "/Users/cobeo/Codes/WorkPlace/AD/kokuin/docs/superpowers/specs/2026-04-06-kokuin-design.md",
+					"tokens_estimated": 7,
+					"action": "edit"
+				}
+			],
+			"totals": {
+				"input_tokens_estimated": 6549,
+				"output_tokens_estimated": 13336,
+				"reads_count": 1,
+				"writes_count": 12,
+				"repeated_reads_blocked": 0,
+				"anatomy_lookups": 1
+			}
+		}
+	],
+	"daemon_usage": [],
+	"waste_flags": [
+		{
+			"pattern": "anatomy_miss_rate",
+			"description": "100% of file lookups missed anatomy in session session-2026-04-06-1451",
+			"tokens_wasted": 0,
+			"suggestion": "Run openwolf scan to refresh anatomy.md.",
+			"detected_at": "2026-04-06T05:07:41.333Z"
+		},
+		{
+			"pattern": "anatomy_miss_rate",
+			"description": "100% of file lookups missed anatomy in session session-2026-04-06-1451",
+			"tokens_wasted": 0,
+			"suggestion": "Run openwolf scan to refresh anatomy.md.",
+			"detected_at": "2026-04-06T05:07:41.333Z"
+		},
+		{
+			"pattern": "anatomy_miss_rate",
+			"description": "100% of file lookups missed anatomy in session session-2026-04-06-1451",
+			"tokens_wasted": 0,
+			"suggestion": "Run openwolf scan to refresh anatomy.md.",
+			"detected_at": "2026-04-06T05:07:41.333Z"
+		},
+		{
+			"pattern": "anatomy_miss_rate",
+			"description": "100% of file lookups missed anatomy in session session-2026-04-06-1451",
+			"tokens_wasted": 0,
+			"suggestion": "Run openwolf scan to refresh anatomy.md.",
+			"detected_at": "2026-04-06T05:07:41.333Z"
+		},
+		{
+			"pattern": "anatomy_miss_rate",
+			"description": "100% of file lookups missed anatomy in session session-2026-04-06-1451",
+			"tokens_wasted": 0,
+			"suggestion": "Run openwolf scan to refresh anatomy.md.",
+			"detected_at": "2026-04-06T05:07:41.333Z"
+		},
+		{
+			"pattern": "anatomy_miss_rate",
+			"description": "100% of file lookups missed anatomy in session session-2026-04-06-1451",
+			"tokens_wasted": 0,
+			"suggestion": "Run openwolf scan to refresh anatomy.md.",
+			"detected_at": "2026-04-06T05:07:41.333Z"
+		},
+		{
+			"pattern": "anatomy_miss_rate",
+			"description": "100% of file lookups missed anatomy in session session-2026-04-06-1451",
+			"tokens_wasted": 0,
+			"suggestion": "Run openwolf scan to refresh anatomy.md.",
+			"detected_at": "2026-04-06T05:07:41.333Z"
+		},
+		{
+			"pattern": "anatomy_miss_rate",
+			"description": "100% of file lookups missed anatomy in session session-2026-04-06-1451",
+			"tokens_wasted": 0,
+			"suggestion": "Run openwolf scan to refresh anatomy.md.",
+			"detected_at": "2026-04-06T05:07:41.333Z"
+		},
+		{
+			"pattern": "anatomy_miss_rate",
+			"description": "100% of file lookups missed anatomy in session session-2026-04-06-1451",
+			"tokens_wasted": 0,
+			"suggestion": "Run openwolf scan to refresh anatomy.md.",
+			"detected_at": "2026-04-06T05:07:41.333Z"
+		},
+		{
+			"pattern": "anatomy_miss_rate",
+			"description": "100% of file lookups missed anatomy in session session-2026-04-06-1451",
+			"tokens_wasted": 0,
+			"suggestion": "Run openwolf scan to refresh anatomy.md.",
+			"detected_at": "2026-04-06T05:07:41.333Z"
+		},
+		{
+			"pattern": "anatomy_miss_rate",
+			"description": "100% of file lookups missed anatomy in session session-2026-04-06-1451",
+			"tokens_wasted": 0,
+			"suggestion": "Run openwolf scan to refresh anatomy.md.",
+			"detected_at": "2026-04-06T05:07:41.333Z"
+		}
+	],
+	"optimization_report": {
+		"last_generated": "2026-04-06T05:07:41.334Z",
+		"patterns": [
+			"anatomy_miss_rate",
+			"anatomy_miss_rate",
+			"anatomy_miss_rate",
+			"anatomy_miss_rate",
+			"anatomy_miss_rate",
+			"anatomy_miss_rate",
+			"anatomy_miss_rate",
+			"anatomy_miss_rate",
+			"anatomy_miss_rate",
+			"anatomy_miss_rate",
+			"anatomy_miss_rate"
+		]
+	}
 }
