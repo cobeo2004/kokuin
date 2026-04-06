@@ -3,6 +3,7 @@ export type { GraphStorageAdapter } from "./adapter";
 export { ChangeDetector } from "./changes";
 export { FsStorageAdapter } from "./fs-adapter";
 export { ImpactAnalyzer } from "./impact";
+export { createMcpServer } from "./mcp-server";
 export { MergedGraphStore } from "./merge";
 export { ParserBridge } from "./parser-bridge";
 export { QueryEngine } from "./query";
