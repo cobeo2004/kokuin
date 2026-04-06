@@ -1,0 +1,7 @@
+[submodule "refs/code-review-graph"]
+	path = refs/code-review-graph
+    url = https://github.com/tirth8205/code-review-graph
+
+[submodule "refs/openwolf"]
+	path = refs/openwolf
+    url = https://github.com/cytostack/openwolf
