@@ -6,10 +6,28 @@ export type CreateContextOptions = {
 	context: HonoContext;
 };
 
+async function resolveSession(context: HonoContext) {
+	// Bearer token: CLI device-flow access token
+	const authHeader = context.req.header("Authorization");
+	if (authHeader?.startsWith("Bearer ")) {
+		const token = authHeader.slice("Bearer ".length);
+		const record = await prisma.deviceAuthCode.findFirst({
+			where: { accessToken: token },
+		});
+		if (record?.userId) {
+			const user = await prisma.user.findUnique({ where: { id: record.userId } });
+			if (user) {
+				return { user } as Awaited<ReturnType<typeof auth.api.getSession>>;
+			}
+		}
+		return null;
+	}
+	// Cookie session (web app)
+	return auth.api.getSession({ headers: context.req.raw.headers });
+}
+
 export async function createContext({ context }: CreateContextOptions) {
-	const session = await auth.api.getSession({
-		headers: context.req.raw.headers,
-	});
+	const session = await resolveSession(context);
 
 	let project = null;
 	let projectMember = null;

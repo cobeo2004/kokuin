@@ -9,6 +9,7 @@ interface DeviceAuthResponse {
 
 interface TokenResponse {
 	accessToken: string;
+	userId: string | null;
 }
 
 function normalizeServerUrl(serverUrl: string): string {
@@ -73,7 +74,7 @@ export async function runDeviceFlow(serverUrl: string, webUrl?: string): Promise
 
 			saveCredentials({
 				accessToken: token.accessToken,
-				userId: "unknown",
+				userId: token.userId ?? "unknown",
 				serverUrl: normalizeServerUrl(serverUrl),
 			});
 

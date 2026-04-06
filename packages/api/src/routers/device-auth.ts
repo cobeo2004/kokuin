@@ -118,8 +118,9 @@ export const deviceAuthRouter = {
 			}
 
 			const accessToken = entry.accessToken;
+			const userId = entry.userId;
 			await prisma.deviceAuthCode.delete({ where: { id: entry.id } });
 
-			return { accessToken };
+			return { accessToken, userId };
 		}),
 };
