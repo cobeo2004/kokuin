@@ -1,0 +1,3 @@
+{
+  "extends": "@kokuin/config/tsconfig.base.json"
+}
