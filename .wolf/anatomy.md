@@ -1,7 +1,12 @@
 # anatomy.md
 
-> Auto-maintained by OpenWolf. Last scanned: 2026-04-06T20:00:00.567Z
-> Files: 508 tracked | Anatomy hits: 0 | Misses: 0
+> Auto-maintained by OpenWolf. Last scanned: 2026-04-07T12:23:59.705Z
+> Files: 512 tracked | Anatomy hits: 0 | Misses: 0
+
+## ../../../../.claude/projects/-Users-cobeo-Codes-WorkPlace-AD-kokuin/memory/
+
+- `feedback_context_mode.md` — 1. Context Saving (98% reduction) (~485 tok)
+- `MEMORY.md` — Memory Index (~48 tok)
 
 ## ./
 
@@ -12,7 +17,7 @@
 - `AGENTS.md` — MCP Tools: code-review-graph (~508 tok)
 - `biome.json` — Biome linter/formatter configuration (~433 tok)
 - `bts.jsonc` — Better-T-Stack (~331 tok)
-- `CLAUDE.md` — Rules for Kioku (~604 tok)
+- `CLAUDE.md` — Rules for Kioku (~771 tok)
 - `GEMINI.md` — MCP Tools: code-review-graph (~508 tok)
 - `opencode.json` (~194 tok)
 - `package.json` — Node.js package manifest (~450 tok)
@@ -457,7 +462,7 @@
 
 ## apps/server/src/
 
-- `index.ts` — API routes: GET (1 endpoints) (~519 tok)
+- `index.ts` — API routes: GET (1 endpoints) (~528 tok)
 - `webhook.ts` — API routes: POST (1 endpoints) (~1007 tok)
 
 ## apps/tui/
@@ -478,15 +483,15 @@
 
 ## apps/tui/src/commands/
 
-- `graph.ts` — Exports graphCommand (~1381 tok)
-- `init.ts` — Exports initCommand (~448 tok)
+- `graph.ts` — Exports graphCommand (~1385 tok)
+- `init.ts` — Exports initCommand (~505 tok)
 - `login.ts` — Exports loginCommand, logoutCommand, whoamiCommand (~312 tok)
-- `project.ts` — Exports projectCommand (~724 tok)
+- `project.ts` — Exports projectCommand (~777 tok)
 
 ## apps/tui/src/utils/
 
 - `api-client.ts` — Exports ApiClient, getApiClient (~137 tok)
-- `git.ts` — Exports getGitRemoteUrl, getCurrentBranch, getChangedFiles (~208 tok)
+- `git.ts` — Exports getGitRemoteUrl, getCurrentBranch, getChangedFiles (~222 tok)
 
 ## apps/web/
 
@@ -508,11 +513,11 @@
 
 ## apps/web/src/components/
 
-- `header.tsx` — Header (~171 tok)
+- `header.tsx` — Header (~190 tok)
 - `loader.tsx` — Loader (~59 tok)
 - `sign-in-form.tsx` — SignInForm — renders form — uses useNavigate, useForm (~972 tok)
 - `sign-up-form.tsx` — SignUpForm — renders form — uses useNavigate, useForm (~1167 tok)
-- `user-menu.tsx` — UserMenu — uses useNavigate (~420 tok)
+- `user-menu.tsx` — UserMenu (~704 tok)
 
 ## apps/web/src/functions/
 
@@ -529,7 +534,7 @@
 ## apps/web/src/routes/
 
 - `__root.tsx` — Route (~386 tok)
-- `dashboard.tsx` — Route — uses useQuery (~839 tok)
+- `dashboard.tsx` — Route (~1918 tok)
 - `device.tsx` — Route — uses useState, useMutation (~1000 tok)
 - `index.tsx` — Route — uses useQuery (~479 tok)
 - `login.tsx` — Route — uses useState (~150 tok)
@@ -538,11 +543,15 @@
 
 - `index.tsx` — Route — renders form — uses useMemo, useState, useQuery, useMutation (~2130 tok)
 
+## apps/web/src/routes/organizations/
+
+- `index.tsx` — Route (~1780 tok)
+
 ## apps/web/src/routes/projects/
 
 - `$projectId.builds.tsx` — Route — uses useParams, useMemo, useQuery (~1716 tok)
 - `$projectId.members.tsx` — Route — renders form (~1727 tok)
-- `$projectId.tsx` — Route — uses useParams, useMemo, useQuery (~1414 tok)
+- `$projectId.tsx` — Route (~1439 tok)
 
 ## apps/web/src/utils/
 
@@ -564,14 +573,15 @@
 
 ## packages/api/src/
 
-- `context.ts` — Exports CreateContextOptions, createContext, Context (~545 tok)
+- `context.ts` — Exports CreateContextOptions, createContext, Context (~554 tok)
 - `index.ts` — tRPC router (~413 tok)
 
 ## packages/api/src/routers/
 
-- `device-auth.ts` — tRPC router (~950 tok)
+- `device-auth.ts` — tRPC router (~996 tok)
 - `graph.ts` — Zod schemas: nodeKindSchema, edgeKindSchema, parsedNodeSchema, parsedEdgeSchema + 6 more (~1956 tok)
-- `index.ts` — tRPC router (~191 tok)
+- `index.ts` — tRPC router (~216 tok)
+- `organization.ts` — Exports organizationRouter (~523 tok)
 - `project.ts` — tRPC router (~1197 tok)
 
 ## packages/auth/

@@ -515,6 +515,38 @@
       "related_bugs": [],
       "occurrences": 1,
       "last_seen": "2026-04-06T11:53:07.896Z"
+    },
+    {
+      "id": "bug-033",
+      "timestamp": "2026-04-07T12:15:14.898Z",
+      "error_message": "Significant refactor of ",
+      "file": "apps/web/src/routes/projects/$projectId.tsx",
+      "root_cause": "2 lines replaced/restructured",
+      "fix": "Rewrote 10→13 lines (2 removed)",
+      "tags": [
+        "auto-detected",
+        "refactor",
+        "tsx"
+      ],
+      "related_bugs": [],
+      "occurrences": 1,
+      "last_seen": "2026-04-07T12:15:14.898Z"
+    },
+    {
+      "id": "bug-034",
+      "timestamp": "2026-04-07T12:23:59.719Z",
+      "error_message": "Wrong return value",
+      "file": "apps/tui/src/utils/git.ts",
+      "root_cause": "Was returning: url",
+      "fix": "Now returns: `https://${normalized}`;",
+      "tags": [
+        "auto-detected",
+        "return-value",
+        "ts"
+      ],
+      "related_bugs": [],
+      "occurrences": 1,
+      "last_seen": "2026-04-07T12:23:59.719Z"
     }
   ]
 }

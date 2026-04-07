@@ -6,8 +6,10 @@
 
 ## User Preferences
 
+- ALWAYS use context-mode MCP tools (ctx_batch_execute / ctx_search / ctx_execute) for any exploration or analysis — Bash only for git/mkdir/rm/mv (<20 lines output)
 - ALWAYS use code-review-graph MCP tools FIRST for codebase exploration, before falling back to Grep/Glob/Read
 - ALWAYS utilize openwolf for token optimization (anatomy.md before reading files, cerebrum.md before generating code, targeted Grep over full reads)
+- Read tool ONLY for files you are about to Edit — never for analysis (use ctx_execute_file instead)
 - Use OMC subagents: haiku for mechanical tasks, sonnet for standard impl, opus for reviews/architecture
 - Run ai-slop-cleaner after each implementation task to validate generated code
 - Run `bun run check-types && bun run check` after every feature (per CLAUDE.md)

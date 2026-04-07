@@ -2,6 +2,19 @@
 
 - **ALWAYS**: Run `bun run check-types` for type checking and `bun run check` for biome formatting/linting after you finished a feature !
 
+# context-mode (MANDATORY)
+
+**ALWAYS use context-mode MCP tools** to avoid flooding the context window:
+
+- `ctx_batch_execute` — primary research tool: runs commands, auto-indexes, searches in one call
+- `ctx_search` — all follow-up queries after batch (one call, many queries)
+- `ctx_execute` / `ctx_execute_file` — data processing, log analysis, large file analysis
+- `ctx_fetch_and_index` — instead of WebFetch
+
+**Bash** only for: git, mkdir, rm, mv — commands producing **<20 lines**.  
+**Read** only for: files you are about to **Edit** (Edit needs exact content in context).  
+After compaction: use `ctx_search(source: "session-events")` to restore prior context.
+
 # OpenWolf
 
 @.wolf/OPENWOLF.md
