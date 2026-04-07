@@ -11,8 +11,37 @@ import { MembersTableView } from "@/views/admin/MembersTableView";
 import { OrgSettingsView } from "@/views/admin/OrgSettingsView";
 
 export function AdminScreen() {
-	const { user, orgRole } = useCurrentUser();
-	const { org, isPending } = useOrganization();
+	const {
+		user,
+		orgRole,
+		isOrgAdmin,
+		isPending: userPending,
+	} = useCurrentUser();
+	const { org, isPending: orgPending, error } = useOrganization();
+
+	const isPending = userPending || orgPending;
+
+	// Role guard: redirect non-admins
+	if (!isPending && !isOrgAdmin) {
+		return (
+			<div className="container mx-auto p-6">
+				<p className="text-muted-foreground text-sm">
+					You don't have permission to access organization settings.
+				</p>
+			</div>
+		);
+	}
+
+	// Error state
+	if (error) {
+		return (
+			<div className="container mx-auto p-6">
+				<p className="text-destructive text-sm">
+					Failed to load organization: {error.message}
+				</p>
+			</div>
+		);
+	}
 
 	return (
 		<div className="container mx-auto space-y-6 p-6">
