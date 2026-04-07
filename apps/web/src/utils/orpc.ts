@@ -54,3 +54,17 @@ export function getProjectOrpc(projectId: string) {
 	) as RouterClient<AppRouter>;
 	return createTanstackQueryUtils(projectClient);
 }
+
+export function getProjectClient(projectId: string): RouterClient<AppRouter> {
+	const projectLink = new RPCLink({
+		url: `${env.VITE_SERVER_URL}/rpc`,
+		headers: { "X-Project-Id": projectId },
+		fetch(url, options) {
+			return fetch(url, {
+				...options,
+				credentials: "include",
+			});
+		},
+	});
+	return createORPCClient(projectLink) as RouterClient<AppRouter>;
+}

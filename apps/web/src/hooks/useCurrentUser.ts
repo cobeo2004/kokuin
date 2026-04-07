@@ -15,7 +15,7 @@ export function useCurrentUser() {
 
   return {
     user: session.data?.user ?? null,
-    isPending: session.isPending,
+    isPending: session.isPending || orgs.isPending,
     orgRole,
     isOrgAdmin: orgRole === "owner" || orgRole === "admin",
   };

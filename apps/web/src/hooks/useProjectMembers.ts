@@ -1,6 +1,6 @@
 import { useQuery, useMutation, useQueryClient } from "@tanstack/react-query";
-import { useMemo } from "react";
-import { getProjectOrpc, client as baseClient } from "@/utils/orpc";
+import { useMemo, useCallback } from "react";
+import { getProjectOrpc, getProjectClient } from "@/utils/orpc";
 import {
   listProjectMembers,
   addProjectMember,
@@ -11,16 +11,14 @@ import {
 export function useProjectMembers(projectId: string) {
   const qc = useQueryClient();
   const projectOrpc = useMemo(() => getProjectOrpc(projectId), [projectId]);
+  const projectClient = useMemo(() => getProjectClient(projectId), [projectId]);
   const queryOpts = listProjectMembers(projectOrpc);
 
   const members = useQuery(queryOpts);
-  const invalidate = () => qc.invalidateQueries({ queryKey: queryOpts.queryKey });
-
-  // Note: mutations need the project-scoped client — wrap base client with project header
-  // The X-Project-Id header is sent by getProjectOrpc's RPCLink
-  const projectClient = useMemo(() => {
-    return getProjectOrpc(projectId) as unknown as typeof baseClient;
-  }, [projectId]);
+  const invalidate = useCallback(
+    () => qc.invalidateQueries({ queryKey: queryOpts.queryKey }),
+    [qc, queryOpts.queryKey],
+  );
 
   const add = useMutation({
     mutationFn: (input: { userId: string; role: "admin" | "member" }) =>
