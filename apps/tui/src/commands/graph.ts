@@ -2,7 +2,7 @@ import { execSync } from "node:child_process";
 import { existsSync, mkdirSync } from "node:fs";
 import { homedir } from "node:os";
 import path from "node:path";
-import { GraphStore } from "@kokuin/graph";
+import { type GraphNode, GraphStore } from "@kokuin/graph";
 import { Command } from "commander";
 import { getApiClient } from "../utils/api-client.js";
 import { getCurrentBranch, getGitRemoteUrl } from "../utils/git.js";
@@ -321,41 +321,47 @@ graphCommand
 		}
 
 		const store = new GraphStore(overlayPath);
-		let rawNodes: ReturnType<typeof store.getAllNodes>;
-		let rawEdges: ReturnType<typeof store.getAllEdges>;
+		let rawNodes: GraphNode[];
+		let mappedEdges: Array<{
+			sourceQualifiedName: string;
+			targetQualifiedName: string;
+			kind: string;
+			weight?: number;
+		}>;
 		try {
 			rawNodes = store.getAllNodes();
-			rawEdges = store.getAllEdges();
+			const db = store.getDatabase();
+			const edgeRows = db
+				.query<
+					{
+						source_qn: string;
+						target_qn: string;
+						kind: string;
+						weight: number;
+					},
+					[]
+				>(
+					`SELECT sn.qualified_name AS source_qn, tn.qualified_name AS target_qn, e.kind, e.weight
+           FROM edges e
+           JOIN nodes sn ON sn.id = e.source_id
+           JOIN nodes tn ON tn.id = e.target_id`,
+				)
+				.all();
+			mappedEdges = edgeRows.map((e) => ({
+				sourceQualifiedName: e.source_qn,
+				targetQualifiedName: e.target_qn,
+				kind: e.kind,
+				weight: e.weight,
+			}));
+		} catch (err) {
+			console.error(`Failed to read local overlay: ${err}`);
+			process.exit(1);
 		} finally {
 			store.close();
 		}
 
 		// Map snake_case DB rows to camelCase for the server's pushOverlay input schema
-		type DbNode = {
-			kind: string;
-			name: string;
-			qualified_name: string;
-			file_path: string;
-			line_start: number;
-			line_end: number;
-			language: string;
-			parent_name?: string;
-			params?: string;
-			return_type?: string;
-			modifiers?: string;
-			is_test?: number;
-			file_hash?: string;
-		};
-		type DbEdge = {
-			source_qualified_name?: string;
-			target_qualified_name?: string;
-			sourceQualifiedName?: string;
-			targetQualifiedName?: string;
-			kind: string;
-			weight?: number;
-		};
-
-		const nodes = (rawNodes as unknown as DbNode[]).map((n) => ({
+		const nodes = rawNodes.map((n: GraphNode) => ({
 			kind: n.kind,
 			name: n.name,
 			qualifiedName: n.qualified_name,
@@ -363,25 +369,16 @@ graphCommand
 			lineStart: n.line_start,
 			lineEnd: n.line_end,
 			language: n.language,
-			parentName: n.parent_name,
-			params: n.params,
-			returnType: n.return_type,
-			modifiers: n.modifiers,
+			parentName: n.parent_name ?? undefined,
+			params: n.params ?? undefined,
+			returnType: n.return_type ?? undefined,
+			modifiers: n.modifiers ?? undefined,
 			isTest: n.is_test === 1,
-			fileHash: n.file_hash,
-		}));
-
-		const edges = (rawEdges as unknown as DbEdge[]).map((e) => ({
-			sourceQualifiedName:
-				e.source_qualified_name ?? e.sourceQualifiedName ?? "",
-			targetQualifiedName:
-				e.target_qualified_name ?? e.targetQualifiedName ?? "",
-			kind: e.kind,
-			weight: e.weight,
+			fileHash: n.file_hash ?? undefined,
 		}));
 
 		console.log(
-			`Pushing overlay (${nodes.length} nodes, ${edges.length} edges) for branch ${branch}...`,
+			`Pushing overlay (${nodes.length} nodes, ${mappedEdges.length} edges) for branch ${branch}...`,
 		);
 
 		const headers: Record<string, string> = {
@@ -390,38 +387,25 @@ graphCommand
 		};
 
 		try {
-			const res = await fetch(
-				`${client.serverUrl.replace(/\/$/, "")}/rpc/graph/pushOverlay`,
-				{
-					method: "POST",
-					headers: { ...headers, "Content-Type": "application/json" },
-					body: JSON.stringify({ json: { branch, nodes, edges } }),
-				},
+			const stats = await rpcCall<{ nodeCount: number; edgeCount: number }>(
+				client.serverUrl,
+				"graph/pushOverlay",
+				headers,
+				{ branch, nodes, edges: mappedEdges },
 			);
-
-			if (res.status === 401) {
-				console.error("Authentication expired. Run `kokuin login`.");
-				process.exit(1);
-			}
-			if (res.status === 403) {
-				console.error("You are not a member of this project.");
-				process.exit(1);
-			}
-			if (!res.ok) {
-				const text = await res.text();
-				throw new Error(`${res.status} ${text}`);
-			}
-
-			const envelope = (await res.json()) as {
-				json: { nodeCount: number; edgeCount: number };
-			};
-			const stats = envelope.json;
 			console.log("Overlay uploaded successfully.");
 			console.log(
 				`Server now has: ${stats.nodeCount} nodes, ${stats.edgeCount} edges`,
 			);
 		} catch (err) {
-			console.error(`Failed: ${err}`);
+			const msg = String(err);
+			if (msg.includes("401")) {
+				console.error("Authentication expired. Run `kokuin login`.");
+			} else if (msg.includes("403")) {
+				console.error("You are not a member of this project.");
+			} else {
+				console.error(`Failed: ${err}`);
+			}
 			process.exit(1);
 		}
 	});
