@@ -600,3 +600,12 @@ WebSocket live sync, D3 visualization, storage adapter S3 impl.
 | 00:29 | Edited apps/web/src/utils/buildStatus.ts | 7→8 lines | ~45 |
 | 00:29 | Edited apps/web/src/screens/projects/ProjectMembersScreen.tsx | 14→14 lines | ~92 |
 | 00:29 | Edited apps/web/src/utils/buildStatus.ts | 8→8 lines | ~47 |
+| 00:33 | Created apps/web/public/kokuin-kanji.svg | — | ~360 |
+| 00:33 | Created apps/web/public/kokuin-favicon.svg | — | ~207 |
+| 00:33 | Created apps/web/src/components/brand/KokuinKanjiMark.tsx | — | ~227 |
+| 00:34 | Created apps/web/src/views/layout/AppSidebar.tsx | — | ~671 |
+| 00:34 | Created apps/web/src/screens/auth/AuthScreen.tsx | — | ~426 |
+| 00:34 | Created apps/web/src/index.css | — | ~183 |
+| 00:34 | Created apps/web/src/routes/__root.tsx | — | ~377 |
+| 00:34 | Created apps/web/src/components/brand/KokuinKanjiMark.tsx | — | ~270 |
+| 14:35 | Completed dashboard refactor (Tasks 1-11): new services/hooks/screens/views architecture, auth screen with Google OAuth, role-aware sidebar, dashboard/admin/project screens | apps/web/src/ | done | ~2000 |

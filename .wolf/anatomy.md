@@ -1,7 +1,7 @@
 # anatomy.md
 
-> Auto-maintained by OpenWolf. Last scanned: 2026-04-07T14:29:48.170Z
-> Files: 531 tracked | Anatomy hits: 0 | Misses: 0
+> Auto-maintained by OpenWolf. Last scanned: 2026-04-07T14:34:34.167Z
+> Files: 529 tracked | Anatomy hits: 0 | Misses: 0
 
 ## ./
 
@@ -529,34 +529,32 @@
 
 ## apps/web/public/
 
+- `kokuin-favicon.svg` (~207 tok)
+- `kokuin-kanji.svg` (~360 tok)
 - `robots.txt` — https://www.robotstxt.org/robotstxt.html (~17 tok)
 
 ## apps/web/src/
 
-- `index.css` — Styles: 2 rules (~24 tok)
+- `index.css` — Styles: 3 rules, 12 vars (~183 tok)
 - `router.tsx` — getRouter (~236 tok)
 - `routeTree.gen.ts` — @ts-nocheck (~2821 tok)
 
 ## apps/web/src/components/
 
-- `header.tsx` — Header (~190 tok)
-- `loader.tsx` — Loader (~59 tok)
-- `sign-in-form.tsx` — SignInForm — renders form — uses useNavigate, useForm (~972 tok)
-- `sign-up-form.tsx` — SignUpForm — renders form — uses useNavigate, useForm (~1167 tok)
-- `user-menu.tsx` — UserMenu — uses useNavigate, useQuery (~704 tok)
+- `loader.tsx` — Loader spinner component (~59 tok)
 
-## apps/web/src/functions/
+## apps/web/src/components/brand/
 
-- `get-user.ts` — Exports getUser (~76 tok)
+- `KokuinKanjiMark.tsx` — variantClass (~270 tok)
 
 ## apps/web/src/hooks/
 
-- `index.ts` (~75 tok)
-- `useCurrentUser.ts` — Exports useCurrentUser (~193 tok)
-- `useOrganization.ts` — Exports useOrganization (~119 tok)
-- `useProjectBuilds.ts` — Exports useProjectBuilds (~138 tok)
-- `useProjectMembers.ts` — Exports useProjectMembers (~401 tok)
-- `useProjects.ts` — Exports useProjects (~96 tok)
+- `index.ts` — Barrel export for all hooks (~30 tok)
+- `useCurrentUser.ts` — Session user + org role derived hook; queries listOrganizations when session exists (~80 tok)
+- `useOrganization.ts` — First org membership query hook, returns org or null (~50 tok)
+- `useProjectBuilds.ts` — Graph build status for a project; uses project-scoped orpc (~50 tok)
+- `useProjectMembers.ts` — Project members list + add/updateRole/remove mutations; memoized project clients (~120 tok)
+- `useProjects.ts` — Project list query hook (~40 tok)
 
 ## apps/web/src/lib/
 
@@ -568,92 +566,92 @@
 
 ## apps/web/src/routes/
 
-- `__root.tsx` — Route (~336 tok)
-- `_app.tsx` — Route (~164 tok)
-- `_public.tsx` — Route (~84 tok)
+- `__root.tsx` — Route (~377 tok)
+- `_app.tsx` — Pathless authenticated layout: auth guard + AppSidebar + scrollable main (~80 tok)
+- `_public.tsx` — Pathless public layout: centered flex wrapper for auth pages (~50 tok)
 - `device.tsx` — Route — uses useState, useMutation (~1000 tok)
-- `index.tsx` — Route (~107 tok)
+- `index.tsx` — Public auth landing; redirects to /dashboard if session exists; renders AuthScreen (~80 tok)
 
 ## apps/web/src/routes/_app/
 
-- `dashboard.tsx` — Route (~64 tok)
+- `dashboard.tsx` — Thin wrapper → DashboardScreen (~30 tok)
 
 ## apps/web/src/routes/_app/admin/
 
-- `index.tsx` — Route (~58 tok)
+- `index.tsx` — Thin wrapper → AdminScreen (~30 tok)
 
 ## apps/web/src/routes/_app/organizations/
 
-- `index.tsx` — Route — uses useState, useMutation, useQuery (~1696 tok)
+- `index.tsx` — Route — org list/create/delete — uses useMutation, useQuery (~1780 tok)
 
 ## apps/web/src/routes/_app/projects/
 
-- `$projectId.builds.tsx` — Route (~103 tok)
-- `$projectId.members.tsx` — Route (~104 tok)
-- `$projectId.tsx` — Route (~96 tok)
+- `$projectId.builds.tsx` — Thin wrapper → ProjectBuildsScreen (~30 tok)
+- `$projectId.members.tsx` — Thin wrapper → ProjectMembersScreen (~30 tok)
+- `$projectId.tsx` — Thin wrapper → ProjectScreen (~30 tok)
 
 ## apps/web/src/routes/_public/
 
-- `login.tsx` — Route (~62 tok)
+- `login.tsx` — Redirects to / (~30 tok)
 
 ## apps/web/src/screens/admin/
 
-- `AdminScreen.tsx` — AdminScreen (~578 tok)
+- `AdminScreen.tsx` — Tabbed admin screen with role guard and error state; Overview/Members/Domain Rules (~80 tok)
 
 ## apps/web/src/screens/auth/
 
-- `AuthScreen.tsx` — AuthScreen (~387 tok)
+- `AuthScreen.tsx` — Tabbed card: Sign in / Sign up tabs; manages tab state (~80 tok)
 
 ## apps/web/src/screens/dashboard/
 
-- `DashboardScreen.tsx` — DashboardScreen (~504 tok)
+- `DashboardScreen.tsx` — Orchestrates stats + project list + create dialog; role-gates New Project button (~100 tok)
 
 ## apps/web/src/screens/projects/
 
-- `ProjectBuildsScreen.tsx` — ProjectBuildsScreen (~340 tok)
-- `ProjectMembersScreen.tsx` — ProjectMembersScreen (~295 tok)
-- `ProjectScreen.tsx` — ProjectScreen (~872 tok)
+- `ProjectBuildsScreen.tsx` — Standalone builds screen with not-found guard (~60 tok)
+- `ProjectMembersScreen.tsx` — Standalone members screen (~60 tok)
+- `ProjectScreen.tsx` — Tabbed project screen: Overview/Builds/Members; Members tab gated on isProjectAdmin (~120 tok)
 
 ## apps/web/src/services/
 
-- `auth.service.ts` — Exports signInWithEmail, signUpWithEmail, signInWithGoogle, signOut (~147 tok)
-- `graph.service.ts` — Exports getGraphStatus (~136 tok)
-- `organization.service.ts` — Exports listOrganizations, createOrganization, deleteOrganization (~161 tok)
-- `project.service.ts` — Exports listProjects, createProject, listProjectMembers, addProjectMember + 2 more (~325 tok)
+- `auth.service.ts` — Wraps authClient signIn/signUp/signOut/Google OAuth calls as plain async functions (~80 tok)
+- `graph.service.ts` — ORPC query options for graph build status; requires project-scoped orpc (~40 tok)
+- `organization.service.ts` — ORPC query options and mutations for organizations (~60 tok)
+- `project.service.ts` — ORPC query options and mutations for projects and project members (~100 tok)
 
 ## apps/web/src/utils/
 
-- `buildStatus.ts` — Exports GraphBuild, statusVariant (~123 tok)
-- `orpc.ts` — Exports queryClient, client, orpc, getProjectOrpc, getProjectClient (~518 tok)
+- `buildStatus.ts` — Shared GraphBuild type and statusVariant helper for build status views (~40 tok)
+- `orpc.ts` — ORPC client, query utils, getProjectOrpc, getProjectClient exports (~150 tok)
 
 ## apps/web/src/views/admin/
 
-- `DomainRulesView.tsx` — DomainRulesView (~161 tok)
-- `MembersTableView.tsx` — MembersTableView (~335 tok)
-- `OrgSettingsView.tsx` — OrgSettingsView (~397 tok)
+- `DomainRulesView.tsx` — Stub domain rules view; backend pending (~40 tok)
+- `MembersTableView.tsx` — Stub members view showing current user; full management is backend-pending (~60 tok)
+- `OrgSettingsView.tsx` — Read-only org name/slug/created info card with skeleton (~80 tok)
 
 ## apps/web/src/views/auth/
 
-- `GoogleOAuthButton.tsx` — GoogleOAuthButton — uses useState (~420 tok)
-- `SignInView.tsx` — SignInView — renders form — uses useNavigate, useForm (~1002 tok)
-- `SignUpView.tsx` — SignUpView — renders form — uses useNavigate, useForm (~1197 tok)
+- `GoogleOAuthButton.tsx` — Google OAuth sign-in button with pending state and error toast (~80 tok)
+- `SignInView.tsx` — Email+password sign-in form with canSubmit guard, name/autoComplete, Google button (~150 tok)
+- `SignUpView.tsx` — Name+email+password sign-up form with same patterns as SignInView (~150 tok)
 
 ## apps/web/src/views/dashboard/
 
-- `CreateProjectDialog.tsx` — CreateProjectDialog — renders modal (~848 tok)
-- `ProjectListView.tsx` — ProjectListView — renders table (~800 tok)
-- `StatsCardsView.tsx` — StatsCardsView (~356 tok)
+- `CreateProjectDialog.tsx` — shadcn Dialog for creating a new project; invalidates listProjects on success (~100 tok)
+- `ProjectListView.tsx` — Table of projects with role badge, view button, empty/loading states (~120 tok)
+- `StatsCardsView.tsx` — Three stats cards (projects, members, builds) with skeleton loading (~80 tok)
 
 ## apps/web/src/views/layout/
 
-- `AppSidebar.tsx` — baseItems — uses useNavigate (~659 tok)
-- `SidebarNav.tsx` — SidebarNav (~284 tok)
+- `AppSidebar.tsx` — Role-aware sidebar with logo, nav groups, user avatar/initials, sign-out; uses useCurrentUser (~150 tok)
+- `SidebarNav.tsx` — Generic nav item list using buttonVariants+Link; active-state detection via useRouterState (~80 tok)
 
 ## apps/web/src/views/projects/
 
-- `BuildsListView.tsx` — BuildsListView (~838 tok)
-- `ProjectMembersView.tsx` — ProjectMembersView — renders form, table (~1063 tok)
-- `ProjectOverviewView.tsx` — ProjectOverviewView (~795 tok)
+- `BuildsListView.tsx` — Graph build status card with node/edge counts; accesses buildStatus.global (~100 tok)
+- `ProjectMembersView.tsx` — Members table with shadcn Select for role, add/role-toggle/remove with currentUserId guard (~150 tok)
+- `ProjectOverviewView.tsx` — Two-card overview: project info + graph build status using shared GraphBuild type (~100 tok)
 
 ## docs/superpowers/plans/
 
