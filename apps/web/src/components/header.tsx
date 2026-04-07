@@ -12,6 +12,7 @@ export default function Header() {
 				<nav className="flex gap-4 text-lg">
 					<Link to="/">Home</Link>
 					<Link to="/dashboard">Dashboard</Link>
+					{session && <Link to="/organizations">Organizations</Link>}
 					{session && <Link to="/admin">Admin</Link>}
 				</nav>
 				<div className="flex items-center gap-2">

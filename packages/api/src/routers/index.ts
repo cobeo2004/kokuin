@@ -3,6 +3,7 @@ import type { RouterClient } from "@orpc/server";
 import { protectedProcedure, publicProcedure } from "../index";
 import { deviceAuthRouter } from "./device-auth";
 import { graphRouter } from "./graph";
+import { organizationRouter } from "./organization";
 import { projectRouter } from "./project";
 
 export const appRouter = {
@@ -18,6 +19,7 @@ export const appRouter = {
 	project: projectRouter,
 	graph: graphRouter,
 	deviceAuth: deviceAuthRouter,
+	organization: organizationRouter,
 };
 export type AppRouter = typeof appRouter;
 export type AppRouterClient = RouterClient<typeof appRouter>;
