@@ -4,6 +4,7 @@ export type GraphBuild = {
 	edgeCount?: number;
 	updatedAt?: Date | string;
 	branch?: string;
+	commitSha?: string | null;
 };
 
 export function statusVariant(

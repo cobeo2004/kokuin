@@ -5,7 +5,10 @@ import { runDeviceFlow } from "../auth/device-flow.js";
 export const loginCommand = new Command("login")
 	.description("Authenticate with a Kokuin server")
 	.option("-s, --server <url>", "Server URL", "https://app.kokuin.dev")
-	.option("-w, --web-url <url>", "Web app URL (for device page, defaults to server URL)")
+	.option(
+		"-w, --web-url <url>",
+		"Web app URL (for device page, defaults to server URL)",
+	)
 	.action(async (options: { server: string; webUrl?: string }) => {
 		await runDeviceFlow(options.server, options.webUrl);
 	});

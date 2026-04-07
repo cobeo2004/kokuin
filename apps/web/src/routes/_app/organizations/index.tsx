@@ -25,10 +25,10 @@ function CreateOrgDialog({ onClose }: { onClose: () => void }) {
 		onSuccess: () => {
 			qc.invalidateQueries({
 				queryKey: orpc.organization.list.queryOptions().queryKey,
-			})
+			});
 			onClose();
 		},
-	})
+	});
 
 	const autoSlug = (val: string) =>
 		val
@@ -46,15 +46,15 @@ function CreateOrgDialog({ onClose }: { onClose: () => void }) {
 	const canSubmit = name.trim() && slug.trim() && !create.isPending;
 
 	return (
-        // biome-ignore lint/a11y/noStaticElementInteractions: backdrop dismiss
-        // biome-ignore lint/a11y/useKeyWithClickEvents: backdrop dismiss
-        <div
+		// biome-ignore lint/a11y/noStaticElementInteractions: backdrop dismiss
+		// biome-ignore lint/a11y/useKeyWithClickEvents: backdrop dismiss
+		<div
 			className="fixed inset-0 z-50 flex items-center justify-center bg-black/50"
 			onClick={(e) => {
 				if (e.target === e.currentTarget) onClose();
 			}}
 		>
-            <div className="w-full max-w-sm rounded-lg border bg-background p-6 shadow-lg">
+			<div className="w-full max-w-sm rounded-lg border bg-background p-6 shadow-lg">
 				<h2 className="mb-4 font-semibold text-lg">Create Organization</h2>
 
 				<div className="space-y-4">
@@ -119,9 +119,9 @@ function RouteComponent() {
 		onSuccess: () => {
 			qc.invalidateQueries({
 				queryKey: orpc.organization.list.queryOptions().queryKey,
-			})
+			});
 		},
-	})
+	});
 
 	return (
 		<div className="container mx-auto p-6">
@@ -184,7 +184,7 @@ function RouteComponent() {
 															`Delete "${org.name}"? This cannot be undone.`,
 														)
 													) {
-														deleteOrg.mutate(org.id)
+														deleteOrg.mutate(org.id);
 													}
 												}}
 											>
@@ -204,5 +204,5 @@ function RouteComponent() {
 				</div>
 			)}
 		</div>
-	)
+	);
 }

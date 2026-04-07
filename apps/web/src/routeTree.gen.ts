@@ -9,29 +9,29 @@
 // Additionally, you should also exclude this file from your linter and/or formatter to prevent it from being checked or modified.
 
 import { Route as rootRouteImport } from './routes/__root'
-import { Route as LoginRouteImport } from './routes/login'
 import { Route as DeviceRouteImport } from './routes/device'
-import { Route as DashboardRouteImport } from './routes/dashboard'
+import { Route as PublicRouteImport } from './routes/_public'
+import { Route as AppRouteImport } from './routes/_app'
 import { Route as IndexRouteImport } from './routes/index'
-import { Route as OrganizationsIndexRouteImport } from './routes/organizations/index'
-import { Route as AdminIndexRouteImport } from './routes/admin/index'
-import { Route as ProjectsProjectIdRouteImport } from './routes/projects/$projectId'
-import { Route as ProjectsProjectIdMembersRouteImport } from './routes/projects/$projectId.members'
-import { Route as ProjectsProjectIdBuildsRouteImport } from './routes/projects/$projectId.builds'
+import { Route as PublicLoginRouteImport } from './routes/_public/login'
+import { Route as AppDashboardRouteImport } from './routes/_app/dashboard'
+import { Route as AppOrganizationsIndexRouteImport } from './routes/_app/organizations/index'
+import { Route as AppAdminIndexRouteImport } from './routes/_app/admin/index'
+import { Route as AppProjectsProjectIdRouteImport } from './routes/_app/projects/$projectId'
+import { Route as AppProjectsProjectIdMembersRouteImport } from './routes/_app/projects/$projectId.members'
+import { Route as AppProjectsProjectIdBuildsRouteImport } from './routes/_app/projects/$projectId.builds'
 
-const LoginRoute = LoginRouteImport.update({
-  id: '/login',
-  path: '/login',
-  getParentRoute: () => rootRouteImport,
-} as any)
 const DeviceRoute = DeviceRouteImport.update({
   id: '/device',
   path: '/device',
   getParentRoute: () => rootRouteImport,
 } as any)
-const DashboardRoute = DashboardRouteImport.update({
-  id: '/dashboard',
-  path: '/dashboard',
+const PublicRoute = PublicRouteImport.update({
+  id: '/_public',
+  getParentRoute: () => rootRouteImport,
+} as any)
+const AppRoute = AppRouteImport.update({
+  id: '/_app',
   getParentRoute: () => rootRouteImport,
 } as any)
 const IndexRoute = IndexRouteImport.update({
@@ -39,73 +39,86 @@ const IndexRoute = IndexRouteImport.update({
   path: '/',
   getParentRoute: () => rootRouteImport,
 } as any)
-const OrganizationsIndexRoute = OrganizationsIndexRouteImport.update({
+const PublicLoginRoute = PublicLoginRouteImport.update({
+  id: '/login',
+  path: '/login',
+  getParentRoute: () => PublicRoute,
+} as any)
+const AppDashboardRoute = AppDashboardRouteImport.update({
+  id: '/dashboard',
+  path: '/dashboard',
+  getParentRoute: () => AppRoute,
+} as any)
+const AppOrganizationsIndexRoute = AppOrganizationsIndexRouteImport.update({
   id: '/organizations/',
   path: '/organizations/',
-  getParentRoute: () => rootRouteImport,
+  getParentRoute: () => AppRoute,
 } as any)
-const AdminIndexRoute = AdminIndexRouteImport.update({
+const AppAdminIndexRoute = AppAdminIndexRouteImport.update({
   id: '/admin/',
   path: '/admin/',
-  getParentRoute: () => rootRouteImport,
+  getParentRoute: () => AppRoute,
 } as any)
-const ProjectsProjectIdRoute = ProjectsProjectIdRouteImport.update({
+const AppProjectsProjectIdRoute = AppProjectsProjectIdRouteImport.update({
   id: '/projects/$projectId',
   path: '/projects/$projectId',
-  getParentRoute: () => rootRouteImport,
+  getParentRoute: () => AppRoute,
 } as any)
-const ProjectsProjectIdMembersRoute =
-  ProjectsProjectIdMembersRouteImport.update({
+const AppProjectsProjectIdMembersRoute =
+  AppProjectsProjectIdMembersRouteImport.update({
     id: '/members',
     path: '/members',
-    getParentRoute: () => ProjectsProjectIdRoute,
+    getParentRoute: () => AppProjectsProjectIdRoute,
   } as any)
-const ProjectsProjectIdBuildsRoute = ProjectsProjectIdBuildsRouteImport.update({
-  id: '/builds',
-  path: '/builds',
-  getParentRoute: () => ProjectsProjectIdRoute,
-} as any)
+const AppProjectsProjectIdBuildsRoute =
+  AppProjectsProjectIdBuildsRouteImport.update({
+    id: '/builds',
+    path: '/builds',
+    getParentRoute: () => AppProjectsProjectIdRoute,
+  } as any)
 
 export interface FileRoutesByFullPath {
   '/': typeof IndexRoute
-  '/dashboard': typeof DashboardRoute
   '/device': typeof DeviceRoute
-  '/login': typeof LoginRoute
-  '/projects/$projectId': typeof ProjectsProjectIdRouteWithChildren
-  '/admin/': typeof AdminIndexRoute
-  '/organizations/': typeof OrganizationsIndexRoute
-  '/projects/$projectId/builds': typeof ProjectsProjectIdBuildsRoute
-  '/projects/$projectId/members': typeof ProjectsProjectIdMembersRoute
+  '/dashboard': typeof AppDashboardRoute
+  '/login': typeof PublicLoginRoute
+  '/projects/$projectId': typeof AppProjectsProjectIdRouteWithChildren
+  '/admin/': typeof AppAdminIndexRoute
+  '/organizations/': typeof AppOrganizationsIndexRoute
+  '/projects/$projectId/builds': typeof AppProjectsProjectIdBuildsRoute
+  '/projects/$projectId/members': typeof AppProjectsProjectIdMembersRoute
 }
 export interface FileRoutesByTo {
   '/': typeof IndexRoute
-  '/dashboard': typeof DashboardRoute
   '/device': typeof DeviceRoute
-  '/login': typeof LoginRoute
-  '/projects/$projectId': typeof ProjectsProjectIdRouteWithChildren
-  '/admin': typeof AdminIndexRoute
-  '/organizations': typeof OrganizationsIndexRoute
-  '/projects/$projectId/builds': typeof ProjectsProjectIdBuildsRoute
-  '/projects/$projectId/members': typeof ProjectsProjectIdMembersRoute
+  '/dashboard': typeof AppDashboardRoute
+  '/login': typeof PublicLoginRoute
+  '/projects/$projectId': typeof AppProjectsProjectIdRouteWithChildren
+  '/admin': typeof AppAdminIndexRoute
+  '/organizations': typeof AppOrganizationsIndexRoute
+  '/projects/$projectId/builds': typeof AppProjectsProjectIdBuildsRoute
+  '/projects/$projectId/members': typeof AppProjectsProjectIdMembersRoute
 }
 export interface FileRoutesById {
   __root__: typeof rootRouteImport
   '/': typeof IndexRoute
-  '/dashboard': typeof DashboardRoute
+  '/_app': typeof AppRouteWithChildren
+  '/_public': typeof PublicRouteWithChildren
   '/device': typeof DeviceRoute
-  '/login': typeof LoginRoute
-  '/projects/$projectId': typeof ProjectsProjectIdRouteWithChildren
-  '/admin/': typeof AdminIndexRoute
-  '/organizations/': typeof OrganizationsIndexRoute
-  '/projects/$projectId/builds': typeof ProjectsProjectIdBuildsRoute
-  '/projects/$projectId/members': typeof ProjectsProjectIdMembersRoute
+  '/_app/dashboard': typeof AppDashboardRoute
+  '/_public/login': typeof PublicLoginRoute
+  '/_app/projects/$projectId': typeof AppProjectsProjectIdRouteWithChildren
+  '/_app/admin/': typeof AppAdminIndexRoute
+  '/_app/organizations/': typeof AppOrganizationsIndexRoute
+  '/_app/projects/$projectId/builds': typeof AppProjectsProjectIdBuildsRoute
+  '/_app/projects/$projectId/members': typeof AppProjectsProjectIdMembersRoute
 }
 export interface FileRouteTypes {
   fileRoutesByFullPath: FileRoutesByFullPath
   fullPaths:
     | '/'
-    | '/dashboard'
     | '/device'
+    | '/dashboard'
     | '/login'
     | '/projects/$projectId'
     | '/admin/'
@@ -115,8 +128,8 @@ export interface FileRouteTypes {
   fileRoutesByTo: FileRoutesByTo
   to:
     | '/'
-    | '/dashboard'
     | '/device'
+    | '/dashboard'
     | '/login'
     | '/projects/$projectId'
     | '/admin'
@@ -126,35 +139,27 @@ export interface FileRouteTypes {
   id:
     | '__root__'
     | '/'
-    | '/dashboard'
+    | '/_app'
+    | '/_public'
     | '/device'
-    | '/login'
-    | '/projects/$projectId'
-    | '/admin/'
-    | '/organizations/'
-    | '/projects/$projectId/builds'
-    | '/projects/$projectId/members'
+    | '/_app/dashboard'
+    | '/_public/login'
+    | '/_app/projects/$projectId'
+    | '/_app/admin/'
+    | '/_app/organizations/'
+    | '/_app/projects/$projectId/builds'
+    | '/_app/projects/$projectId/members'
   fileRoutesById: FileRoutesById
 }
 export interface RootRouteChildren {
   IndexRoute: typeof IndexRoute
-  DashboardRoute: typeof DashboardRoute
+  AppRoute: typeof AppRouteWithChildren
+  PublicRoute: typeof PublicRouteWithChildren
   DeviceRoute: typeof DeviceRoute
-  LoginRoute: typeof LoginRoute
-  ProjectsProjectIdRoute: typeof ProjectsProjectIdRouteWithChildren
-  AdminIndexRoute: typeof AdminIndexRoute
-  OrganizationsIndexRoute: typeof OrganizationsIndexRoute
 }
 
 declare module '@tanstack/react-router' {
   interface FileRoutesByPath {
-    '/login': {
-      id: '/login'
-      path: '/login'
-      fullPath: '/login'
-      preLoaderRoute: typeof LoginRouteImport
-      parentRoute: typeof rootRouteImport
-    }
     '/device': {
       id: '/device'
       path: '/device'
@@ -162,11 +167,18 @@ declare module '@tanstack/react-router' {
       preLoaderRoute: typeof DeviceRouteImport
       parentRoute: typeof rootRouteImport
     }
-    '/dashboard': {
-      id: '/dashboard'
-      path: '/dashboard'
-      fullPath: '/dashboard'
-      preLoaderRoute: typeof DashboardRouteImport
+    '/_public': {
+      id: '/_public'
+      path: ''
+      fullPath: '/'
+      preLoaderRoute: typeof PublicRouteImport
+      parentRoute: typeof rootRouteImport
+    }
+    '/_app': {
+      id: '/_app'
+      path: ''
+      fullPath: '/'
+      preLoaderRoute: typeof AppRouteImport
       parentRoute: typeof rootRouteImport
     }
     '/': {
@@ -176,65 +188,103 @@ declare module '@tanstack/react-router' {
       preLoaderRoute: typeof IndexRouteImport
       parentRoute: typeof rootRouteImport
     }
-    '/organizations/': {
-      id: '/organizations/'
+    '/_public/login': {
+      id: '/_public/login'
+      path: '/login'
+      fullPath: '/login'
+      preLoaderRoute: typeof PublicLoginRouteImport
+      parentRoute: typeof PublicRoute
+    }
+    '/_app/dashboard': {
+      id: '/_app/dashboard'
+      path: '/dashboard'
+      fullPath: '/dashboard'
+      preLoaderRoute: typeof AppDashboardRouteImport
+      parentRoute: typeof AppRoute
+    }
+    '/_app/organizations/': {
+      id: '/_app/organizations/'
       path: '/organizations'
       fullPath: '/organizations/'
-      preLoaderRoute: typeof OrganizationsIndexRouteImport
-      parentRoute: typeof rootRouteImport
+      preLoaderRoute: typeof AppOrganizationsIndexRouteImport
+      parentRoute: typeof AppRoute
     }
-    '/admin/': {
-      id: '/admin/'
+    '/_app/admin/': {
+      id: '/_app/admin/'
       path: '/admin'
       fullPath: '/admin/'
-      preLoaderRoute: typeof AdminIndexRouteImport
-      parentRoute: typeof rootRouteImport
+      preLoaderRoute: typeof AppAdminIndexRouteImport
+      parentRoute: typeof AppRoute
     }
-    '/projects/$projectId': {
-      id: '/projects/$projectId'
+    '/_app/projects/$projectId': {
+      id: '/_app/projects/$projectId'
       path: '/projects/$projectId'
       fullPath: '/projects/$projectId'
-      preLoaderRoute: typeof ProjectsProjectIdRouteImport
-      parentRoute: typeof rootRouteImport
+      preLoaderRoute: typeof AppProjectsProjectIdRouteImport
+      parentRoute: typeof AppRoute
     }
-    '/projects/$projectId/members': {
-      id: '/projects/$projectId/members'
+    '/_app/projects/$projectId/members': {
+      id: '/_app/projects/$projectId/members'
       path: '/members'
       fullPath: '/projects/$projectId/members'
-      preLoaderRoute: typeof ProjectsProjectIdMembersRouteImport
-      parentRoute: typeof ProjectsProjectIdRoute
+      preLoaderRoute: typeof AppProjectsProjectIdMembersRouteImport
+      parentRoute: typeof AppProjectsProjectIdRoute
     }
-    '/projects/$projectId/builds': {
-      id: '/projects/$projectId/builds'
+    '/_app/projects/$projectId/builds': {
+      id: '/_app/projects/$projectId/builds'
       path: '/builds'
       fullPath: '/projects/$projectId/builds'
-      preLoaderRoute: typeof ProjectsProjectIdBuildsRouteImport
-      parentRoute: typeof ProjectsProjectIdRoute
+      preLoaderRoute: typeof AppProjectsProjectIdBuildsRouteImport
+      parentRoute: typeof AppProjectsProjectIdRoute
     }
   }
 }
 
-interface ProjectsProjectIdRouteChildren {
-  ProjectsProjectIdBuildsRoute: typeof ProjectsProjectIdBuildsRoute
-  ProjectsProjectIdMembersRoute: typeof ProjectsProjectIdMembersRoute
+interface AppProjectsProjectIdRouteChildren {
+  AppProjectsProjectIdBuildsRoute: typeof AppProjectsProjectIdBuildsRoute
+  AppProjectsProjectIdMembersRoute: typeof AppProjectsProjectIdMembersRoute
 }
 
-const ProjectsProjectIdRouteChildren: ProjectsProjectIdRouteChildren = {
-  ProjectsProjectIdBuildsRoute: ProjectsProjectIdBuildsRoute,
-  ProjectsProjectIdMembersRoute: ProjectsProjectIdMembersRoute,
+const AppProjectsProjectIdRouteChildren: AppProjectsProjectIdRouteChildren = {
+  AppProjectsProjectIdBuildsRoute: AppProjectsProjectIdBuildsRoute,
+  AppProjectsProjectIdMembersRoute: AppProjectsProjectIdMembersRoute,
 }
 
-const ProjectsProjectIdRouteWithChildren =
-  ProjectsProjectIdRoute._addFileChildren(ProjectsProjectIdRouteChildren)
+const AppProjectsProjectIdRouteWithChildren =
+  AppProjectsProjectIdRoute._addFileChildren(AppProjectsProjectIdRouteChildren)
+
+interface AppRouteChildren {
+  AppDashboardRoute: typeof AppDashboardRoute
+  AppProjectsProjectIdRoute: typeof AppProjectsProjectIdRouteWithChildren
+  AppAdminIndexRoute: typeof AppAdminIndexRoute
+  AppOrganizationsIndexRoute: typeof AppOrganizationsIndexRoute
+}
+
+const AppRouteChildren: AppRouteChildren = {
+  AppDashboardRoute: AppDashboardRoute,
+  AppProjectsProjectIdRoute: AppProjectsProjectIdRouteWithChildren,
+  AppAdminIndexRoute: AppAdminIndexRoute,
+  AppOrganizationsIndexRoute: AppOrganizationsIndexRoute,
+}
+
+const AppRouteWithChildren = AppRoute._addFileChildren(AppRouteChildren)
+
+interface PublicRouteChildren {
+  PublicLoginRoute: typeof PublicLoginRoute
+}
+
+const PublicRouteChildren: PublicRouteChildren = {
+  PublicLoginRoute: PublicLoginRoute,
+}
+
+const PublicRouteWithChildren =
+  PublicRoute._addFileChildren(PublicRouteChildren)
 
 const rootRouteChildren: RootRouteChildren = {
   IndexRoute: IndexRoute,
-  DashboardRoute: DashboardRoute,
+  AppRoute: AppRouteWithChildren,
+  PublicRoute: PublicRouteWithChildren,
   DeviceRoute: DeviceRoute,
-  LoginRoute: LoginRoute,
-  ProjectsProjectIdRoute: ProjectsProjectIdRouteWithChildren,
-  AdminIndexRoute: AdminIndexRoute,
-  OrganizationsIndexRoute: OrganizationsIndexRoute,
 }
 export const routeTree = rootRouteImport
   ._addFileChildren(rootRouteChildren)

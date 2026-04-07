@@ -1,17 +1,14 @@
 # anatomy.md
 
-> Auto-maintained by OpenWolf. Last scanned: 2026-04-07T12:23:59.705Z
-> Files: 512 tracked | Anatomy hits: 0 | Misses: 0
-
-## ../../../../.claude/projects/-Users-cobeo-Codes-WorkPlace-AD-kokuin/memory/
-
-- `feedback_context_mode.md` — 1. Context Saving (98% reduction) (~485 tok)
-- `MEMORY.md` — Memory Index (~48 tok)
+> Auto-maintained by OpenWolf. Last scanned: 2026-04-07T14:29:48.170Z
+> Files: 531 tracked | Anatomy hits: 0 | Misses: 0
 
 ## ./
 
 - `.cursorrules` (~467 tok)
+- `.DS_Store` (~2186 tok)
 - `.gitignore` — Git ignore rules (~148 tok)
+- `.gitmodules` (~60 tok)
 - `.mcp.json` (~142 tok)
 - `.windsurfrules` (~467 tok)
 - `AGENTS.md` — MCP Tools: code-review-graph (~508 tok)
@@ -343,7 +340,7 @@
 ## .claude/
 
 - `settings.json` (~503 tok)
-- `settings.local.json` (~95 tok)
+- `settings.local.json` (~560 tok)
 
 ## .claude/rules/
 
@@ -359,7 +356,7 @@
 ## .code-review-graph/
 
 - `.gitignore` — Git ignore rules (~38 tok)
-- `graph.html` — Code Review Graph (~119118 tok)
+- `graph.html` — Code Review Graph (~162596 tok)
 
 ## .cursor/
 
@@ -368,33 +365,51 @@
 ## .omc/
 
 - `notepad.md` — Notepad (~126 tok)
-- `project-memory.json` (~2979 tok)
+- `project-memory.json` (~3106 tok)
 
 ## .omc/sessions/
 
+- `04a90f4a-1b27-428c-a12e-5a5b4d47645a.json` (~56 tok)
 - `07494264-cce1-4850-b841-a21c9b630455.json` (~56 tok)
+- `09189f6f-37f3-4665-8f5a-e950b59ed8a8.json` (~56 tok)
 - `0a57bbf7-bf30-41a2-a574-9df47d29b90e.json` (~56 tok)
+- `0f3377d5-9ce0-4d24-9965-73d9df78ae8b.json` (~56 tok)
+- `269bec00-8b8b-4a03-b7a1-0c7df20d7207.json` (~57 tok)
+- `49667e91-609b-4e8c-bd01-f5c09578f3b5.json` (~56 tok)
 - `4ab54993-5945-4fa4-a671-85104146e3bf.json` (~57 tok)
-- `50910635-699d-404a-83ad-4f632a623298.json` (~56 tok)
+- `50910635-699d-404a-83ad-4f632a623298.json` (~53 tok)
 - `548ba789-d9fc-46c8-abdf-bde4d5f5c5a1.json` (~56 tok)
+- `71ec1265-537f-409b-ade4-ab1bec63168f.json` (~57 tok)
 - `73f761b9-a98b-4a10-bb01-b09ce6e86414.json` (~56 tok)
+- `74becf48-99fe-4df1-af12-425079e8421a.json` (~56 tok)
 - `7918e690-4b1b-4ba3-bbba-8b337e32ec3b.json` (~56 tok)
+- `7d481f8d-3abf-4762-9ed2-1554ad00c306.json` (~53 tok)
 - `82edf984-24fe-427c-9cce-ddc3e6eed8fb.json` (~56 tok)
 - `8555f6b1-b2cc-452b-a968-a4b612c38fe1.json` (~56 tok)
+- `94508bd0-5d93-4b7d-959e-e058b516b2f8.json` (~53 tok)
 - `9ae37590-4bb6-423b-ad76-02db875b60e1.json` (~56 tok)
 - `9ed202b0-77d1-421c-a505-560dc2d519a1.json` (~56 tok)
+- `b02ae28e-7bfc-44ac-8f41-59c0d5c6adc5.json` (~56 tok)
 - `b2c96bf8-e66a-4661-a4b6-1e269bb65a01.json` (~56 tok)
+- `b6f23a5d-f4c2-4d79-bd48-156824c8739b.json` (~56 tok)
 - `ce8eddd4-b910-4dd1-b6f2-7fe1018cc7f5.json` (~53 tok)
+- `dac0ecbd-523f-471e-9103-9e91851d9854.json` (~53 tok)
+- `e66fc314-b2c1-490a-a063-07da4f8f150c.json` (~53 tok)
 - `fc841f3d-2e67-402f-8a0b-c4f18daa9014.json` (~56 tok)
 
 ## .omc/state/
 
-- `idle-notif-cooldown.json` (~14 tok)
-- `mission-state.json` (~18 tok)
+- `agent-replay-8c748bc9-b72c-4576-bad2-9db0d2415d87.jsonl` (~558 tok)
+- `last-tool-error.json` (~118 tok)
+- `mission-state.json` (~5776 tok)
+- `subagent-tracking.json` (~835 tok)
 
 ## .omc/state/checkpoints/
 
 - `checkpoint-2026-04-06T10-32-36-803Z.json` (~76 tok)
+- `checkpoint-2026-04-07T11-52-17-978Z.json` (~76 tok)
+- `checkpoint-2026-04-07T12-28-25-060Z.json` (~76 tok)
+- `checkpoint-2026-04-07T13-27-12-990Z.json` (~76 tok)
 
 ## .superpowers/brainstorm/33526-1775451224/content/
 
@@ -460,17 +475,26 @@
 - `tsconfig.json` — TypeScript configuration (~66 tok)
 - `tsdown.config.ts` (~52 tok)
 
+## apps/server/data/graphs/cmnolb8q40001xvj2fm63ak2k/main/overlays/
+
+- `GIPI48ALCl1q0pD7NfKHBHwGPQxuc1u0.db-shm` (~8739 tok)
+- `GIPI48ALCl1q0pD7NfKHBHwGPQxuc1u0.db-wal` (~0 tok)
+
 ## apps/server/src/
 
-- `index.ts` — API routes: GET (1 endpoints) (~528 tok)
+- `index.ts` — API routes: GET (1 endpoints) (~556 tok)
 - `webhook.ts` — API routes: POST (1 endpoints) (~1007 tok)
 
 ## apps/tui/
 
 - `.gitignore` — Git ignore rules (~104 tok)
-- `package.json` — Node.js package manifest (~104 tok)
+- `package.json` — Node.js package manifest (~114 tok)
 - `README.md` — Project documentation (~57 tok)
 - `tsconfig.json` — TypeScript configuration (~185 tok)
+
+## apps/tui/.omc/
+
+- `project-memory.json` (~396 tok)
 
 ## apps/tui/src/
 
@@ -479,26 +503,28 @@
 ## apps/tui/src/auth/
 
 - `credentials.ts` — Exports saveCredentials, loadCredentials, clearCredentials (~279 tok)
-- `device-flow.ts` — Exports runDeviceFlow (~733 tok)
+- `device-flow.ts` — Exports runDeviceFlow (~734 tok)
 
 ## apps/tui/src/commands/
 
-- `graph.ts` — Exports graphCommand (~1385 tok)
+- `graph.ts` — Exports graphCommand (~3394 tok)
 - `init.ts` — Exports initCommand (~505 tok)
-- `login.ts` — Exports loginCommand, logoutCommand, whoamiCommand (~312 tok)
+- `login.ts` — Exports loginCommand, logoutCommand, whoamiCommand (~314 tok)
 - `project.ts` — Exports projectCommand (~777 tok)
 
 ## apps/tui/src/utils/
 
 - `api-client.ts` — Exports ApiClient, getApiClient (~137 tok)
 - `git.ts` — Exports getGitRemoteUrl, getCurrentBranch, getChangedFiles (~222 tok)
+- `parser.ts` — Exports ParsedNodeRaw, ParsedEdgeRaw, ParseResult, ParserProcess (~977 tok)
+- `project.ts` — Exports resolveProjectId (~208 tok)
 
 ## apps/web/
 
 - `.gitignore` — Git ignore rules (~153 tok)
 - `components.json` (~146 tok)
 - `package.json` — Node.js package manifest (~422 tok)
-- `tsconfig.json` — TypeScript configuration (~185 tok)
+- `tsconfig.json` — TypeScript configuration (~173 tok)
 - `vite.config.ts` — Vite build configuration (~110 tok)
 
 ## apps/web/public/
@@ -509,7 +535,7 @@
 
 - `index.css` — Styles: 2 rules (~24 tok)
 - `router.tsx` — getRouter (~236 tok)
-- `routeTree.gen.ts` — @ts-nocheck (~2100 tok)
+- `routeTree.gen.ts` — @ts-nocheck (~2821 tok)
 
 ## apps/web/src/components/
 
@@ -517,11 +543,20 @@
 - `loader.tsx` — Loader (~59 tok)
 - `sign-in-form.tsx` — SignInForm — renders form — uses useNavigate, useForm (~972 tok)
 - `sign-up-form.tsx` — SignUpForm — renders form — uses useNavigate, useForm (~1167 tok)
-- `user-menu.tsx` — UserMenu (~704 tok)
+- `user-menu.tsx` — UserMenu — uses useNavigate, useQuery (~704 tok)
 
 ## apps/web/src/functions/
 
 - `get-user.ts` — Exports getUser (~76 tok)
+
+## apps/web/src/hooks/
+
+- `index.ts` (~75 tok)
+- `useCurrentUser.ts` — Exports useCurrentUser (~193 tok)
+- `useOrganization.ts` — Exports useOrganization (~119 tok)
+- `useProjectBuilds.ts` — Exports useProjectBuilds (~138 tok)
+- `useProjectMembers.ts` — Exports useProjectMembers (~401 tok)
+- `useProjects.ts` — Exports useProjects (~96 tok)
 
 ## apps/web/src/lib/
 
@@ -533,37 +568,104 @@
 
 ## apps/web/src/routes/
 
-- `__root.tsx` — Route (~386 tok)
-- `dashboard.tsx` — Route (~1918 tok)
+- `__root.tsx` — Route (~336 tok)
+- `_app.tsx` — Route (~164 tok)
+- `_public.tsx` — Route (~84 tok)
 - `device.tsx` — Route — uses useState, useMutation (~1000 tok)
-- `index.tsx` — Route — uses useQuery (~479 tok)
-- `login.tsx` — Route — uses useState (~150 tok)
+- `index.tsx` — Route (~107 tok)
 
-## apps/web/src/routes/admin/
+## apps/web/src/routes/_app/
 
-- `index.tsx` — Route — renders form — uses useMemo, useState, useQuery, useMutation (~2130 tok)
+- `dashboard.tsx` — Route (~64 tok)
 
-## apps/web/src/routes/organizations/
+## apps/web/src/routes/_app/admin/
 
-- `index.tsx` — Route (~1780 tok)
+- `index.tsx` — Route (~58 tok)
 
-## apps/web/src/routes/projects/
+## apps/web/src/routes/_app/organizations/
 
-- `$projectId.builds.tsx` — Route — uses useParams, useMemo, useQuery (~1716 tok)
-- `$projectId.members.tsx` — Route — renders form (~1727 tok)
-- `$projectId.tsx` — Route (~1439 tok)
+- `index.tsx` — Route — uses useState, useMutation, useQuery (~1696 tok)
+
+## apps/web/src/routes/_app/projects/
+
+- `$projectId.builds.tsx` — Route (~103 tok)
+- `$projectId.members.tsx` — Route (~104 tok)
+- `$projectId.tsx` — Route (~96 tok)
+
+## apps/web/src/routes/_public/
+
+- `login.tsx` — Route (~62 tok)
+
+## apps/web/src/screens/admin/
+
+- `AdminScreen.tsx` — AdminScreen (~578 tok)
+
+## apps/web/src/screens/auth/
+
+- `AuthScreen.tsx` — AuthScreen (~387 tok)
+
+## apps/web/src/screens/dashboard/
+
+- `DashboardScreen.tsx` — DashboardScreen (~504 tok)
+
+## apps/web/src/screens/projects/
+
+- `ProjectBuildsScreen.tsx` — ProjectBuildsScreen (~340 tok)
+- `ProjectMembersScreen.tsx` — ProjectMembersScreen (~295 tok)
+- `ProjectScreen.tsx` — ProjectScreen (~872 tok)
+
+## apps/web/src/services/
+
+- `auth.service.ts` — Exports signInWithEmail, signUpWithEmail, signInWithGoogle, signOut (~147 tok)
+- `graph.service.ts` — Exports getGraphStatus (~136 tok)
+- `organization.service.ts` — Exports listOrganizations, createOrganization, deleteOrganization (~161 tok)
+- `project.service.ts` — Exports listProjects, createProject, listProjectMembers, addProjectMember + 2 more (~325 tok)
 
 ## apps/web/src/utils/
 
-- `orpc.ts` — Exports queryClient, client, orpc, getProjectOrpc (~413 tok)
+- `buildStatus.ts` — Exports GraphBuild, statusVariant (~123 tok)
+- `orpc.ts` — Exports queryClient, client, orpc, getProjectOrpc, getProjectClient (~518 tok)
+
+## apps/web/src/views/admin/
+
+- `DomainRulesView.tsx` — DomainRulesView (~161 tok)
+- `MembersTableView.tsx` — MembersTableView (~335 tok)
+- `OrgSettingsView.tsx` — OrgSettingsView (~397 tok)
+
+## apps/web/src/views/auth/
+
+- `GoogleOAuthButton.tsx` — GoogleOAuthButton — uses useState (~420 tok)
+- `SignInView.tsx` — SignInView — renders form — uses useNavigate, useForm (~1002 tok)
+- `SignUpView.tsx` — SignUpView — renders form — uses useNavigate, useForm (~1197 tok)
+
+## apps/web/src/views/dashboard/
+
+- `CreateProjectDialog.tsx` — CreateProjectDialog — renders modal (~848 tok)
+- `ProjectListView.tsx` — ProjectListView — renders table (~800 tok)
+- `StatsCardsView.tsx` — StatsCardsView (~356 tok)
+
+## apps/web/src/views/layout/
+
+- `AppSidebar.tsx` — baseItems — uses useNavigate (~659 tok)
+- `SidebarNav.tsx` — SidebarNav (~284 tok)
+
+## apps/web/src/views/projects/
+
+- `BuildsListView.tsx` — BuildsListView (~838 tok)
+- `ProjectMembersView.tsx` — ProjectMembersView — renders form, table (~1063 tok)
+- `ProjectOverviewView.tsx` — ProjectOverviewView (~795 tok)
 
 ## docs/superpowers/plans/
 
 - `2026-04-06-kokuin-phase1-mvp.md` — Kokuin Phase 1 (MVP) Implementation Plan (~29897 tok)
+- `2026-04-07-dashboard-refactor.md` — Dashboard Refactor Implementation Plan (~18690 tok)
+- `2026-04-07-phase1-completion.md` — Phase 1 Completion Implementation Plan (~4181 tok)
 
 ## docs/superpowers/specs/
 
 - `2026-04-06-kokuin-design.md` — Kokuin — Design Specification (~6840 tok)
+- `2026-04-07-dashboard-refactor-design.md` — Kokuin Web Dashboard Refactor — Design Specification (~2693 tok)
+- `2026-04-07-phase1-completion-design.md` — Kokuin Phase 1 Completion — Design Specification (~1920 tok)
 
 ## packages/api/
 
@@ -573,15 +675,15 @@
 
 ## packages/api/src/
 
-- `context.ts` — Exports CreateContextOptions, createContext, Context (~554 tok)
+- `context.ts` — Exports CreateContextOptions, createContext, Context (~556 tok)
 - `index.ts` — tRPC router (~413 tok)
 
 ## packages/api/src/routers/
 
 - `device-auth.ts` — tRPC router (~996 tok)
-- `graph.ts` — Zod schemas: nodeKindSchema, edgeKindSchema, parsedNodeSchema, parsedEdgeSchema + 6 more (~1956 tok)
+- `graph.ts` — Zod schemas: nodeKindSchema, edgeKindSchema, parsedNodeSchema, parsedEdgeSchema + 6 more (~1978 tok)
 - `index.ts` — tRPC router (~216 tok)
-- `organization.ts` — Exports organizationRouter (~523 tok)
+- `organization.ts` — tRPC router (~529 tok)
 - `project.ts` — tRPC router (~1197 tok)
 
 ## packages/auth/
@@ -611,32 +713,32 @@
 ## packages/db/prisma/generated/
 
 - `browser.ts` — Model User (~490 tok)
-- `client.ts` — ## Prisma Client (~761 tok)
-- `commonInputTypes.ts` — biome-ignore-all lint: generated file (~7233 tok)
+- `client.ts` — ## Prisma Client (~766 tok)
+- `commonInputTypes.ts` — biome-ignore-all lint: generated file (~7342 tok)
 - `enums.ts` — biome-ignore-all lint: generated file (~96 tok)
-- `models.ts` — biome-ignore-all lint: generated file (~241 tok)
+- `models.ts` (~245 tok)
 
 ## packages/db/prisma/generated/internal/
 
-- `class.ts` — biome-ignore-all lint: generated file (~20392 tok)
-- `prismaNamespace.ts` — Prisma Errors (~17756 tok)
-- `prismaNamespaceBrowser.ts` — Helper for filtering JSON entries that have `null` on the database (empty on the db) (~2386 tok)
+- `class.ts` — biome-ignore-all lint: generated file (~19667 tok)
+- `prismaNamespace.ts` — Prisma Errors (~16804 tok)
+- `prismaNamespaceBrowser.ts` — Helper for filtering JSON entries that have `null` on the database (empty on the db) (~2368 tok)
 
 ## packages/db/prisma/generated/models/
 
-- `Account.ts` — Model Account (~17644 tok)
-- `DeviceAuthCode.ts` — Model DeviceAuthCode (~13105 tok)
-- `GraphBuild.ts` — Model GraphBuild (~20447 tok)
-- `GraphDelta.ts` — Model GraphDelta (~16599 tok)
-- `Invitation.ts` — Model Invitation (~15608 tok)
-- `Member.ts` — Model Member (~15790 tok)
-- `Organization.ts` — Model Organization (~15874 tok)
-- `Project.ts` — Model Project (~19212 tok)
-- `ProjectMember.ts` — Model ProjectMember (~14865 tok)
-- `Session.ts` — Model Session (~15084 tok)
-- `User.ts` — Model User (~16642 tok)
-- `UserGraphOverlay.ts` — Model UserGraphOverlay (~17070 tok)
-- `Verification.ts` — Model Verification (~12158 tok)
+- `Account.ts` — Model Account (~17837 tok)
+- `DeviceAuthCode.ts` — Model DeviceAuthCode (~13161 tok)
+- `GraphBuild.ts` — Model GraphBuild (~20641 tok)
+- `GraphDelta.ts` — Model GraphDelta (~16717 tok)
+- `Invitation.ts` — Model Invitation (~15726 tok)
+- `Member.ts` — Model Member (~15945 tok)
+- `Organization.ts` — Model Organization (~15985 tok)
+- `Project.ts` — Model Project (~19374 tok)
+- `ProjectMember.ts` — Model ProjectMember (~15003 tok)
+- `Session.ts` — Model Session (~15184 tok)
+- `User.ts` — Model User (~16758 tok)
+- `UserGraphOverlay.ts` — Model UserGraphOverlay (~17234 tok)
+- `Verification.ts` — Model Verification (~12200 tok)
 
 ## packages/db/prisma/migrations/
 
@@ -668,7 +770,7 @@
 
 ## packages/env/src/
 
-- `server.ts` — Exports env (~282 tok)
+- `server.ts` — Exports env (~270 tok)
 - `web.ts` — Exports env (~70 tok)
 
 ## packages/graph/
@@ -683,7 +785,7 @@
 - `fs-adapter.ts` — Exports FsStorageAdapter (~458 tok)
 - `impact.ts` — Exports ImpactAnalyzer (~390 tok)
 - `index.ts` — Exports VERSION (~152 tok)
-- `mcp-server.ts` — Exports createMcpServer (~1338 tok)
+- `mcp-server.ts` — Exports createMcpServer (~1363 tok)
 - `merge.ts` — Exports MergedGraphStore (~1042 tok)
 - `parser-bridge.ts` — Exports ParserBridge (~702 tok)
 - `query.ts` — Exports QueryEngine (~830 tok)
@@ -714,14 +816,21 @@
 
 ## packages/ui/src/components/
 
-- `button.tsx` — buttonVariants (~788 tok)
+- `avatar.tsx` — Avatar (~824 tok)
+- `badge.tsx` — badgeVariants (~527 tok)
+- `button.tsx` — buttonVariants (~800 tok)
 - `card.tsx` — Card (~707 tok)
 - `checkbox.tsx` — Checkbox (~376 tok)
+- `dialog.tsx` — Dialog — renders modal (~1067 tok)
 - `dropdown-menu.tsx` — DropdownMenu (~2380 tok)
 - `input.tsx` — Input (~295 tok)
 - `label.tsx` — Label (~139 tok)
+- `select.tsx` — Select (~1796 tok)
+- `separator.tsx` — Separator (~151 tok)
 - `skeleton.tsx` — Skeleton (~79 tok)
 - `sonner.tsx` — Toaster (~296 tok)
+- `table.tsx` — Table — renders table (~636 tok)
+- `tabs.tsx` — Tabs (~947 tok)
 
 ## packages/ui/src/hooks/
 
@@ -737,113 +846,59 @@
 
 ## parser/
 
-- `main.py` — Stateless parser worker for kokuin. JSON-RPC over stdin/stdout. (~737 tok)
+- `main.py` — Stateless parser worker for kokuin. JSON-RPC over stdin/stdout. (~839 tok)
 - `requirements.txt` — Python dependencies (~9 tok)
 
 ## refs/code-review-graph/
 
-- `.gitignore` — Git ignore rules (~260 tok)
+- `.gitignore` — Git ignore rules (~294 tok)
 - `.mcp.json` (~34 tok)
-- `CHANGELOG.md` — Change log (~3333 tok)
-- `CLAUDE.md` — CLAUDE.md - Project Context for Claude Code (~1407 tok)
+- `CHANGELOG.md` — Change log (~3808 tok)
+- `CLAUDE.md` — CLAUDE.md - Project Context for Claude Code (~1536 tok)
 - `CODE_OF_CONDUCT.md` — Code of Conduct (~147 tok)
 - `CONTRIBUTING.md` — Contributing to code-review-graph (~603 tok)
 - `LICENSE` — Project license (~286 tok)
-- `marketing-diagram.excalidraw` (~18501 tok)
-- `pyproject.toml` — Python project configuration (~833 tok)
-- `README.md` — Project documentation (~4844 tok)
-- `SECURITY.md` — Security Policy (~638 tok)
+- `pyproject.toml` — Python project configuration (~867 tok)
+- `README.md` — Project documentation (~3990 tok)
+- `SECURITY.md` — Security Policy (~559 tok)
 
 ## refs/code-review-graph/.claude-plugin/
 
 - `marketplace.json` (~190 tok)
 - `plugin.json` (~195 tok)
 
+## refs/code-review-graph/.code-review-graph/
+
+- `.gitignore` — Git ignore rules (~38 tok)
+
 ## refs/code-review-graph/.github/workflows/
 
 - `ci.yml` — CI: CI (~797 tok)
 - `publish.yml` — CI: Publish to PyPI (~177 tok)
-
-## refs/code-review-graph/code-review-graph-vscode/
-
-- `.gitignore` — Git ignore rules (~9 tok)
-- `.vscodeignore` — test/** (~27 tok)
-- `CHANGELOG.md` — Change log (~316 tok)
-- `esbuild.mjs` — isWatch: main (~333 tok)
-- `LICENSE` — Project license (~286 tok)
-- `package-lock.json` — npm lock file (~40629 tok)
-- `package.json` — Node.js package manifest (~2288 tok)
-- `README.md` — Project documentation (~1137 tok)
-- `tsconfig.json` — TypeScript configuration (~140 tok)
-
-## refs/code-review-graph/code-review-graph-vscode/media/walkthrough/
-
-- `build.md` — Build Your Graph (~75 tok)
-- `explore.md` — Explore Your Code (~123 tok)
-- `install.md` — Install the Backend (~83 tok)
-
-## refs/code-review-graph/code-review-graph-vscode/src/
-
-- `extension.ts` — Locate the graph database file in the workspace. (~8221 tok)
-
-## refs/code-review-graph/code-review-graph-vscode/src/backend/
-
-- `cli.ts` — Check whether the CLI binary is reachable. (~1514 tok)
-- `sqlite.ts` — Read-only SQLite reader for the code-review-graph database. (~4753 tok)
-- `watcher.ts` — Return a debounced version of `fn` that delays invocation until `ms` (~492 tok)
-
-## refs/code-review-graph/code-review-graph-vscode/src/features/
-
-- `blastRadius.ts` — Register the cursor-aware blast radius command. (~788 tok)
-- `cursorResolver.ts` — Resolve the innermost graph node at the current cursor position. (~335 tok)
-- `navigation.ts` — Register the navigation commands: findCallers, findTests, and search. (~1636 tok)
-- `reviewAssistant.ts` — SCM integration for code review. (~954 tok)
-- `scmDecorations.ts` — SCM file decoration provider. (~1337 tok)
-- `search.ts` — Quick search command with live filtering. (~1003 tok)
-
-## refs/code-review-graph/code-review-graph-vscode/src/onboarding/
-
-- `installer.ts` — Handles auto-detection and installation of the Python backend. (~898 tok)
-- `welcome.ts` — Register command handlers for the walkthrough steps defined in (~835 tok)
-
-## refs/code-review-graph/code-review-graph-vscode/src/views/
-
-- `graphWebview.ts` — Webview panel for the interactive graph visualization. (~4909 tok)
-- `statusBar.ts` — Number of milliseconds in one hour. (~651 tok)
-- `treeItems.ts` — FileTreeItem – represents a source file in the code graph (~2132 tok)
-- `treeView.ts` — Exports CodeGraphTreeProvider, BlastRadiusTreeProvider, StatsTreeProvider (~1987 tok)
-
-## refs/code-review-graph/code-review-graph-vscode/src/webview/
-
-- `graph.ts` — Webview entry point for the D3.js force-directed graph visualization. (~7132 tok)
-
-## refs/code-review-graph/code-review-graph-vscode/test/
-
-- `sqlite.test.ts` — Tests for the SqliteReader module. (~4903 tok)
 
 ## refs/code-review-graph/code_review_graph/
 
 - `__init__.py` — Code Review Graph - MCP server for persistent incremental code knowledge graphs. (~32 tok)
 - `__main__.py` — Allow running as: python -m code_review_graph (~24 tok)
 - `changes.py` — Change impact analysis for code review. (~2947 tok)
-- `cli.py` — CLI entry point for code-review-graph. (~5729 tok)
-- `communities.py` — Community/cluster detection for the code knowledge graph. (~5743 tok)
-- `constants.py` — Shared constants for code-review-graph. (~117 tok)
+- `cli.py` — CLI entry point for code-review-graph. (~6692 tok)
+- `communities.py` — Community/cluster detection for the code knowledge graph. (~6116 tok)
+- `constants.py` — Shared constants for code-review-graph. (~297 tok)
 - `embeddings.py` — Vector embedding support for semantic code search. (~4762 tok)
-- `flows.py` — Execution flow detection, tracing, and criticality scoring. (~4400 tok)
-- `graph.py` — SQLite-backed knowledge graph storage and query engine. (~9452 tok)
+- `flows.py` — Execution flow detection, tracing, and criticality scoring. (~5704 tok)
+- `graph.py` — SQLite-backed knowledge graph storage and query engine. (~10680 tok)
 - `hints.py` — Context-aware hints system for MCP tool responses. (~3426 tok)
-- `incremental.py` — Incremental graph update logic. (~5183 tok)
-- `main.py` — MCP server entry point for Code Review Graph. (~5928 tok)
-- `migrations.py` — Schema migration framework for the code-review-graph SQLite database. (~1956 tok)
+- `incremental.py` — Incremental graph update logic. (~6412 tok)
+- `main.py` — MCP server entry point for Code Review Graph. (~6873 tok)
+- `migrations.py` — Schema migration framework for the code-review-graph SQLite database. (~2465 tok)
 - `parser.py` — Tree-sitter based multi-language code parser. (~30989 tok)
-- `prompts.py` — MCP prompt templates for Code Review Graph. (~2584 tok)
+- `prompts.py` — MCP prompt templates for Code Review Graph. (~2010 tok)
 - `refactor.py` — Graph-powered refactoring operations. (~4346 tok)
 - `registry.py` — Multi-repo registry and connection pool. (~2314 tok)
 - `search.py` — Hybrid search engine combining FTS5 (BM25) and vector embeddings. (~3690 tok)
-- `skills.py` — Claude Code skills and hooks auto-install. (~4920 tok)
+- `skills.py` — Claude Code skills and hooks auto-install. (~5420 tok)
 - `tsconfig_resolver.py` — TypeScript tsconfig.json path alias resolver. (~2552 tok)
-- `visualization.py` — Interactive D3.js graph visualization for code knowledge graphs. (~11175 tok)
+- `visualization.py` — Interactive D3.js graph visualization for code knowledge graphs. (~23044 tok)
 - `wiki.py` — Wiki generation from community structure. (~2735 tok)
 
 ## refs/code-review-graph/code_review_graph/eval/
@@ -852,6 +907,7 @@
 - `reporter.py` — Markdown report generator for evaluation benchmark results. (~2285 tok)
 - `runner.py` — Evaluation runner: orchestrates benchmark execution across repositories. (~1386 tok)
 - `scorer.py` — Scoring metrics for evaluating graph-based code review quality. (~736 tok)
+- `token_benchmark.py` — Measures total tokens consumed by agent workflows against benchmark repos. (~1675 tok)
 
 ## refs/code-review-graph/code_review_graph/eval/benchmarks/
 
@@ -870,31 +926,3 @@
 - `gin.yaml` (~231 tok)
 - `httpx.yaml` — Declares checker (~192 tok)
 - `nextjs.yaml` (~225 tok)
-
-## refs/code-review-graph/code_review_graph/tools/
-
-- `__init__.py` — MCP tool definitions for the Code Review Graph server. (~1227 tok)
-- `_common.py` — Shared utilities for tool sub-modules. (~1074 tok)
-- `build.py` — Tool 1: build_or_update_graph. (~1435 tok)
-- `community_tools.py` — Tools 13, 14, 15: community listing, detail, architecture overview. (~1672 tok)
-- `docs.py` — Tools 7, 8, 19, 20: embed_graph, get_docs_section, wiki tools. (~2157 tok)
-- `flows_tools.py` — Tools 10, 11: list_flows, get_flow. (~1600 tok)
-- `query.py` — Tools 2, 3, 5, 6, 9: query / search / stats helpers. (~5143 tok)
-- `refactor_tools.py` — Tools 17, 18: refactor_func, apply_refactor_func. (~1484 tok)
-- `registry_tools.py` — Tools 21, 22: list_repos_func, cross_repo_search_func. (~1079 tok)
-- `review.py` — Tools 4, 12, 16: review context, affected flows, detect changes. (~3956 tok)
-
-## refs/code-review-graph/diagrams/
-
-- `generate_diagrams.py` — Generate 6 Excalidraw diagrams for code-review-graph Medium article. (~7502 tok)
-
-## refs/code-review-graph/docs/
-
-- `architecture.md` — Architecture (~1466 tok)
-- `COMMANDS.md` — All Available Commands (~1691 tok)
-- `FEATURES.md` — Features (~1982 tok)
-- `INDEX.md` — Documentation Index (~176 tok)
-- `LEGAL.md` — Legal & Privacy (~104 tok)
-- `LLM-OPTIMIZED-REFERENCE.md` — LLM-OPTIMIZED REFERENCE -- code-review-graph v2.1.0 (~877 tok)
-- `ROADMAP.md` — Roadmap (~574 tok)
-- `schema.md` — Knowledge Graph Schema (~1883 tok)

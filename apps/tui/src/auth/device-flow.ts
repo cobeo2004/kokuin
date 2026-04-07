@@ -44,7 +44,10 @@ async function rpcCall<T>(
 	return data;
 }
 
-export async function runDeviceFlow(serverUrl: string, webUrl?: string): Promise<void> {
+export async function runDeviceFlow(
+	serverUrl: string,
+	webUrl?: string,
+): Promise<void> {
 	console.log(`Connecting to ${serverUrl}...`);
 
 	const auth = await rpcCall<DeviceAuthResponse>(
