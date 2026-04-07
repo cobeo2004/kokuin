@@ -6,7 +6,11 @@ import { type GraphNode, GraphStore } from "@kokuin/graph";
 import { Command } from "commander";
 import { getApiClient } from "../utils/api-client.js";
 import { getCurrentBranch, getGitRemoteUrl } from "../utils/git.js";
-import { ParserProcess } from "../utils/parser.js";
+import {
+	type ParsedEdgeRaw,
+	type ParsedNodeRaw,
+	ParserProcess,
+} from "../utils/parser.js";
 import { resolveProjectId } from "../utils/project.js";
 
 export const graphCommand = new Command("graph").description(
@@ -33,6 +37,13 @@ async function rpcCall<T>(
 	return envelope.json as T;
 }
 
+function getGraphHeaders(repoUrl: string | null): Record<string, string> {
+	const client = getApiClient();
+	const headers: Record<string, string> = { ...client.headers };
+	if (repoUrl) headers["X-Repo-Url"] = repoUrl;
+	return headers;
+}
+
 graphCommand
 	.command("status")
 	.description("Show global graph and overlay statistics")
@@ -40,9 +51,7 @@ graphCommand
 	.action(async (options: { branch?: string }) => {
 		const repoUrl = getGitRemoteUrl();
 		const client = getApiClient();
-
-		const headers: Record<string, string> = { ...client.headers };
-		if (repoUrl) headers["X-Repo-Url"] = repoUrl;
+		const headers = getGraphHeaders(repoUrl);
 
 		try {
 			const status = await rpcCall<{
@@ -100,9 +109,7 @@ graphCommand
 		async (pattern: string, target: string, options: { branch?: string }) => {
 			const repoUrl = getGitRemoteUrl();
 			const client = getApiClient();
-
-			const headers: Record<string, string> = { ...client.headers };
-			if (repoUrl) headers["X-Repo-Url"] = repoUrl;
+			const headers = getGraphHeaders(repoUrl);
 
 			try {
 				const nodes = await rpcCall<
@@ -139,9 +146,7 @@ graphCommand
 	.action(async (term: string, options: { branch?: string; limit: string }) => {
 		const repoUrl = getGitRemoteUrl();
 		const client = getApiClient();
-
-		const headers: Record<string, string> = { ...client.headers };
-		if (repoUrl) headers["X-Repo-Url"] = repoUrl;
+		const headers = getGraphHeaders(repoUrl);
 
 		try {
 			const results = await rpcCall<
@@ -247,8 +252,8 @@ graphCommand
 			process.exit(1);
 		}
 
-		let nodes: import("../utils/parser.js").ParsedNodeRaw[] = [];
-		let edges: import("../utils/parser.js").ParsedEdgeRaw[] = [];
+		let nodes: ParsedNodeRaw[] = [];
+		let edges: ParsedEdgeRaw[] = [];
 
 		try {
 			const result = await parser.parse(absFiles);
@@ -398,10 +403,10 @@ graphCommand
 				`Server now has: ${stats.nodeCount} nodes, ${stats.edgeCount} edges`,
 			);
 		} catch (err) {
-			const msg = String(err);
-			if (msg.includes("401")) {
+			const errMsg = `${err}`;
+			if (errMsg.includes("401")) {
 				console.error("Authentication expired. Run `kokuin login`.");
-			} else if (msg.includes("403")) {
+			} else if (errMsg.includes("403")) {
 				console.error("You are not a member of this project.");
 			} else {
 				console.error(`Failed: ${err}`);
