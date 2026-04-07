@@ -1,3 +1,4 @@
+import path from "node:path";
 import prisma from "@kokuin/db";
 import { env } from "@kokuin/env/server";
 import type {
@@ -241,6 +242,7 @@ export const graphRouter = {
 				context.project.id,
 				input.branch,
 			);
+			storage.ensureDir(path.dirname(overlayPath));
 			const overlayStore = new GraphStore(overlayPath);
 			try {
 				overlayStore.upsertNodes(input.nodes as ParsedNode[]);
