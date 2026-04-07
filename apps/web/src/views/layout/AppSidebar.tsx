@@ -32,7 +32,7 @@ export function AppSidebar() {
 	const handleSignOut = async () => {
 		try {
 			await signOut();
-			navigate({ to: "/" });
+			navigate({ to: "/login" });
 		} catch {
 			// sign-out failure: stay on current page
 		}
