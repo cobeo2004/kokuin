@@ -34,7 +34,7 @@ export interface ParseResult {
 function getParserScriptPath(): string {
 	// parser/main.py is 4 levels up from apps/tui/src/utils/
 	return path.resolve(
-		fileURLToPath(import.meta.url),
+		path.dirname(fileURLToPath(import.meta.url)),
 		"../../../../parser/main.py",
 	);
 }
