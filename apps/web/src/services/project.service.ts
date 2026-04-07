@@ -17,6 +17,7 @@ export const createProject = (
 	},
 ) => client.project.create(input);
 
+// Requires a project-scoped orpc instance from getProjectOrpc(projectId)
 export const listProjectMembers = (orpc: Orpc) =>
 	orpc.project.members.list.queryOptions();
 
