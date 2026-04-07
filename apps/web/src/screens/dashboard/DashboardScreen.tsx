@@ -11,20 +11,16 @@ import { StatsCardsView } from "@/views/dashboard/StatsCardsView";
 export function DashboardScreen() {
 	const { isOrgAdmin } = useCurrentUser();
 	const { org, isPending: orgPending } = useOrganization();
-	const {
-		projects,
-		isPending: projectsPending,
-		error: projectsError,
-	} = useProjects();
+	const { projects, isPending: projectsPending, error } = useProjects();
 	const [showCreate, setShowCreate] = useState(false);
 
 	const isPending = orgPending || projectsPending;
 
-	if (projectsError) {
+	if (error) {
 		return (
 			<div className="container mx-auto p-6">
 				<p className="text-destructive text-sm">
-					Failed to load projects: {projectsError.message}
+					Failed to load projects: {error.message}
 				</p>
 			</div>
 		);
