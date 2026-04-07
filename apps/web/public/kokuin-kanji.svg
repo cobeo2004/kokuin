@@ -1,0 +1,25 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 320 140" fill="none" role="img" aria-labelledby="title desc">
+  <title id="title">Kokuin handwritten mark</title>
+  <desc id="desc">Brush style logo mark for the Kokuin brand.</desc>
+  <g stroke="#f6f7fb" stroke-linecap="round" stroke-linejoin="round">
+    <!-- Left glyph -->
+    <path d="M20 24 Q66 8 122 20" stroke-width="10" />
+    <path d="M34 44 Q72 34 116 40" stroke-width="9" />
+    <path d="M46 18 Q52 44 56 96" stroke-width="11" />
+    <path d="M28 62 Q70 56 120 62" stroke-width="8.5" />
+    <path d="M26 82 Q70 78 120 82" stroke-width="8.5" />
+    <path d="M18 100 Q72 108 126 98" stroke-width="9.5" />
+    <path d="M30 116 Q46 108 58 118" stroke-width="8" />
+    <path d="M66 118 Q80 108 94 118" stroke-width="8" />
+    <path d="M102 116 Q116 108 128 118" stroke-width="8" />
+
+    <!-- Right glyph -->
+    <path d="M176 24 Q206 12 240 20 Q252 24 258 34" stroke-width="10" />
+    <path d="M184 42 Q212 36 238 42" stroke-width="8.5" />
+    <path d="M190 20 Q188 46 188 90" stroke-width="10.5" />
+    <path d="M172 62 Q208 56 236 62" stroke-width="8.5" />
+    <path d="M226 22 Q224 68 222 114" stroke-width="11" />
+    <path d="M170 102 Q206 100 242 108" stroke-width="9.5" />
+    <path d="M242 92 Q254 106 264 124" stroke-width="9" />
+  </g>
+</svg>
