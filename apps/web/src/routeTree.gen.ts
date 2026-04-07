@@ -9,11 +9,10 @@
 // Additionally, you should also exclude this file from your linter and/or formatter to prevent it from being checked or modified.
 
 import { Route as rootRouteImport } from './routes/__root'
+import { Route as LoginRouteImport } from './routes/login'
 import { Route as DeviceRouteImport } from './routes/device'
-import { Route as PublicRouteImport } from './routes/_public'
 import { Route as AppRouteImport } from './routes/_app'
 import { Route as IndexRouteImport } from './routes/index'
-import { Route as PublicLoginRouteImport } from './routes/_public/login'
 import { Route as AppDashboardRouteImport } from './routes/_app/dashboard'
 import { Route as AppOrganizationsIndexRouteImport } from './routes/_app/organizations/index'
 import { Route as AppAdminIndexRouteImport } from './routes/_app/admin/index'
@@ -21,13 +20,14 @@ import { Route as AppProjectsProjectIdRouteImport } from './routes/_app/projects
 import { Route as AppProjectsProjectIdMembersRouteImport } from './routes/_app/projects/$projectId.members'
 import { Route as AppProjectsProjectIdBuildsRouteImport } from './routes/_app/projects/$projectId.builds'
 
+const LoginRoute = LoginRouteImport.update({
+  id: '/login',
+  path: '/login',
+  getParentRoute: () => rootRouteImport,
+} as any)
 const DeviceRoute = DeviceRouteImport.update({
   id: '/device',
   path: '/device',
-  getParentRoute: () => rootRouteImport,
-} as any)
-const PublicRoute = PublicRouteImport.update({
-  id: '/_public',
   getParentRoute: () => rootRouteImport,
 } as any)
 const AppRoute = AppRouteImport.update({
@@ -38,11 +38,6 @@ const IndexRoute = IndexRouteImport.update({
   id: '/',
   path: '/',
   getParentRoute: () => rootRouteImport,
-} as any)
-const PublicLoginRoute = PublicLoginRouteImport.update({
-  id: '/login',
-  path: '/login',
-  getParentRoute: () => PublicRoute,
 } as any)
 const AppDashboardRoute = AppDashboardRouteImport.update({
   id: '/dashboard',
@@ -80,8 +75,8 @@ const AppProjectsProjectIdBuildsRoute =
 export interface FileRoutesByFullPath {
   '/': typeof IndexRoute
   '/device': typeof DeviceRoute
+  '/login': typeof LoginRoute
   '/dashboard': typeof AppDashboardRoute
-  '/login': typeof PublicLoginRoute
   '/projects/$projectId': typeof AppProjectsProjectIdRouteWithChildren
   '/admin/': typeof AppAdminIndexRoute
   '/organizations/': typeof AppOrganizationsIndexRoute
@@ -91,8 +86,8 @@ export interface FileRoutesByFullPath {
 export interface FileRoutesByTo {
   '/': typeof IndexRoute
   '/device': typeof DeviceRoute
+  '/login': typeof LoginRoute
   '/dashboard': typeof AppDashboardRoute
-  '/login': typeof PublicLoginRoute
   '/projects/$projectId': typeof AppProjectsProjectIdRouteWithChildren
   '/admin': typeof AppAdminIndexRoute
   '/organizations': typeof AppOrganizationsIndexRoute
@@ -103,10 +98,9 @@ export interface FileRoutesById {
   __root__: typeof rootRouteImport
   '/': typeof IndexRoute
   '/_app': typeof AppRouteWithChildren
-  '/_public': typeof PublicRouteWithChildren
   '/device': typeof DeviceRoute
+  '/login': typeof LoginRoute
   '/_app/dashboard': typeof AppDashboardRoute
-  '/_public/login': typeof PublicLoginRoute
   '/_app/projects/$projectId': typeof AppProjectsProjectIdRouteWithChildren
   '/_app/admin/': typeof AppAdminIndexRoute
   '/_app/organizations/': typeof AppOrganizationsIndexRoute
@@ -118,8 +112,8 @@ export interface FileRouteTypes {
   fullPaths:
     | '/'
     | '/device'
-    | '/dashboard'
     | '/login'
+    | '/dashboard'
     | '/projects/$projectId'
     | '/admin/'
     | '/organizations/'
@@ -129,8 +123,8 @@ export interface FileRouteTypes {
   to:
     | '/'
     | '/device'
-    | '/dashboard'
     | '/login'
+    | '/dashboard'
     | '/projects/$projectId'
     | '/admin'
     | '/organizations'
@@ -140,10 +134,9 @@ export interface FileRouteTypes {
     | '__root__'
     | '/'
     | '/_app'
-    | '/_public'
     | '/device'
+    | '/login'
     | '/_app/dashboard'
-    | '/_public/login'
     | '/_app/projects/$projectId'
     | '/_app/admin/'
     | '/_app/organizations/'
@@ -154,24 +147,24 @@ export interface FileRouteTypes {
 export interface RootRouteChildren {
   IndexRoute: typeof IndexRoute
   AppRoute: typeof AppRouteWithChildren
-  PublicRoute: typeof PublicRouteWithChildren
   DeviceRoute: typeof DeviceRoute
+  LoginRoute: typeof LoginRoute
 }
 
 declare module '@tanstack/react-router' {
   interface FileRoutesByPath {
+    '/login': {
+      id: '/login'
+      path: '/login'
+      fullPath: '/login'
+      preLoaderRoute: typeof LoginRouteImport
+      parentRoute: typeof rootRouteImport
+    }
     '/device': {
       id: '/device'
       path: '/device'
       fullPath: '/device'
       preLoaderRoute: typeof DeviceRouteImport
-      parentRoute: typeof rootRouteImport
-    }
-    '/_public': {
-      id: '/_public'
-      path: ''
-      fullPath: '/'
-      preLoaderRoute: typeof PublicRouteImport
       parentRoute: typeof rootRouteImport
     }
     '/_app': {
@@ -187,13 +180,6 @@ declare module '@tanstack/react-router' {
       fullPath: '/'
       preLoaderRoute: typeof IndexRouteImport
       parentRoute: typeof rootRouteImport
-    }
-    '/_public/login': {
-      id: '/_public/login'
-      path: '/login'
-      fullPath: '/login'
-      preLoaderRoute: typeof PublicLoginRouteImport
-      parentRoute: typeof PublicRoute
     }
     '/_app/dashboard': {
       id: '/_app/dashboard'
@@ -269,22 +255,11 @@ const AppRouteChildren: AppRouteChildren = {
 
 const AppRouteWithChildren = AppRoute._addFileChildren(AppRouteChildren)
 
-interface PublicRouteChildren {
-  PublicLoginRoute: typeof PublicLoginRoute
-}
-
-const PublicRouteChildren: PublicRouteChildren = {
-  PublicLoginRoute: PublicLoginRoute,
-}
-
-const PublicRouteWithChildren =
-  PublicRoute._addFileChildren(PublicRouteChildren)
-
 const rootRouteChildren: RootRouteChildren = {
   IndexRoute: IndexRoute,
   AppRoute: AppRouteWithChildren,
-  PublicRoute: PublicRouteWithChildren,
   DeviceRoute: DeviceRoute,
+  LoginRoute: LoginRoute,
 }
 export const routeTree = rootRouteImport
   ._addFileChildren(rootRouteChildren)
