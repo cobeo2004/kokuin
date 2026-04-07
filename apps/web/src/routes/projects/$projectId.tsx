@@ -47,10 +47,11 @@ function RouteComponent() {
 		);
 	}
 
-	if (!project.data) {
+	if (project.error || !project.data) {
+		const msg = project.error ? String(project.error) : "Project not found.";
 		return (
 			<div className="container mx-auto p-6">
-				<p className="text-muted-foreground">Project not found.</p>
+				<p className="text-muted-foreground">{msg}</p>
 				<Link to="/dashboard">
 					<Button variant="outline" className="mt-4">
 						Back to Dashboard

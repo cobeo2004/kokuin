@@ -6,28 +6,35 @@ export const projectCommand = new Command("project").description(
 	"Manage Kokuin projects",
 );
 
+async function rpcCall<T>(
+	serverUrl: string,
+	path: string,
+	headers: Record<string, string>,
+	input?: unknown,
+): Promise<T> {
+	const url = `${serverUrl.replace(/\/$/, "")}/rpc/${path}`;
+	const res = await fetch(url, {
+		method: "POST",
+		headers: { ...headers, "Content-Type": "application/json" },
+		body: JSON.stringify({ json: input ?? {} }),
+	});
+	if (!res.ok) {
+		const text = await res.text();
+		throw new Error(`${res.status} ${text}`);
+	}
+	const envelope = (await res.json()) as { json: unknown };
+	return envelope.json as T;
+}
+
 projectCommand
 	.command("list")
 	.description("List all projects for the authenticated user")
 	.action(async () => {
 		const client = getApiClient();
-
 		try {
-			const response = await fetch(`${client.serverUrl}/api/projects`, {
-				headers: client.headers,
-			});
-
-			if (!response.ok) {
-				const text = await response.text();
-				console.error(`Server error: ${response.status} ${text}`);
-				process.exit(1);
-			}
-
-			const projects = (await response.json()) as Array<{
-				id: string;
-				name: string;
-				repoUrl: string;
-			}>;
+			const projects = await rpcCall<
+				Array<{ id: string; name: string; githubRepoUrl: string; role: string }>
+			>(client.serverUrl, "project/list", client.headers);
 
 			if (projects.length === 0) {
 				console.log("No projects found.");
@@ -36,12 +43,12 @@ projectCommand
 
 			console.log(`Projects (${projects.length}):`);
 			for (const p of projects) {
-				console.log(`  ${p.name}`);
+				console.log(`  ${p.name} [${p.role}]`);
 				console.log(`    ID:   ${p.id}`);
-				console.log(`    Repo: ${p.repoUrl}`);
+				console.log(`    Repo: ${p.githubRepoUrl}`);
 			}
 		} catch (err) {
-			console.error(`Failed to connect to server: ${err}`);
+			console.error(`Failed: ${err}`);
 			process.exit(1);
 		}
 	});
@@ -59,45 +66,36 @@ projectCommand
 		}
 
 		const client = getApiClient();
-
 		try {
-			const response = await fetch(
-				`${client.serverUrl}/api/projects/resolve?repoUrl=${encodeURIComponent(repoUrl)}`,
-				{
-					headers: {
-						...client.headers,
-						"X-Repo-Url": repoUrl,
-					},
-				},
-			);
+			const project = await rpcCall<{
+				id: string;
+				name: string;
+				githubRepoUrl: string;
+				defaultBranch: string;
+				role: string;
+				createdAt?: string;
+			} | null>(client.serverUrl, "project/byRepoUrl", client.headers, {
+				url: repoUrl,
+			});
 
-			if (response.status === 404) {
+			if (!project) {
 				console.log(`No project found for remote: ${repoUrl}`);
 				process.exit(1);
 			}
 
-			if (!response.ok) {
-				const text = await response.text();
-				console.error(`Server error: ${response.status} ${text}`);
-				process.exit(1);
-			}
-
-			const project = (await response.json()) as {
-				id: string;
-				name: string;
-				repoUrl: string;
-				createdAt?: string;
-			};
-
 			console.log("Project info:");
-			console.log(`  ID:         ${project.id}`);
-			console.log(`  Name:       ${project.name}`);
-			console.log(`  Repo:       ${project.repoUrl}`);
+			console.log(`  ID:      ${project.id}`);
+			console.log(`  Name:    ${project.name}`);
+			console.log(`  Repo:    ${project.githubRepoUrl}`);
+			console.log(`  Branch:  ${project.defaultBranch}`);
+			console.log(`  Role:    ${project.role}`);
 			if (project.createdAt) {
-				console.log(`  Created:    ${project.createdAt}`);
+				console.log(
+					`  Created: ${new Date(project.createdAt).toLocaleDateString()}`,
+				);
 			}
 		} catch (err) {
-			console.error(`Failed to connect to server: ${err}`);
+			console.error(`Failed: ${err}`);
 			process.exit(1);
 		}
 	});

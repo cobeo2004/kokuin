@@ -6,55 +6,79 @@ export const graphCommand = new Command("graph").description(
 	"Query and inspect the code review graph",
 );
 
+async function rpcCall<T>(
+	serverUrl: string,
+	path: string,
+	headers: Record<string, string>,
+	input?: unknown,
+): Promise<T> {
+	const url = `${serverUrl.replace(/\/$/, "")}/rpc/${path}`;
+	const res = await fetch(url, {
+		method: "POST",
+		headers: { ...headers, "Content-Type": "application/json" },
+		body: JSON.stringify({ json: input ?? {} }),
+	});
+	if (!res.ok) {
+		const text = await res.text();
+		throw new Error(`${res.status} ${text}`);
+	}
+	const envelope = (await res.json()) as { json: unknown };
+	return envelope.json as T;
+}
+
 graphCommand
 	.command("status")
 	.description("Show global graph and overlay statistics")
-	.action(async () => {
+	.option("-b, --branch <branch>", "Branch to check")
+	.action(async (options: { branch?: string }) => {
 		const repoUrl = getGitRemoteUrl();
 		const client = getApiClient();
 
 		const headers: Record<string, string> = { ...client.headers };
-		if (repoUrl) {
-			headers["X-Repo-Url"] = repoUrl;
-		}
+		if (repoUrl) headers["X-Repo-Url"] = repoUrl;
 
 		try {
-			const response = await fetch(`${client.serverUrl}/api/graph/status`, {
-				headers,
-			});
-
-			if (!response.ok) {
-				const text = await response.text();
-				console.error(`Server error: ${response.status} ${text}`);
-				process.exit(1);
-			}
-
-			const status = (await response.json()) as {
-				globalNodes?: number;
-				globalEdges?: number;
-				overlayNodes?: number;
-				overlayEdges?: number;
-				branch?: string;
-				updatedAt?: string;
-			};
+			const status = await rpcCall<{
+				global: {
+					status: string;
+					branch: string;
+					nodeCount: number;
+					edgeCount: number;
+					commitSha?: string;
+					updatedAt?: string;
+				} | null;
+				overlay: {
+					nodeCount: number;
+					edgeCount: number;
+					lastSyncedAt?: string;
+				} | null;
+			}>(client.serverUrl, "graph/status", headers, { branch: options.branch });
 
 			console.log("Graph status:");
-			if (status.globalNodes !== undefined) {
-				console.log(`  Global nodes: ${status.globalNodes}`);
-				console.log(`  Global edges: ${status.globalEdges ?? 0}`);
+			if (status.global) {
+				console.log(`  Branch:        ${status.global.branch}`);
+				console.log(`  Status:        ${status.global.status}`);
+				console.log(`  Global nodes:  ${status.global.nodeCount}`);
+				console.log(`  Global edges:  ${status.global.edgeCount}`);
+				if (status.global.commitSha) {
+					console.log(
+						`  Commit:        ${status.global.commitSha.slice(0, 7)}`,
+					);
+				}
+				if (status.global.updatedAt) {
+					console.log(
+						`  Updated:       ${new Date(status.global.updatedAt).toLocaleString()}`,
+					);
+				}
+			} else {
+				console.log("  No global graph built yet.");
 			}
-			if (status.overlayNodes !== undefined) {
-				console.log(`  Overlay nodes: ${status.overlayNodes}`);
-				console.log(`  Overlay edges: ${status.overlayEdges ?? 0}`);
-			}
-			if (status.branch) {
-				console.log(`  Branch:       ${status.branch}`);
-			}
-			if (status.updatedAt) {
-				console.log(`  Updated:      ${status.updatedAt}`);
+			if (status.overlay) {
+				console.log(`  Overlay nodes: ${status.overlay.nodeCount}`);
+				console.log(`  Overlay edges: ${status.overlay.edgeCount}`);
 			}
 		} catch (err) {
-			console.error(`Failed to connect to server: ${err}`);
+			console.error(`Failed: ${err}`);
 			process.exit(1);
 		}
 	});
@@ -62,7 +86,7 @@ graphCommand
 graphCommand
 	.command("query <pattern> <target>")
 	.description(
-		"Run a pattern query against the graph (patterns: callers_of, callees_of, imports_of, tests_for)",
+		"Run a pattern query (patterns: callers_of, callees_of, imports_of, tests_for)",
 	)
 	.option("-b, --branch <branch>", "Branch to query")
 	.action(
@@ -71,45 +95,30 @@ graphCommand
 			const client = getApiClient();
 
 			const headers: Record<string, string> = { ...client.headers };
-			if (repoUrl) {
-				headers["X-Repo-Url"] = repoUrl;
-			}
-
-			const params = new URLSearchParams({ pattern, target });
-			if (options.branch) {
-				params.set("branch", options.branch);
-			}
+			if (repoUrl) headers["X-Repo-Url"] = repoUrl;
 
 			try {
-				const response = await fetch(
-					`${client.serverUrl}/api/graph/query?${params.toString()}`,
-					{ headers },
-				);
+				const nodes = await rpcCall<
+					Array<{ id: string; name?: string; file_path?: string }>
+				>(client.serverUrl, "graph/query", headers, {
+					pattern,
+					target,
+					branch: options.branch,
+				});
 
-				if (!response.ok) {
-					const text = await response.text();
-					console.error(`Server error: ${response.status} ${text}`);
-					process.exit(1);
-				}
-
-				const result = (await response.json()) as {
-					nodes?: Array<{ id: string; name?: string; file?: string }>;
-				};
-
-				const nodes = result.nodes ?? [];
 				if (nodes.length === 0) {
 					console.log("No results found.");
 					return;
 				}
 
-				console.log(`Results for ${pattern}(${target}):`);
+				console.log(`Results for ${pattern}(${target}) — ${nodes.length}:`);
 				for (const node of nodes) {
 					const label = node.name ?? node.id;
-					const loc = node.file ? ` — ${node.file}` : "";
+					const loc = node.file_path ? ` — ${node.file_path}` : "";
 					console.log(`  ${label}${loc}`);
 				}
 			} catch (err) {
-				console.error(`Failed to connect to server: ${err}`);
+				console.error(`Failed: ${err}`);
 				process.exit(1);
 			}
 		},
@@ -119,43 +128,28 @@ graphCommand
 	.command("search <term>")
 	.description("Search the graph by keyword")
 	.option("-b, --branch <branch>", "Branch to search")
-	.option("-l, --limit <number>", "Maximum number of results", "20")
+	.option("-l, --limit <number>", "Maximum results", "20")
 	.action(async (term: string, options: { branch?: string; limit: string }) => {
 		const repoUrl = getGitRemoteUrl();
 		const client = getApiClient();
 
 		const headers: Record<string, string> = { ...client.headers };
-		if (repoUrl) {
-			headers["X-Repo-Url"] = repoUrl;
-		}
-
-		const params = new URLSearchParams({ term, limit: options.limit });
-		if (options.branch) {
-			params.set("branch", options.branch);
-		}
+		if (repoUrl) headers["X-Repo-Url"] = repoUrl;
 
 		try {
-			const response = await fetch(
-				`${client.serverUrl}/api/graph/search?${params.toString()}`,
-				{ headers },
-			);
-
-			if (!response.ok) {
-				const text = await response.text();
-				console.error(`Server error: ${response.status} ${text}`);
-				process.exit(1);
-			}
-
-			const result = (await response.json()) as {
-				results?: Array<{
+			const results = await rpcCall<
+				Array<{
 					id: string;
 					name?: string;
-					file?: string;
+					file_path?: string;
 					score?: number;
-				}>;
-			};
+				}>
+			>(client.serverUrl, "graph/search", headers, {
+				query: term,
+				limit: Number(options.limit),
+				branch: options.branch,
+			});
 
-			const results = result.results ?? [];
 			if (results.length === 0) {
 				console.log("No results found.");
 				return;
@@ -164,13 +158,13 @@ graphCommand
 			console.log(`Search results for "${term}" (${results.length}):`);
 			for (const node of results) {
 				const label = node.name ?? node.id;
-				const loc = node.file ? ` — ${node.file}` : "";
+				const loc = node.file_path ? ` — ${node.file_path}` : "";
 				const score =
 					node.score !== undefined ? ` (score: ${node.score.toFixed(3)})` : "";
 				console.log(`  ${label}${loc}${score}`);
 			}
 		} catch (err) {
-			console.error(`Failed to connect to server: ${err}`);
+			console.error(`Failed: ${err}`);
 			process.exit(1);
 		}
 	});

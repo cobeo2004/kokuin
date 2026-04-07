@@ -5,10 +5,11 @@ export function getGitRemoteUrl(): string | null {
 		const url = execSync("git remote get-url origin", {
 			encoding: "utf-8",
 		}).trim();
-		return url
+		const normalized = url
 			.replace(/^https?:\/\//, "")
 			.replace(/^git@([^:]+):/, "$1/")
 			.replace(/\.git$/, "");
+		return `https://${normalized}`;
 	} catch {
 		return null;
 	}

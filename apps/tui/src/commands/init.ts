@@ -16,40 +16,40 @@ export const initCommand = new Command("init")
 		const client = getApiClient();
 
 		try {
-			const response = await fetch(
-				`${client.serverUrl}/api/projects/resolve?repoUrl=${encodeURIComponent(repoUrl)}`,
-				{
-					headers: {
-						...client.headers,
-						"X-Repo-Url": repoUrl,
-					},
-				},
-			);
+			const url = `${client.serverUrl.replace(/\/$/, "")}/rpc/project/byRepoUrl`;
+			const res = await fetch(url, {
+				method: "POST",
+				headers: { ...client.headers, "Content-Type": "application/json" },
+				body: JSON.stringify({ json: { url: repoUrl } }),
+			});
 
-			if (response.status === 404) {
-				console.log(`No project found for remote: ${repoUrl}`);
-				console.log(
-					"Create one at your Kokuin server or run `kokuin project create`.",
-				);
+			if (!res.ok) {
+				const text = await res.text();
+				console.error(`Server error: ${res.status} ${text}`);
 				process.exit(1);
 			}
 
-			if (!response.ok) {
-				const text = await response.text();
-				console.error(`Server error: ${response.status} ${text}`);
-				process.exit(1);
-			}
-
-			const project = (await response.json()) as {
+			const envelope = (await res.json()) as { json: unknown };
+			const project = envelope.json as {
 				id: string;
 				name: string;
-				repoUrl: string;
-			};
+				githubRepoUrl: string;
+				defaultBranch: string;
+				role: string;
+			} | null;
+
+			if (!project) {
+				console.log(`No project found for remote: ${repoUrl}`);
+				console.log("Create one at your Kokuin dashboard first.");
+				process.exit(1);
+			}
 
 			console.log("Project found:");
 			console.log(`  ID:      ${project.id}`);
 			console.log(`  Name:    ${project.name}`);
-			console.log(`  Repo:    ${project.repoUrl}`);
+			console.log(`  Repo:    ${project.githubRepoUrl}`);
+			console.log(`  Branch:  ${project.defaultBranch}`);
+			console.log(`  Role:    ${project.role}`);
 			console.log("\nRepository is linked to this Kokuin project.");
 		} catch (err) {
 			console.error(`Failed to connect to server: ${err}`);
