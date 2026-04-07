@@ -12,10 +12,12 @@ async function resolveSession(context: HonoContext) {
 	if (authHeader?.startsWith("Bearer ")) {
 		const token = authHeader.slice("Bearer ".length);
 		const record = await prisma.deviceAuthCode.findFirst({
-			where: { accessToken: token },
+			where: { accessToken: token, expiresAt: { gt: new Date() } },
 		});
 		if (record?.userId) {
-			const user = await prisma.user.findUnique({ where: { id: record.userId } });
+			const user = await prisma.user.findUnique({
+				where: { id: record.userId },
+			});
 			if (user) {
 				return { user } as Awaited<ReturnType<typeof auth.api.getSession>>;
 			}

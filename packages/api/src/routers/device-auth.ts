@@ -119,7 +119,11 @@ export const deviceAuthRouter = {
 
 			const accessToken = entry.accessToken;
 			const userId = entry.userId;
-			await prisma.deviceAuthCode.delete({ where: { id: entry.id } });
+			// Extend expiry to 90 days — record becomes a persistent CLI session token
+			await prisma.deviceAuthCode.update({
+				where: { id: entry.id },
+				data: { expiresAt: new Date(Date.now() + 90 * 24 * 60 * 60 * 1000) },
+			});
 
 			return { accessToken, userId };
 		}),
