@@ -7,22 +7,12 @@ import {
 } from "@kokuin/ui/components/card";
 import { Skeleton } from "@kokuin/ui/components/skeleton";
 import { useQuery } from "@tanstack/react-query";
-import { createFileRoute, Link, redirect } from "@tanstack/react-router";
+import { createFileRoute, Link } from "@tanstack/react-router";
 import { useMemo } from "react";
-import { getUser } from "@/functions/get-user";
 import { getProjectOrpc } from "@/utils/orpc";
 
-export const Route = createFileRoute("/projects/$projectId/builds")({
+export const Route = createFileRoute("/_app/projects/$projectId/builds")({
 	component: RouteComponent,
-	beforeLoad: async () => {
-		const session = await getUser();
-		return { session };
-	},
-	loader: async ({ context }) => {
-		if (!context.session) {
-			throw redirect({ to: "/login" });
-		}
-	},
 });
 
 function statusBadgeClass(status: string) {
@@ -45,7 +35,7 @@ function RouteComponent() {
 	const project = useQuery(projectOrpc.project.getById.queryOptions());
 	const defaultBranchStatus = useQuery(
 		projectOrpc.graph.status.queryOptions({ input: {} }),
-	);
+	)
 
 	if (project.isPending) {
 		return (
@@ -53,7 +43,7 @@ function RouteComponent() {
 				<Skeleton className="h-8 w-48" />
 				<Skeleton className="h-48 w-full" />
 			</div>
-		);
+		)
 	}
 
 	if (!project.data) {
@@ -66,7 +56,7 @@ function RouteComponent() {
 					</Button>
 				</Link>
 			</div>
-		);
+		)
 	}
 
 	const p = project.data;
@@ -202,5 +192,5 @@ function RouteComponent() {
 				</CardContent>
 			</Card>
 		</div>
-	);
+	)
 }

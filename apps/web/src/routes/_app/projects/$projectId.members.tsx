@@ -8,22 +8,12 @@ import {
 import { Input } from "@kokuin/ui/components/input";
 import { Skeleton } from "@kokuin/ui/components/skeleton";
 import { useMutation, useQuery, useQueryClient } from "@tanstack/react-query";
-import { createFileRoute, Link, redirect } from "@tanstack/react-router";
+import { createFileRoute, Link } from "@tanstack/react-router";
 import { useMemo, useState } from "react";
-import { getUser } from "@/functions/get-user";
 import { getProjectOrpc } from "@/utils/orpc";
 
-export const Route = createFileRoute("/projects/$projectId/members")({
+export const Route = createFileRoute("/_app/projects/$projectId/members")({
 	component: RouteComponent,
-	beforeLoad: async () => {
-		const session = await getUser();
-		return { session };
-	},
-	loader: async ({ context }) => {
-		if (!context.session) {
-			throw redirect({ to: "/login" });
-		}
-	},
 });
 
 function RouteComponent() {
@@ -42,7 +32,7 @@ function RouteComponent() {
 
 	const currentMember = members.data?.find(
 		(m) => m.userId === session?.user.id,
-	);
+	)
 	const isAdmin = currentMember?.role === "admin";
 
 	const invalidateMembers = () =>
@@ -60,7 +50,7 @@ function RouteComponent() {
 			setAddUserId("");
 			invalidateMembers();
 		},
-	});
+	})
 
 	const updateRole = useMutation({
 		mutationFn: ({
@@ -71,13 +61,13 @@ function RouteComponent() {
 			role: "admin" | "member";
 		}) => projectOrpc.project.members.updateRole.call({ userId, role }),
 		onSuccess: invalidateMembers,
-	});
+	})
 
 	const removeMember = useMutation({
 		mutationFn: (userId: string) =>
 			projectOrpc.project.members.remove.call({ userId }),
 		onSuccess: invalidateMembers,
-	});
+	})
 
 	return (
 		<div className="container mx-auto space-y-6 p-6">
@@ -111,7 +101,7 @@ function RouteComponent() {
 						<form
 							className="flex gap-2"
 							onSubmit={(e) => {
-								e.preventDefault();
+								e.preventDefault()
 								if (!addUserId.trim()) return;
 								addMember.mutate({ userId: addUserId.trim(), role: addRole });
 							}}
@@ -209,5 +199,5 @@ function RouteComponent() {
 				</CardContent>
 			</Card>
 		</div>
-	);
+	)
 }

@@ -8,24 +8,12 @@ import {
 import { Input } from "@kokuin/ui/components/input";
 import { Skeleton } from "@kokuin/ui/components/skeleton";
 import { useMutation, useQuery, useQueryClient } from "@tanstack/react-query";
-import { createFileRoute, Link, redirect } from "@tanstack/react-router";
+import { createFileRoute, Link } from "@tanstack/react-router";
 import { useState } from "react";
-import { getUser } from "@/functions/get-user";
 import { client, orpc } from "@/utils/orpc";
 
-export const Route = createFileRoute("/dashboard")({
+export const Route = createFileRoute("/_app/dashboard")({
 	component: RouteComponent,
-	beforeLoad: async () => {
-		const session = await getUser();
-		return { session };
-	},
-	loader: async ({ context }) => {
-		if (!context.session) {
-			throw redirect({
-				to: "/login",
-			});
-		}
-	},
 });
 
 function CreateProjectDialog({ onClose }: { onClose: () => void }) {
@@ -49,24 +37,24 @@ function CreateProjectDialog({ onClose }: { onClose: () => void }) {
 		onSuccess: () => {
 			qc.invalidateQueries({
 				queryKey: orpc.project.list.queryOptions().queryKey,
-			});
+			})
 			onClose();
 		},
-	});
+	})
 
 	const canSubmit =
 		name.trim() && orgId && githubRepoUrl.trim() && !create.isPending;
 
 	return (
-		// biome-ignore lint/a11y/noStaticElementInteractions: backdrop dismiss
-		// biome-ignore lint/a11y/useKeyWithClickEvents: backdrop dismiss
-		<div
+        // biome-ignore lint/a11y/noStaticElementInteractions: backdrop dismiss
+        // biome-ignore lint/a11y/useKeyWithClickEvents: backdrop dismiss
+        <div
 			className="fixed inset-0 z-50 flex items-center justify-center bg-black/50"
 			onClick={(e) => {
 				if (e.target === e.currentTarget) onClose();
 			}}
 		>
-			<div className="w-full max-w-md rounded-lg border bg-background p-6 shadow-lg">
+            <div className="w-full max-w-md rounded-lg border bg-background p-6 shadow-lg">
 				<h2 className="mb-4 font-semibold text-lg">Create Project</h2>
 
 				<div className="space-y-4">
@@ -155,8 +143,8 @@ function CreateProjectDialog({ onClose }: { onClose: () => void }) {
 					</Button>
 				</div>
 			</div>
-		</div>
-	);
+        </div>
+    )
 }
 
 function RouteComponent() {
@@ -235,5 +223,5 @@ function RouteComponent() {
 				</div>
 			)}
 		</div>
-	);
+	)
 }

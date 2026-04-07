@@ -6,7 +6,7 @@ export const Route = createFileRoute("/_app")({
 	beforeLoad: async () => {
 		const session = await getUser();
 		if (!session) {
-			throw redirect({ to: "/" });
+			throw redirect({ to: "/login" });
 		}
 		return { session };
 	},

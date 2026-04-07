@@ -7,22 +7,12 @@ import {
 } from "@kokuin/ui/components/card";
 import { Input } from "@kokuin/ui/components/input";
 import { useMutation, useQuery, useQueryClient } from "@tanstack/react-query";
-import { createFileRoute, Link, redirect } from "@tanstack/react-router";
+import { createFileRoute, Link } from "@tanstack/react-router";
 import { useMemo, useState } from "react";
-import { getUser } from "@/functions/get-user";
 import { getProjectOrpc, orpc } from "@/utils/orpc";
 
-export const Route = createFileRoute("/admin/")({
+export const Route = createFileRoute("/_app/admin/")({
 	component: RouteComponent,
-	beforeLoad: async () => {
-		const session = await getUser();
-		return { session };
-	},
-	loader: async ({ context }) => {
-		if (!context.session) {
-			throw redirect({ to: "/login" });
-		}
-	},
 });
 
 function DomainManager({ projectId }: { projectId: string }) {
@@ -39,10 +29,10 @@ function DomainManager({ projectId }: { projectId: string }) {
 		onSuccess: () => {
 			qc.invalidateQueries({
 				queryKey: projectOrpc.project.getById.queryOptions().queryKey,
-			});
+			})
 			setNewDomain("");
 		},
-	});
+	})
 
 	if (project.isPending) {
 		return <p className="text-muted-foreground text-sm">Loading project…</p>;
@@ -58,11 +48,11 @@ function DomainManager({ projectId }: { projectId: string }) {
 		const trimmed = newDomain.trim().toLowerCase();
 		if (!trimmed || domains.includes(trimmed)) return;
 		updateDomains.mutate([...domains, trimmed]);
-	};
+	}
 
 	const handleRemove = (domain: string) => {
 		updateDomains.mutate(domains.filter((d) => d !== domain));
-	};
+	}
 
 	return (
 		<div className="space-y-3">
@@ -97,7 +87,7 @@ function DomainManager({ projectId }: { projectId: string }) {
 				className="flex gap-2"
 				onSubmit={(e) => {
 					e.preventDefault();
-					handleAdd();
+					handleAdd()
 				}}
 			>
 				<Input
@@ -114,7 +104,7 @@ function DomainManager({ projectId }: { projectId: string }) {
 				</Button>
 			</form>
 		</div>
-	);
+	)
 }
 
 function RouteComponent() {
@@ -125,11 +115,11 @@ function RouteComponent() {
 
 	const [selectedProjectId, setSelectedProjectId] = useState<string | null>(
 		null,
-	);
+	)
 
 	const selectedProject = projects.data?.find(
 		(p) => p.id === selectedProjectId,
-	);
+	)
 
 	return (
 		<div className="container mx-auto space-y-6 p-6">
@@ -264,5 +254,5 @@ function RouteComponent() {
 				</p>
 			)}
 		</div>
-	);
+	)
 }

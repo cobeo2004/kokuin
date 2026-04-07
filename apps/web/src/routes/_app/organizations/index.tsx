@@ -7,22 +7,12 @@ import {
 } from "@kokuin/ui/components/card";
 import { Input } from "@kokuin/ui/components/input";
 import { useMutation, useQuery, useQueryClient } from "@tanstack/react-query";
-import { createFileRoute, Link, redirect } from "@tanstack/react-router";
+import { createFileRoute, Link } from "@tanstack/react-router";
 import { useState } from "react";
-import { getUser } from "@/functions/get-user";
 import { client, orpc } from "@/utils/orpc";
 
-export const Route = createFileRoute("/organizations/")({
+export const Route = createFileRoute("/_app/organizations/")({
 	component: RouteComponent,
-	beforeLoad: async () => {
-		const session = await getUser();
-		return { session };
-	},
-	loader: async ({ context }) => {
-		if (!context.session) {
-			throw redirect({ to: "/login" });
-		}
-	},
 });
 
 function CreateOrgDialog({ onClose }: { onClose: () => void }) {
@@ -35,10 +25,10 @@ function CreateOrgDialog({ onClose }: { onClose: () => void }) {
 		onSuccess: () => {
 			qc.invalidateQueries({
 				queryKey: orpc.organization.list.queryOptions().queryKey,
-			});
+			})
 			onClose();
 		},
-	});
+	})
 
 	const autoSlug = (val: string) =>
 		val
@@ -51,20 +41,20 @@ function CreateOrgDialog({ onClose }: { onClose: () => void }) {
 		if (!slug || slug === autoSlug(name)) {
 			setSlug(autoSlug(val));
 		}
-	};
+	}
 
 	const canSubmit = name.trim() && slug.trim() && !create.isPending;
 
 	return (
-		// biome-ignore lint/a11y/noStaticElementInteractions: backdrop dismiss
-		// biome-ignore lint/a11y/useKeyWithClickEvents: backdrop dismiss
-		<div
+        // biome-ignore lint/a11y/noStaticElementInteractions: backdrop dismiss
+        // biome-ignore lint/a11y/useKeyWithClickEvents: backdrop dismiss
+        <div
 			className="fixed inset-0 z-50 flex items-center justify-center bg-black/50"
 			onClick={(e) => {
 				if (e.target === e.currentTarget) onClose();
 			}}
 		>
-			<div className="w-full max-w-sm rounded-lg border bg-background p-6 shadow-lg">
+            <div className="w-full max-w-sm rounded-lg border bg-background p-6 shadow-lg">
 				<h2 className="mb-4 font-semibold text-lg">Create Organization</h2>
 
 				<div className="space-y-4">
@@ -114,8 +104,8 @@ function CreateOrgDialog({ onClose }: { onClose: () => void }) {
 					</Button>
 				</div>
 			</div>
-		</div>
-	);
+        </div>
+    )
 }
 
 function RouteComponent() {
@@ -129,9 +119,9 @@ function RouteComponent() {
 		onSuccess: () => {
 			qc.invalidateQueries({
 				queryKey: orpc.organization.list.queryOptions().queryKey,
-			});
+			})
 		},
-	});
+	})
 
 	return (
 		<div className="container mx-auto p-6">
@@ -194,7 +184,7 @@ function RouteComponent() {
 															`Delete "${org.name}"? This cannot be undone.`,
 														)
 													) {
-														deleteOrg.mutate(org.id);
+														deleteOrg.mutate(org.id)
 													}
 												}}
 											>
@@ -214,5 +204,5 @@ function RouteComponent() {
 				</div>
 			)}
 		</div>
-	);
+	)
 }

@@ -4,7 +4,7 @@ import { useState } from "react";
 import SignInForm from "@/components/sign-in-form";
 import SignUpForm from "@/components/sign-up-form";
 
-export const Route = createFileRoute("/login")({
+export const Route = createFileRoute("/_public/login")({
 	component: RouteComponent,
 });
 
@@ -15,5 +15,5 @@ function RouteComponent() {
 		<SignInForm onSwitchToSignUp={() => setShowSignIn(false)} />
 	) : (
 		<SignUpForm onSwitchToSignIn={() => setShowSignIn(true)} />
-	);
+	)
 }
