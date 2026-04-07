@@ -1,10 +1,18 @@
 """Stateless parser worker for kokuin. JSON-RPC over stdin/stdout."""
 import json
 import sys
+from pathlib import Path
 
-sys.path.insert(0, "refs/code-review-graph")
+from code_review_graph.parser import CodeParser, file_hash
 
-from code_review_graph.parser import parse_file
+_parser = CodeParser()
+
+
+def _qualify(name: str, file_path: str, parent_name) -> str:
+    """Compute a qualified name: parent::name or file::name."""
+    if parent_name:
+        return f"{file_path}::{parent_name}::{name}"
+    return f"{file_path}::{name}"
 
 
 def handle_request(request):
@@ -18,14 +26,17 @@ def handle_request(request):
         all_edges = []
         for file_info in files:
             path = file_info["path"]
-            language = file_info.get("language")
             try:
-                nodes, edges = parse_file(path, language=language)
+                nodes, edges = _parser.parse_file(Path(path))
+                try:
+                    fhash = file_hash(Path(path))
+                except Exception:
+                    fhash = None
                 for node in nodes:
                     all_nodes.append({
                         "kind": node.kind,
                         "name": node.name,
-                        "qualifiedName": node.qualified_name,
+                        "qualifiedName": _qualify(node.name, node.file_path, node.parent_name),
                         "filePath": node.file_path,
                         "lineStart": node.line_start,
                         "lineEnd": node.line_end,
@@ -35,7 +46,7 @@ def handle_request(request):
                         "returnType": node.return_type,
                         "modifiers": node.modifiers,
                         "isTest": node.is_test,
-                        "fileHash": node.file_hash,
+                        "fileHash": fhash,
                     })
                 for edge in edges:
                     all_edges.append({

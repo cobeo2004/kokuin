@@ -52,8 +52,13 @@ export class ParserProcess {
 		const pythonBin = process.env.PARSER_PYTHON_PATH ?? "python3";
 		const scriptPath = getParserScriptPath();
 
+		const repoRoot = path.resolve(
+			path.dirname(fileURLToPath(import.meta.url)),
+			"../../../..",
+		);
 		this.proc = spawn(pythonBin, [scriptPath], {
 			stdio: ["pipe", "pipe", "pipe"],
+			cwd: repoRoot,
 		});
 
 		if (!this.proc.stdout || !this.proc.stdin) {
