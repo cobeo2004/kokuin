@@ -10,6 +10,7 @@ import { ZodToJsonSchemaConverter } from "@orpc/zod/zod4";
 import { Hono } from "hono";
 import { cors } from "hono/cors";
 import { logger } from "hono/logger";
+import { registerWebhookRoutes } from "./webhook.js";
 
 const app = new Hono();
 
@@ -79,5 +80,7 @@ app.use("/*", async (c, next) => {
 app.get("/", (c) => {
 	return c.text("OK");
 });
+
+registerWebhookRoutes(app);
 
 export default app;
