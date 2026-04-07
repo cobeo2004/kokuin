@@ -1,5 +1,5 @@
 import { useQuery, useMutation, useQueryClient } from "@tanstack/react-query";
-import { useMemo, useCallback } from "react";
+import { useCallback } from "react";
 import { getProjectOrpc, getProjectClient } from "@/utils/orpc";
 import {
   listProjectMembers,
@@ -10,9 +10,7 @@ import {
 
 export function useProjectMembers(projectId: string) {
   const qc = useQueryClient();
-  const projectOrpc = useMemo(() => getProjectOrpc(projectId), [projectId]);
-  const projectClient = useMemo(() => getProjectClient(projectId), [projectId]);
-  const queryOpts = listProjectMembers(projectOrpc);
+  const queryOpts = listProjectMembers(getProjectOrpc(projectId));
 
   const members = useQuery(queryOpts);
   const invalidate = useCallback(
@@ -22,19 +20,19 @@ export function useProjectMembers(projectId: string) {
 
   const add = useMutation({
     mutationFn: (input: { userId: string; role: "admin" | "member" }) =>
-      addProjectMember(projectClient, input),
+      addProjectMember(getProjectClient(projectId), input),
     onSuccess: invalidate,
   });
 
   const updateRole = useMutation({
     mutationFn: (input: { userId: string; role: "admin" | "member" }) =>
-      updateProjectMemberRole(projectClient, input),
+      updateProjectMemberRole(getProjectClient(projectId), input),
     onSuccess: invalidate,
   });
 
   const remove = useMutation({
     mutationFn: (userId: string) =>
-      removeProjectMember(projectClient, { userId }),
+      removeProjectMember(getProjectClient(projectId), { userId }),
     onSuccess: invalidate,
   });
 

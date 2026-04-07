@@ -1,11 +1,9 @@
 import { useQuery } from "@tanstack/react-query";
-import { useMemo } from "react";
 import { getProjectOrpc } from "@/utils/orpc";
 import { getGraphStatus } from "@/services/graph.service";
 
 export function useProjectBuilds(projectId: string) {
-  const projectOrpc = useMemo(() => getProjectOrpc(projectId), [projectId]);
-  const status = useQuery(getGraphStatus(projectOrpc));
+  const status = useQuery(getGraphStatus(getProjectOrpc(projectId)));
   return {
     buildStatus: status.data ?? null,
     isPending: status.isPending,
