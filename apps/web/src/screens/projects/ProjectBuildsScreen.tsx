@@ -16,12 +16,20 @@ export function ProjectBuildsScreen({ projectId }: ProjectBuildsScreenProps) {
 
 	if (project.isPending) return <Skeleton className="m-6 h-48 w-full" />;
 
+	if (project.isError || !project.data) {
+		return (
+			<div className="container mx-auto p-6">
+				<p className="text-muted-foreground text-sm">Project not found.</p>
+			</div>
+		);
+	}
+
 	return (
 		<div className="container mx-auto space-y-6 p-6">
 			<h1 className="font-bold text-2xl">Graph Builds</h1>
 			<BuildsListView
 				buildStatus={buildStatus}
-				defaultBranch={project.data?.defaultBranch ?? "main"}
+				defaultBranch={project.data.defaultBranch}
 				isPending={isPending}
 			/>
 		</div>

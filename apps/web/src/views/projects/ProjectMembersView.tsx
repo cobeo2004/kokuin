@@ -1,6 +1,13 @@
 import { Badge } from "@kokuin/ui/components/badge";
 import { Button } from "@kokuin/ui/components/button";
 import { Input } from "@kokuin/ui/components/input";
+import {
+	Select,
+	SelectContent,
+	SelectItem,
+	SelectTrigger,
+	SelectValue,
+} from "@kokuin/ui/components/select";
 import { Skeleton } from "@kokuin/ui/components/skeleton";
 import {
 	Table,
@@ -68,14 +75,18 @@ export function ProjectMembersView({
 						onChange={(e) => setAddUserId(e.target.value)}
 						className="flex-1"
 					/>
-					<select
+					<Select
 						value={addRole}
-						onChange={(e) => setAddRole(e.target.value as "admin" | "member")}
-						className="rounded-md border border-input bg-background px-3 py-2 text-sm"
+						onValueChange={(v) => setAddRole(v as "admin" | "member")}
 					>
-						<option value="member">Member</option>
-						<option value="admin">Admin</option>
-					</select>
+						<SelectTrigger className="w-28">
+							<SelectValue />
+						</SelectTrigger>
+						<SelectContent>
+							<SelectItem value="member">Member</SelectItem>
+							<SelectItem value="admin">Admin</SelectItem>
+						</SelectContent>
+					</Select>
 					<Button type="submit" disabled={add.isPending}>
 						Add
 					</Button>

@@ -22,7 +22,7 @@ export function ProjectMembersScreen({ projectId }: ProjectMembersScreenProps) {
 			<h1 className="font-bold text-2xl">Members</h1>
 			<ProjectMembersView
 				members={members}
-				isPending={isPending}
+				isPending={false}
 				isAdmin={isAdmin}
 				currentUserId={user?.id ?? ""}
 				add={add}

@@ -6,14 +6,7 @@ import {
 	CardTitle,
 } from "@kokuin/ui/components/card";
 import { Skeleton } from "@kokuin/ui/components/skeleton";
-
-interface GraphBuild {
-	status: string;
-	nodeCount?: number | null;
-	edgeCount?: number | null;
-	updatedAt?: Date | string | null;
-	commitSha?: string | null;
-}
+import { type GraphBuild, statusVariant } from "@/utils/buildStatus";
 
 interface GraphStatus {
 	global: GraphBuild | null;
@@ -23,15 +16,6 @@ interface BuildsListViewProps {
 	buildStatus: GraphStatus | null;
 	defaultBranch: string;
 	isPending: boolean;
-}
-
-function statusVariant(
-	status: string,
-): "default" | "secondary" | "destructive" | "outline" {
-	if (status === "ready") return "default";
-	if (status === "building") return "secondary";
-	if (status === "failed") return "destructive";
-	return "outline";
 }
 
 export function BuildsListView({

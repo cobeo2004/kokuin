@@ -7,18 +7,7 @@ import {
 } from "@kokuin/ui/components/card";
 import { Skeleton } from "@kokuin/ui/components/skeleton";
 import { Activity, Calendar, GitBranch } from "lucide-react";
-
-interface GraphBuild {
-	status: string;
-	nodeCount?: number | null;
-	edgeCount?: number | null;
-	updatedAt?: Date | string | null;
-	commitSha?: string | null;
-}
-
-interface GraphStatus {
-	global: GraphBuild | null;
-}
+import { type GraphBuild, statusVariant } from "@/utils/buildStatus";
 
 interface Project {
 	name: string;
@@ -29,17 +18,8 @@ interface Project {
 
 interface ProjectOverviewViewProps {
 	project: Project | null;
-	buildStatus: GraphStatus | null;
+	buildStatus: { global: GraphBuild | null } | null;
 	isPending: boolean;
-}
-
-function statusVariant(
-	status: string,
-): "default" | "secondary" | "destructive" | "outline" {
-	if (status === "ready") return "default";
-	if (status === "building") return "secondary";
-	if (status === "failed") return "destructive";
-	return "outline";
 }
 
 export function ProjectOverviewView({
