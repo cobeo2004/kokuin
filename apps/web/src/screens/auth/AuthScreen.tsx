@@ -3,7 +3,6 @@ import {
 	CardContent,
 	CardDescription,
 	CardHeader,
-	CardTitle,
 } from "@kokuin/ui/components/card";
 import {
 	Tabs,
@@ -12,6 +11,7 @@ import {
 	TabsTrigger,
 } from "@kokuin/ui/components/tabs";
 import { useState } from "react";
+import { KokuinKanjiMark } from "@/components/brand/KokuinKanjiMark";
 import { SignInView } from "@/views/auth/SignInView";
 import { SignUpView } from "@/views/auth/SignUpView";
 
@@ -21,10 +21,10 @@ export function AuthScreen() {
 	return (
 		<div className="flex min-h-dvh items-center justify-center px-4">
 			<Card className="w-full max-w-md">
-				<CardHeader className="text-center">
-					<CardTitle className="text-2xl">Kokuin</CardTitle>
+				<CardHeader className="space-y-4 text-center">
+					<KokuinKanjiMark variant="auth" className="mx-auto" />
 					<CardDescription>
-						Code review graph & OpenWolf platform
+						刻印 (kokuin): Engraved in stillness. Retrieved in a flash.
 					</CardDescription>
 				</CardHeader>
 				<CardContent>
