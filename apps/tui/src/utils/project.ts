@@ -7,7 +7,7 @@ export async function resolveProjectId(
 	const url = `${client.serverUrl.replace(/\/$/, "")}/rpc/project/byRepoUrl`;
 	const res = await fetch(url, {
 		method: "POST",
-		headers: { ...client.headers, "Content-Type": "application/json" },
+		headers: client.headers,
 		body: JSON.stringify({ json: { url: repoUrl } }),
 	});
 

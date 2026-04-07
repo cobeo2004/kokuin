@@ -26,7 +26,7 @@ async function rpcCall<T>(
 	const url = `${serverUrl.replace(/\/$/, "")}/rpc/${path}`;
 	const res = await fetch(url, {
 		method: "POST",
-		headers: { ...headers, "Content-Type": "application/json" },
+		headers,
 		body: JSON.stringify({ json: input ?? {} }),
 	});
 	if (!res.ok) {
@@ -210,10 +210,19 @@ graphCommand
 				const output = execSync("git ls-files", { encoding: "utf-8" }).trim();
 				files = output ? output.split("\n") : [];
 			} else {
-				const output = execSync("git diff HEAD --name-only", {
+				const unstaged = execSync("git diff HEAD --name-only", {
 					encoding: "utf-8",
 				}).trim();
-				files = output ? output.split("\n") : [];
+				const staged = execSync("git diff --cached --name-only", {
+					encoding: "utf-8",
+				}).trim();
+				const allFiles = [
+					...new Set([
+						...(unstaged ? unstaged.split("\n") : []),
+						...(staged ? staged.split("\n") : []),
+					]),
+				];
+				files = allFiles;
 			}
 		} catch {
 			console.error("Failed to list files via git.");
@@ -381,6 +390,24 @@ graphCommand
 			isTest: n.is_test === 1,
 			fileHash: n.file_hash ?? undefined,
 		}));
+
+		const VALID_EDGE_KINDS = new Set<string>([
+			"CALLS",
+			"IMPORTS_FROM",
+			"INHERITS",
+			"IMPLEMENTS",
+			"CONTAINS",
+			"TESTED_BY",
+			"DEPENDS_ON",
+		]);
+
+		const invalidEdge = mappedEdges.find((e) => !VALID_EDGE_KINDS.has(e.kind));
+		if (invalidEdge) {
+			console.error(
+				`Invalid edge kind in overlay: "${invalidEdge.kind}". Rebuild the overlay with \`kokuin graph build\`.`,
+			);
+			process.exit(1);
+		}
 
 		console.log(
 			`Pushing overlay (${nodes.length} nodes, ${mappedEdges.length} edges) for branch ${branch}...`,
