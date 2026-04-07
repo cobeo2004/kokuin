@@ -20,7 +20,11 @@ export function StatsCardsView({
 }: StatsCardsViewProps) {
 	const cards = [
 		{ label: "Total Projects", value: projectCount, icon: FolderOpen },
-		{ label: "Total Members", value: memberCount, icon: Users },
+		{
+			label: "Total Members",
+			value: memberCount > 0 ? memberCount : "—",
+			icon: Users,
+		},
 		{ label: "Active Builds", value: "—", icon: Activity },
 	];
 

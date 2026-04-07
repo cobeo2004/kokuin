@@ -17,7 +17,6 @@ interface Project {
 	name: string;
 	githubRepoUrl: string;
 	defaultBranch: string;
-	createdAt: Date | string;
 	role: string;
 }
 
@@ -37,8 +36,8 @@ export function ProjectListView({
 	if (isPending) {
 		return (
 			<div className="space-y-2">
-				{[...Array(3)].map((_item, i) => (
-					<Skeleton key={i} className="h-12 w-full" />
+				{["s0", "s1", "s2"].map((k) => (
+					<Skeleton key={k} className="h-12 w-full" />
 				))}
 			</div>
 		);

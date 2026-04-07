@@ -2,6 +2,7 @@ import { Button } from "@kokuin/ui/components/button";
 import {
 	Dialog,
 	DialogContent,
+	DialogDescription,
 	DialogFooter,
 	DialogHeader,
 	DialogTitle,
@@ -44,13 +45,23 @@ export function CreateProjectDialog({
 		onError: (e) => toast.error(e.message),
 	});
 
+	const handleClose = () => {
+		setName("");
+		setGithubRepoUrl("");
+		setDefaultBranch("main");
+		onClose();
+	};
+
 	const canSubmit = name.trim() && githubRepoUrl.trim() && !create.isPending;
 
 	return (
-		<Dialog open={open} onOpenChange={(o) => !o && onClose()}>
+		<Dialog open={open} onOpenChange={(o) => !o && handleClose()}>
 			<DialogContent className="sm:max-w-md">
 				<DialogHeader>
 					<DialogTitle>Create Project</DialogTitle>
+					<DialogDescription>
+						Add a new project linked to a GitHub repository.
+					</DialogDescription>
 				</DialogHeader>
 				<div className="space-y-3">
 					<div className="space-y-1">
@@ -84,7 +95,7 @@ export function CreateProjectDialog({
 				<DialogFooter>
 					<Button
 						variant="outline"
-						onClick={onClose}
+						onClick={handleClose}
 						disabled={create.isPending}
 					>
 						Cancel

@@ -11,10 +11,24 @@ import { StatsCardsView } from "@/views/dashboard/StatsCardsView";
 export function DashboardScreen() {
 	const { isOrgAdmin } = useCurrentUser();
 	const { org, isPending: orgPending } = useOrganization();
-	const { projects, isPending: projectsPending } = useProjects();
+	const {
+		projects,
+		isPending: projectsPending,
+		error: projectsError,
+	} = useProjects();
 	const [showCreate, setShowCreate] = useState(false);
 
 	const isPending = orgPending || projectsPending;
+
+	if (projectsError) {
+		return (
+			<div className="container mx-auto p-6">
+				<p className="text-destructive text-sm">
+					Failed to load projects: {projectsError.message}
+				</p>
+			</div>
+		);
+	}
 
 	return (
 		<div className="container mx-auto space-y-6 p-6">
@@ -41,13 +55,11 @@ export function DashboardScreen() {
 				onCreateProject={() => setShowCreate(true)}
 			/>
 
-			{org && (
-				<CreateProjectDialog
-					open={showCreate}
-					onClose={() => setShowCreate(false)}
-					orgId={org.id}
-				/>
-			)}
+			<CreateProjectDialog
+				open={showCreate && !!org}
+				onClose={() => setShowCreate(false)}
+				orgId={org?.id ?? ""}
+			/>
 		</div>
 	);
 }
