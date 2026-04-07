@@ -1,5 +1,5 @@
 import { execSync } from "node:child_process";
-import { mkdirSync } from "node:fs";
+import { existsSync, mkdirSync } from "node:fs";
 import { homedir } from "node:os";
 import path from "node:path";
 import { GraphStore } from "@kokuin/graph";
@@ -282,5 +282,146 @@ graphCommand
 			console.log("Run `kokuin graph push` to upload to the server.");
 		} finally {
 			store.close();
+		}
+	});
+
+graphCommand
+	.command("push")
+	.description("Push local graph overlay to the server")
+	.option("-b, --branch <branch>", "Branch to push overlay for")
+	.action(async (options: { branch?: string }) => {
+		const repoUrl = getGitRemoteUrl();
+		if (!repoUrl) {
+			console.error("No git remote found.");
+			process.exit(1);
+		}
+
+		const client = getApiClient();
+		const branch = options.branch ?? getCurrentBranch();
+
+		let projectId: string;
+		try {
+			projectId = await resolveProjectId(client, repoUrl);
+		} catch (err) {
+			console.error(`${err}`);
+			process.exit(1);
+		}
+
+		const overlayPath = path.join(
+			homedir(),
+			".kokuin",
+			projectId,
+			branch,
+			"overlay.db",
+		);
+
+		if (!existsSync(overlayPath)) {
+			console.error("No local overlay found. Run `kokuin graph build` first.");
+			process.exit(1);
+		}
+
+		const store = new GraphStore(overlayPath);
+		let rawNodes: ReturnType<typeof store.getAllNodes>;
+		let rawEdges: ReturnType<typeof store.getAllEdges>;
+		try {
+			rawNodes = store.getAllNodes();
+			rawEdges = store.getAllEdges();
+		} finally {
+			store.close();
+		}
+
+		// Map snake_case DB rows to camelCase for the server's pushOverlay input schema
+		type DbNode = {
+			kind: string;
+			name: string;
+			qualified_name: string;
+			file_path: string;
+			line_start: number;
+			line_end: number;
+			language: string;
+			parent_name?: string;
+			params?: string;
+			return_type?: string;
+			modifiers?: string;
+			is_test?: number;
+			file_hash?: string;
+		};
+		type DbEdge = {
+			source_qualified_name?: string;
+			target_qualified_name?: string;
+			sourceQualifiedName?: string;
+			targetQualifiedName?: string;
+			kind: string;
+			weight?: number;
+		};
+
+		const nodes = (rawNodes as unknown as DbNode[]).map((n) => ({
+			kind: n.kind,
+			name: n.name,
+			qualifiedName: n.qualified_name,
+			filePath: n.file_path,
+			lineStart: n.line_start,
+			lineEnd: n.line_end,
+			language: n.language,
+			parentName: n.parent_name,
+			params: n.params,
+			returnType: n.return_type,
+			modifiers: n.modifiers,
+			isTest: n.is_test === 1,
+			fileHash: n.file_hash,
+		}));
+
+		const edges = (rawEdges as unknown as DbEdge[]).map((e) => ({
+			sourceQualifiedName:
+				e.source_qualified_name ?? e.sourceQualifiedName ?? "",
+			targetQualifiedName:
+				e.target_qualified_name ?? e.targetQualifiedName ?? "",
+			kind: e.kind,
+			weight: e.weight,
+		}));
+
+		console.log(
+			`Pushing overlay (${nodes.length} nodes, ${edges.length} edges) for branch ${branch}...`,
+		);
+
+		const headers: Record<string, string> = {
+			...client.headers,
+			"X-Repo-Url": repoUrl,
+		};
+
+		try {
+			const res = await fetch(
+				`${client.serverUrl.replace(/\/$/, "")}/rpc/graph/pushOverlay`,
+				{
+					method: "POST",
+					headers: { ...headers, "Content-Type": "application/json" },
+					body: JSON.stringify({ json: { branch, nodes, edges } }),
+				},
+			);
+
+			if (res.status === 401) {
+				console.error("Authentication expired. Run `kokuin login`.");
+				process.exit(1);
+			}
+			if (res.status === 403) {
+				console.error("You are not a member of this project.");
+				process.exit(1);
+			}
+			if (!res.ok) {
+				const text = await res.text();
+				throw new Error(`${res.status} ${text}`);
+			}
+
+			const envelope = (await res.json()) as {
+				json: { nodeCount: number; edgeCount: number };
+			};
+			const stats = envelope.json;
+			console.log("Overlay uploaded successfully.");
+			console.log(
+				`Server now has: ${stats.nodeCount} nodes, ${stats.edgeCount} edges`,
+			);
+		} catch (err) {
+			console.error(`Failed: ${err}`);
+			process.exit(1);
 		}
 	});
