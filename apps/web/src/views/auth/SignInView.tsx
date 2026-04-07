@@ -46,10 +46,12 @@ export function SignInView({ onSwitchToSignUp }: SignInViewProps) {
 				<form.Field name="email">
 					{(field) => (
 						<div className="space-y-1">
-							<Label htmlFor="email">Email</Label>
+							<Label htmlFor="signin-email">Email</Label>
 							<Input
-								id="email"
+								id="signin-email"
+								name="email"
 								type="email"
+								autoComplete="email"
 								placeholder="you@example.com"
 								value={field.state.value}
 								onChange={(e) => field.handleChange(e.target.value)}
@@ -67,10 +69,12 @@ export function SignInView({ onSwitchToSignUp }: SignInViewProps) {
 				<form.Field name="password">
 					{(field) => (
 						<div className="space-y-1">
-							<Label htmlFor="password">Password</Label>
+							<Label htmlFor="signin-password">Password</Label>
 							<Input
-								id="password"
+								id="signin-password"
+								name="password"
 								type="password"
+								autoComplete="current-password"
 								placeholder="••••••••"
 								value={field.state.value}
 								onChange={(e) => field.handleChange(e.target.value)}
@@ -85,9 +89,18 @@ export function SignInView({ onSwitchToSignUp }: SignInViewProps) {
 					)}
 				</form.Field>
 
-				<form.Subscribe selector={(s) => s.isSubmitting}>
-					{(isSubmitting) => (
-						<Button type="submit" className="w-full" disabled={isSubmitting}>
+				<form.Subscribe
+					selector={(s) => ({
+						isSubmitting: s.isSubmitting,
+						canSubmit: s.canSubmit,
+					})}
+				>
+					{({ isSubmitting, canSubmit }) => (
+						<Button
+							type="submit"
+							className="w-full"
+							disabled={!canSubmit || isSubmitting}
+						>
 							{isSubmitting ? "Signing in…" : "Sign in"}
 						</Button>
 					)}

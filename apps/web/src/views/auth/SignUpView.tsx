@@ -54,6 +54,8 @@ export function SignUpView({ onSwitchToSignIn }: SignUpViewProps) {
 							<Label htmlFor="name">Name</Label>
 							<Input
 								id="name"
+								name="name"
+								autoComplete="name"
 								placeholder="Jane Smith"
 								value={field.state.value}
 								onChange={(e) => field.handleChange(e.target.value)}
@@ -74,7 +76,9 @@ export function SignUpView({ onSwitchToSignIn }: SignUpViewProps) {
 							<Label htmlFor="signup-email">Email</Label>
 							<Input
 								id="signup-email"
+								name="email"
 								type="email"
+								autoComplete="email"
 								placeholder="you@example.com"
 								value={field.state.value}
 								onChange={(e) => field.handleChange(e.target.value)}
@@ -95,7 +99,9 @@ export function SignUpView({ onSwitchToSignIn }: SignUpViewProps) {
 							<Label htmlFor="signup-password">Password</Label>
 							<Input
 								id="signup-password"
+								name="password"
 								type="password"
+								autoComplete="new-password"
 								placeholder="••••••••"
 								value={field.state.value}
 								onChange={(e) => field.handleChange(e.target.value)}
@@ -110,9 +116,18 @@ export function SignUpView({ onSwitchToSignIn }: SignUpViewProps) {
 					)}
 				</form.Field>
 
-				<form.Subscribe selector={(s) => s.isSubmitting}>
-					{(isSubmitting) => (
-						<Button type="submit" className="w-full" disabled={isSubmitting}>
+				<form.Subscribe
+					selector={(s) => ({
+						isSubmitting: s.isSubmitting,
+						canSubmit: s.canSubmit,
+					})}
+				>
+					{({ isSubmitting, canSubmit }) => (
+						<Button
+							type="submit"
+							className="w-full"
+							disabled={!canSubmit || isSubmitting}
+						>
 							{isSubmitting ? "Creating account…" : "Create account"}
 						</Button>
 					)}

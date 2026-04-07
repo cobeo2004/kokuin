@@ -1,5 +1,6 @@
 import { Button } from "@kokuin/ui/components/button";
 import { useState } from "react";
+import { toast } from "sonner";
 import { signInWithGoogle } from "@/services/auth.service";
 
 export function GoogleOAuthButton() {
@@ -9,6 +10,8 @@ export function GoogleOAuthButton() {
 		setIsPending(true);
 		try {
 			await signInWithGoogle();
+		} catch {
+			toast.error("Google sign-in failed. Please try again.");
 		} finally {
 			setIsPending(false);
 		}
