@@ -225,9 +225,15 @@ graphCommand
 		);
 
 		// Resolve absolute paths
-		const repoRoot = execSync("git rev-parse --show-toplevel", {
-			encoding: "utf-8",
-		}).trim();
+		let repoRoot: string;
+		try {
+			repoRoot = execSync("git rev-parse --show-toplevel", {
+				encoding: "utf-8",
+			}).trim();
+		} catch {
+			console.error("Failed to determine repository root.");
+			process.exit(1);
+		}
 		const absFiles = files.map((f) => ({
 			path: path.resolve(repoRoot, f),
 		}));
