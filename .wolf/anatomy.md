@@ -1,6 +1,6 @@
 # anatomy.md
 
-> Auto-maintained by OpenWolf. Last scanned: 2026-04-07T14:34:34.167Z
+> Auto-maintained by OpenWolf. Last scanned: 2026-04-07T14:44:30.318Z
 > Files: 529 tracked | Anatomy hits: 0 | Misses: 0
 
 ## ./
@@ -498,7 +498,7 @@
 
 ## apps/tui/src/
 
-- `index.ts` — Declares program (~189 tok)
+- `index.ts` — Declares KOKUIN_ASCII (~303 tok)
 
 ## apps/tui/src/auth/
 
@@ -530,7 +530,7 @@
 ## apps/web/public/
 
 - `kokuin-favicon.svg` (~207 tok)
-- `kokuin-kanji.svg` (~360 tok)
+- `kokuin-kanji.svg` (~351 tok)
 - `robots.txt` — https://www.robotstxt.org/robotstxt.html (~17 tok)
 
 ## apps/web/src/
@@ -545,7 +545,7 @@
 
 ## apps/web/src/components/brand/
 
-- `KokuinKanjiMark.tsx` — variantClass (~270 tok)
+- `KokuinKanjiMark.tsx` — variantClass (~262 tok)
 
 ## apps/web/src/hooks/
 
@@ -644,7 +644,7 @@
 
 ## apps/web/src/views/layout/
 
-- `AppSidebar.tsx` — Role-aware sidebar with logo, nav groups, user avatar/initials, sign-out; uses useCurrentUser (~150 tok)
+- `AppSidebar.tsx` — baseItems (~653 tok)
 - `SidebarNav.tsx` — Generic nav item list using buttonVariants+Link; active-state detection via useRouterState (~80 tok)
 
 ## apps/web/src/views/projects/

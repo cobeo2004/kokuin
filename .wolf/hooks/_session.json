@@ -3,33 +3,33 @@
   "started": "2026-04-07T14:24:14.897Z",
   "files_read": {
     "/Users/cobeo/Codes/WorkPlace/AD/kokuin/apps/web/src/views/projects/ProjectOverviewView.tsx": {
-      "count": 3,
-      "tokens": 795,
+      "count": 4,
+      "tokens": 100,
       "first_read": "2026-04-07T14:25:33.155Z"
     },
     "/Users/cobeo/Codes/WorkPlace/AD/kokuin/apps/web/src/views/projects/BuildsListView.tsx": {
-      "count": 3,
-      "tokens": 838,
+      "count": 4,
+      "tokens": 100,
       "first_read": "2026-04-07T14:25:33.628Z"
     },
     "/Users/cobeo/Codes/WorkPlace/AD/kokuin/apps/web/src/screens/projects/ProjectBuildsScreen.tsx": {
-      "count": 3,
-      "tokens": 340,
+      "count": 4,
+      "tokens": 60,
       "first_read": "2026-04-07T14:25:34.132Z"
     },
     "/Users/cobeo/Codes/WorkPlace/AD/kokuin/apps/web/src/screens/projects/ProjectMembersScreen.tsx": {
-      "count": 3,
-      "tokens": 294,
+      "count": 4,
+      "tokens": 60,
       "first_read": "2026-04-07T14:25:34.424Z"
     },
     "/Users/cobeo/Codes/WorkPlace/AD/kokuin/apps/web/src/views/projects/ProjectMembersView.tsx": {
-      "count": 3,
-      "tokens": 1063,
+      "count": 4,
+      "tokens": 150,
       "first_read": "2026-04-07T14:25:34.590Z"
     },
     "/Users/cobeo/Codes/WorkPlace/AD/kokuin/apps/web/src/utils/buildStatus.ts": {
-      "count": 2,
-      "tokens": 115,
+      "count": 3,
+      "tokens": 40,
       "first_read": "2026-04-07T14:26:37.805Z"
     },
     "/Users/cobeo/.cursor/projects/Users-cobeo-Codes-WorkPlace-AD-kokuin/mcps/project-0-kokuin-code-review-graph/tools/get_architecture_overview_tool.json": {
@@ -58,7 +58,7 @@
       "first_read": "2026-04-07T14:27:38.113Z"
     },
     "/Users/cobeo/Codes/WorkPlace/AD/kokuin/apps/web/src/index.css": {
-      "count": 3,
+      "count": 4,
       "tokens": 24,
       "first_read": "2026-04-07T14:28:43.469Z"
     },
@@ -68,23 +68,23 @@
       "first_read": "2026-04-07T14:28:45.023Z"
     },
     "/Users/cobeo/Codes/WorkPlace/AD/kokuin/apps/web/src/views/layout/AppSidebar.tsx": {
-      "count": 3,
-      "tokens": 659,
+      "count": 6,
+      "tokens": 150,
       "first_read": "2026-04-07T14:28:47.145Z"
     },
     "/Users/cobeo/Codes/WorkPlace/AD/kokuin/apps/web/src/routes/_app.tsx": {
-      "count": 3,
-      "tokens": 164,
+      "count": 4,
+      "tokens": 80,
       "first_read": "2026-04-07T14:28:47.660Z"
     },
     "/Users/cobeo/Codes/WorkPlace/AD/kokuin/apps/web/src/screens/auth/AuthScreen.tsx": {
-      "count": 3,
-      "tokens": 387,
+      "count": 5,
+      "tokens": 80,
       "first_read": "2026-04-07T14:28:47.953Z"
     },
     "/Users/cobeo/Codes/WorkPlace/AD/kokuin/apps/web/src/routes/__root.tsx": {
-      "count": 3,
-      "tokens": 336,
+      "count": 5,
+      "tokens": 377,
       "first_read": "2026-04-07T14:28:48.045Z"
     },
     "/Users/cobeo/Codes/WorkPlace/AD/kokuin/apps/web/src/components/header.tsx": {
@@ -108,8 +108,8 @@
       "first_read": "2026-04-07T14:28:50.443Z"
     },
     "/Users/cobeo/Codes/WorkPlace/AD/kokuin/apps/web/src/views/layout/SidebarNav.tsx": {
-      "count": 2,
-      "tokens": 284,
+      "count": 3,
+      "tokens": 80,
       "first_read": "2026-04-07T14:28:52.909Z"
     },
     "/Users/cobeo/Codes/WorkPlace/AD/kokuin/packages/ui/src/components/button.tsx": {
@@ -118,29 +118,199 @@
       "first_read": "2026-04-07T14:28:53.131Z"
     },
     "/Users/cobeo/Codes/WorkPlace/AD/kokuin/apps/web/src/routes/index.tsx": {
-      "count": 1,
-      "tokens": 107,
+      "count": 2,
+      "tokens": 80,
       "first_read": "2026-04-07T14:28:53.637Z"
     },
     "/Users/cobeo/Codes/WorkPlace/AD/kokuin/apps/web/src/routes/_public/login.tsx": {
-      "count": 1,
-      "tokens": 62,
+      "count": 3,
+      "tokens": 30,
       "first_read": "2026-04-07T14:28:55.145Z"
     },
     "/Users/cobeo/Codes/WorkPlace/AD/kokuin/apps/web/src/routes/_public.tsx": {
-      "count": 2,
-      "tokens": 84,
+      "count": 3,
+      "tokens": 50,
       "first_read": "2026-04-07T14:28:56.499Z"
     },
     "/Users/cobeo/Codes/WorkPlace/AD/kokuin/apps/web/src/routes/device.tsx": {
-      "count": 1,
+      "count": 2,
       "tokens": 1000,
       "first_read": "2026-04-07T14:28:56.691Z"
     },
     "/Users/cobeo/Codes/WorkPlace/AD/kokuin/apps/web/src/screens/projects/ProjectScreen.tsx": {
-      "count": 1,
-      "tokens": 872,
+      "count": 2,
+      "tokens": 120,
       "first_read": "2026-04-07T14:29:02.882Z"
+    },
+    "/Users/cobeo/Codes/WorkPlace/AD/kokuin/apps/web/public/kokuin-kanji.svg": {
+      "count": 2,
+      "tokens": 0,
+      "first_read": "2026-04-07T14:33:30.668Z"
+    },
+    "/Users/cobeo/Codes/WorkPlace/AD/kokuin/apps/web/public/kokuin-favicon.svg": {
+      "count": 1,
+      "tokens": 0,
+      "first_read": "2026-04-07T14:33:36.790Z"
+    },
+    "/Users/cobeo/Codes/WorkPlace/AD/kokuin/apps/web/src/components/brand/KokuinKanjiMark.tsx": {
+      "count": 1,
+      "tokens": 0,
+      "first_read": "2026-04-07T14:33:54.293Z"
+    },
+    "/Users/cobeo/Codes/WorkPlace/AD/kokuin/apps/web/src/routes/_app/dashboard.tsx": {
+      "count": 1,
+      "tokens": 30,
+      "first_read": "2026-04-07T14:37:40.982Z"
+    },
+    "/Users/cobeo/Codes/WorkPlace/AD/kokuin/apps/web/src/routes/_app/admin/index.tsx": {
+      "count": 1,
+      "tokens": 30,
+      "first_read": "2026-04-07T14:37:41.773Z"
+    },
+    "/Users/cobeo/Codes/WorkPlace/AD/kokuin/apps/web/src/routes/_app/projects/$projectId.tsx": {
+      "count": 1,
+      "tokens": 30,
+      "first_read": "2026-04-07T14:37:42.237Z"
+    },
+    "/Users/cobeo/Codes/WorkPlace/AD/kokuin/apps/web/src/routes/_app/projects/$projectId.builds.tsx": {
+      "count": 1,
+      "tokens": 30,
+      "first_read": "2026-04-07T14:37:42.555Z"
+    },
+    "/Users/cobeo/Codes/WorkPlace/AD/kokuin/apps/web/src/routes/_app/projects/$projectId.members.tsx": {
+      "count": 1,
+      "tokens": 30,
+      "first_read": "2026-04-07T14:37:43.046Z"
+    },
+    "/Users/cobeo/Codes/WorkPlace/AD/kokuin/apps/web/src/screens/dashboard/DashboardScreen.tsx": {
+      "count": 1,
+      "tokens": 100,
+      "first_read": "2026-04-07T14:37:48.241Z"
+    },
+    "/Users/cobeo/Codes/WorkPlace/AD/kokuin/apps/web/src/screens/admin/AdminScreen.tsx": {
+      "count": 1,
+      "tokens": 80,
+      "first_read": "2026-04-07T14:37:48.991Z"
+    },
+    "/Users/cobeo/Codes/WorkPlace/AD/kokuin/apps/web/src/hooks/useCurrentUser.ts": {
+      "count": 1,
+      "tokens": 80,
+      "first_read": "2026-04-07T14:37:54.442Z"
+    },
+    "/Users/cobeo/Codes/WorkPlace/AD/kokuin/apps/web/src/hooks/useOrganization.ts": {
+      "count": 1,
+      "tokens": 50,
+      "first_read": "2026-04-07T14:37:54.889Z"
+    },
+    "/Users/cobeo/Codes/WorkPlace/AD/kokuin/apps/web/src/hooks/useProjects.ts": {
+      "count": 1,
+      "tokens": 40,
+      "first_read": "2026-04-07T14:37:55.266Z"
+    },
+    "/Users/cobeo/Codes/WorkPlace/AD/kokuin/apps/web/src/hooks/useProjectBuilds.ts": {
+      "count": 1,
+      "tokens": 50,
+      "first_read": "2026-04-07T14:37:55.727Z"
+    },
+    "/Users/cobeo/Codes/WorkPlace/AD/kokuin/apps/web/src/hooks/useProjectMembers.ts": {
+      "count": 1,
+      "tokens": 120,
+      "first_read": "2026-04-07T14:37:56.086Z"
+    },
+    "/Users/cobeo/Codes/WorkPlace/AD/kokuin/apps/web/src/hooks/index.ts": {
+      "count": 1,
+      "tokens": 30,
+      "first_read": "2026-04-07T14:37:56.398Z"
+    },
+    "/Users/cobeo/Codes/WorkPlace/AD/kokuin/apps/web/src/services/auth.service.ts": {
+      "count": 1,
+      "tokens": 80,
+      "first_read": "2026-04-07T14:38:00.156Z"
+    },
+    "/Users/cobeo/Codes/WorkPlace/AD/kokuin/apps/web/src/services/organization.service.ts": {
+      "count": 1,
+      "tokens": 60,
+      "first_read": "2026-04-07T14:38:00.506Z"
+    },
+    "/Users/cobeo/Codes/WorkPlace/AD/kokuin/apps/web/src/services/project.service.ts": {
+      "count": 1,
+      "tokens": 100,
+      "first_read": "2026-04-07T14:38:00.952Z"
+    },
+    "/Users/cobeo/Codes/WorkPlace/AD/kokuin/apps/web/src/services/graph.service.ts": {
+      "count": 1,
+      "tokens": 40,
+      "first_read": "2026-04-07T14:38:01.335Z"
+    },
+    "/Users/cobeo/Codes/WorkPlace/AD/kokuin/apps/web/src/utils/orpc.ts": {
+      "count": 1,
+      "tokens": 150,
+      "first_read": "2026-04-07T14:38:01.743Z"
+    },
+    "/Users/cobeo/Codes/WorkPlace/AD/kokuin/apps/web/src/views/auth/SignInView.tsx": {
+      "count": 1,
+      "tokens": 150,
+      "first_read": "2026-04-07T14:38:06.063Z"
+    },
+    "/Users/cobeo/Codes/WorkPlace/AD/kokuin/apps/web/src/views/auth/SignUpView.tsx": {
+      "count": 1,
+      "tokens": 150,
+      "first_read": "2026-04-07T14:38:06.428Z"
+    },
+    "/Users/cobeo/Codes/WorkPlace/AD/kokuin/apps/web/src/views/auth/GoogleOAuthButton.tsx": {
+      "count": 1,
+      "tokens": 80,
+      "first_read": "2026-04-07T14:38:06.866Z"
+    },
+    "/Users/cobeo/Codes/WorkPlace/AD/kokuin/apps/web/src/views/dashboard/CreateProjectDialog.tsx": {
+      "count": 1,
+      "tokens": 100,
+      "first_read": "2026-04-07T14:38:08.423Z"
+    },
+    "/Users/cobeo/Codes/WorkPlace/AD/kokuin/apps/web/src/views/dashboard/ProjectListView.tsx": {
+      "count": 1,
+      "tokens": 120,
+      "first_read": "2026-04-07T14:38:12.370Z"
+    },
+    "/Users/cobeo/Codes/WorkPlace/AD/kokuin/apps/web/src/views/dashboard/StatsCardsView.tsx": {
+      "count": 1,
+      "tokens": 80,
+      "first_read": "2026-04-07T14:38:13.081Z"
+    },
+    "/Users/cobeo/Codes/WorkPlace/AD/kokuin/apps/web/src/views/admin/OrgSettingsView.tsx": {
+      "count": 1,
+      "tokens": 80,
+      "first_read": "2026-04-07T14:38:13.537Z"
+    },
+    "/Users/cobeo/Codes/WorkPlace/AD/kokuin/apps/web/src/views/admin/MembersTableView.tsx": {
+      "count": 1,
+      "tokens": 60,
+      "first_read": "2026-04-07T14:38:13.950Z"
+    },
+    "/Users/cobeo/Codes/WorkPlace/AD/kokuin/apps/web/src/views/admin/DomainRulesView.tsx": {
+      "count": 1,
+      "tokens": 40,
+      "first_read": "2026-04-07T14:38:14.726Z"
+    },
+    "/Users/cobeo/Codes/WorkPlace/AD/kokuin/apps/web/src/routes/_app/organizations/index.tsx": {
+      "count": 1,
+      "tokens": 1780,
+      "first_read": "2026-04-07T14:38:21.767Z"
+    },
+    "/Users/cobeo/Codes/WorkPlace/AD/kokuin/apps/web/src/routeTree.gen.ts": {
+      "count": 1,
+      "tokens": 2821,
+      "first_read": "2026-04-07T14:39:33.601Z"
+    },
+    "/Users/cobeo/Codes/WorkPlace/AD/kokuin/apps/tui/src/index.ts": {
+      "count": 2,
+      "tokens": 189,
+      "first_read": "2026-04-07T14:43:19.931Z"
+    },
+    "/Users/cobeo/Codes/WorkPlace/AD/kokuin/apps/tui/package.json": {
+      "count": 1,
+      "tokens": 450,
+      "first_read": "2026-04-07T14:44:09.767Z"
     }
   },
   "files_written": [
@@ -215,6 +385,96 @@
       "action": "edit",
       "tokens": 47,
       "at": "2026-04-07T14:29:48.186Z"
+    },
+    {
+      "file": "/Users/cobeo/Codes/WorkPlace/AD/kokuin/apps/web/public/kokuin-kanji.svg",
+      "action": "create",
+      "tokens": 386,
+      "at": "2026-04-07T14:33:31.081Z"
+    },
+    {
+      "file": "/Users/cobeo/Codes/WorkPlace/AD/kokuin/apps/web/public/kokuin-favicon.svg",
+      "action": "create",
+      "tokens": 221,
+      "at": "2026-04-07T14:33:37.260Z"
+    },
+    {
+      "file": "/Users/cobeo/Codes/WorkPlace/AD/kokuin/apps/web/src/components/brand/KokuinKanjiMark.tsx",
+      "action": "create",
+      "tokens": 227,
+      "at": "2026-04-07T14:33:55.510Z"
+    },
+    {
+      "file": "/Users/cobeo/Codes/WorkPlace/AD/kokuin/apps/web/src/views/layout/AppSidebar.tsx",
+      "action": "create",
+      "tokens": 671,
+      "at": "2026-04-07T14:34:00.955Z"
+    },
+    {
+      "file": "/Users/cobeo/Codes/WorkPlace/AD/kokuin/apps/web/src/screens/auth/AuthScreen.tsx",
+      "action": "create",
+      "tokens": 426,
+      "at": "2026-04-07T14:34:06.137Z"
+    },
+    {
+      "file": "/Users/cobeo/Codes/WorkPlace/AD/kokuin/apps/web/src/index.css",
+      "action": "create",
+      "tokens": 183,
+      "at": "2026-04-07T14:34:21.199Z"
+    },
+    {
+      "file": "/Users/cobeo/Codes/WorkPlace/AD/kokuin/apps/web/src/routes/__root.tsx",
+      "action": "create",
+      "tokens": 377,
+      "at": "2026-04-07T14:34:29.696Z"
+    },
+    {
+      "file": "/Users/cobeo/Codes/WorkPlace/AD/kokuin/apps/web/src/components/brand/KokuinKanjiMark.tsx",
+      "action": "create",
+      "tokens": 270,
+      "at": "2026-04-07T14:34:34.181Z"
+    },
+    {
+      "file": "/Users/cobeo/Codes/WorkPlace/AD/kokuin/apps/web/src/components/brand/KokuinKanjiMark.tsx",
+      "action": "create",
+      "tokens": 262,
+      "at": "2026-04-07T14:36:40.905Z"
+    },
+    {
+      "file": "/Users/cobeo/Codes/WorkPlace/AD/kokuin/apps/web/public/kokuin-kanji.svg",
+      "action": "create",
+      "tokens": 376,
+      "at": "2026-04-07T14:37:54.339Z"
+    },
+    {
+      "file": "/Users/cobeo/Codes/WorkPlace/AD/kokuin/apps/web/public/kokuin-kanji.svg",
+      "action": "create",
+      "tokens": 376,
+      "at": "2026-04-07T14:39:37.235Z"
+    },
+    {
+      "file": "/Users/cobeo/Codes/WorkPlace/AD/kokuin/apps/web/src/views/layout/AppSidebar.tsx",
+      "action": "edit",
+      "tokens": 211,
+      "at": "2026-04-07T14:41:18.218Z"
+    },
+    {
+      "file": "/Users/cobeo/Codes/WorkPlace/AD/kokuin/apps/tui/src/index.ts",
+      "action": "create",
+      "tokens": 319,
+      "at": "2026-04-07T14:43:38.334Z"
+    },
+    {
+      "file": "/Users/cobeo/Codes/WorkPlace/AD/kokuin/apps/tui/src/index.ts",
+      "action": "create",
+      "tokens": 319,
+      "at": "2026-04-07T14:44:05.230Z"
+    },
+    {
+      "file": "/Users/cobeo/Codes/WorkPlace/AD/kokuin/apps/tui/src/index.ts",
+      "action": "create",
+      "tokens": 303,
+      "at": "2026-04-07T14:44:30.343Z"
     }
   ],
   "edit_counts": {
@@ -223,11 +483,19 @@
     "apps/web/src/views/projects/BuildsListView.tsx": 3,
     "apps/web/src/screens/projects/ProjectBuildsScreen.tsx": 1,
     "apps/web/src/screens/projects/ProjectMembersScreen.tsx": 2,
-    "apps/web/src/views/projects/ProjectMembersView.tsx": 2
+    "apps/web/src/views/projects/ProjectMembersView.tsx": 2,
+    "apps/web/public/kokuin-kanji.svg": 3,
+    "apps/web/public/kokuin-favicon.svg": 1,
+    "apps/web/src/components/brand/KokuinKanjiMark.tsx": 3,
+    "apps/web/src/views/layout/AppSidebar.tsx": 2,
+    "apps/web/src/screens/auth/AuthScreen.tsx": 1,
+    "apps/web/src/index.css": 1,
+    "apps/web/src/routes/__root.tsx": 1,
+    "apps/tui/src/index.ts": 3
   },
-  "anatomy_hits": 23,
-  "anatomy_misses": 5,
-  "repeated_reads_warned": 25,
+  "anatomy_hits": 54,
+  "anatomy_misses": 8,
+  "repeated_reads_warned": 49,
   "cerebrum_warnings": 0,
-  "stop_count": 1
+  "stop_count": 5
 }

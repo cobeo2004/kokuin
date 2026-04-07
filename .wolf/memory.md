@@ -609,3 +609,14 @@ WebSocket live sync, D3 visualization, storage adapter S3 impl.
 | 00:34 | Created apps/web/src/routes/__root.tsx | — | ~377 |
 | 00:34 | Created apps/web/src/components/brand/KokuinKanjiMark.tsx | — | ~270 |
 | 14:35 | Completed dashboard refactor (Tasks 1-11): new services/hooks/screens/views architecture, auth screen with Google OAuth, role-aware sidebar, dashboard/admin/project screens | apps/web/src/ | done | ~2000 |
+| 00:36 | Created apps/web/src/components/brand/KokuinKanjiMark.tsx | — | ~262 |
+| 00:37 | Created apps/web/public/kokuin-kanji.svg | — | ~351 |
+| 00:39 | Created apps/web/public/kokuin-kanji.svg | — | ~351 |
+| 00:39 | Session end: 23 writes across 13 files (buildStatus.ts, ProjectOverviewView.tsx, BuildsListView.tsx, ProjectBuildsScreen.tsx, ProjectMembersScreen.tsx) | 60 reads | ~17387 tok |
+| 00:41 | Edited apps/web/src/views/layout/AppSidebar.tsx | 18→17 lines | ~211 |
+| 00:42 | Session end: 24 writes across 13 files (buildStatus.ts, ProjectOverviewView.tsx, BuildsListView.tsx, ProjectBuildsScreen.tsx, ProjectMembersScreen.tsx) | 60 reads | ~17598 tok |
+| 00:42 | Session end: 24 writes across 13 files (buildStatus.ts, ProjectOverviewView.tsx, BuildsListView.tsx, ProjectBuildsScreen.tsx, ProjectMembersScreen.tsx) | 60 reads | ~17598 tok |
+| 00:43 | Created apps/tui/src/index.ts | — | ~319 |
+| 00:44 | Created apps/tui/src/index.ts | — | ~319 |
+| 00:44 | Created apps/tui/src/index.ts | — | ~303 |
+| 00:44 | Session end: 27 writes across 14 files (buildStatus.ts, ProjectOverviewView.tsx, BuildsListView.tsx, ProjectBuildsScreen.tsx, ProjectMembersScreen.tsx) | 62 reads | ~19178 tok |

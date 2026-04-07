@@ -1,1048 +1,797 @@
 {
-  "version": 1,
-  "bugs": [
-    {
-      "id": "bug-001",
-      "timestamp": "2026-04-06T05:21:35.004Z",
-      "error_message": "Wrong reference: only should be Own",
-      "file": "docs/superpowers/specs/2026-04-06-kokuin-design.md",
-      "root_cause": "Used \"only\" instead of \"Own\"",
-      "fix": "Changed only → Own",
-      "tags": [
-        "auto-detected",
-        "wrong-reference",
-        "md"
-      ],
-      "related_bugs": [],
-      "occurrences": 1,
-      "last_seen": "2026-04-06T05:21:35.004Z"
-    },
-    {
-      "id": "bug-002",
-      "timestamp": "2026-04-06T05:24:13.875Z",
-      "error_message": "Significant refactor of ",
-      "file": "docs/superpowers/specs/2026-04-06-kokuin-design.md",
-      "root_cause": "2 lines replaced/restructured",
-      "fix": "Rewrote 11→21 lines (2 removed)",
-      "tags": [
-        "auto-detected",
-        "refactor",
-        "md"
-      ],
-      "related_bugs": [],
-      "occurrences": 1,
-      "last_seen": "2026-04-06T05:24:13.875Z"
-    },
-    {
-      "id": "bug-003",
-      "timestamp": "2026-04-06T10:13:08.732Z",
-      "error_message": "CSS fix: to",
-      "file": "apps/web/src/components/header.tsx",
-      "root_cause": "to: \"/ai\", label: \"AI Chat\" → \"/dashboard\", label: \"Dashboard\"",
-      "fix": "Changed to: \"/ai\", label: \"AI Chat\" → \"/dashboard\", label: \"Dashboard\"",
-      "tags": [
-        "auto-detected",
-        "style-fix",
-        "tsx"
-      ],
-      "related_bugs": [],
-      "occurrences": 1,
-      "last_seen": "2026-04-06T10:13:08.732Z"
-    },
-    {
-      "id": "bug-004",
-      "timestamp": "2026-04-06T10:16:51.359Z",
-      "error_message": "Incorrect value in code",
-      "file": "apps/web/src/routes/dashboard.tsx",
-      "root_cause": "Had \"/projects/new\"",
-      "fix": "Changed to \"Coming soon\"",
-      "tags": [
-        "auto-detected",
-        "wrong-value",
-        "tsx"
-      ],
-      "related_bugs": [],
-      "occurrences": 2,
-      "last_seen": "2026-04-06T10:16:56.314Z"
-    },
-    {
-      "id": "bug-005",
-      "timestamp": "2026-04-06T10:44:35.970Z",
-      "error_message": "Null/undefined access in ",
-      "file": "packages/graph/src/query.ts",
-      "root_cause": "Property access on potentially null/undefined value",
-      "fix": "Added null safety (optional chaining or null check)",
-      "tags": [
-        "auto-detected",
-        "null-safety",
-        "ts"
-      ],
-      "related_bugs": [],
-      "occurrences": 1,
-      "last_seen": "2026-04-06T10:44:35.970Z"
-    },
-    {
-      "id": "bug-006",
-      "timestamp": "2026-04-06T10:45:06.095Z",
-      "error_message": "Wrong return value",
-      "file": "packages/graph/src/search.ts",
-      "root_cause": "Was returning: rows",
-      "fix": "Now returns: mergedRows",
-      "tags": [
-        "auto-detected",
-        "return-value",
-        "ts"
-      ],
-      "related_bugs": [],
-      "occurrences": 1,
-      "last_seen": "2026-04-06T10:45:06.095Z"
-    },
-    {
-      "id": "bug-007",
-      "timestamp": "2026-04-06T10:45:58.184Z",
-      "error_message": "Type error",
-      "file": "packages/api/src/routers/graph.ts",
-      "root_cause": "Missing or incorrect type annotation",
-      "fix": "Added type assertion/annotation | Also: overlayStore.upsertNodes(input.nodes as ParsedNode[]);; overlayStore.upsertEdges(input.edges as ParsedEdge[]);",
-      "tags": [
-        "auto-detected",
-        "type-fix",
-        "ts"
-      ],
-      "related_bugs": [],
-      "occurrences": 2,
-      "last_seen": "2026-04-06T10:47:13.317Z"
-    },
-    {
-      "id": "bug-008",
-      "timestamp": "2026-04-06T10:45:58.523Z",
-      "error_message": "Wrong reference: getGlobalStore should be query",
-      "file": "packages/graph/src/mcp-server.ts",
-      "root_cause": "Used \"getGlobalStore\" instead of \"query\"",
-      "fix": "Changed getGlobalStore → query",
-      "tags": [
-        "auto-detected",
-        "wrong-reference",
-        "ts"
-      ],
-      "related_bugs": [],
-      "occurrences": 1,
-      "last_seen": "2026-04-06T10:45:58.523Z"
-    },
-    {
-      "id": "bug-009",
-      "timestamp": "2026-04-06T10:46:08.819Z",
-      "error_message": "Null/undefined access in ",
-      "file": "packages/graph/src/mcp-server.ts",
-      "root_cause": "Property access on potentially null/undefined value",
-      "fix": "Added null safety (optional chaining or null check)",
-      "tags": [
-        "auto-detected",
-        "null-safety",
-        "ts"
-      ],
-      "related_bugs": [],
-      "occurrences": 1,
-      "last_seen": "2026-04-06T10:46:08.820Z"
-    },
-    {
-      "id": "bug-010",
-      "timestamp": "2026-04-06T10:46:21.188Z",
-      "error_message": "Null/undefined access in ",
-      "file": "packages/api/src/routers/graph.ts",
-      "root_cause": "Property access on potentially null/undefined value",
-      "fix": "Added null safety (optional chaining or null check)",
-      "tags": [
-        "auto-detected",
-        "null-safety",
-        "ts"
-      ],
-      "related_bugs": [],
-      "occurrences": 1,
-      "last_seen": "2026-04-06T10:46:21.188Z"
-    },
-    {
-      "id": "bug-011",
-      "timestamp": "2026-04-06T10:46:21.584Z",
-      "error_message": "Wrong return value",
-      "file": "packages/api/src/routers/graph.ts",
-      "root_cause": "Was returning: new ImpactAnalyzer(merged.getGlobalStore()).getImp",
-      "fix": "Now returns: new ImpactAnalyzer(merged).getImpactRadius(",
-      "tags": [
-        "auto-detected",
-        "return-value",
-        "ts"
-      ],
-      "related_bugs": [],
-      "occurrences": 2,
-      "last_seen": "2026-04-06T10:46:51.372Z"
-    },
-    {
-      "id": "bug-012",
-      "timestamp": "2026-04-06T10:57:16.072Z",
-      "error_message": "Type error",
-      "file": ".claude/worktrees/agent-aeba7c78/packages/api/src/routers/graph.ts",
-      "root_cause": "Missing or incorrect type annotation",
-      "fix": "Added type assertion/annotation",
-      "tags": [
-        "auto-detected",
-        "type-fix",
-        "ts"
-      ],
-      "related_bugs": [],
-      "occurrences": 1,
-      "last_seen": "2026-04-06T10:57:16.072Z"
-    },
-    {
-      "id": "bug-013",
-      "timestamp": "2026-04-06T10:58:18.241Z",
-      "error_message": "Significant refactor of ",
-      "file": "apps/tui/src/auth/credentials.ts",
-      "root_cause": "2 lines replaced/restructured",
-      "fix": "Rewrote 3→7 lines (2 removed)",
-      "tags": [
-        "auto-detected",
-        "refactor",
-        "ts"
-      ],
-      "related_bugs": [],
-      "occurrences": 1,
-      "last_seen": "2026-04-06T10:58:18.241Z"
-    },
-    {
-      "id": "bug-014",
-      "timestamp": "2026-04-06T10:58:37.878Z",
-      "error_message": "Missing error handling in function",
-      "file": "apps/tui/src/auth/device-flow.ts",
-      "root_cause": "Code path had no error handling — exceptions would propagate uncaught",
-      "fix": "Added try/catch block",
-      "tags": [
-        "auto-detected",
-        "error-handling",
-        "ts"
-      ],
-      "related_bugs": [],
-      "occurrences": 1,
-      "last_seen": "2026-04-06T10:58:37.878Z"
-    },
-    {
-      "id": "bug-015",
-      "timestamp": "2026-04-06T10:59:33.306Z",
-      "error_message": "Null/undefined access in ",
-      "file": "packages/api/src/routers/device-auth.ts",
-      "root_cause": "Property access on potentially null/undefined value",
-      "fix": "Added null safety (optional chaining or null check)",
-      "tags": [
-        "auto-detected",
-        "null-safety",
-        "ts"
-      ],
-      "related_bugs": [],
-      "occurrences": 1,
-      "last_seen": "2026-04-06T10:59:33.306Z"
-    },
-    {
-      "id": "bug-016",
-      "timestamp": "2026-04-06T10:59:53.112Z",
-      "error_message": "Missing await",
-      "file": "packages/api/src/routers/device-auth.ts",
-      "root_cause": "Async call without await — returned Promise instead of value",
-      "fix": "Added await to async call",
-      "tags": [
-        "auto-detected",
-        "async-fix",
-        "ts"
-      ],
-      "related_bugs": [],
-      "occurrences": 1,
-      "last_seen": "2026-04-06T10:59:53.112Z"
-    },
-    {
-      "id": "bug-017",
-      "timestamp": "2026-04-06T11:00:10.804Z",
-      "error_message": "Missing await",
-      "file": "packages/api/src/routers/project.ts",
-      "root_cause": "Async call without await — returned Promise instead of value",
-      "fix": "Added await to async call",
-      "tags": [
-        "auto-detected",
-        "async-fix",
-        "ts"
-      ],
-      "related_bugs": [],
-      "occurrences": 1,
-      "last_seen": "2026-04-06T11:00:10.804Z"
-    },
-    {
-      "id": "bug-018",
-      "timestamp": "2026-04-06T11:00:18.691Z",
-      "error_message": "Missing guard clause",
-      "file": "packages/graph/src/fs-adapter.ts",
-      "root_cause": "No early return/throw for edge case: !trimmed",
-      "fix": "Added guard clause: if (!trimmed)",
-      "tags": [
-        "auto-detected",
-        "guard-clause",
-        "ts"
-      ],
-      "related_bugs": [],
-      "occurrences": 1,
-      "last_seen": "2026-04-06T11:00:18.691Z"
-    },
-    {
-      "id": "bug-019",
-      "timestamp": "2026-04-06T11:00:37.781Z",
-      "error_message": "Type error",
-      "file": ".claude/worktrees/agent-aeba7c78/packages/graph/src/mcp-server.ts",
-      "root_cause": "Missing or incorrect type annotation",
-      "fix": "Added type assertion/annotation | Also: async ({ query, limit }: { query: string; limit: number }) = | Also: async ({ target, maxDepth }: { target: string; maxDepth: num | Also: async ({ changes }: { changes: Array<{ filePath: string; lin",
-      "tags": [
-        "auto-detected",
-        "type-fix",
-        "ts"
-      ],
-      "related_bugs": [],
-      "occurrences": 4,
-      "last_seen": "2026-04-06T11:00:53.182Z"
-    },
-    {
-      "id": "bug-020",
-      "timestamp": "2026-04-06T11:01:23.527Z",
-      "error_message": "Incorrect value in code",
-      "file": ".claude/worktrees/agent-aeba7c78/packages/graph/src/mcp-server.ts",
-      "root_cause": "Had \"@modelcontextprotocol/sdk/server/mcp.js\"",
-      "fix": "Changed to \"@modelcontextprotocol/sdk/server/mcp\"",
-      "tags": [
-        "auto-detected",
-        "wrong-value",
-        "ts"
-      ],
-      "related_bugs": [],
-      "occurrences": 2,
-      "last_seen": "2026-04-06T11:04:20.125Z"
-    },
-    {
-      "id": "bug-021",
-      "timestamp": "2026-04-06T11:02:42.000Z",
-      "error_message": "Project creation allowed non-organization members",
-      "file": "packages/api/src/routers/project.ts",
-      "root_cause": "Missing organization membership check before creating project",
-      "fix": "Verified org membership via prisma.member and reject with FORBIDDEN when missing",
-      "tags": [
-        "auth",
-        "org-membership",
-        "project-create"
-      ],
-      "related_bugs": [],
-      "occurrences": 1,
-      "last_seen": "2026-04-06T11:02:42.000Z"
-    },
-    {
-      "id": "bug-022",
-      "timestamp": "2026-04-06T11:02:42.000Z",
-      "error_message": "Path traversal risk via unsanitized projectId/userId in FsStorageAdapter",
-      "file": "packages/graph/src/fs-adapter.ts",
-      "root_cause": "projectId/userId used directly in join without sanitization",
-      "fix": "Sanitized projectId and userId path segments before building filesystem paths",
-      "tags": [
-        "security",
-        "path-traversal",
-        "fs-adapter"
-      ],
-      "related_bugs": [],
-      "occurrences": 1,
-      "last_seen": "2026-04-06T11:02:42.000Z"
-    },
-    {
-      "id": "bug-023",
-      "timestamp": "2026-04-06T11:02:42.000Z",
-      "error_message": "Webhook marked build ready without running parser/build",
-      "file": "apps/server/src/webhook.ts",
-      "root_cause": "triggerBuild set status to ready immediately after creating empty SQLite DB",
-      "fix": "Set status to in_progress when triggering build; no ready status without parser",
-      "tags": [
-        "webhook",
-        "graph-build",
-        "status"
-      ],
-      "related_bugs": [],
-      "occurrences": 1,
-      "last_seen": "2026-04-06T11:02:42.000Z"
-    },
-    {
-      "id": "bug-024",
-      "timestamp": "2026-04-06T13:15:00.000Z",
-      "error_message": "Device auth used Math.random and in-memory store",
-      "file": "packages/api/src/routers/device-auth.ts",
-      "root_cause": "Device codes and access tokens were generated with Math.random and stored in memory",
-      "fix": "Use crypto-backed randomness and persist device auth codes in Prisma",
-      "tags": [
-        "security",
-        "device-auth",
-        "prisma"
-      ],
-      "related_bugs": [],
-      "occurrences": 1,
-      "last_seen": "2026-04-06T13:15:00.000Z"
-    },
-    {
-      "id": "bug-025",
-      "timestamp": "2026-04-06T11:04:27.000Z",
-      "error_message": "Type check failed: prisma.deviceAuthCode missing",
-      "file": "packages/api/src/routers/device-auth.ts",
-      "root_cause": "Device auth refactor expects Prisma model that is not present in schema/client",
-      "fix": "Reverted device auth to in-memory store to unblock type checks",
-      "tags": [
-        "typecheck",
-        "prisma",
-        "device-auth",
-        "rollback"
-      ],
-      "related_bugs": [],
-      "occurrences": 1,
-      "last_seen": "2026-04-06T11:04:27.000Z"
-    },
-    {
-      "id": "bug-026",
-      "timestamp": "2026-04-06T13:20:00.000Z",
-      "error_message": "CLI device flow used JSON-RPC request format instead of ORPC RPCLink JSON body",
-      "file": "apps/tui/src/auth/device-flow.ts",
-      "root_cause": "Device flow used { method, params } payload and parsed JSON-RPC response while server expects POST /rpc/<path> with JSON input.",
-      "fix": "Send POST to /rpc/deviceAuth/authorize and /rpc/deviceAuth/token with JSON body and handle ORPC error responses.",
-      "tags": [
-        "cli",
-        "auth",
-        "orpc",
-        "rpc",
-        "format"
-      ],
-      "related_bugs": [],
-      "occurrences": 1,
-      "last_seen": "2026-04-06T13:20:00.000Z"
-    },
-    {
-      "id": "bug-027",
-      "timestamp": "2026-04-06T13:23:00.000Z",
-      "error_message": "bun run check-types failed to execute",
-      "file": "package.json",
-      "root_cause": "Used bun --cwd run check-types instead of bun run --cwd <path> check-types",
-      "fix": "Run bun run --cwd /path check-types",
-      "tags": [
-        "build",
-        "bun",
-        "check-types"
-      ],
-      "related_bugs": [],
-      "occurrences": 1,
-      "last_seen": "2026-04-06T13:23:00.000Z"
-    },
-    {
-      "id": "bug-028",
-      "timestamp": "2026-04-06T11:06:33.118Z",
-      "error_message": "Missing await",
-      "file": "packages/api/src/routers/device-auth.ts",
-      "root_cause": "Async call without await — returned Promise instead of value",
-      "fix": "Added await to async call",
-      "tags": [
-        "auto-detected",
-        "async-fix",
-        "ts"
-      ],
-      "related_bugs": [],
-      "occurrences": 1,
-      "last_seen": "2026-04-06T11:06:33.118Z"
-    },
-    {
-      "id": "bug-029",
-      "timestamp": "2026-04-06T11:47:59.834Z",
-      "error_message": "Null/undefined access in ",
-      "file": "apps/tui/src/auth/device-flow.ts",
-      "root_cause": "Property access on potentially null/undefined value",
-      "fix": "Added null safety (optional chaining or null check) | Also: export async function runDeviceFlow(serverUrl: string, webUr; const verificationUrl = `${normalizeServerUrl(webUrl ?? serv | Also: userId: token.userId ?? \"unknown\",",
-      "tags": [
-        "auto-detected",
-        "null-safety",
-        "ts"
-      ],
-      "related_bugs": [],
-      "occurrences": 3,
-      "last_seen": "2026-04-06T11:53:38.102Z"
-    },
-    {
-      "id": "bug-030",
-      "timestamp": "2026-04-06T11:49:59.744Z",
-      "error_message": "Significant refactor of ",
-      "file": "apps/tui/src/commands/login.ts",
-      "root_cause": "2 lines replaced/restructured",
-      "fix": "Rewrote 6→7 lines (2 removed)",
-      "tags": [
-        "auto-detected",
-        "refactor",
-        "ts"
-      ],
-      "related_bugs": [],
-      "occurrences": 1,
-      "last_seen": "2026-04-06T11:49:59.744Z"
-    },
-    {
-      "id": "bug-031",
-      "timestamp": "2026-04-06T11:52:59.517Z",
-      "error_message": "Wrong return value",
-      "file": "packages/api/src/routers/device-auth.ts",
-      "root_cause": "Was returning: { accessToken };",
-      "fix": "Now returns: { accessToken, userId };",
-      "tags": [
-        "auto-detected",
-        "return-value",
-        "ts"
-      ],
-      "related_bugs": [],
-      "occurrences": 1,
-      "last_seen": "2026-04-06T11:52:59.517Z"
-    },
-    {
-      "id": "bug-032",
-      "timestamp": "2026-04-06T11:53:07.896Z",
-      "error_message": "Null/undefined access in ",
-      "file": "packages/api/src/context.ts",
-      "root_cause": "Property access on potentially null/undefined value",
-      "fix": "Added null safety (optional chaining or null check)",
-      "tags": [
-        "auto-detected",
-        "null-safety",
-        "ts"
-      ],
-      "related_bugs": [],
-      "occurrences": 1,
-      "last_seen": "2026-04-06T11:53:07.896Z"
-    },
-    {
-      "id": "bug-033",
-      "timestamp": "2026-04-07T12:15:14.898Z",
-      "error_message": "Significant refactor of ",
-      "file": "apps/web/src/routes/projects/$projectId.tsx",
-      "root_cause": "2 lines replaced/restructured",
-      "fix": "Rewrote 10→13 lines (2 removed)",
-      "tags": [
-        "auto-detected",
-        "refactor",
-        "tsx"
-      ],
-      "related_bugs": [],
-      "occurrences": 1,
-      "last_seen": "2026-04-07T12:15:14.898Z"
-    },
-    {
-      "id": "bug-034",
-      "timestamp": "2026-04-07T12:23:59.719Z",
-      "error_message": "Wrong return value",
-      "file": "apps/tui/src/utils/git.ts",
-      "root_cause": "Was returning: url",
-      "fix": "Now returns: `https://${normalized}`;",
-      "tags": [
-        "auto-detected",
-        "return-value",
-        "ts"
-      ],
-      "related_bugs": [],
-      "occurrences": 1,
-      "last_seen": "2026-04-07T12:23:59.719Z"
-    },
-    {
-      "id": "bug-035",
-      "timestamp": "2026-04-07T12:48:29.991Z",
-      "error_message": "Null/undefined access in ",
-      "file": "apps/tui/src/utils/parser.ts",
-      "root_cause": "Property access on potentially null/undefined value",
-      "fix": "Added null safety (optional chaining or null check)",
-      "tags": [
-        "auto-detected",
-        "null-safety",
-        "ts"
-      ],
-      "related_bugs": [],
-      "occurrences": 1,
-      "last_seen": "2026-04-07T12:48:29.992Z"
-    },
-    {
-      "id": "bug-036",
-      "timestamp": "2026-04-07T12:55:53.411Z",
-      "error_message": "Null/undefined access in ",
-      "file": "apps/tui/src/commands/graph.ts",
-      "root_cause": "Property access on potentially null/undefined value",
-      "fix": "Added null safety (optional chaining or null check)",
-      "tags": [
-        "auto-detected",
-        "null-safety",
-        "ts"
-      ],
-      "related_bugs": [],
-      "occurrences": 1,
-      "last_seen": "2026-04-07T12:55:53.411Z"
-    },
-    {
-      "id": "bug-037",
-      "timestamp": "2026-04-07T12:57:31.612Z",
-      "error_message": "Incorrect value in code",
-      "file": "apps/tui/src/commands/graph.ts",
-      "root_cause": "Had \"commander\"",
-      "fix": "Changed to \"@kokuin/graph\"",
-      "tags": [
-        "auto-detected",
-        "wrong-value",
-        "ts"
-      ],
-      "related_bugs": [],
-      "occurrences": 1,
-      "last_seen": "2026-04-07T12:57:31.612Z"
-    },
-    {
-      "id": "bug-038",
-      "timestamp": "2026-04-07T12:58:53.128Z",
-      "error_message": "Missing error handling in unknown",
-      "file": "apps/tui/src/commands/graph.ts",
-      "root_cause": "Code path had no error handling — exceptions would propagate uncaught",
-      "fix": "Added try/catch block | Also: graphCommand; .command(\"push\")",
-      "tags": [
-        "auto-detected",
-        "error-handling",
-        "ts"
-      ],
-      "related_bugs": [],
-      "occurrences": 2,
-      "last_seen": "2026-04-07T13:00:34.644Z"
-    },
-    {
-      "id": "bug-039",
-      "timestamp": "2026-04-07T13:11:17.777Z",
-      "error_message": "Significant refactor of ",
-      "file": "apps/tui/src/commands/graph.ts",
-      "root_cause": "4 lines replaced/restructured",
-      "fix": "Rewrote 6→9 lines (4 removed)",
-      "tags": [
-        "auto-detected",
-        "refactor",
-        "ts"
-      ],
-      "related_bugs": [],
-      "occurrences": 1,
-      "last_seen": "2026-04-07T13:11:17.777Z"
-    },
-    {
-      "id": "bug-040",
-      "timestamp": "2026-04-07T13:11:24.993Z",
-      "error_message": "Type error",
-      "file": "apps/tui/src/commands/graph.ts",
-      "root_cause": "Missing or incorrect type annotation",
-      "fix": "Added type assertion/annotation",
-      "tags": [
-        "auto-detected",
-        "type-fix",
-        "ts"
-      ],
-      "related_bugs": [],
-      "occurrences": 1,
-      "last_seen": "2026-04-07T13:11:24.993Z"
-    },
-    {
-      "id": "bug-041",
-      "timestamp": "2026-04-07T13:17:21.165Z",
-      "error_message": "Type error",
-      "file": "packages/graph/src/mcp-server.ts",
-      "root_cause": "Missing or incorrect type annotation",
-      "fix": "Added type assertion/annotation",
-      "tags": [
-        "auto-detected",
-        "type-fix",
-        "ts"
-      ],
-      "related_bugs": [],
-      "occurrences": 1,
-      "last_seen": "2026-04-07T13:17:21.165Z"
-    },
-    {
-      "id": "bug-042",
-      "timestamp": "2026-04-07T13:25:16.875Z",
-      "error_message": "Incorrect value in code",
-      "file": "packages/api/src/routers/graph.ts",
-      "root_cause": "Had \"@kokuin/db\"",
-      "fix": "Changed to \"node:path\"",
-      "tags": [
-        "auto-detected",
-        "wrong-value",
-        "ts"
-      ],
-      "related_bugs": [],
-      "occurrences": 1,
-      "last_seen": "2026-04-07T13:25:16.875Z"
-    },
-    {
-      "id": "bug-043",
-      "timestamp": "2026-04-07T13:31:36.747Z",
-      "error_message": "Significant refactor of ",
-      "file": "apps/web/src/hooks/useProjectMembers.ts",
-      "root_cause": "3 lines replaced/restructured",
-      "fix": "Rewrote 5→3 lines (3 removed)",
-      "tags": [
-        "auto-detected",
-        "refactor",
-        "ts"
-      ],
-      "related_bugs": [],
-      "occurrences": 1,
-      "last_seen": "2026-04-07T13:31:36.747Z"
-    },
-    {
-      "id": "bug-044",
-      "timestamp": "2026-04-07T13:38:30.341Z",
-      "error_message": "CSS fix: label",
-      "file": "apps/web/src/views/layout/AppSidebar.tsx",
-      "root_cause": "label: \"Projects\", to: \"/dashboard\", icon: FolderOpen → \"Dashboard\", to: \"/dashboard\", icon: LayoutDashboard",
-      "fix": "Changed label: \"Projects\", to: \"/dashboard\", icon: FolderOpen → \"Dashboard\", to: \"/dashboard\", icon: LayoutDashboard",
-      "tags": [
-        "auto-detected",
-        "style-fix",
-        "tsx"
-      ],
-      "related_bugs": [],
-      "occurrences": 1,
-      "last_seen": "2026-04-07T13:38:30.341Z"
-    },
-    {
-      "id": "bug-045",
-      "timestamp": "2026-04-07T13:38:34.688Z",
-      "error_message": "Missing error handling in unknown",
-      "file": "apps/web/src/views/layout/AppSidebar.tsx",
-      "root_cause": "Code path had no error handling — exceptions would propagate uncaught",
-      "fix": "Added try/catch block",
-      "tags": [
-        "auto-detected",
-        "error-handling",
-        "tsx"
-      ],
-      "related_bugs": [],
-      "occurrences": 1,
-      "last_seen": "2026-04-07T13:38:34.688Z"
-    },
-    {
-      "id": "bug-046",
-      "timestamp": "2026-04-07T13:47:16.772Z",
-      "error_message": "Significant refactor of ",
-      "file": "apps/web/src/routes/_app/dashboard.tsx",
-      "root_cause": "13 lines replaced/restructured",
-      "fix": "Rewrote 19→7 lines (13 removed)",
-      "tags": [
-        "auto-detected",
-        "refactor",
-        "tsx"
-      ],
-      "related_bugs": [],
-      "occurrences": 1,
-      "last_seen": "2026-04-07T13:47:16.772Z"
-    },
-    {
-      "id": "bug-047",
-      "timestamp": "2026-04-07T13:47:19.727Z",
-      "error_message": "Significant refactor of ",
-      "file": "apps/web/src/routes/_app/admin/index.tsx",
-      "root_cause": "11 lines replaced/restructured",
-      "fix": "Rewrote 17→7 lines (11 removed) | Also: import { createFileRoute, Link, redirect } from \"@; import { getUser } from \"@/functions/get-user\";",
-      "tags": [
-        "auto-detected",
-        "refactor",
-        "tsx"
-      ],
-      "related_bugs": [],
-      "occurrences": 2,
-      "last_seen": "2026-04-07T13:47:28.402Z"
-    },
-    {
-      "id": "bug-048",
-      "timestamp": "2026-04-07T13:47:21.902Z",
-      "error_message": "Significant refactor of ",
-      "file": "apps/web/src/routes/_app/projects/$projectId.tsx",
-      "root_cause": "11 lines replaced/restructured",
-      "fix": "Rewrote 17→7 lines (11 removed)",
-      "tags": [
-        "auto-detected",
-        "refactor",
-        "tsx"
-      ],
-      "related_bugs": [],
-      "occurrences": 1,
-      "last_seen": "2026-04-07T13:47:21.902Z"
-    },
-    {
-      "id": "bug-049",
-      "timestamp": "2026-04-07T13:47:24.284Z",
-      "error_message": "Significant refactor of ",
-      "file": "apps/web/src/routes/_app/projects/$projectId.builds.tsx",
-      "root_cause": "11 lines replaced/restructured",
-      "fix": "Rewrote 17→7 lines (11 removed)",
-      "tags": [
-        "auto-detected",
-        "refactor",
-        "tsx"
-      ],
-      "related_bugs": [],
-      "occurrences": 1,
-      "last_seen": "2026-04-07T13:47:24.284Z"
-    },
-    {
-      "id": "bug-050",
-      "timestamp": "2026-04-07T13:47:26.337Z",
-      "error_message": "Significant refactor of ",
-      "file": "apps/web/src/routes/_app/projects/$projectId.members.tsx",
-      "root_cause": "11 lines replaced/restructured",
-      "fix": "Rewrote 17→7 lines (11 removed)",
-      "tags": [
-        "auto-detected",
-        "refactor",
-        "tsx"
-      ],
-      "related_bugs": [],
-      "occurrences": 1,
-      "last_seen": "2026-04-07T13:47:26.337Z"
-    },
-    {
-      "id": "bug-051",
-      "timestamp": "2026-04-07T13:47:37.042Z",
-      "error_message": "CSS fix: to",
-      "file": "apps/web/src/routes/_app.tsx",
-      "root_cause": "to: \"/\" → \"/login\"",
-      "fix": "Changed to: \"/\" → \"/login\"",
-      "tags": [
-        "auto-detected",
-        "style-fix",
-        "tsx"
-      ],
-      "related_bugs": [],
-      "occurrences": 1,
-      "last_seen": "2026-04-07T13:47:37.042Z"
-    },
-    {
-      "id": "bug-052",
-      "timestamp": "2026-04-07T13:52:58.385Z",
-      "error_message": "Incorrect value in code",
-      "file": "apps/web/src/routes/index.tsx",
-      "root_cause": "Had \"/_app/dashboard\"",
-      "fix": "Changed to \"/dashboard\"",
-      "tags": [
-        "auto-detected",
-        "wrong-value",
-        "tsx"
-      ],
-      "related_bugs": [],
-      "occurrences": 1,
-      "last_seen": "2026-04-07T13:52:58.385Z"
-    },
-    {
-      "id": "bug-053",
-      "timestamp": "2026-04-07T13:52:59.196Z",
-      "error_message": "Incorrect value in code",
-      "file": "apps/web/src/views/auth/SignInView.tsx",
-      "root_cause": "Had \"/_app/dashboard\"",
-      "fix": "Changed to \"/dashboard\"",
-      "tags": [
-        "auto-detected",
-        "wrong-value",
-        "tsx"
-      ],
-      "related_bugs": [],
-      "occurrences": 1,
-      "last_seen": "2026-04-07T13:52:59.196Z"
-    },
-    {
-      "id": "bug-054",
-      "timestamp": "2026-04-07T13:52:59.827Z",
-      "error_message": "Incorrect value in code",
-      "file": "apps/web/src/views/auth/SignUpView.tsx",
-      "root_cause": "Had \"/_app/dashboard\"",
-      "fix": "Changed to \"/dashboard\"",
-      "tags": [
-        "auto-detected",
-        "wrong-value",
-        "tsx"
-      ],
-      "related_bugs": [],
-      "occurrences": 1,
-      "last_seen": "2026-04-07T13:52:59.827Z"
-    },
-    {
-      "id": "bug-055",
-      "timestamp": "2026-04-07T13:56:57.590Z",
-      "error_message": "Missing error handling in unknown",
-      "file": "apps/web/src/views/auth/GoogleOAuthButton.tsx",
-      "root_cause": "Code path had no error handling — exceptions would propagate uncaught",
-      "fix": "Added try/catch block",
-      "tags": [
-        "auto-detected",
-        "error-handling",
-        "tsx"
-      ],
-      "related_bugs": [],
-      "occurrences": 1,
-      "last_seen": "2026-04-07T13:56:57.590Z"
-    },
-    {
-      "id": "bug-056",
-      "timestamp": "2026-04-07T14:01:06.410Z",
-      "error_message": "CSS fix: component",
-      "file": "apps/web/src/routes/_app/dashboard.tsx",
-      "root_cause": "component: RouteComponent, → DashboardScreen,",
-      "fix": "Changed component: RouteComponent, → DashboardScreen,",
-      "tags": [
-        "auto-detected",
-        "style-fix",
-        "tsx"
-      ],
-      "related_bugs": [],
-      "occurrences": 1,
-      "last_seen": "2026-04-07T14:01:06.410Z"
-    },
-    {
-      "id": "bug-057",
-      "timestamp": "2026-04-07T14:01:54.950Z",
-      "error_message": "Wrong reference: admin should be string",
-      "file": "apps/web/src/views/dashboard/ProjectListView.tsx",
-      "root_cause": "Used \"admin\" instead of \"string\"",
-      "fix": "Changed admin → string",
-      "tags": [
-        "auto-detected",
-        "wrong-reference",
-        "tsx"
-      ],
-      "related_bugs": [],
-      "occurrences": 1,
-      "last_seen": "2026-04-07T14:01:54.950Z"
-    },
-    {
-      "id": "bug-058",
-      "timestamp": "2026-04-07T14:08:51.213Z",
-      "error_message": "Wrong reference: useProjects should be error",
-      "file": "apps/web/src/screens/dashboard/DashboardScreen.tsx",
-      "root_cause": "Used \"useProjects\" instead of \"error\"",
-      "fix": "Changed useProjects → error",
-      "tags": [
-        "auto-detected",
-        "wrong-reference",
-        "tsx"
-      ],
-      "related_bugs": [],
-      "occurrences": 1,
-      "last_seen": "2026-04-07T14:08:51.213Z"
-    },
-    {
-      "id": "bug-059",
-      "timestamp": "2026-04-07T14:08:57.054Z",
-      "error_message": "Type error",
-      "file": "apps/web/src/screens/dashboard/DashboardScreen.tsx",
-      "root_cause": "Missing or incorrect type annotation",
-      "fix": "Added type assertion/annotation",
-      "tags": [
-        "auto-detected",
-        "type-fix",
-        "tsx"
-      ],
-      "related_bugs": [],
-      "occurrences": 1,
-      "last_seen": "2026-04-07T14:08:57.054Z"
-    },
-    {
-      "id": "bug-060",
-      "timestamp": "2026-04-07T14:09:02.367Z",
-      "error_message": "Null/undefined access in ",
-      "file": "apps/web/src/screens/dashboard/DashboardScreen.tsx",
-      "root_cause": "Property access on potentially null/undefined value",
-      "fix": "Added null safety (optional chaining or null check)",
-      "tags": [
-        "auto-detected",
-        "null-safety",
-        "tsx"
-      ],
-      "related_bugs": [],
-      "occurrences": 1,
-      "last_seen": "2026-04-07T14:09:02.367Z"
-    },
-    {
-      "id": "bug-061",
-      "timestamp": "2026-04-07T14:11:02.228Z",
-      "error_message": "CSS fix: isPending, projects",
-      "file": "apps/web/src/screens/dashboard/DashboardScreen.tsx",
-      "root_cause": "isPending: projectsPending, → projectsPending, error; projects: {projectsError.message → {error.message",
-      "fix": "Changed isPending: projectsPending, → projectsPending, error; projects: {projectsError.message → {error.message",
-      "tags": [
-        "auto-detected",
-        "style-fix",
-        "tsx"
-      ],
-      "related_bugs": [],
-      "occurrences": 1,
-      "last_seen": "2026-04-07T14:11:02.228Z"
-    },
-    {
-      "id": "bug-062",
-      "timestamp": "2026-04-07T14:25:53.895Z",
-      "error_message": "CSS fix: buildStatus",
-      "file": "apps/web/src/views/projects/ProjectOverviewView.tsx",
-      "root_cause": "buildStatus: GraphStatus | null → { global: GraphBuild | null",
-      "fix": "Changed buildStatus: GraphStatus | null → { global: GraphBuild | null",
-      "tags": [
-        "auto-detected",
-        "style-fix",
-        "tsx"
-      ],
-      "related_bugs": [],
-      "occurrences": 1,
-      "last_seen": "2026-04-07T14:25:53.895Z"
-    },
-    {
-      "id": "bug-063",
-      "timestamp": "2026-04-07T14:26:44.900Z",
-      "error_message": "Significant refactor of ",
-      "file": "apps/web/src/views/projects/BuildsListView.tsx",
-      "root_cause": "13 lines replaced/restructured",
-      "fix": "Rewrote 35→19 lines (13 removed) | Also: // Note: globalBuild.commitSha is accessed but not; // This should be added to the type definition or ",
-      "tags": [
-        "auto-detected",
-        "refactor",
-        "tsx"
-      ],
-      "related_bugs": [],
-      "occurrences": 2,
-      "last_seen": "2026-04-07T14:29:12.584Z"
-    },
-    {
-      "id": "bug-064",
-      "timestamp": "2026-04-07T14:26:52.094Z",
-      "error_message": "Wrong operator: ?? should be ||",
-      "file": "apps/web/src/screens/projects/ProjectBuildsScreen.tsx",
-      "root_cause": "Used \"??\" instead of \"||\"",
-      "fix": "Changed operator ?? → ||",
-      "tags": [
-        "auto-detected",
-        "operator-fix",
-        "tsx"
-      ],
-      "related_bugs": [],
-      "occurrences": 1,
-      "last_seen": "2026-04-07T14:26:52.094Z"
-    },
-    {
-      "id": "bug-065",
-      "timestamp": "2026-04-07T14:26:55.675Z",
-      "error_message": "Wrong reference: isPending should be false",
-      "file": "apps/web/src/screens/projects/ProjectMembersScreen.tsx",
-      "root_cause": "Used \"isPending\" instead of \"false\"",
-      "fix": "Changed isPending → false",
-      "tags": [
-        "auto-detected",
-        "wrong-reference",
-        "tsx"
-      ],
-      "related_bugs": [],
-      "occurrences": 1,
-      "last_seen": "2026-04-07T14:26:55.675Z"
-    }
-  ]
+	"version": 1,
+	"bugs": [
+		{
+			"id": "bug-001",
+			"timestamp": "2026-04-06T05:21:35.004Z",
+			"error_message": "Wrong reference: only should be Own",
+			"file": "docs/superpowers/specs/2026-04-06-kokuin-design.md",
+			"root_cause": "Used \"only\" instead of \"Own\"",
+			"fix": "Changed only → Own",
+			"tags": ["auto-detected", "wrong-reference", "md"],
+			"related_bugs": [],
+			"occurrences": 1,
+			"last_seen": "2026-04-06T05:21:35.004Z"
+		},
+		{
+			"id": "bug-002",
+			"timestamp": "2026-04-06T05:24:13.875Z",
+			"error_message": "Significant refactor of ",
+			"file": "docs/superpowers/specs/2026-04-06-kokuin-design.md",
+			"root_cause": "2 lines replaced/restructured",
+			"fix": "Rewrote 11→21 lines (2 removed)",
+			"tags": ["auto-detected", "refactor", "md"],
+			"related_bugs": [],
+			"occurrences": 1,
+			"last_seen": "2026-04-06T05:24:13.875Z"
+		},
+		{
+			"id": "bug-003",
+			"timestamp": "2026-04-06T10:13:08.732Z",
+			"error_message": "CSS fix: to",
+			"file": "apps/web/src/components/header.tsx",
+			"root_cause": "to: \"/ai\", label: \"AI Chat\" → \"/dashboard\", label: \"Dashboard\"",
+			"fix": "Changed to: \"/ai\", label: \"AI Chat\" → \"/dashboard\", label: \"Dashboard\"",
+			"tags": ["auto-detected", "style-fix", "tsx"],
+			"related_bugs": [],
+			"occurrences": 1,
+			"last_seen": "2026-04-06T10:13:08.732Z"
+		},
+		{
+			"id": "bug-004",
+			"timestamp": "2026-04-06T10:16:51.359Z",
+			"error_message": "Incorrect value in code",
+			"file": "apps/web/src/routes/dashboard.tsx",
+			"root_cause": "Had \"/projects/new\"",
+			"fix": "Changed to \"Coming soon\"",
+			"tags": ["auto-detected", "wrong-value", "tsx"],
+			"related_bugs": [],
+			"occurrences": 2,
+			"last_seen": "2026-04-06T10:16:56.314Z"
+		},
+		{
+			"id": "bug-005",
+			"timestamp": "2026-04-06T10:44:35.970Z",
+			"error_message": "Null/undefined access in ",
+			"file": "packages/graph/src/query.ts",
+			"root_cause": "Property access on potentially null/undefined value",
+			"fix": "Added null safety (optional chaining or null check)",
+			"tags": ["auto-detected", "null-safety", "ts"],
+			"related_bugs": [],
+			"occurrences": 1,
+			"last_seen": "2026-04-06T10:44:35.970Z"
+		},
+		{
+			"id": "bug-006",
+			"timestamp": "2026-04-06T10:45:06.095Z",
+			"error_message": "Wrong return value",
+			"file": "packages/graph/src/search.ts",
+			"root_cause": "Was returning: rows",
+			"fix": "Now returns: mergedRows",
+			"tags": ["auto-detected", "return-value", "ts"],
+			"related_bugs": [],
+			"occurrences": 1,
+			"last_seen": "2026-04-06T10:45:06.095Z"
+		},
+		{
+			"id": "bug-007",
+			"timestamp": "2026-04-06T10:45:58.184Z",
+			"error_message": "Type error",
+			"file": "packages/api/src/routers/graph.ts",
+			"root_cause": "Missing or incorrect type annotation",
+			"fix": "Added type assertion/annotation | Also: overlayStore.upsertNodes(input.nodes as ParsedNode[]);; overlayStore.upsertEdges(input.edges as ParsedEdge[]);",
+			"tags": ["auto-detected", "type-fix", "ts"],
+			"related_bugs": [],
+			"occurrences": 2,
+			"last_seen": "2026-04-06T10:47:13.317Z"
+		},
+		{
+			"id": "bug-008",
+			"timestamp": "2026-04-06T10:45:58.523Z",
+			"error_message": "Wrong reference: getGlobalStore should be query",
+			"file": "packages/graph/src/mcp-server.ts",
+			"root_cause": "Used \"getGlobalStore\" instead of \"query\"",
+			"fix": "Changed getGlobalStore → query",
+			"tags": ["auto-detected", "wrong-reference", "ts"],
+			"related_bugs": [],
+			"occurrences": 1,
+			"last_seen": "2026-04-06T10:45:58.523Z"
+		},
+		{
+			"id": "bug-009",
+			"timestamp": "2026-04-06T10:46:08.819Z",
+			"error_message": "Null/undefined access in ",
+			"file": "packages/graph/src/mcp-server.ts",
+			"root_cause": "Property access on potentially null/undefined value",
+			"fix": "Added null safety (optional chaining or null check)",
+			"tags": ["auto-detected", "null-safety", "ts"],
+			"related_bugs": [],
+			"occurrences": 1,
+			"last_seen": "2026-04-06T10:46:08.820Z"
+		},
+		{
+			"id": "bug-010",
+			"timestamp": "2026-04-06T10:46:21.188Z",
+			"error_message": "Null/undefined access in ",
+			"file": "packages/api/src/routers/graph.ts",
+			"root_cause": "Property access on potentially null/undefined value",
+			"fix": "Added null safety (optional chaining or null check)",
+			"tags": ["auto-detected", "null-safety", "ts"],
+			"related_bugs": [],
+			"occurrences": 1,
+			"last_seen": "2026-04-06T10:46:21.188Z"
+		},
+		{
+			"id": "bug-011",
+			"timestamp": "2026-04-06T10:46:21.584Z",
+			"error_message": "Wrong return value",
+			"file": "packages/api/src/routers/graph.ts",
+			"root_cause": "Was returning: new ImpactAnalyzer(merged.getGlobalStore()).getImp",
+			"fix": "Now returns: new ImpactAnalyzer(merged).getImpactRadius(",
+			"tags": ["auto-detected", "return-value", "ts"],
+			"related_bugs": [],
+			"occurrences": 2,
+			"last_seen": "2026-04-06T10:46:51.372Z"
+		},
+		{
+			"id": "bug-012",
+			"timestamp": "2026-04-06T10:57:16.072Z",
+			"error_message": "Type error",
+			"file": ".claude/worktrees/agent-aeba7c78/packages/api/src/routers/graph.ts",
+			"root_cause": "Missing or incorrect type annotation",
+			"fix": "Added type assertion/annotation",
+			"tags": ["auto-detected", "type-fix", "ts"],
+			"related_bugs": [],
+			"occurrences": 1,
+			"last_seen": "2026-04-06T10:57:16.072Z"
+		},
+		{
+			"id": "bug-013",
+			"timestamp": "2026-04-06T10:58:18.241Z",
+			"error_message": "Significant refactor of ",
+			"file": "apps/tui/src/auth/credentials.ts",
+			"root_cause": "2 lines replaced/restructured",
+			"fix": "Rewrote 3→7 lines (2 removed)",
+			"tags": ["auto-detected", "refactor", "ts"],
+			"related_bugs": [],
+			"occurrences": 1,
+			"last_seen": "2026-04-06T10:58:18.241Z"
+		},
+		{
+			"id": "bug-014",
+			"timestamp": "2026-04-06T10:58:37.878Z",
+			"error_message": "Missing error handling in function",
+			"file": "apps/tui/src/auth/device-flow.ts",
+			"root_cause": "Code path had no error handling — exceptions would propagate uncaught",
+			"fix": "Added try/catch block",
+			"tags": ["auto-detected", "error-handling", "ts"],
+			"related_bugs": [],
+			"occurrences": 1,
+			"last_seen": "2026-04-06T10:58:37.878Z"
+		},
+		{
+			"id": "bug-015",
+			"timestamp": "2026-04-06T10:59:33.306Z",
+			"error_message": "Null/undefined access in ",
+			"file": "packages/api/src/routers/device-auth.ts",
+			"root_cause": "Property access on potentially null/undefined value",
+			"fix": "Added null safety (optional chaining or null check)",
+			"tags": ["auto-detected", "null-safety", "ts"],
+			"related_bugs": [],
+			"occurrences": 1,
+			"last_seen": "2026-04-06T10:59:33.306Z"
+		},
+		{
+			"id": "bug-016",
+			"timestamp": "2026-04-06T10:59:53.112Z",
+			"error_message": "Missing await",
+			"file": "packages/api/src/routers/device-auth.ts",
+			"root_cause": "Async call without await — returned Promise instead of value",
+			"fix": "Added await to async call",
+			"tags": ["auto-detected", "async-fix", "ts"],
+			"related_bugs": [],
+			"occurrences": 1,
+			"last_seen": "2026-04-06T10:59:53.112Z"
+		},
+		{
+			"id": "bug-017",
+			"timestamp": "2026-04-06T11:00:10.804Z",
+			"error_message": "Missing await",
+			"file": "packages/api/src/routers/project.ts",
+			"root_cause": "Async call without await — returned Promise instead of value",
+			"fix": "Added await to async call",
+			"tags": ["auto-detected", "async-fix", "ts"],
+			"related_bugs": [],
+			"occurrences": 1,
+			"last_seen": "2026-04-06T11:00:10.804Z"
+		},
+		{
+			"id": "bug-018",
+			"timestamp": "2026-04-06T11:00:18.691Z",
+			"error_message": "Missing guard clause",
+			"file": "packages/graph/src/fs-adapter.ts",
+			"root_cause": "No early return/throw for edge case: !trimmed",
+			"fix": "Added guard clause: if (!trimmed)",
+			"tags": ["auto-detected", "guard-clause", "ts"],
+			"related_bugs": [],
+			"occurrences": 1,
+			"last_seen": "2026-04-06T11:00:18.691Z"
+		},
+		{
+			"id": "bug-019",
+			"timestamp": "2026-04-06T11:00:37.781Z",
+			"error_message": "Type error",
+			"file": ".claude/worktrees/agent-aeba7c78/packages/graph/src/mcp-server.ts",
+			"root_cause": "Missing or incorrect type annotation",
+			"fix": "Added type assertion/annotation | Also: async ({ query, limit }: { query: string; limit: number }) = | Also: async ({ target, maxDepth }: { target: string; maxDepth: num | Also: async ({ changes }: { changes: Array<{ filePath: string; lin",
+			"tags": ["auto-detected", "type-fix", "ts"],
+			"related_bugs": [],
+			"occurrences": 4,
+			"last_seen": "2026-04-06T11:00:53.182Z"
+		},
+		{
+			"id": "bug-020",
+			"timestamp": "2026-04-06T11:01:23.527Z",
+			"error_message": "Incorrect value in code",
+			"file": ".claude/worktrees/agent-aeba7c78/packages/graph/src/mcp-server.ts",
+			"root_cause": "Had \"@modelcontextprotocol/sdk/server/mcp.js\"",
+			"fix": "Changed to \"@modelcontextprotocol/sdk/server/mcp\"",
+			"tags": ["auto-detected", "wrong-value", "ts"],
+			"related_bugs": [],
+			"occurrences": 2,
+			"last_seen": "2026-04-06T11:04:20.125Z"
+		},
+		{
+			"id": "bug-021",
+			"timestamp": "2026-04-06T11:02:42.000Z",
+			"error_message": "Project creation allowed non-organization members",
+			"file": "packages/api/src/routers/project.ts",
+			"root_cause": "Missing organization membership check before creating project",
+			"fix": "Verified org membership via prisma.member and reject with FORBIDDEN when missing",
+			"tags": ["auth", "org-membership", "project-create"],
+			"related_bugs": [],
+			"occurrences": 1,
+			"last_seen": "2026-04-06T11:02:42.000Z"
+		},
+		{
+			"id": "bug-022",
+			"timestamp": "2026-04-06T11:02:42.000Z",
+			"error_message": "Path traversal risk via unsanitized projectId/userId in FsStorageAdapter",
+			"file": "packages/graph/src/fs-adapter.ts",
+			"root_cause": "projectId/userId used directly in join without sanitization",
+			"fix": "Sanitized projectId and userId path segments before building filesystem paths",
+			"tags": ["security", "path-traversal", "fs-adapter"],
+			"related_bugs": [],
+			"occurrences": 1,
+			"last_seen": "2026-04-06T11:02:42.000Z"
+		},
+		{
+			"id": "bug-023",
+			"timestamp": "2026-04-06T11:02:42.000Z",
+			"error_message": "Webhook marked build ready without running parser/build",
+			"file": "apps/server/src/webhook.ts",
+			"root_cause": "triggerBuild set status to ready immediately after creating empty SQLite DB",
+			"fix": "Set status to in_progress when triggering build; no ready status without parser",
+			"tags": ["webhook", "graph-build", "status"],
+			"related_bugs": [],
+			"occurrences": 1,
+			"last_seen": "2026-04-06T11:02:42.000Z"
+		},
+		{
+			"id": "bug-024",
+			"timestamp": "2026-04-06T13:15:00.000Z",
+			"error_message": "Device auth used Math.random and in-memory store",
+			"file": "packages/api/src/routers/device-auth.ts",
+			"root_cause": "Device codes and access tokens were generated with Math.random and stored in memory",
+			"fix": "Use crypto-backed randomness and persist device auth codes in Prisma",
+			"tags": ["security", "device-auth", "prisma"],
+			"related_bugs": [],
+			"occurrences": 1,
+			"last_seen": "2026-04-06T13:15:00.000Z"
+		},
+		{
+			"id": "bug-025",
+			"timestamp": "2026-04-06T11:04:27.000Z",
+			"error_message": "Type check failed: prisma.deviceAuthCode missing",
+			"file": "packages/api/src/routers/device-auth.ts",
+			"root_cause": "Device auth refactor expects Prisma model that is not present in schema/client",
+			"fix": "Reverted device auth to in-memory store to unblock type checks",
+			"tags": ["typecheck", "prisma", "device-auth", "rollback"],
+			"related_bugs": [],
+			"occurrences": 1,
+			"last_seen": "2026-04-06T11:04:27.000Z"
+		},
+		{
+			"id": "bug-026",
+			"timestamp": "2026-04-06T13:20:00.000Z",
+			"error_message": "CLI device flow used JSON-RPC request format instead of ORPC RPCLink JSON body",
+			"file": "apps/tui/src/auth/device-flow.ts",
+			"root_cause": "Device flow used { method, params } payload and parsed JSON-RPC response while server expects POST /rpc/<path> with JSON input.",
+			"fix": "Send POST to /rpc/deviceAuth/authorize and /rpc/deviceAuth/token with JSON body and handle ORPC error responses.",
+			"tags": ["cli", "auth", "orpc", "rpc", "format"],
+			"related_bugs": [],
+			"occurrences": 1,
+			"last_seen": "2026-04-06T13:20:00.000Z"
+		},
+		{
+			"id": "bug-027",
+			"timestamp": "2026-04-06T13:23:00.000Z",
+			"error_message": "bun run check-types failed to execute",
+			"file": "package.json",
+			"root_cause": "Used bun --cwd run check-types instead of bun run --cwd <path> check-types",
+			"fix": "Run bun run --cwd /path check-types",
+			"tags": ["build", "bun", "check-types"],
+			"related_bugs": [],
+			"occurrences": 1,
+			"last_seen": "2026-04-06T13:23:00.000Z"
+		},
+		{
+			"id": "bug-028",
+			"timestamp": "2026-04-06T11:06:33.118Z",
+			"error_message": "Missing await",
+			"file": "packages/api/src/routers/device-auth.ts",
+			"root_cause": "Async call without await — returned Promise instead of value",
+			"fix": "Added await to async call",
+			"tags": ["auto-detected", "async-fix", "ts"],
+			"related_bugs": [],
+			"occurrences": 1,
+			"last_seen": "2026-04-06T11:06:33.118Z"
+		},
+		{
+			"id": "bug-029",
+			"timestamp": "2026-04-06T11:47:59.834Z",
+			"error_message": "Null/undefined access in ",
+			"file": "apps/tui/src/auth/device-flow.ts",
+			"root_cause": "Property access on potentially null/undefined value",
+			"fix": "Added null safety (optional chaining or null check) | Also: export async function runDeviceFlow(serverUrl: string, webUr; const verificationUrl = `${normalizeServerUrl(webUrl ?? serv | Also: userId: token.userId ?? \"unknown\",",
+			"tags": ["auto-detected", "null-safety", "ts"],
+			"related_bugs": [],
+			"occurrences": 3,
+			"last_seen": "2026-04-06T11:53:38.102Z"
+		},
+		{
+			"id": "bug-030",
+			"timestamp": "2026-04-06T11:49:59.744Z",
+			"error_message": "Significant refactor of ",
+			"file": "apps/tui/src/commands/login.ts",
+			"root_cause": "2 lines replaced/restructured",
+			"fix": "Rewrote 6→7 lines (2 removed)",
+			"tags": ["auto-detected", "refactor", "ts"],
+			"related_bugs": [],
+			"occurrences": 1,
+			"last_seen": "2026-04-06T11:49:59.744Z"
+		},
+		{
+			"id": "bug-031",
+			"timestamp": "2026-04-06T11:52:59.517Z",
+			"error_message": "Wrong return value",
+			"file": "packages/api/src/routers/device-auth.ts",
+			"root_cause": "Was returning: { accessToken };",
+			"fix": "Now returns: { accessToken, userId };",
+			"tags": ["auto-detected", "return-value", "ts"],
+			"related_bugs": [],
+			"occurrences": 1,
+			"last_seen": "2026-04-06T11:52:59.517Z"
+		},
+		{
+			"id": "bug-032",
+			"timestamp": "2026-04-06T11:53:07.896Z",
+			"error_message": "Null/undefined access in ",
+			"file": "packages/api/src/context.ts",
+			"root_cause": "Property access on potentially null/undefined value",
+			"fix": "Added null safety (optional chaining or null check)",
+			"tags": ["auto-detected", "null-safety", "ts"],
+			"related_bugs": [],
+			"occurrences": 1,
+			"last_seen": "2026-04-06T11:53:07.896Z"
+		},
+		{
+			"id": "bug-033",
+			"timestamp": "2026-04-07T12:15:14.898Z",
+			"error_message": "Significant refactor of ",
+			"file": "apps/web/src/routes/projects/$projectId.tsx",
+			"root_cause": "2 lines replaced/restructured",
+			"fix": "Rewrote 10→13 lines (2 removed)",
+			"tags": ["auto-detected", "refactor", "tsx"],
+			"related_bugs": [],
+			"occurrences": 1,
+			"last_seen": "2026-04-07T12:15:14.898Z"
+		},
+		{
+			"id": "bug-034",
+			"timestamp": "2026-04-07T12:23:59.719Z",
+			"error_message": "Wrong return value",
+			"file": "apps/tui/src/utils/git.ts",
+			"root_cause": "Was returning: url",
+			"fix": "Now returns: `https://${normalized}`;",
+			"tags": ["auto-detected", "return-value", "ts"],
+			"related_bugs": [],
+			"occurrences": 1,
+			"last_seen": "2026-04-07T12:23:59.719Z"
+		},
+		{
+			"id": "bug-035",
+			"timestamp": "2026-04-07T12:48:29.991Z",
+			"error_message": "Null/undefined access in ",
+			"file": "apps/tui/src/utils/parser.ts",
+			"root_cause": "Property access on potentially null/undefined value",
+			"fix": "Added null safety (optional chaining or null check)",
+			"tags": ["auto-detected", "null-safety", "ts"],
+			"related_bugs": [],
+			"occurrences": 1,
+			"last_seen": "2026-04-07T12:48:29.992Z"
+		},
+		{
+			"id": "bug-036",
+			"timestamp": "2026-04-07T12:55:53.411Z",
+			"error_message": "Null/undefined access in ",
+			"file": "apps/tui/src/commands/graph.ts",
+			"root_cause": "Property access on potentially null/undefined value",
+			"fix": "Added null safety (optional chaining or null check)",
+			"tags": ["auto-detected", "null-safety", "ts"],
+			"related_bugs": [],
+			"occurrences": 1,
+			"last_seen": "2026-04-07T12:55:53.411Z"
+		},
+		{
+			"id": "bug-037",
+			"timestamp": "2026-04-07T12:57:31.612Z",
+			"error_message": "Incorrect value in code",
+			"file": "apps/tui/src/commands/graph.ts",
+			"root_cause": "Had \"commander\"",
+			"fix": "Changed to \"@kokuin/graph\"",
+			"tags": ["auto-detected", "wrong-value", "ts"],
+			"related_bugs": [],
+			"occurrences": 1,
+			"last_seen": "2026-04-07T12:57:31.612Z"
+		},
+		{
+			"id": "bug-038",
+			"timestamp": "2026-04-07T12:58:53.128Z",
+			"error_message": "Missing error handling in unknown",
+			"file": "apps/tui/src/commands/graph.ts",
+			"root_cause": "Code path had no error handling — exceptions would propagate uncaught",
+			"fix": "Added try/catch block | Also: graphCommand; .command(\"push\")",
+			"tags": ["auto-detected", "error-handling", "ts"],
+			"related_bugs": [],
+			"occurrences": 2,
+			"last_seen": "2026-04-07T13:00:34.644Z"
+		},
+		{
+			"id": "bug-039",
+			"timestamp": "2026-04-07T13:11:17.777Z",
+			"error_message": "Significant refactor of ",
+			"file": "apps/tui/src/commands/graph.ts",
+			"root_cause": "4 lines replaced/restructured",
+			"fix": "Rewrote 6→9 lines (4 removed)",
+			"tags": ["auto-detected", "refactor", "ts"],
+			"related_bugs": [],
+			"occurrences": 1,
+			"last_seen": "2026-04-07T13:11:17.777Z"
+		},
+		{
+			"id": "bug-040",
+			"timestamp": "2026-04-07T13:11:24.993Z",
+			"error_message": "Type error",
+			"file": "apps/tui/src/commands/graph.ts",
+			"root_cause": "Missing or incorrect type annotation",
+			"fix": "Added type assertion/annotation",
+			"tags": ["auto-detected", "type-fix", "ts"],
+			"related_bugs": [],
+			"occurrences": 1,
+			"last_seen": "2026-04-07T13:11:24.993Z"
+		},
+		{
+			"id": "bug-041",
+			"timestamp": "2026-04-07T13:17:21.165Z",
+			"error_message": "Type error",
+			"file": "packages/graph/src/mcp-server.ts",
+			"root_cause": "Missing or incorrect type annotation",
+			"fix": "Added type assertion/annotation",
+			"tags": ["auto-detected", "type-fix", "ts"],
+			"related_bugs": [],
+			"occurrences": 1,
+			"last_seen": "2026-04-07T13:17:21.165Z"
+		},
+		{
+			"id": "bug-042",
+			"timestamp": "2026-04-07T13:25:16.875Z",
+			"error_message": "Incorrect value in code",
+			"file": "packages/api/src/routers/graph.ts",
+			"root_cause": "Had \"@kokuin/db\"",
+			"fix": "Changed to \"node:path\"",
+			"tags": ["auto-detected", "wrong-value", "ts"],
+			"related_bugs": [],
+			"occurrences": 1,
+			"last_seen": "2026-04-07T13:25:16.875Z"
+		},
+		{
+			"id": "bug-043",
+			"timestamp": "2026-04-07T13:31:36.747Z",
+			"error_message": "Significant refactor of ",
+			"file": "apps/web/src/hooks/useProjectMembers.ts",
+			"root_cause": "3 lines replaced/restructured",
+			"fix": "Rewrote 5→3 lines (3 removed)",
+			"tags": ["auto-detected", "refactor", "ts"],
+			"related_bugs": [],
+			"occurrences": 1,
+			"last_seen": "2026-04-07T13:31:36.747Z"
+		},
+		{
+			"id": "bug-044",
+			"timestamp": "2026-04-07T13:38:30.341Z",
+			"error_message": "CSS fix: label",
+			"file": "apps/web/src/views/layout/AppSidebar.tsx",
+			"root_cause": "label: \"Projects\", to: \"/dashboard\", icon: FolderOpen → \"Dashboard\", to: \"/dashboard\", icon: LayoutDashboard",
+			"fix": "Changed label: \"Projects\", to: \"/dashboard\", icon: FolderOpen → \"Dashboard\", to: \"/dashboard\", icon: LayoutDashboard",
+			"tags": ["auto-detected", "style-fix", "tsx"],
+			"related_bugs": [],
+			"occurrences": 1,
+			"last_seen": "2026-04-07T13:38:30.341Z"
+		},
+		{
+			"id": "bug-045",
+			"timestamp": "2026-04-07T13:38:34.688Z",
+			"error_message": "Missing error handling in unknown",
+			"file": "apps/web/src/views/layout/AppSidebar.tsx",
+			"root_cause": "Code path had no error handling — exceptions would propagate uncaught",
+			"fix": "Added try/catch block",
+			"tags": ["auto-detected", "error-handling", "tsx"],
+			"related_bugs": [],
+			"occurrences": 1,
+			"last_seen": "2026-04-07T13:38:34.688Z"
+		},
+		{
+			"id": "bug-046",
+			"timestamp": "2026-04-07T13:47:16.772Z",
+			"error_message": "Significant refactor of ",
+			"file": "apps/web/src/routes/_app/dashboard.tsx",
+			"root_cause": "13 lines replaced/restructured",
+			"fix": "Rewrote 19→7 lines (13 removed)",
+			"tags": ["auto-detected", "refactor", "tsx"],
+			"related_bugs": [],
+			"occurrences": 1,
+			"last_seen": "2026-04-07T13:47:16.772Z"
+		},
+		{
+			"id": "bug-047",
+			"timestamp": "2026-04-07T13:47:19.727Z",
+			"error_message": "Significant refactor of ",
+			"file": "apps/web/src/routes/_app/admin/index.tsx",
+			"root_cause": "11 lines replaced/restructured",
+			"fix": "Rewrote 17→7 lines (11 removed) | Also: import { createFileRoute, Link, redirect } from \"@; import { getUser } from \"@/functions/get-user\";",
+			"tags": ["auto-detected", "refactor", "tsx"],
+			"related_bugs": [],
+			"occurrences": 2,
+			"last_seen": "2026-04-07T13:47:28.402Z"
+		},
+		{
+			"id": "bug-048",
+			"timestamp": "2026-04-07T13:47:21.902Z",
+			"error_message": "Significant refactor of ",
+			"file": "apps/web/src/routes/_app/projects/$projectId.tsx",
+			"root_cause": "11 lines replaced/restructured",
+			"fix": "Rewrote 17→7 lines (11 removed)",
+			"tags": ["auto-detected", "refactor", "tsx"],
+			"related_bugs": [],
+			"occurrences": 1,
+			"last_seen": "2026-04-07T13:47:21.902Z"
+		},
+		{
+			"id": "bug-049",
+			"timestamp": "2026-04-07T13:47:24.284Z",
+			"error_message": "Significant refactor of ",
+			"file": "apps/web/src/routes/_app/projects/$projectId.builds.tsx",
+			"root_cause": "11 lines replaced/restructured",
+			"fix": "Rewrote 17→7 lines (11 removed)",
+			"tags": ["auto-detected", "refactor", "tsx"],
+			"related_bugs": [],
+			"occurrences": 1,
+			"last_seen": "2026-04-07T13:47:24.284Z"
+		},
+		{
+			"id": "bug-050",
+			"timestamp": "2026-04-07T13:47:26.337Z",
+			"error_message": "Significant refactor of ",
+			"file": "apps/web/src/routes/_app/projects/$projectId.members.tsx",
+			"root_cause": "11 lines replaced/restructured",
+			"fix": "Rewrote 17→7 lines (11 removed)",
+			"tags": ["auto-detected", "refactor", "tsx"],
+			"related_bugs": [],
+			"occurrences": 1,
+			"last_seen": "2026-04-07T13:47:26.337Z"
+		},
+		{
+			"id": "bug-051",
+			"timestamp": "2026-04-07T13:47:37.042Z",
+			"error_message": "CSS fix: to",
+			"file": "apps/web/src/routes/_app.tsx",
+			"root_cause": "to: \"/\" → \"/login\"",
+			"fix": "Changed to: \"/\" → \"/login\"",
+			"tags": ["auto-detected", "style-fix", "tsx"],
+			"related_bugs": [],
+			"occurrences": 1,
+			"last_seen": "2026-04-07T13:47:37.042Z"
+		},
+		{
+			"id": "bug-052",
+			"timestamp": "2026-04-07T13:52:58.385Z",
+			"error_message": "Incorrect value in code",
+			"file": "apps/web/src/routes/index.tsx",
+			"root_cause": "Had \"/_app/dashboard\"",
+			"fix": "Changed to \"/dashboard\"",
+			"tags": ["auto-detected", "wrong-value", "tsx"],
+			"related_bugs": [],
+			"occurrences": 1,
+			"last_seen": "2026-04-07T13:52:58.385Z"
+		},
+		{
+			"id": "bug-053",
+			"timestamp": "2026-04-07T13:52:59.196Z",
+			"error_message": "Incorrect value in code",
+			"file": "apps/web/src/views/auth/SignInView.tsx",
+			"root_cause": "Had \"/_app/dashboard\"",
+			"fix": "Changed to \"/dashboard\"",
+			"tags": ["auto-detected", "wrong-value", "tsx"],
+			"related_bugs": [],
+			"occurrences": 1,
+			"last_seen": "2026-04-07T13:52:59.196Z"
+		},
+		{
+			"id": "bug-054",
+			"timestamp": "2026-04-07T13:52:59.827Z",
+			"error_message": "Incorrect value in code",
+			"file": "apps/web/src/views/auth/SignUpView.tsx",
+			"root_cause": "Had \"/_app/dashboard\"",
+			"fix": "Changed to \"/dashboard\"",
+			"tags": ["auto-detected", "wrong-value", "tsx"],
+			"related_bugs": [],
+			"occurrences": 1,
+			"last_seen": "2026-04-07T13:52:59.827Z"
+		},
+		{
+			"id": "bug-055",
+			"timestamp": "2026-04-07T13:56:57.590Z",
+			"error_message": "Missing error handling in unknown",
+			"file": "apps/web/src/views/auth/GoogleOAuthButton.tsx",
+			"root_cause": "Code path had no error handling — exceptions would propagate uncaught",
+			"fix": "Added try/catch block",
+			"tags": ["auto-detected", "error-handling", "tsx"],
+			"related_bugs": [],
+			"occurrences": 1,
+			"last_seen": "2026-04-07T13:56:57.590Z"
+		},
+		{
+			"id": "bug-056",
+			"timestamp": "2026-04-07T14:01:06.410Z",
+			"error_message": "CSS fix: component",
+			"file": "apps/web/src/routes/_app/dashboard.tsx",
+			"root_cause": "component: RouteComponent, → DashboardScreen,",
+			"fix": "Changed component: RouteComponent, → DashboardScreen,",
+			"tags": ["auto-detected", "style-fix", "tsx"],
+			"related_bugs": [],
+			"occurrences": 1,
+			"last_seen": "2026-04-07T14:01:06.410Z"
+		},
+		{
+			"id": "bug-057",
+			"timestamp": "2026-04-07T14:01:54.950Z",
+			"error_message": "Wrong reference: admin should be string",
+			"file": "apps/web/src/views/dashboard/ProjectListView.tsx",
+			"root_cause": "Used \"admin\" instead of \"string\"",
+			"fix": "Changed admin → string",
+			"tags": ["auto-detected", "wrong-reference", "tsx"],
+			"related_bugs": [],
+			"occurrences": 1,
+			"last_seen": "2026-04-07T14:01:54.950Z"
+		},
+		{
+			"id": "bug-058",
+			"timestamp": "2026-04-07T14:08:51.213Z",
+			"error_message": "Wrong reference: useProjects should be error",
+			"file": "apps/web/src/screens/dashboard/DashboardScreen.tsx",
+			"root_cause": "Used \"useProjects\" instead of \"error\"",
+			"fix": "Changed useProjects → error",
+			"tags": ["auto-detected", "wrong-reference", "tsx"],
+			"related_bugs": [],
+			"occurrences": 1,
+			"last_seen": "2026-04-07T14:08:51.213Z"
+		},
+		{
+			"id": "bug-059",
+			"timestamp": "2026-04-07T14:08:57.054Z",
+			"error_message": "Type error",
+			"file": "apps/web/src/screens/dashboard/DashboardScreen.tsx",
+			"root_cause": "Missing or incorrect type annotation",
+			"fix": "Added type assertion/annotation",
+			"tags": ["auto-detected", "type-fix", "tsx"],
+			"related_bugs": [],
+			"occurrences": 1,
+			"last_seen": "2026-04-07T14:08:57.054Z"
+		},
+		{
+			"id": "bug-060",
+			"timestamp": "2026-04-07T14:09:02.367Z",
+			"error_message": "Null/undefined access in ",
+			"file": "apps/web/src/screens/dashboard/DashboardScreen.tsx",
+			"root_cause": "Property access on potentially null/undefined value",
+			"fix": "Added null safety (optional chaining or null check)",
+			"tags": ["auto-detected", "null-safety", "tsx"],
+			"related_bugs": [],
+			"occurrences": 1,
+			"last_seen": "2026-04-07T14:09:02.367Z"
+		},
+		{
+			"id": "bug-061",
+			"timestamp": "2026-04-07T14:11:02.228Z",
+			"error_message": "CSS fix: isPending, projects",
+			"file": "apps/web/src/screens/dashboard/DashboardScreen.tsx",
+			"root_cause": "isPending: projectsPending, → projectsPending, error; projects: {projectsError.message → {error.message",
+			"fix": "Changed isPending: projectsPending, → projectsPending, error; projects: {projectsError.message → {error.message",
+			"tags": ["auto-detected", "style-fix", "tsx"],
+			"related_bugs": [],
+			"occurrences": 1,
+			"last_seen": "2026-04-07T14:11:02.228Z"
+		},
+		{
+			"id": "bug-062",
+			"timestamp": "2026-04-07T14:25:53.895Z",
+			"error_message": "CSS fix: buildStatus",
+			"file": "apps/web/src/views/projects/ProjectOverviewView.tsx",
+			"root_cause": "buildStatus: GraphStatus | null → { global: GraphBuild | null",
+			"fix": "Changed buildStatus: GraphStatus | null → { global: GraphBuild | null",
+			"tags": ["auto-detected", "style-fix", "tsx"],
+			"related_bugs": [],
+			"occurrences": 1,
+			"last_seen": "2026-04-07T14:25:53.895Z"
+		},
+		{
+			"id": "bug-063",
+			"timestamp": "2026-04-07T14:26:44.900Z",
+			"error_message": "Significant refactor of ",
+			"file": "apps/web/src/views/projects/BuildsListView.tsx",
+			"root_cause": "13 lines replaced/restructured",
+			"fix": "Rewrote 35→19 lines (13 removed) | Also: // Note: globalBuild.commitSha is accessed but not; // This should be added to the type definition or ",
+			"tags": ["auto-detected", "refactor", "tsx"],
+			"related_bugs": [],
+			"occurrences": 2,
+			"last_seen": "2026-04-07T14:29:12.584Z"
+		},
+		{
+			"id": "bug-064",
+			"timestamp": "2026-04-07T14:26:52.094Z",
+			"error_message": "Wrong operator: ?? should be ||",
+			"file": "apps/web/src/screens/projects/ProjectBuildsScreen.tsx",
+			"root_cause": "Used \"??\" instead of \"||\"",
+			"fix": "Changed operator ?? → ||",
+			"tags": ["auto-detected", "operator-fix", "tsx"],
+			"related_bugs": [],
+			"occurrences": 1,
+			"last_seen": "2026-04-07T14:26:52.094Z"
+		},
+		{
+			"id": "bug-065",
+			"timestamp": "2026-04-07T14:26:55.675Z",
+			"error_message": "Wrong reference: isPending should be false",
+			"file": "apps/web/src/screens/projects/ProjectMembersScreen.tsx",
+			"root_cause": "Used \"isPending\" instead of \"false\"",
+			"fix": "Changed isPending → false",
+			"tags": ["auto-detected", "wrong-reference", "tsx"],
+			"related_bugs": [],
+			"occurrences": 1,
+			"last_seen": "2026-04-07T14:26:55.675Z"
+		},
+		{
+			"id": "bug-066",
+			"timestamp": "2026-04-07T14:41:18.219Z",
+			"error_message": "CSS fix: label",
+			"file": "apps/web/src/views/layout/AppSidebar.tsx",
+			"root_cause": "label: \"Members\", to: \"/admin/members\", icon: Users → \"Organization\", to: \"/admin\", icon: Building2",
+			"fix": "Changed label: \"Members\", to: \"/admin/members\", icon: Users → \"Organization\", to: \"/admin\", icon: Building2",
+			"tags": ["auto-detected", "style-fix", "tsx"],
+			"related_bugs": [],
+			"occurrences": 1,
+			"last_seen": "2026-04-07T14:41:18.219Z"
+		}
+	]
 }
