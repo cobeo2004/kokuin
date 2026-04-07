@@ -2,20 +2,13 @@ import { Avatar, AvatarFallback } from "@kokuin/ui/components/avatar";
 import { Button } from "@kokuin/ui/components/button";
 import { Separator } from "@kokuin/ui/components/separator";
 import { useNavigate } from "@tanstack/react-router";
-import {
-	Building2,
-	FolderOpen,
-	LayoutDashboard,
-	LogOut,
-	Users,
-} from "lucide-react";
+import { Building2, LayoutDashboard, LogOut, Users } from "lucide-react";
 import { useCurrentUser } from "@/hooks/useCurrentUser";
 import { signOut } from "@/services/auth.service";
 import { type NavItem, SidebarNav } from "./SidebarNav";
 
 const baseItems: NavItem[] = [
 	{ label: "Dashboard", to: "/dashboard", icon: LayoutDashboard },
-	{ label: "Projects", to: "/dashboard", icon: FolderOpen },
 ];
 
 const adminItems: NavItem[] = [
@@ -37,8 +30,12 @@ export function AppSidebar() {
 		: "??";
 
 	const handleSignOut = async () => {
-		await signOut();
-		navigate({ to: "/" });
+		try {
+			await signOut();
+			navigate({ to: "/" });
+		} catch {
+			// sign-out failure: stay on current page
+		}
 	};
 
 	return (

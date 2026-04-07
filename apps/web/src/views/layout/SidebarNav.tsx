@@ -1,4 +1,4 @@
-import { Button } from "@kokuin/ui/components/button";
+import { buttonVariants } from "@kokuin/ui/components/button";
 import { cn } from "@kokuin/ui/lib/utils";
 import { Link, useRouterState } from "@tanstack/react-router";
 import type { LucideIcon } from "lucide-react";
@@ -23,17 +23,17 @@ export function SidebarNav({ items }: SidebarNavProps) {
 				const isActive =
 					pathname === item.to || pathname.startsWith(`${item.to}/`);
 				return (
-					<Link key={item.to} to={item.to as never}>
-						<Button
-							variant="ghost"
-							className={cn(
-								"w-full justify-start gap-2",
-								isActive && "bg-accent text-accent-foreground",
-							)}
-						>
-							<item.icon className="h-4 w-4" />
-							{item.label}
-						</Button>
+					<Link
+						key={item.to}
+						to={item.to as never}
+						className={cn(
+							buttonVariants({ variant: "ghost" }),
+							"w-full justify-start gap-2",
+							isActive && "bg-accent text-accent-foreground",
+						)}
+					>
+						<item.icon className="h-4 w-4" />
+						{item.label}
 					</Link>
 				);
 			})}
