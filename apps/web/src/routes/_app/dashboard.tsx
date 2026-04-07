@@ -143,8 +143,8 @@ function CreateProjectDialog({ onClose }: { onClose: () => void }) {
 					</Button>
 				</div>
 			</div>
-        </div>
-    )
+		</div>
+	);
 }
 
 function RouteComponent() {

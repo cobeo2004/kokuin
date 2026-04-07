@@ -52,7 +52,7 @@ function DomainManager({ projectId }: { projectId: string }) {
 
 	const handleRemove = (domain: string) => {
 		updateDomains.mutate(domains.filter((d) => d !== domain));
-	}
+	};
 
 	return (
 		<div className="space-y-3">

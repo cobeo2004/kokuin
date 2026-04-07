@@ -41,7 +41,7 @@ function CreateOrgDialog({ onClose }: { onClose: () => void }) {
 		if (!slug || slug === autoSlug(name)) {
 			setSlug(autoSlug(val));
 		}
-	}
+	};
 
 	const canSubmit = name.trim() && slug.trim() && !create.isPending;
 
@@ -104,8 +104,8 @@ function CreateOrgDialog({ onClose }: { onClose: () => void }) {
 					</Button>
 				</div>
 			</div>
-        </div>
-    )
+		</div>
+	);
 }
 
 function RouteComponent() {

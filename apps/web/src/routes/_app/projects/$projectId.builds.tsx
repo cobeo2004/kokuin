@@ -35,7 +35,7 @@ function RouteComponent() {
 	const project = useQuery(projectOrpc.project.getById.queryOptions());
 	const defaultBranchStatus = useQuery(
 		projectOrpc.graph.status.queryOptions({ input: {} }),
-	)
+	);
 
 	if (project.isPending) {
 		return (
