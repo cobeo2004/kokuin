@@ -1,6 +1,13 @@
+import { execSync } from "node:child_process";
+import { mkdirSync } from "node:fs";
+import { homedir } from "node:os";
+import path from "node:path";
+import { GraphStore } from "@kokuin/graph";
 import { Command } from "commander";
 import { getApiClient } from "../utils/api-client.js";
-import { getGitRemoteUrl } from "../utils/git.js";
+import { getCurrentBranch, getGitRemoteUrl } from "../utils/git.js";
+import { ParserProcess } from "../utils/parser.js";
+import { resolveProjectId } from "../utils/project.js";
 
 export const graphCommand = new Command("graph").description(
 	"Query and inspect the code review graph",
@@ -166,5 +173,108 @@ graphCommand
 		} catch (err) {
 			console.error(`Failed: ${err}`);
 			process.exit(1);
+		}
+	});
+
+graphCommand
+	.command("build")
+	.description("Build a local graph overlay from changed or all files")
+	.option("--full", "Parse all tracked files instead of just changed files")
+	.action(async (options: { full?: boolean }) => {
+		const repoUrl = getGitRemoteUrl();
+		if (!repoUrl) {
+			console.error("No git remote found.");
+			process.exit(1);
+		}
+
+		const client = getApiClient();
+		const branch = getCurrentBranch();
+
+		let projectId: string;
+		try {
+			projectId = await resolveProjectId(client, repoUrl);
+		} catch (err) {
+			console.error(`${err}`);
+			process.exit(1);
+		}
+
+		// Determine files to parse
+		let files: string[];
+		try {
+			if (options.full) {
+				const output = execSync("git ls-files", { encoding: "utf-8" }).trim();
+				files = output ? output.split("\n") : [];
+			} else {
+				const output = execSync("git diff HEAD --name-only", {
+					encoding: "utf-8",
+				}).trim();
+				files = output ? output.split("\n") : [];
+			}
+		} catch {
+			console.error("Failed to list files via git.");
+			process.exit(1);
+		}
+
+		if (files.length === 0) {
+			console.log("Nothing to build.");
+			return;
+		}
+
+		console.log(
+			`Building overlay from ${files.length} ${options.full ? "tracked" : "changed"} files...`,
+		);
+
+		// Resolve absolute paths
+		const repoRoot = execSync("git rev-parse --show-toplevel", {
+			encoding: "utf-8",
+		}).trim();
+		const absFiles = files.map((f) => ({
+			path: path.resolve(repoRoot, f),
+		}));
+
+		// Run parser
+		let parser: ParserProcess;
+		try {
+			parser = new ParserProcess();
+		} catch (err) {
+			console.error(`${err}`);
+			process.exit(1);
+		}
+
+		let nodes: import("../utils/parser.js").ParsedNodeRaw[] = [];
+		let edges: import("../utils/parser.js").ParsedEdgeRaw[] = [];
+
+		try {
+			const result = await parser.parse(absFiles);
+			nodes = result.nodes;
+			edges = result.edges;
+		} catch (err) {
+			console.error(`Parser error: ${err}`);
+			process.exit(1);
+		} finally {
+			parser.kill();
+		}
+
+		// Write overlay SQLite
+		const overlayDir = path.join(homedir(), ".kokuin", projectId, branch);
+		mkdirSync(overlayDir, { recursive: true });
+		const overlayPath = path.join(overlayDir, "overlay.db");
+
+		const store = new GraphStore(overlayPath);
+		try {
+			store.upsertNodes(
+				nodes.map((n) => ({
+					...n,
+					isTest: n.isTest ?? false,
+				})) as Parameters<typeof store.upsertNodes>[0],
+			);
+			store.upsertEdges(edges as Parameters<typeof store.upsertEdges>[0]);
+			store.rebuildFts();
+			const stats = store.getStats();
+			console.log(`Parsed: ${stats.nodeCount} nodes, ${stats.edgeCount} edges`);
+			console.log(`Overlay saved: ${overlayPath}`);
+			console.log("Run `kokuin graph push` to upload to the server.");
+		} finally {
+			store.close();
 		}
 	});
