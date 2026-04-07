@@ -191,4 +191,7 @@ async function main(): Promise<void> {
 	await server.connect(transport);
 }
 
-main().catch(console.error);
+// Only run as entry point, not when imported as a module
+if (import.meta.main) {
+	main().catch(console.error);
+}
