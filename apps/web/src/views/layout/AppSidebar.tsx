@@ -2,7 +2,8 @@ import { Avatar, AvatarFallback } from "@kokuin/ui/components/avatar";
 import { Button } from "@kokuin/ui/components/button";
 import { Separator } from "@kokuin/ui/components/separator";
 import { useNavigate } from "@tanstack/react-router";
-import { Building2, LayoutDashboard, LogOut, Users } from "lucide-react";
+import { Building2, LayoutDashboard, LogOut } from "lucide-react";
+import { KokuinKanjiMark } from "@/components/brand/KokuinKanjiMark";
 import { useCurrentUser } from "@/hooks/useCurrentUser";
 import { signOut } from "@/services/auth.service";
 import { type NavItem, SidebarNav } from "./SidebarNav";
@@ -13,7 +14,6 @@ const baseItems: NavItem[] = [
 
 const adminItems: NavItem[] = [
 	{ label: "Organization", to: "/admin", icon: Building2 },
-	{ label: "Members", to: "/admin/members", icon: Users },
 ];
 
 export function AppSidebar() {
@@ -42,7 +42,7 @@ export function AppSidebar() {
 		<aside className="flex h-full w-56 flex-col border-r bg-background px-3 py-4">
 			{/* Logo */}
 			<div className="mb-6 px-2">
-				<span className="font-bold text-lg tracking-tight">Kokuin</span>
+				<KokuinKanjiMark variant="sidebar" />
 			</div>
 
 			{/* Main nav */}
