@@ -3,8 +3,7 @@ import type { createTanstackQueryUtils } from "@orpc/tanstack-query";
 
 type Orpc = ReturnType<typeof createTanstackQueryUtils<AppRouterClient>>;
 
-export const listProjects = (orpc: Orpc) =>
-	orpc.project.list.queryOptions();
+export const listProjects = (orpc: Orpc) => orpc.project.list.queryOptions();
 
 export const createProject = (
 	client: AppRouterClient,

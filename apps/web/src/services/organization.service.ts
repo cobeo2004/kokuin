@@ -11,7 +11,5 @@ export const createOrganization = (
 	input: { name: string; slug: string },
 ) => client.organization.create(input);
 
-export const deleteOrganization = (
-	client: AppRouterClient,
-	orgId: string,
-) => client.organization.delete({ orgId });
+export const deleteOrganization = (client: AppRouterClient, orgId: string) =>
+	client.organization.delete({ orgId });

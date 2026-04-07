@@ -1,5 +1,5 @@
-import type { createTanstackQueryUtils } from "@orpc/tanstack-query";
 import type { AppRouterClient } from "@kokuin/api/routers/index";
+import type { createTanstackQueryUtils } from "@orpc/tanstack-query";
 
 type Orpc = ReturnType<typeof createTanstackQueryUtils<AppRouterClient>>;
 
