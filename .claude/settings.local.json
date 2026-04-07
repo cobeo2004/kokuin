@@ -1,11 +1,19 @@
 {
-	"permissions": {
-		"allow": [
-			"mcp__context7__resolve-library-id",
-			"mcp__context7__query-docs",
-			"mcp__plugin_context-mode_context-mode__ctx_batch_execute",
-			"Bash(find:*)",
-			"Bash(/Users/cobeo/.claude/plugins/cache/claude-plugins-official/superpowers/5.0.7/skills/brainstorming/scripts/start-server.sh:*)"
-		]
-	}
+  "permissions": {
+    "allow": [
+      "mcp__context7__resolve-library-id",
+      "mcp__context7__query-docs",
+      "mcp__plugin_context-mode_context-mode__ctx_batch_execute",
+      "Bash(find:*)",
+      "Bash(/Users/cobeo/.claude/plugins/cache/claude-plugins-official/superpowers/5.0.7/skills/brainstorming/scripts/start-server.sh:*)",
+      "mcp__plugin_context-mode_context-mode__ctx_execute_file",
+      "mcp__plugin_context-mode_context-mode__ctx_execute",
+      "mcp__plugin_context-mode_context-mode__ctx_fetch_and_index",
+      "Bash(bun run:*)",
+      "mcp__plugin_context-mode_context-mode__ctx_search",
+      "Bash(bun x:*)",
+      "Bash(git add:*)",
+      "Bash(git commit -m ':*)"
+    ]
+  }
 }
