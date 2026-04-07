@@ -58,6 +58,7 @@
         "kokuin": "src/index.ts",
       },
       "dependencies": {
+        "@kokuin/graph": "workspace:*",
         "commander": "^13.0.0",
       },
       "devDependencies": {
