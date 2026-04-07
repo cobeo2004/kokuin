@@ -86,6 +86,22 @@ export class ParserProcess {
 				// ignore malformed lines
 			}
 		});
+
+		this.proc.on("error", (err) => {
+			for (const handler of this.pending.values()) {
+				handler.reject(new Error(`Parser process error: ${err.message}`));
+			}
+			this.pending.clear();
+		});
+		this.proc.on("close", (code) => {
+			if (this.pending.size === 0) return;
+			for (const handler of this.pending.values()) {
+				handler.reject(
+					new Error(`Parser process exited unexpectedly (code ${code})`),
+				);
+			}
+			this.pending.clear();
+		});
 	}
 
 	async parse(
@@ -99,11 +115,20 @@ export class ParserProcess {
 				method: "parse",
 				params: { files },
 			});
-			this.proc.stdin?.write(`${request}\n`);
+			if (!this.proc.stdin?.writable) {
+				this.pending.delete(id);
+				reject(new Error("Parser stdin is not writable"));
+				return;
+			}
+			this.proc.stdin.write(`${request}\n`);
 		});
 	}
 
 	kill(): void {
+		for (const handler of this.pending.values()) {
+			handler.reject(new Error("Parser process killed"));
+		}
+		this.pending.clear();
 		this.rl.close();
 		this.proc.kill();
 	}
